@@ -346,6 +346,12 @@ namespace ShareX
                 case HotkeyType.HashCheck:
                     OpenHashCheck(filePath, safeTaskSettings);
                     break;
+                case HotkeyType.CopyTimestamp:
+                    CopyTimestampToClipboard(safeTaskSettings);
+                    break;
+                case HotkeyType.CopyUUID:
+                    CopyUUIDToClipboard(safeTaskSettings);
+                    break;
                 case HotkeyType.Metadata:
                     OpenMetadataWindow(filePath);
                     break;
@@ -971,6 +977,42 @@ namespace ShareX
             hashChecker.FileCheckProgressChanged += value => progress.Report(value);
             using CancellationTokenRegistration registration = cancellationToken.Register(hashChecker.Stop);
             return await hashChecker.Start(filePath, (HashType)algorithm);
+        }
+
+        public static void CopyTimestampToClipboard(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            TimestampCopyOptions options = taskSettings.ToolsSettingsReference.TimestampCopyOptions;
+            string text = NameParser.Parse(NameParserType.Default, options.FormatPattern);
+
+            ClipboardHelpers.CopyText(text);
+
+            PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
+
+            if (taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+            {
+                ShowNotificationTip(string.Format(Strings.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
+                    "ShareX - " + Strings.TaskHelpers_CopyTimestamp);
+            }
+        }
+
+        public static void CopyUUIDToClipboard(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            UuidCopyOptions options = taskSettings.ToolsSettingsReference.UuidCopyOptions;
+            string text = options.Version == UuidVersion.V7 ? Guid.CreateVersion7().ToString() : Guid.NewGuid().ToString();
+
+            ClipboardHelpers.CopyText(text);
+
+            PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
+
+            if (taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted)
+            {
+                ShowNotificationTip(string.Format(Strings.TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_, text),
+                    "ShareX - " + Strings.TaskHelpers_CopyUUID);
+            }
         }
 
         public static void OpenMetadataWindow(string filePath = null)
@@ -2329,6 +2371,8 @@ namespace ShareX
                 HotkeyType.QRCodeDecodeFromScreen => LucideIcons.scan_eye,
                 HotkeyType.QRCodeScanRegion => LucideIcons.scan_line,
                 HotkeyType.HashCheck => LucideIcons.hash,
+                HotkeyType.CopyTimestamp => LucideIcons.clock,
+                HotkeyType.CopyUUID => LucideIcons.fingerprint,
                 HotkeyType.Metadata => LucideIcons.tags,
                 HotkeyType.StripMetadata => LucideIcons.file_x,
                 HotkeyType.IndexFolder => LucideIcons.folder_tree,

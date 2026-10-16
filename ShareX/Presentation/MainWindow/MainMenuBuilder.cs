@@ -284,6 +284,8 @@ internal sealed class MainMenuBuilder
         new(Strings.MainMenuBuilder_ToolCategoryData,
         [
             Tool(nameof(Strings.MainMenuBuilder_AnalyzeImage), Strings.MainMenuBuilder_AnalyzeImage, LucideIcons.bot, () => TaskHelpers.AnalyzeImage()),
+            Tool(nameof(Strings.MainMenuBuilder_CopyTimestamp), Strings.MainMenuBuilder_CopyTimestamp, LucideIcons.clock, () => TaskHelpers.CopyTimestampToClipboard()),
+            Tool(nameof(Strings.MainMenuBuilder_CopyUUID), Strings.MainMenuBuilder_CopyUUID, LucideIcons.fingerprint, () => TaskHelpers.CopyUUIDToClipboard()),
             Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, LucideIcons.hash, () => TaskHelpers.OpenHashCheck()),
             Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, LucideIcons.folder_tree, () => TaskHelpers.OpenDirectoryIndexer()),
             Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, LucideIcons.tags, () => TaskHelpers.OpenMetadataWindow()),

@@ -492,6 +492,25 @@ namespace ShareX
         public AIOptions AIOptions = new AIOptions();
         public ImageEditorOptions ImageEditorOptions = new ImageEditorOptions();
         public BackgroundRemoverOptions BackgroundRemoverOptions = new BackgroundRemoverOptions();
+        public TimestampCopyOptions TimestampCopyOptions = new TimestampCopyOptions();
+        public UuidCopyOptions UuidCopyOptions = new UuidCopyOptions();
+    }
+
+    public class TimestampCopyOptions
+    {
+        // Name parser pattern, e.g. "%y-%mo-%d %h:%mi:%s" or "%unix".
+        public string FormatPattern = "%y-%mo-%d_%h-%mi-%s";
+    }
+
+    public enum UuidVersion // Localized
+    {
+        V4,
+        V7
+    }
+
+    public class UuidCopyOptions
+    {
+        public UuidVersion Version = UuidVersion.V4;
     }
 
     public class TaskSettingsAdvanced

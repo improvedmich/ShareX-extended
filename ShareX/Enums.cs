@@ -328,6 +328,10 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         HashCheck,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        CopyTimestamp,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        CopyUUID,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         Metadata,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         StripMetadata,
