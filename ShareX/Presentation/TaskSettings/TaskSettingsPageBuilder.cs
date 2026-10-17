@@ -874,13 +874,30 @@ internal sealed class TaskSettingsPageBuilder
     {
         TaskSettingsTools tools = _toolsSettings;
         var picker = tools.ScreenColorPickerOptions;
+        TimestampCopyOptions timestamp = tools.TimestampCopyOptions;
+        TextBlock timestampPreview = Hint(string.Empty);
+
+        void UpdateTimestampPreview()
+        {
+            timestampPreview.Text = NameParser.Parse(NameParserType.Default, timestamp.FormatPattern);
+        }
+
+        BoundValue<string> timestampPattern = new(timestamp.FormatPattern, value => { timestamp.FormatPattern = value; UpdateTimestampPreview(); });
+        TextBox timestampPatternTextBox = NamePatternText(timestampPattern, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+        UpdateTimestampPreview();
+
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_ScreenColorPicker,
                 Row(Strings.TaskSettingsWindow_Format, PixelInfoText(new(picker.Format, value => picker.Format = value))),
                 Row(Strings.TaskSettingsWindow_FormatCtrlPlusClick, PixelInfoText(new(picker.FormatCtrl, value => picker.FormatCtrl = value))),
                 Row(Strings.TaskSettingsWindow_InfoText, PixelInfoText(new(picker.InfoText, value => picker.InfoText = value))),
-                Check(Strings.TaskSettingsWindow_ShowMagnifier, () => picker.ShowMagnifier, value => picker.ShowMagnifier = value)));
+                Check(Strings.TaskSettingsWindow_ShowMagnifier, () => picker.ShowMagnifier, value => picker.ShowMagnifier = value)),
+            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_TimestampCopy,
+                Row(Strings.TaskSettingsWindow_Format, timestampPatternTextBox),
+                Row(Strings.TaskSettingsWindow_Preview, timestampPreview)),
+            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_UUIDCopy,
+                Row(Strings.TaskSettingsWindow_UUIDVersion, EnumCombo(() => tools.UuidCopyOptions.Version, value => tools.UuidCopyOptions.Version = value))));
     }
 
     private Control BuildMouseHighlighterPage()

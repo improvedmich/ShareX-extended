@@ -651,6 +651,12 @@ Do you still want to run it?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Color picker</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Copy timestamp to clipboard</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Copy UUID to clipboard</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capture pre configured region</value>
   </data>

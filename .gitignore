@@ -332,3 +332,4 @@ ASALocalRun/
 Output/
 APIKeysLocal.cs
 ResXManager.config.xml
+Scripts/BuildRelease.local.json
