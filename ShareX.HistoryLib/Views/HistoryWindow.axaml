@@ -139,7 +139,8 @@
                                          SelectionChanged="OnHistorySelectionChanged"
                                          DoubleTapped="OnHistoryDoubleTapped"
                                          KeyDown="OnHistoryListKeyDown"
-                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                         ScrollViewer.AllowAutoHide="False">
                                     <ListBox.ItemsPanel>
                                         <ItemsPanelTemplate>
                                             <VirtualizingStackPanel/>
