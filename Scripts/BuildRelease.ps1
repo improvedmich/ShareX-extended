@@ -33,7 +33,7 @@ param(
     [string]$Configuration = 'Release',
     [string]$Platform = 'x64',
     [string]$DeployPath,
-    [string]$FFmpegVersion = '8.1',
+    [string]$FFmpegVersion = '9',
     [switch]$SkipFFmpeg,
     [switch]$SkipDeploy
 )
