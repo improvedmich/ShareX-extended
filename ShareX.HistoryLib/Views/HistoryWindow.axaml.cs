@@ -27,6 +27,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
@@ -487,8 +488,7 @@ public partial class HistoryWindow : Window
     private void OnHistoryPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         PointerPoint point = e.GetCurrentPoint(HistoryList);
-        ListBoxItem? container = (e.Source as Visual)?.GetVisualAncestors()
-            .OfType<ListBoxItem>().FirstOrDefault() ?? e.Source as ListBoxItem;
+        ListBoxItem? container = GetRowContainer(e.Source as Visual);
 
         if (point.Properties.IsRightButtonPressed && container?.DataContext is HistoryItem item &&
             HistoryList.SelectedItems?.Contains(item) != true)
@@ -497,7 +497,7 @@ public partial class HistoryWindow : Window
             HistoryList.SelectedItem = item;
         }
 
-        if (point.Properties.IsLeftButtonPressed)
+        if (point.Properties.IsLeftButtonPressed && container != null)
         {
             _dragPointerPressed = e;
             _dragStart = e.GetPosition(HistoryList);
@@ -505,9 +505,26 @@ public partial class HistoryWindow : Window
         }
     }
 
+    // Scroll bar thumbs capture the pointer but their events still bubble up to the list, so starting a
+    // file drag from them would steal the gesture and leave the thumb stuck.
+    private static bool IsInScrollBar(Visual? source) =>
+        source != null && source.GetSelfAndVisualAncestors().Any(visual => visual is ScrollBar);
+
+    private static ListBoxItem? GetRowContainer(Visual? source)
+    {
+        if (source == null || IsInScrollBar(source)) return null;
+
+        return source.GetSelfAndVisualAncestors().OfType<ListBoxItem>().FirstOrDefault();
+    }
+
     private async void OnHistoryPointerMoved(object? sender, PointerEventArgs e)
     {
         if (_dragPointerPressed == null || _dragStarted || !e.GetCurrentPoint(HistoryList).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        if (IsInScrollBar(e.Source as Visual))
         {
             return;
         }
