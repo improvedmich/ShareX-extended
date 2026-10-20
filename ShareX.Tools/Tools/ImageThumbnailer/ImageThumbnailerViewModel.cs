@@ -214,8 +214,7 @@ public sealed partial class ImageThumbnailerViewModel : ViewModelBase
 
             using Bitmap thumbnail = SkiaImageHelpers.CreateThumbnail(source, (int)Width, (int)Height);
             using Bitmap output = SkiaImageHelpers.FillBackground(thumbnail, Color.White);
-            string sourceName = Path.GetFileNameWithoutExtension(filePath);
-            string outputPath = Path.Combine(OutputFolderPath, OutputFileName.Replace("$filename", sourceName));
+            string outputPath = Path.Combine(OutputFolderPath, InputFileNameParser.Parse(OutputFileName, filePath));
             outputPath = Path.ChangeExtension(outputPath, "jpg");
             SkiaImageHelpers.SaveJPEG(output, outputPath, (int)Quality);
             outputFiles.Add(outputPath);

@@ -449,9 +449,8 @@ public sealed partial class ImageWatermarkViewModel : ViewModelBase, IDisposable
             }
 
             using SKBitmap output = ImageWatermarkService.Apply(source, watermarkImage, options);
-            string sourceName = Path.GetFileNameWithoutExtension(filePath);
             string outputPath = Path.Combine(outputFolderPath,
-                outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
+                InputFileNameParser.Parse(outputFileName, filePath));
             outputPath = Path.ChangeExtension(outputPath, extension);
             ImageWatermarkService.Save(output, outputPath, format, quality, backgroundColor);
             outputFiles.Add(outputPath);

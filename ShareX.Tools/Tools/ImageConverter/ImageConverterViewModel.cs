@@ -459,9 +459,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
                 continue;
             }
 
-            string sourceName = Path.GetFileNameWithoutExtension(filePath);
             string outputPath = Path.Combine(outputFolderPath,
-                outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
+                InputFileNameParser.Parse(outputFileName, filePath));
             outputPath = Path.ChangeExtension(outputPath, extension);
             ImageConverterService.Save(source, outputPath, format, quality, backgroundColor, pngOptions, jpegSubsampling,
                 gifQuality, pngBitDepth, bmpBitDepth, webpCompression);

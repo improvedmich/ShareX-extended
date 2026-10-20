@@ -368,9 +368,8 @@ public sealed partial class ImageResizerViewModel : ViewModelBase, IDisposable
             }
 
             using SKBitmap output = ImageResizerService.Resize(source, width, height, mode);
-            string sourceName = Path.GetFileNameWithoutExtension(filePath);
             string outputPath = Path.Combine(outputFolderPath,
-                outputFileName.Replace("$filename", sourceName, StringComparison.Ordinal));
+                InputFileNameParser.Parse(outputFileName, filePath));
             outputPath = Path.ChangeExtension(outputPath, extension);
             ImageResizerService.Save(output, outputPath, format, quality, backgroundColor);
             outputFiles.Add(outputPath);

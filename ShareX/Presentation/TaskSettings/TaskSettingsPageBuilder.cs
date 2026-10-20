@@ -876,6 +876,8 @@ internal sealed class TaskSettingsPageBuilder
         var picker = tools.ScreenColorPickerOptions;
         TimestampCopyOptions timestamp = tools.TimestampCopyOptions;
         TextBlock timestampPreview = Hint(string.Empty);
+        VideoConverterOptions videoConverter = tools.VideoConverterOptions;
+        TextBlock videoConverterPreview = Hint(string.Empty);
 
         void UpdateTimestampPreview()
         {
@@ -885,6 +887,18 @@ internal sealed class TaskSettingsPageBuilder
         BoundValue<string> timestampPattern = new(timestamp.FormatPattern, value => { timestamp.FormatPattern = value; UpdateTimestampPreview(); });
         TextBox timestampPatternTextBox = NamePatternText(timestampPattern, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
         UpdateTimestampPreview();
+
+        void UpdateVideoConverterPreview()
+        {
+            videoConverterPreview.Text = InputFileNameParser.Preview(videoConverter.OutputFileNameMask);
+        }
+
+        BoundValue<string> videoConverterMask = new(videoConverter.OutputFileNameMask,
+            value => { videoConverter.OutputFileNameMask = value; UpdateVideoConverterPreview(); });
+        TextBox videoConverterMaskTextBox = CodeMenuText(videoConverterMask, true, CodeMenuEntryInputFileName.fileExt,
+            CodeMenuEntryInputFileName.filePath, CodeMenuEntryInputFileName.folderPath, CodeMenuEntryInputFileName.folderName);
+        UpdateVideoConverterPreview();
+
 
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
@@ -896,6 +910,9 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_TimestampCopy,
                 Row(Strings.TaskSettingsWindow_Format, timestampPatternTextBox),
                 Row(Strings.TaskSettingsWindow_Preview, timestampPreview)),
+            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_VideoConverter,
+                Row(Strings.TaskSettingsWindow_FileNameMask, videoConverterMaskTextBox),
+                Row(Strings.TaskSettingsWindow_Preview, videoConverterPreview)),
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_UUIDCopy,
                 Row(Strings.TaskSettingsWindow_UUIDVersion, EnumCombo(() => tools.UuidCopyOptions.Version, value => tools.UuidCopyOptions.Version = value))));
     }

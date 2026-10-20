@@ -1203,6 +1203,21 @@
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Текущий год (2 цифры)</value>
   </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Имя входного файла (без расширения)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Расширение входного файла</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Полный путь к входному файлу</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Путь к папке входного файла</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Имя папки входного файла</value>
+  </data>
   <data name="ScrollMethod_DownArrow" xml:space="preserve">
     <value>Стрелка вниз</value>
   </data>

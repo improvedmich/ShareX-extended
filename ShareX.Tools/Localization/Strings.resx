@@ -2123,6 +2123,9 @@
   <data name="VideoConverterWindow_Start_encoding" xml:space="preserve">
     <value>Start encoding</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>Apply mask</value>
+  </data>
   <data name="VideoConverterWindow_Stop_encoding" xml:space="preserve">
     <value>Stop encoding</value>
   </data>

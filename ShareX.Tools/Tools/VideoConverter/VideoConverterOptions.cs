@@ -32,9 +32,19 @@ namespace ShareX.Tools
 {
     public class VideoConverterOptions
     {
+        // Single source of truth for the default output file name mask.
+        public const string DefaultOutputFileNameMask = "%input_file_name%";
+
         public string InputFilePath { get; set; }
         public string OutputFolderPath { get; set; }
         public string OutputFileName { get; set; }
+
+        // Output file name mask, expanded by InputFileNameParser when encoding starts.
+        // Supports %input_file_name%, %input_file_ext%, %input_folder_name% and every NameParser token.
+        public string OutputFileNameMask { get; set; } = DefaultOutputFileNameMask;
+
+        // Persisted counter behind the %i NameParser token.
+        public int NameParserAutoIncrementNumber { get; set; } = 0;
 
         public string OutputFilePath
         {

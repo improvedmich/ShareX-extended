@@ -3229,6 +3229,51 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input file extension.
+        /// </summary>
+        public static string ReplCodeMenuEntry_fe_input_file_extension {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_fe_input_file_extension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input file folder path.
+        /// </summary>
+        public static string ReplCodeMenuEntry_ff_input_folder_path {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_ff_input_folder_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input file name (without extension).
+        /// </summary>
+        public static string ReplCodeMenuEntry_fn_input_file_name {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_fn_input_file_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input file folder name.
+        /// </summary>
+        public static string ReplCodeMenuEntry_fnm_input_folder_name {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_fnm_input_folder_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input file full path.
+        /// </summary>
+        public static string ReplCodeMenuEntry_fp_input_file_path {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuEntry_fp_input_file_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Random GUID.
         /// </summary>
         public static string ReplCodeMenuEntry_guid_Random_guid {

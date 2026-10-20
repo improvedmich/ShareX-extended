@@ -1,0 +1,89 @@
+{
+	"files": [
+		{
+			"path": "ShareX.Tools/Tools/VideoConverter/VideoConverterOptions.cs",
+			"bookmarks": [
+				{
+					"line": 40,
+					"column": 7,
+					"label": "OutputFileNameMask Значение по умолчанию при объявлении"
+				}
+			]
+		},
+		{
+			"path": "ShareX.Tools/Tools/VideoConverter/VideoConverterViewModel.cs",
+			"bookmarks": [
+				{
+					"line": 104,
+					"column": 6,
+					"label": ""
+				},
+				{
+					"line": 124,
+					"column": 7,
+					"label": "OutputFileNameMask значение по умолчанию дублируется"
+				},
+				{
+					"line": 156,
+					"column": 12,
+					"label": ""
+				},
+				{
+					"line": 200,
+					"column": 18,
+					"label": ""
+				},
+				{
+					"line": 319,
+					"column": 15,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "ShareX.Tools/Integration/ToolsIntegration.cs",
+			"bookmarks": [
+				{
+					"line": 244,
+					"column": 6,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "ShareX/TaskSettings.cs",
+			"bookmarks": [
+				{
+					"line": 159,
+					"column": 19,
+					"label": ""
+				},
+				{
+					"line": 187,
+					"column": 23,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "ShareX/SettingManager.cs",
+			"bookmarks": [
+				{
+					"line": 110,
+					"column": 12,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "ShareX.Tools/Tools/VideoTrimmer/VideoTrimmerViewModel.cs",
+			"bookmarks": [
+				{
+					"line": 354,
+					"column": 40,
+					"label": "Имя выходного файла тоже должно быть поддержано через общий сервис"
+				}
+			]
+		}
+	]
+}

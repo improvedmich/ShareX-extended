@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.HelpersLib;
 using System.Text;
 
 namespace ShareX.Tools;
@@ -61,15 +62,21 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(InputFileDisplay))]
+    [NotifyPropertyChangedFor(nameof(OutputFileNamePreview))]
     private string _inputFilePath;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
+    [NotifyPropertyChangedFor(nameof(OutputFileNamePreview))]
     private string _outputFolderPath;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
+    [NotifyPropertyChangedFor(nameof(OutputFileNamePreview))]
     private string _outputFileName;
+
+    [ObservableProperty]
+    private string _outputFileNameMask;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
@@ -115,6 +122,9 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _inputFilePath = options.InputFilePath ?? string.Empty;
         _outputFolderPath = options.OutputFolderPath ?? string.Empty;
         _outputFileName = options.OutputFileName ?? string.Empty;
+        _outputFileNameMask = string.IsNullOrWhiteSpace(options.OutputFileNameMask)
+            ? VideoConverterOptions.DefaultOutputFileNameMask
+            : options.OutputFileNameMask;
         _selectedCodec = Codecs.First(x => (int)x.Codec == (int)options.VideoCodec);
         _useBitrate = options.VideoQualityUseBitrate;
         _videoQuality = options.VideoQuality;
@@ -155,17 +165,58 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _ => 51
     };
 
-    public string OutputFilePath
+    // File name with every token expanded for the currently selected input. Live preview only,
+    // it does not consume the %i auto increment counter.
+    public string OutputFileNamePreview
     {
         get
         {
-            if (string.IsNullOrWhiteSpace(OutputFolderPath) || string.IsNullOrWhiteSpace(OutputFileName))
+            if (string.IsNullOrWhiteSpace(OutputFileName))
             {
                 return string.Empty;
             }
 
-            string path = Path.Combine(OutputFolderPath, OutputFileName);
-            return Path.HasExtension(OutputFileName) ? path : Path.ChangeExtension(path, GetFileExtension());
+            return InputFileNameParser.Parse(OutputFileName, InputFilePath, _options.NameParserAutoIncrementNumber);
+        }
+    }
+
+    public string OutputFilePath
+    {
+        get
+        {
+            string fileName = OutputFileNamePreview;
+
+            if (string.IsNullOrWhiteSpace(OutputFolderPath) || string.IsNullOrWhiteSpace(fileName))
+            {
+                return string.Empty;
+            }
+
+            string path = Path.Combine(OutputFolderPath, fileName);
+            return Path.HasExtension(fileName) ? path : Path.ChangeExtension(path, GetFileExtension());
+        }
+    }
+
+    // Expands the file name mask for real and consumes the auto increment counter, so it is only
+    // called once when the user starts encoding.
+    private string ResolveOutputFilePath()
+    {
+        string fileName = InputFileNameParser.Parse(OutputFileName, InputFilePath, _options.NameParserAutoIncrementNumber);
+
+        if (fileName.Contains("%i"))
+        {
+            _options.NameParserAutoIncrementNumber++;
+        }
+
+        string path = Path.Combine(OutputFolderPath, fileName);
+        return Path.HasExtension(fileName) ? path : Path.ChangeExtension(path, GetFileExtension());
+    }
+
+    [RelayCommand]
+    private void ApplyMask()
+    {
+        if (!string.IsNullOrWhiteSpace(OutputFileNameMask))
+        {
+            OutputFileName = OutputFileNameMask;
         }
     }
 
@@ -210,7 +261,9 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
         if (string.IsNullOrWhiteSpace(OutputFileName))
         {
-            OutputFileName = $"{Path.GetFileNameWithoutExtension(filePath)}-output";
+            OutputFileName = !string.IsNullOrWhiteSpace(OutputFileNameMask)
+                ? OutputFileNameMask
+                : $"{Path.GetFileNameWithoutExtension(filePath)}-output";
         }
 
         StatusText = string.Empty;
@@ -243,6 +296,11 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         }
 
         PersistSettings();
+
+        // The file name mask is expanded here rather than on every keystroke so that date, time and
+        // auto increment tokens reflect the moment the user actually started the conversion.
+        string outputFilePath = ResolveOutputFilePath();
+
         IsEncoding = true;
         Progress = 0;
         StatusText = Localization.Strings.VideoConverterViewModel_Converting;
@@ -251,13 +309,13 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
         try
         {
-            VideoConversionRequest request = new(BuildArguments(), OutputFilePath, AutoOpenFolder);
+            VideoConversionRequest request = new(BuildArguments(outputFilePath), outputFilePath, AutoOpenFolder);
             VideoConversionResult result = await _conversionHandler(request, progress, _cancellationTokenSource.Token);
 
             if (result.Succeeded && !result.WasCancelled)
             {
                 Progress = 100;
-                StatusText = string.Format(Localization.Strings.VideoConverterViewModel_Conversion_complete, OutputFilePath);
+                StatusText = string.Format(Localization.Strings.VideoConverterViewModel_Conversion_complete, outputFilePath);
             }
             else if (result.WasCancelled)
             {
@@ -314,6 +372,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     partial void OnVideoQualityChanged(double value) => SettingsValueChanged();
     partial void OnVideoBitrateChanged(decimal value) => SettingsValueChanged();
     partial void OnAutoOpenFolderChanged(bool value) => SettingsValueChanged();
+    partial void OnOutputFileNameMaskChanged(string value) => SettingsValueChanged();
     private void SettingsValueChanged()
     {
         PersistSettings();
@@ -325,6 +384,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _options.InputFilePath = InputFilePath;
         _options.OutputFolderPath = OutputFolderPath;
         _options.OutputFileName = OutputFileName;
+        _options.OutputFileNameMask = OutputFileNameMask;
         _options.VideoCodec = (ConverterVideoCodecs)SelectedCodec.Codec;
         _options.VideoQualityUseBitrate = UseBitrate;
         _options.VideoQuality = (int)Math.Round(VideoQuality);
@@ -332,7 +392,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _options.AutoOpenFolder = AutoOpenFolder;
     }
 
-    private string BuildArguments()
+    private string BuildArguments(string outputFilePath)
     {
         StringBuilder args = new();
         args.Append($"-i \"{InputFilePath}\" ");
@@ -429,7 +489,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             }
         }
 
-        args.Append($"-y \"{OutputFilePath}\"");
+        args.Append($"-y \"{outputFilePath}\"");
         return args.ToString();
     }
 

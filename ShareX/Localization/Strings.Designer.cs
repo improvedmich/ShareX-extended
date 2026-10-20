@@ -6937,6 +6937,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File name mask:.
+        /// </summary>
+        public static string TaskSettingsWindow_FileNameMask {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FileNameMask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File naming.
         /// </summary>
         public static string TaskSettingsWindow_FileNaming {
@@ -8859,6 +8868,15 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_UUIDVersion {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_UUIDVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Video converter.
+        /// </summary>
+        public static string TaskSettingsWindow_VideoConverter {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_VideoConverter", resourceCulture);
             }
         }
         

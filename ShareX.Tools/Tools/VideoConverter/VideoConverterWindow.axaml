@@ -136,10 +136,19 @@
                                     </Button>
                                 </Grid>
                                 <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_File_name}"/>
-                                <TextBox Text="{Binding OutputFileName}"
-                                         PlaceholderText="{x:Static localization:Strings.VideoConverterWindow_video_output}"
-                                         IsEnabled="{Binding IsIdle}"
-                                         Margin="0,0,0,8"/>
+                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8" Margin="0,0,0,8">
+                                    <TextBox Grid.Column="0"
+                                             Text="{Binding OutputFileName}"
+                                             PlaceholderText="{x:Static localization:Strings.VideoConverterWindow_video_output}"
+                                             IsEnabled="{Binding IsIdle}"/>
+                                    <Button Grid.Column="1"
+                                            Command="{Binding ApplyMaskCommand}"
+                                            IsEnabled="{Binding IsIdle}"
+                                            ToolTip.Tip="{x:Static localization:Strings.VideoConverterWindow_Apply_mask}">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.wand_sparkles}"
+                                                   Classes="icon"/>
+                                    </Button>
+                                </Grid>
                                 <TextBlock Classes="path-text"
                                            Text="{Binding OutputFilePath}"
                                            Margin="0,0,0,12"/>
