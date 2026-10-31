@@ -36,7 +36,11 @@
     <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
     <ProjectReference Include="..\ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <!-- SkipGetTargetFrameworkProperties stops the SDK from picking a compatible TFM,
+           so the caller's global TargetFramework (e.g. the IDE debug build) must not leak
+           into this project, which targets a different framework. -->
       <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
+      <GlobalPropertiesToRemove>TargetFramework</GlobalPropertiesToRemove>
     </ProjectReference>
     <ProjectReference Include="..\ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj" />
     <ProjectReference Include="..\ShareX.ScreenRecordingLib\ShareX.ScreenRecordingLib.csproj" />
