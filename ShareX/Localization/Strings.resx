@@ -2281,10 +2281,13 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_ClipboardContentFormat" xml:space="preserve">
     <value>Clipboard content format</value>
   </data>
-  <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
-    <value>Clipboard upload</value>
-  </data>
-  <data name="TaskSettingsWindow_Close" xml:space="preserve">
+   <data name="TaskSettingsWindow_ClipboardUpload" xml:space="preserve">
+     <value>Clipboard upload</value>
+   </data>
+   <data name="TaskSettingsWindow_CommonOutputFileName" xml:space="preserve">
+     <value>Common output file name</value>
+   </data>
+   <data name="TaskSettingsWindow_Close" xml:space="preserve">
     <value>Close</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
@@ -2934,12 +2937,6 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Tools</value>
-  </data>
-  <data name="TaskSettingsWindow_VideoConverter" xml:space="preserve">
-    <value>Video converter</value>
-  </data>
-  <data name="TaskSettingsWindow_FileNameMask" xml:space="preserve">
-    <value>File name mask:</value>
   </data>
   <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
     <value>URL replacement</value>

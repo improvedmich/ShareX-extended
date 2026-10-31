@@ -1110,6 +1110,12 @@ Do you still want to run it?</value>
   <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
     <value>Window</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Input file</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Input folder</value>
+  </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>Computer name</value>
   </data>

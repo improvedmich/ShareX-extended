@@ -3193,6 +3193,24 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Input file.
+        /// </summary>
+        public static string ReplCodeMenuCategory_Input_File {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Input_File", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input folder.
+        /// </summary>
+        public static string ReplCodeMenuCategory_Input_Folder {
+            get {
+                return ResourceManager.GetString("ReplCodeMenuCategory_Input_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Random.
         /// </summary>
         public static string ReplCodeMenuCategory_Random {

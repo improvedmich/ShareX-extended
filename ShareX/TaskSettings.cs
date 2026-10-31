@@ -454,6 +454,8 @@ namespace ShareX
         public TimeZoneInfo CustomTimeZone = TimeZoneInfo.Utc;
         public string NameFormatPattern = "%ra{10}";
         public string NameFormatPatternActiveWindow = "%pn_%ra{10}";
+        // Common output file name mask for all tools (VideoConverter, ImageConverter, etc.)
+        public string CommonOutputFileNameMask = InputFileNameParser.DefaultMask;
         public bool FileUploadUseNamePattern = false;
         public bool FileUploadReplaceProblematicCharacters = false;
         public bool URLRegexReplace = false;

@@ -84,6 +84,16 @@
 					"label": "Имя выходного файла тоже должно быть поддержано через общий сервис"
 				}
 			]
+		},
+		{
+			"path": "ShareX/Presentation/TaskSettings/TaskSettingsPageBuilder.cs",
+			"bookmarks": [
+				{
+					"line": 1458,
+					"column": 31,
+					"label": ""
+				}
+			]
 		}
 	]
 }

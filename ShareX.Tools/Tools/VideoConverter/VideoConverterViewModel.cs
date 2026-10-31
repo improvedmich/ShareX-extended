@@ -123,7 +123,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _outputFolderPath = options.OutputFolderPath ?? string.Empty;
         _outputFileName = options.OutputFileName ?? string.Empty;
         _outputFileNameMask = string.IsNullOrWhiteSpace(options.OutputFileNameMask)
-            ? VideoConverterOptions.DefaultOutputFileNameMask
+            ? InputFileNameParser.DefaultMask
             : options.OutputFileNameMask;
         _selectedCodec = Codecs.First(x => (int)x.Codec == (int)options.VideoCodec);
         _useBitrate = options.VideoQualityUseBitrate;

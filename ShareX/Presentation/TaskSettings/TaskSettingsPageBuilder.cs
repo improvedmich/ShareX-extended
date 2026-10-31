@@ -707,11 +707,12 @@ internal sealed class TaskSettingsPageBuilder
                 Button(Strings.TaskSettingsWindow_OCRHelp, () => URLHelpers.OpenURL(Links.DocsOCR))));
     }
 
-    private Control BuildFileNamingPage()
+     private Control BuildFileNamingPage()
     {
         TaskSettingsUpload upload = _settings.UploadSettings;
         TextBlock capturePreview = Hint(string.Empty);
         TextBlock windowPreview = Hint(string.Empty);
+        TextBlock outputFileNamePreview = Hint(string.Empty);
 
         void UpdatePreviews()
         {
@@ -730,6 +731,11 @@ internal sealed class TaskSettingsPageBuilder
             parser.WindowText = _window.Title;
             parser.ProcessName = "ShareX";
             windowPreview.Text = parser.Parse(upload.NameFormatPatternActiveWindow);
+        }
+
+        void UpdateOutputFileNamePreview()
+        {
+            outputFileNamePreview.Text = InputFileNameParser.Preview(upload.CommonOutputFileNameMask);
         }
 
         BoundValue<string> capturePattern = new(upload.NameFormatPattern, value => { upload.NameFormatPattern = value; UpdatePreviews(); });
@@ -753,12 +759,22 @@ internal sealed class TaskSettingsPageBuilder
             autoIncrementValue.PropertyChanged += (_, _) => UpdatePreviews();
         }
 
+        BoundValue<string> outputFileNameMask = new(upload.CommonOutputFileNameMask,
+            value => { upload.CommonOutputFileNameMask = value; UpdateOutputFileNamePreview(); });
+        // The mask supports input file tokens and all standard NameParser tokens
+        IEnumerable<CodeMenuEntry> outputFileNameEntries = GetCodeMenuEntries<CodeMenuEntryInputFileName>().Cast<CodeMenuEntry>()
+            .Concat(GetCodeMenuEntries<CodeMenuEntryFilename>());
+        TextBox outputFileNameMaskTextBox = CodeMenuEntriesText(outputFileNameMask, true, outputFileNameEntries,
+            CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
+        UpdateOutputFileNamePreview();
+
         UpdatePreviews();
 
         return Page("upload-file-naming", Strings.TaskSettingsWindow_FileNaming, LucideIcons.file_pen,
             EnabledCard(_uploadOverride, Strings.TaskSettingsWindow_NamePatterns,
                 Row(Strings.TaskSettingsWindow_CaptureOrClipboardUpload, capturePatternTextBox), Row(Strings.TaskSettingsWindow_Preview, capturePreview),
                 Row(Strings.TaskSettingsWindow_WindowCapture, windowPatternTextBox), Row(Strings.TaskSettingsWindow_Preview, windowPreview),
+                Row(Strings.TaskSettingsWindow_CommonOutputFileName, outputFileNameMaskTextBox), Row(Strings.TaskSettingsWindow_Preview, outputFileNamePreview),
                 Check(Strings.TaskSettingsWindow_UseNamePatternForFileUploads, () => upload.FileUploadUseNamePattern, value => upload.FileUploadUseNamePattern = value),
                 Check(Strings.TaskSettingsWindow_ReplaceURLProblematicCharactersWithUnderscores, () => upload.FileUploadReplaceProblematicCharacters, value => upload.FileUploadReplaceProblematicCharacters = value),
                 Row(Strings.TaskSettingsWindow_AutoIncrementNumber, autoIncrement)),
@@ -876,8 +892,6 @@ internal sealed class TaskSettingsPageBuilder
         var picker = tools.ScreenColorPickerOptions;
         TimestampCopyOptions timestamp = tools.TimestampCopyOptions;
         TextBlock timestampPreview = Hint(string.Empty);
-        VideoConverterOptions videoConverter = tools.VideoConverterOptions;
-        TextBlock videoConverterPreview = Hint(string.Empty);
 
         void UpdateTimestampPreview()
         {
@@ -887,18 +901,6 @@ internal sealed class TaskSettingsPageBuilder
         BoundValue<string> timestampPattern = new(timestamp.FormatPattern, value => { timestamp.FormatPattern = value; UpdateTimestampPreview(); });
         TextBox timestampPatternTextBox = NamePatternText(timestampPattern, CodeMenuEntryFilename.n, CodeMenuEntryFilename.t, CodeMenuEntryFilename.pn);
         UpdateTimestampPreview();
-
-        void UpdateVideoConverterPreview()
-        {
-            videoConverterPreview.Text = InputFileNameParser.Preview(videoConverter.OutputFileNameMask);
-        }
-
-        BoundValue<string> videoConverterMask = new(videoConverter.OutputFileNameMask,
-            value => { videoConverter.OutputFileNameMask = value; UpdateVideoConverterPreview(); });
-        TextBox videoConverterMaskTextBox = CodeMenuText(videoConverterMask, true, CodeMenuEntryInputFileName.fileExt,
-            CodeMenuEntryInputFileName.filePath, CodeMenuEntryInputFileName.folderPath, CodeMenuEntryInputFileName.folderName);
-        UpdateVideoConverterPreview();
-
 
         return Page("tools", Strings.TaskSettingsWindow_Tools, LucideIcons.wrench,
             OverrideCard(_toolsOverride, Strings.TaskSettingsWindow_OverrideToolsSettings),
@@ -910,9 +912,6 @@ internal sealed class TaskSettingsPageBuilder
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_TimestampCopy,
                 Row(Strings.TaskSettingsWindow_Format, timestampPatternTextBox),
                 Row(Strings.TaskSettingsWindow_Preview, timestampPreview)),
-            EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_VideoConverter,
-                Row(Strings.TaskSettingsWindow_FileNameMask, videoConverterMaskTextBox),
-                Row(Strings.TaskSettingsWindow_Preview, videoConverterPreview)),
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_UUIDCopy,
                 Row(Strings.TaskSettingsWindow_UUIDVersion, EnumCombo(() => tools.UuidCopyOptions.Version, value => tools.UuidCopyOptions.Version = value))));
     }
@@ -1426,20 +1425,30 @@ internal sealed class TaskSettingsPageBuilder
     }
 
     private TextBox CodeMenuText<T>(BoundValue<string> value, bool useCategories, params T[] ignoredEntries) where T : CodeMenuEntry
+        => CodeMenuEntriesText(value, useCategories, GetCodeMenuEntries<T>(), ignoredEntries);
+
+    private static List<T> GetCodeMenuEntries<T>() where T : CodeMenuEntry
     {
-        TextBox textBox = Text(value);
-        HashSet<T> ignored = ignoredEntries.ToHashSet();
-        List<T> entries = typeof(T)
+        return typeof(T)
             .GetFields(BindingFlags.Public | BindingFlags.Static)
             .Where(field => field.FieldType == typeof(T))
             .Select(field => field.GetValue(null))
             .OfType<T>()
-            .Where(entry => !ignored.Contains(entry))
             .ToList();
+    }
+
+    // Same as CodeMenuText but accepts a pre-built list of entries, so menus can combine
+    // tokens from several CodeMenuEntry classes (e.g. input file tokens + all NameParser tokens).
+    private TextBox CodeMenuEntriesText(BoundValue<string> value, bool useCategories, IEnumerable<CodeMenuEntry> entries,
+        params CodeMenuEntry[] ignoredEntries)
+    {
+        TextBox textBox = Text(value);
+        HashSet<CodeMenuEntry> ignored = ignoredEntries.ToHashSet();
+        List<CodeMenuEntry> entryList = entries.Where(entry => !ignored.Contains(entry)).ToList();
 
         List<MenuItem> rootItems = [];
 
-        MenuItem CreateItem(T entry)
+        MenuItem CreateItem(CodeMenuEntry entry)
         {
             string pattern = entry.ToPrefixString();
             MenuItem item = new()
@@ -1453,7 +1462,7 @@ internal sealed class TaskSettingsPageBuilder
 
         if (useCategories)
         {
-            foreach (IGrouping<string?, T> group in entries.GroupBy(entry => entry.Category))
+            foreach (IGrouping<string?, CodeMenuEntry> group in entryList.GroupBy(entry => entry.Category))
             {
                 List<MenuItem> items = group.Select(CreateItem).ToList();
 
@@ -1469,7 +1478,7 @@ internal sealed class TaskSettingsPageBuilder
         }
         else
         {
-            rootItems.AddRange(entries.Select(CreateItem));
+            rootItems.AddRange(entryList.Select(CreateItem));
         }
 
         ContextMenu menu = new()

@@ -50,6 +50,10 @@ namespace ShareX.HelpersLib
     {
         private const string LegacyFilenameToken = "$filename";
 
+        // Default output file name mask for every tool that parses input file name patterns
+        // (VideoConverter, ImageConverter, ImageResizer, ImageThumbnailer, ImageWatermark).
+        public const string DefaultMask = "%input_file_name%";
+
         public static string Parse(string pattern, string inputFilePath, int autoIncrementNumber = 0,
             NameParserType parserType = NameParserType.FileName)
         {

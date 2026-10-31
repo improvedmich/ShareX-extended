@@ -6721,6 +6721,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Common output file name.
+        /// </summary>
+        public static string TaskSettingsWindow_CommonOutputFileName {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CommonOutputFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configure....
         /// </summary>
         public static string TaskSettingsWindow_ConfigureWithEllipsis {
@@ -6933,15 +6942,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_FadeDurationSeconds {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_FadeDurationSeconds", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File name mask:.
-        /// </summary>
-        public static string TaskSettingsWindow_FileNameMask {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_FileNameMask", resourceCulture);
             }
         }
         
@@ -8868,15 +8868,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_UUIDVersion {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_UUIDVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Video converter.
-        /// </summary>
-        public static string TaskSettingsWindow_VideoConverter {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_VideoConverter", resourceCulture);
             }
         }
         
