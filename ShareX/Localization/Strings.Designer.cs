@@ -3841,6 +3841,366 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose folder to browse.
+        /// </summary>
+        public static string ImageBrowserWindow_Choose_folder {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Choose_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string ImageBrowserWindow_Close {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modified.
+        /// </summary>
+        public static string ImageBrowserWindow_Column_modified {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Column_modified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ImageBrowserWindow_Column_name {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Column_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string ImageBrowserWindow_Column_size {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Column_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file name.
+        /// </summary>
+        public static string ImageBrowserWindow_Copy_file_name {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Copy_file_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file path.
+        /// </summary>
+        public static string ImageBrowserWindow_Copy_file_path {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Copy_file_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string ImageBrowserWindow_Created {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dimensions.
+        /// </summary>
+        public static string ImageBrowserWindow_Dimensions {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Dimensions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtered.
+        /// </summary>
+        public static string ImageBrowserWindow_Filtered {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Filtered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder....
+        /// </summary>
+        public static string ImageBrowserWindow_Folder {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder not found.
+        /// </summary>
+        public static string ImageBrowserWindow_Folder_missing {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Folder_missing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder.
+        /// </summary>
+        public static string ImageBrowserWindow_Folder_path {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Folder_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Count.
+        /// </summary>
+        public static string ImageBrowserWindow_Group_count {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Group_count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} files.
+        /// </summary>
+        public static string ImageBrowserWindow_Group_files_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Group_files_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string ImageBrowserWindow_Group_value {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Group_value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a regular expression with named groups, for example (?&lt;extension&gt;\w+), to see a breakdown by group value..
+        /// </summary>
+        public static string ImageBrowserWindow_Groups_hint {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Groups_hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The regular expression has no named groups..
+        /// </summary>
+        public static string ImageBrowserWindow_Groups_no_named_groups {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Groups_no_named_groups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} items.
+        /// </summary>
+        public static string ImageBrowserWindow_Items_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Items_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading....
+        /// </summary>
+        public static string ImageBrowserWindow_Loading {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matched.
+        /// </summary>
+        public static string ImageBrowserWindow_Matched {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Matched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modified.
+        /// </summary>
+        public static string ImageBrowserWindow_Modified {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Modified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ... {0} more groups.
+        /// </summary>
+        public static string ImageBrowserWindow_More_groups_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_More_groups_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ... {0} more values.
+        /// </summary>
+        public static string ImageBrowserWindow_More_values_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_More_values_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No image files found.
+        /// </summary>
+        public static string ImageBrowserWindow_No_files {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_No_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No files match the current filter.
+        /// </summary>
+        public static string ImageBrowserWindow_No_matches {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_No_matches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No image preview available.
+        /// </summary>
+        public static string ImageBrowserWindow_No_preview {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_No_preview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open file.
+        /// </summary>
+        public static string ImageBrowserWindow_Open_file {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Open_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open folder.
+        /// </summary>
+        public static string ImageBrowserWindow_Open_folder {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Open_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recursive.
+        /// </summary>
+        public static string ImageBrowserWindow_Recursive {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Recursive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string ImageBrowserWindow_Refresh {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Regular expression (file name).
+        /// </summary>
+        public static string ImageBrowserWindow_Regex_pattern {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Regex_pattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search file names and paths.
+        /// </summary>
+        public static string ImageBrowserWindow_Search_placeholder {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Search_placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a file to preview.
+        /// </summary>
+        public static string ImageBrowserWindow_Select_file {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Select_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string ImageBrowserWindow_Size {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string ImageBrowserWindow_Statistics {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Image browser.
+        /// </summary>
+        public static string ImageBrowserWindow_Title {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string ImageBrowserWindow_Total {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unmatched.
+        /// </summary>
+        public static string ImageBrowserWindow_Unmatched {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Unmatched", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not write image to path:.
         /// </summary>
         public static string ImageData_Write_Error_Message {
@@ -4278,6 +4638,15 @@ namespace ShareX.Localization {
         public static string MainMenuBuilder_ImageBeautifier {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_ImageBeautifier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image browser....
+        /// </summary>
+        public static string MainMenuBuilder_ImageBrowser {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ImageBrowser", resourceCulture);
             }
         }
         

@@ -1,0 +1,346 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localization="using:ShareX.Localization"
+        xmlns:local="using:ShareX"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d"
+        d:DesignWidth="1300"
+        d:DesignHeight="700"
+        x:Class="ShareX.ImageBrowserWindow"
+        Title="{x:Static localization:Strings.ImageBrowserWindow_Title}"
+        Width="1300"
+        Height="700"
+        MinWidth="850"
+        MinHeight="560"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="ListBox.browser-list">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.browser-list ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="MinHeight" Value="34"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="ListBox.browser-list ListBoxItem /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="TextBlock.browser-cell">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.sort-header">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+        <Style Selector="TextBlock.loading-icon">
+            <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
+            <Style.Animations>
+                <Animation Duration="0:0:1" IterationCount="Infinite">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="RotateTransform.Angle" Value="0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="RotateTransform.Angle" Value="360"/>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="10,0,10,10" RowDefinitions="Auto,*" RowSpacing="10">
+            <Border Grid.Row="0" Classes="tool-panel docked-top-toolbar">
+                <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto,250" ColumnSpacing="8">
+                    <Button Grid.Column="0" Click="OnBrowseFolderClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                            <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Folder}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <TextBlock x:Name="FolderPathText"
+                               Grid.Column="1"
+                               Classes="path-text"
+                               VerticalAlignment="Center"
+                               Margin="8,0,0,0"
+                               TextTrimming="CharacterEllipsis"/>
+
+                    <Button Grid.Column="2" Click="OnRefreshClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.refresh_cw}"/>
+                            <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Refresh}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <CheckBox x:Name="RecursiveCheckBox"
+                              Grid.Column="3"
+                              Content="{x:Static localization:Strings.ImageBrowserWindow_Recursive}"
+                              VerticalAlignment="Center"
+                              IsCheckedChanged="OnRecursiveCheckedChanged"/>
+
+                    <Button Grid.Column="4" Click="OnStatsClick">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chart_bar}"/>
+                            <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Stats}"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Grid Grid.Column="5">
+                        <TextBox x:Name="SearchTextBox"
+                                 PlaceholderText="{x:Static localization:Strings.ImageBrowserWindow_Search_placeholder}"
+                                 TextChanged="OnSearchTextChanged"
+                                 Padding="12,7,38,7"/>
+                        <TextBlock Text="{x:Static theming:LucideIcons.search}"
+                                   Classes="icon"
+                                   HorizontalAlignment="Right"
+                                   Margin="0,0,12,0"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                   IsHitTestVisible="False"/>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Grid x:Name="MainGrid" Grid.Row="1" ColumnDefinitions="650,10,*">
+                <Border Grid.Column="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,*">
+                        <Border Grid.Row="0"
+                                Padding="10,8"
+                                Background="{DynamicResource ShareX.Brush.Control.Background}"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="0,0,0,1">
+                            <Grid ColumnDefinitions="*,90,150" ColumnSpacing="8">
+                                <Button Grid.Column="0" Classes="sort-header" Click="OnSortNameClick">
+                                    <StackPanel Orientation="Horizontal" Spacing="6">
+                                        <TextBlock x:Name="SortNameIcon" Classes="icon" Text=""/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Column_name}"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Column="1" Classes="sort-header" Click="OnSortSizeClick">
+                                    <StackPanel Orientation="Horizontal" Spacing="6">
+                                        <TextBlock x:Name="SortSizeIcon" Classes="icon" Text=""/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Column_size}"/>
+                                    </StackPanel>
+                                </Button>
+                                <Button Grid.Column="2" Classes="sort-header" Click="OnSortModifiedClick">
+                                    <StackPanel Orientation="Horizontal" Spacing="6">
+                                        <TextBlock x:Name="SortModifiedIcon" Classes="icon" Text=""/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Column_modified}"/>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </Border>
+
+                        <Grid Grid.Row="1">
+                            <ListBox x:Name="FileList"
+                                     Classes="browser-list"
+                                     SelectionMode="Single"
+                                     SelectionChanged="OnFileSelectionChanged"
+                                     DoubleTapped="OnFileDoubleTapped"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                     ScrollViewer.AllowAutoHide="False">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate x:DataType="local:ImageFileInfo">
+                                        <Grid Height="34" ColumnDefinitions="*,90,150" ColumnSpacing="8" Margin="10,0">
+                                            <TextBlock Grid.Column="0"
+                                                       Classes="browser-cell"
+                                                       Text="{Binding FileName}"/>
+                                            <TextBlock Grid.Column="1"
+                                                       Classes="browser-cell"
+                                                       Text="{Binding SizeText}"
+                                                       HorizontalAlignment="Right"/>
+                                            <TextBlock Grid.Column="2"
+                                                       Classes="browser-cell"
+                                                       Text="{Binding ModifiedAt, StringFormat={}{0:g}}"
+                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                                <ListBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Open_file}" Click="OnOpenFileClick" InputGesture="Enter">
+                                            <MenuItem.Icon>
+                                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Open_folder}" Click="OnOpenFolderClick" InputGesture="Shift+Enter">
+                                            <MenuItem.Icon>
+                                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_open}"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <Separator/>
+                                        <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Copy_file_path}" Click="OnCopyFilePathClick" InputGesture="Ctrl+Shift+C">
+                                            <MenuItem.Icon>
+                                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                        <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Copy_file_name}" Click="OnCopyFileNameClick" InputGesture="Ctrl+C">
+                                            <MenuItem.Icon>
+                                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </ContextMenu>
+                                </ListBox.ContextMenu>
+                            </ListBox>
+
+                            <StackPanel x:Name="LoadingState"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="8"
+                                        IsHitTestVisible="False">
+                                <TextBlock Text="{x:Static theming:LucideIcons.loader_circle}"
+                                           Classes="icon loading-icon"
+                                           FontSize="44"
+                                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                           HorizontalAlignment="Center">
+                                    <TextBlock.RenderTransform>
+                                        <RotateTransform Angle="0"/>
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                                <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Loading}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+
+                            <StackPanel x:Name="EmptyState"
+                                        IsVisible="False"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="8"
+                                        IsHitTestVisible="False">
+                                <TextBlock Text="{x:Static theming:LucideIcons.images}"
+                                           Classes="icon"
+                                           FontSize="44"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="EmptyStateText"
+                                           Text="{x:Static localization:Strings.ImageBrowserWindow_No_files}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <GridSplitter Grid.Column="1"
+                              ResizeDirection="Columns"
+                              Background="Transparent"/>
+
+                <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                    <Grid RowDefinitions="Auto,*">
+                        <StackPanel x:Name="PreviewInfoPanel"
+                                    Grid.Row="0"
+                                    Spacing="2"
+                                    Margin="12,10"
+                                    IsVisible="False">
+                            <TextBlock x:Name="PreviewFileName"
+                                       Classes="section-heading"
+                                       TextTrimming="CharacterEllipsis"/>
+                            <TextBlock x:Name="PreviewDetails"
+                                       FontWeight="Normal"
+                                       FontSize="12"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+
+                        <Grid Grid.Row="1" Margin="12,0,12,12">
+                            <Border x:Name="PreviewContent"
+                                    IsVisible="False"
+                                    Background="{DynamicResource ShareX.Brush.Checkered}"
+                                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                    BorderThickness="1"
+                                    CornerRadius="4"
+                                    ClipToBounds="True"
+                                    Cursor="Hand"
+                                    PointerPressed="OnPreviewPointerPressed">
+                                <Grid>
+                                    <Image x:Name="PreviewImage"
+                                           Stretch="Uniform"
+                                           StretchDirection="DownOnly"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                                    <StackPanel x:Name="PreviewUnavailable"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Spacing="8">
+                                        <TextBlock Text="{x:Static theming:LucideIcons.file}"
+                                                   Classes="icon"
+                                                   FontSize="38"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                   HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_No_preview}"
+                                                   FontWeight="Normal"
+                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <StackPanel x:Name="NoSelectionState"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="8">
+                                <TextBlock Text="{x:Static theming:LucideIcons.mouse_pointer_click}"
+                                           Classes="icon"
+                                           FontSize="40"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Select_file}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           TextAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="ModalOverlay"
+              IsVisible="False"
+              Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
+            <Border x:Name="StatsDialog" Classes="tool-panel" Width="720" Height="540" Padding="18"
+                    IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" RowSpacing="12">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.ImageBrowserWindow_Statistics}"/>
+                        <Button Grid.Column="1" Classes="toolbar-button" Height="32" Width="32" Click="OnCloseModalClick"
+                                ToolTip.Tip="{x:Static localization:Strings.ImageBrowserWindow_Close}">
+                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"/>
+                        </Button>
+                    </Grid>
+                    <TextBox x:Name="StatsRegexTextBox" Grid.Row="1"
+                             PlaceholderText="{x:Static localization:Strings.ImageBrowserWindow_Regex_pattern}"
+                             TextChanged="OnStatsRegexTextChanged"/>
+                    <TextBlock x:Name="StatsErrorText" Grid.Row="2"
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                               TextWrapping="Wrap"
+                               IsVisible="False"/>
+                    <TextBlock x:Name="StatsSummaryText" Grid.Row="3"
+                               FontWeight="Normal"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                               TextWrapping="Wrap"/>
+                    <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled"
+                                  VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="StatsGroupsPanel" Spacing="14"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
