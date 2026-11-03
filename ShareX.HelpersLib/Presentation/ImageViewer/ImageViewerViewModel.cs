@@ -38,7 +38,10 @@ namespace ShareX.HelpersLib;
 public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
 {
     private string[] _images = [];
+    // Files that failed to decode during this viewing session, skipped without retrying.
+    private readonly HashSet<string> _unreadableFiles = new(StringComparer.OrdinalIgnoreCase);
     private int _currentImageIndex;
+
     private Bitmap? _currentImage;
     private string? _currentImageFilePath;
     private string _statusText = string.Empty;
@@ -109,7 +112,9 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             ? Directory.GetFiles(folder).Where(FileHelpers.IsImageFile).ToArray()
             : [filePath];
 
+        _unreadableFiles.Clear();
         _currentImageIndex = Array.FindIndex(_images,
+
             path => string.Equals(path, filePath, StringComparison.OrdinalIgnoreCase));
         if (_currentImageIndex < 0)
         {
@@ -145,7 +150,9 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             return false;
         }
 
+        _unreadableFiles.Clear();
         _currentImageIndex = filteredSelectedIndex >= 0
+
             ? filteredSelectedIndex
             : Math.Clamp(selectedIndex, 0, _images.Length - 1);
 
@@ -183,21 +190,37 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             return;
         }
 
-        int nextIndex = _currentImageIndex + offset;
-        if (SupportWrap)
+        int startIndex = _currentImageIndex;
+
+        // Walk forward/backward past files that fail to decode, so the index always matches the
+        // image actually shown. Stopping on a broken file would make the counter drift and leave
+        // the user stuck, since every key press would retry the same unreadable file.
+        for (int step = 1; step < _images.Length; step++)
         {
-            nextIndex = (nextIndex + _images.Length) % _images.Length;
-        }
-        else
-        {
-            nextIndex = Math.Clamp(nextIndex, 0, _images.Length - 1);
+            int index = SupportWrap
+                ? ((startIndex + offset * step) % _images.Length + _images.Length) % _images.Length
+                : startIndex + offset * step;
+
+            if (index < 0 || index >= _images.Length)
+            {
+                break;
+            }
+
+            if (_unreadableFiles.Contains(_images[index]))
+            {
+                continue;
+            }
+
+            _currentImageIndex = index;
+
+            if (LoadCurrentImage())
+            {
+                return;
+            }
         }
 
-        if (nextIndex != _currentImageIndex)
-        {
-            _currentImageIndex = nextIndex;
-            LoadCurrentImage();
-        }
+        // Nothing else could be loaded, keep the currently displayed image.
+        _currentImageIndex = startIndex;
     }
 
     private bool LoadCurrentImage()
@@ -207,22 +230,30 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             return false;
         }
 
+        string filePath = _images[_currentImageIndex];
+
         try
         {
-            CurrentImageFilePath = _images[_currentImageIndex];
-            ReplaceImage(new Bitmap(CurrentImageFilePath));
+            Bitmap bitmap = new(filePath);
+            // Commit the path only after a successful decode, so a failed load leaves the previous
+            // image, file name and status counter untouched.
+            CurrentImageFilePath = filePath;
+            ReplaceImage(bitmap);
             UpdateStatus();
             return true;
         }
         catch (Exception exception)
         {
+            _unreadableFiles.Add(filePath);
             DebugHelper.WriteException(exception,
-                $"Failed to load image '{CurrentImageFilePath}'.");
+                $"Failed to load image '{filePath}'.");
             return false;
         }
     }
 
+
     private void ReplaceImage(Bitmap image)
+
     {
         CurrentImage?.Dispose();
         CurrentImage = image;
@@ -248,9 +279,24 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             parts.Add($"{CurrentImage.PixelSize.Width} × {CurrentImage.PixelSize.Height}");
         }
 
+        try
+        {
+            if (!string.IsNullOrEmpty(CurrentImageFilePath) && File.Exists(CurrentImageFilePath))
+            {
+                FileInfo info = new(CurrentImageFilePath);
+                parts.Add(info.Length.ToSizeString());
+                parts.Add(info.LastWriteTime.ToString("g"));
+            }
+        }
+        catch (Exception exception)
+        {
+            DebugHelper.WriteException(exception, $"Failed to read file information for '{CurrentImageFilePath}'.");
+        }
+
         StatusText = string.Join("  |  ", parts);
         NotifyNavigationChanged();
     }
+
 
     private void NotifyNavigationChanged()
     {

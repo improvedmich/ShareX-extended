@@ -1322,10 +1322,131 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Hotkey settings</value>
   </data>
+  <data name="ImageBrowserWindow_Title" xml:space="preserve">
+    <value>ShareX - Image browser</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder" xml:space="preserve">
+    <value>Folder...</value>
+  </data>
+  <data name="ImageBrowserWindow_Choose_folder" xml:space="preserve">
+    <value>Choose folder to browse</value>
+  </data>
+  <data name="ImageBrowserWindow_Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="ImageBrowserWindow_Recursive" xml:space="preserve">
+    <value>Recursive</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="ImageBrowserWindow_Search_placeholder" xml:space="preserve">
+    <value>Search file names and paths</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_modified" xml:space="preserve">
+    <value>Modified</value>
+  </data>
+  <data name="ImageBrowserWindow_Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="ImageBrowserWindow_No_files" xml:space="preserve">
+    <value>No image files found</value>
+  </data>
+  <data name="ImageBrowserWindow_No_matches" xml:space="preserve">
+    <value>No files match the current filter</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_missing" xml:space="preserve">
+    <value>Folder not found</value>
+  </data>
+  <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="ImageBrowserWindow_Select_file" xml:space="preserve">
+    <value>Select a file to preview</value>
+  </data>
+  <data name="ImageBrowserWindow_No_preview" xml:space="preserve">
+    <value>No image preview available</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_file" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_folder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_path" xml:space="preserve">
+    <value>Copy file path</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_name" xml:space="preserve">
+    <value>Copy file name</value>
+  </data>
+  <data name="ImageBrowserWindow_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
+    <value>Dimensions</value>
+  </data>
+  <data name="ImageBrowserWindow_Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="ImageBrowserWindow_Modified" xml:space="preserve">
+    <value>Modified</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_path" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="ImageBrowserWindow_Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="ImageBrowserWindow_Regex_pattern" xml:space="preserve">
+    <value>Regular expression (file name)</value>
+  </data>
+  <data name="ImageBrowserWindow_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="ImageBrowserWindow_Filtered" xml:space="preserve">
+    <value>Filtered</value>
+  </data>
+  <data name="ImageBrowserWindow_Matched" xml:space="preserve">
+    <value>Matched</value>
+  </data>
+  <data name="ImageBrowserWindow_Unmatched" xml:space="preserve">
+    <value>Unmatched</value>
+  </data>
+  <data name="ImageBrowserWindow_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_files_format" xml:space="preserve">
+    <value>{0} files</value>
+  </data>
+  <data name="ImageBrowserWindow_Groups_hint" xml:space="preserve">
+    <value>Enter a regular expression with named groups, for example (?&lt;extension&gt;\w+), to see a breakdown by group value.</value>
+  </data>
+  <data name="ImageBrowserWindow_Groups_no_named_groups" xml:space="preserve">
+    <value>The regular expression has no named groups.</value>
+  </data>
+  <data name="ImageBrowserWindow_More_groups_format" xml:space="preserve">
+    <value>... {0} more groups</value>
+  </data>
+  <data name="ImageBrowserWindow_More_values_format" xml:space="preserve">
+    <value>... {0} more values</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write image to path:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
+
     <value>Edit with ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
@@ -1469,7 +1590,11 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>Image beautifier...</value>
   </data>
+  <data name="MainMenuBuilder_ImageBrowser" xml:space="preserve">
+    <value>Image browser...</value>
+  </data>
   <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
+
     <value>Image combiner...</value>
   </data>
   <data name="MainMenuBuilder_ImageComparer" xml:space="preserve">

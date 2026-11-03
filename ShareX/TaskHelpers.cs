@@ -1660,6 +1660,12 @@ namespace ShareX
             ImageViewerWindowIntegration.ShowImage();
         }
 
+        public static void OpenImageBrowser()
+        {
+            ImageBrowserWindowIntegration.Show();
+        }
+
+
         public static void OpenImageViewer(string filePath)
         {
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))

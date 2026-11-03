@@ -20,8 +20,12 @@
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Border Background="{DynamicResource ShareX.Brush.Checkered}"
                     ClipToBounds="True"
+                    Cursor="SizeAll"
+                    PointerPressed="OnPreviewPointerPressed"
+                    PointerMoved="OnPreviewPointerMoved"
                     PointerReleased="OnPreviewPointerReleased"
                     PointerWheelChanged="OnPreviewPointerWheelChanged">
+
                 <Image x:Name="PreviewImage"
                        Source="{Binding CurrentImage}"
                        RenderTransformOrigin="0,0"
@@ -29,7 +33,8 @@
                        StretchDirection="DownOnly"/>
             </Border>
 
-            <Border Classes="tool-panel"
+            <Border x:Name="StatusPanel"
+                    Classes="tool-panel"
                     Padding="10,7"
                     Margin="16"
                     HorizontalAlignment="Center"
@@ -38,7 +43,8 @@
                 <TextBlock Text="{Binding StatusText}" FontWeight="Normal"/>
             </Border>
 
-            <Button Width="72"
+            <Button x:Name="PreviousButton"
+                    Width="72"
                     Height="96"
                     Margin="20"
                     Focusable="False"
@@ -46,13 +52,15 @@
                     VerticalAlignment="Center"
                     IsVisible="{Binding CanNavigateLeft}"
                     Click="OnPreviousClick">
+
                 <TextBlock Text="{x:Static theming:LucideIcons.chevron_left}"
                            FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                            FontWeight="Normal"
                            FontSize="38"/>
             </Button>
 
-            <Button Width="72"
+            <Button x:Name="NextButton"
+                    Width="72"
                     Height="96"
                     Margin="20"
                     Focusable="False"
@@ -60,6 +68,7 @@
                     VerticalAlignment="Center"
                     IsVisible="{Binding CanNavigateRight}"
                     Click="OnNextClick">
+
                 <TextBlock Text="{x:Static theming:LucideIcons.chevron_right}"
                            FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
                            FontWeight="Normal"

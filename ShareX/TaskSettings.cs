@@ -139,6 +139,9 @@ namespace ShareX
         public bool UseDefaultAdvancedSettings = true;
         public TaskSettingsAdvanced AdvancedSettings = new TaskSettingsAdvanced();
 
+        public bool UseDefaultImageBrowserOptions = true;
+        public ImageBrowserOptions ImageBrowserOptions = new ImageBrowserOptions();
+
         public bool WatchFolderEnabled = false;
         public List<WatchFolderSettings> WatchFolderList = new List<WatchFolderSettings>();
 
@@ -153,7 +156,7 @@ namespace ShareX
             {
                 return UseDefaultAfterCaptureJob && UseDefaultAfterUploadJob && UseDefaultDestinations && !OverrideFTP && !OverrideCustomUploader &&
                     !OverrideScreenshotsFolder && UseDefaultGeneralSettings && UseDefaultImageSettings && UseDefaultCaptureSettings && UseDefaultUploadSettings &&
-                    UseDefaultActions && UseDefaultToolsSettings && UseDefaultAdvancedSettings && !WatchFolderEnabled;
+                    UseDefaultActions && UseDefaultToolsSettings && UseDefaultAdvancedSettings && UseDefaultImageBrowserOptions && !WatchFolderEnabled;
             }
         }
 
@@ -246,6 +249,11 @@ namespace ShareX
                 {
                     AdvancedSettings = defaultTaskSettings.AdvancedSettings;
                 }
+
+                if (UseDefaultImageBrowserOptions)
+                {
+                    ImageBrowserOptions = defaultTaskSettings.ImageBrowserOptions;
+                }
             }
         }
 
@@ -284,6 +292,11 @@ namespace ShareX
             if (UseDefaultAdvancedSettings)
             {
                 AdvancedSettings = null;
+            }
+
+            if (UseDefaultImageBrowserOptions)
+            {
+                ImageBrowserOptions = null;
             }
         }
 
@@ -513,6 +526,14 @@ namespace ShareX
     public class UuidCopyOptions
     {
         public UuidVersion Version = UuidVersion.V4;
+    }
+
+    public class ImageBrowserOptions
+    {
+        // Regex used by the "Statistics" button to match file names (e.g. "^(.+?)_\d{8}_\d{6}").
+        public string StatsRegexPattern = "";
+        // When enabled, folder scan traverses subfolders recursively.
+        public bool RecursiveSearch = false;
     }
 
     public class TaskSettingsAdvanced

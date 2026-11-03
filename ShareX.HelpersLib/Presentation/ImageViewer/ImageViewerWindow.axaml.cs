@@ -49,6 +49,16 @@ public partial class ImageViewerWindow : Window
     private readonly ImageViewerViewModel _viewModel = new();
     private readonly MatrixTransform _previewTransform = new() { Matrix = Matrix.Identity };
     private bool _closeOnDeactivate;
+    // Space toggles the whole overlay UI; keyboard navigation hides only the navigation buttons.
+    private bool _chromeVisible = true;
+    private bool _navButtonsVisible = true;
+    private bool _isPanning;
+    private Point _panStartPosition;
+    private Matrix _panStartMatrix;
+    // A left-button release below this movement threshold counts as a close click, not a pan.
+    private const double ClickThresholdPixels = 6;
+
+
 
     public ImageViewerWindow()
     {
@@ -86,6 +96,8 @@ public partial class ImageViewerWindow : Window
                 _previewTransform.Matrix = Matrix.Identity;
             }
         };
+        PointerMoved += OnPointerMoved;
+
         System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
         WindowStartupLocation = WindowStartupLocation.Manual;
         Position = new PixelPoint(activeScreen.X, activeScreen.Y);
@@ -94,7 +106,9 @@ public partial class ImageViewerWindow : Window
         KeyDown += OnKeyDown;
         Deactivated += OnDeactivated;
         Closed += (_, _) => _viewModel.Dispose();
+        ApplyChrome();
     }
+
 
     private async void OnOpened(object? sender, EventArgs e)
     {
@@ -126,9 +140,101 @@ public partial class ImageViewerWindow : Window
     private void OnPreviousClick(object? sender, RoutedEventArgs e) => _viewModel.Navigate(-1);
     private void OnNextClick(object? sender, RoutedEventArgs e) => _viewModel.Navigate(1);
 
+
+    // Opacity is used instead of IsVisible so the CanNavigate bindings on the buttons keep working.
+    private void ApplyChrome()
+    {
+        Border? statusPanel = this.FindControl<Border>("StatusPanel");
+        Button? previousButton = this.FindControl<Button>("PreviousButton");
+        Button? nextButton = this.FindControl<Button>("NextButton");
+
+        if (statusPanel != null)
+        {
+            statusPanel.Opacity = _chromeVisible ? 1.0 : 0.0;
+            statusPanel.IsHitTestVisible = _chromeVisible;
+        }
+
+        bool buttonsVisible = _chromeVisible && _navButtonsVisible;
+
+        foreach (Button? button in new[] { previousButton, nextButton })
+        {
+            if (button != null)
+            {
+                button.Opacity = buttonsVisible ? 1.0 : 0.0;
+                button.IsHitTestVisible = buttonsVisible;
+            }
+        }
+    }
+
+
+    private void OnPointerMoved(object? sender, PointerEventArgs e)
+    {
+        // Mouse activity restores the overlay hidden by keyboard navigation or Space.
+        if (!_chromeVisible || !_navButtonsVisible)
+        {
+            _chromeVisible = true;
+            _navButtonsVisible = true;
+            ApplyChrome();
+        }
+    }
+
+
+    private void OnPreviewPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (sender is not Border border || !e.GetCurrentPoint(border).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        _isPanning = true;
+        _panStartPosition = e.GetPosition(border);
+        _panStartMatrix = _previewTransform.Matrix;
+        e.Pointer.Capture(border);
+        Cursor = new Cursor(StandardCursorType.SizeAll);
+        e.Handled = true;
+    }
+
+    private void OnPreviewPointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (!_isPanning || sender is not Border border)
+        {
+            return;
+        }
+
+        Point position = e.GetPosition(border);
+        double offsetX = _panStartMatrix.M31 + position.X - _panStartPosition.X;
+        double offsetY = _panStartMatrix.M32 + position.Y - _panStartPosition.Y;
+        Matrix matrix = _panStartMatrix;
+        _previewTransform.Matrix = new Matrix(matrix.M11, 0, 0, matrix.M22, offsetX, offsetY);
+        e.Handled = true;
+    }
+
     private void OnPreviewPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (e.InitialPressMouseButton is MouseButton.Left or MouseButton.Right)
+        if (_isPanning && e.InitialPressMouseButton == MouseButton.Left)
+        {
+            _isPanning = false;
+            e.Pointer.Capture(null);
+            Cursor = Cursor.Default;
+
+            if (sender is Border border)
+            {
+                Point position = e.GetPosition(border);
+                double distance = Math.Abs(position.X - _panStartPosition.X) +
+                    Math.Abs(position.Y - _panStartPosition.Y);
+
+                // A drag moves the canvas; a plain click still closes the viewer.
+                if (distance > ClickThresholdPixels)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+
+            Close();
+            e.Handled = true;
+        }
+        else if (e.InitialPressMouseButton == MouseButton.Right)
         {
             Close();
             e.Handled = true;
@@ -139,6 +245,8 @@ public partial class ImageViewerWindow : Window
             e.Handled = true;
         }
     }
+
+
 
     private void OnPreviewPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
@@ -177,20 +285,36 @@ public partial class ImageViewerWindow : Window
         {
             case Key.Left:
                 _viewModel.Navigate(-1);
+                HideNavButtons();
                 e.Handled = true;
                 break;
             case Key.Right:
                 _viewModel.Navigate(1);
+                HideNavButtons();
+                e.Handled = true;
+                break;
+            case Key.Space:
+                _chromeVisible = !_chromeVisible;
+                ApplyChrome();
                 e.Handled = true;
                 break;
             case Key.Escape:
             case Key.Enter:
-            case Key.Space:
                 Close();
                 e.Handled = true;
                 break;
         }
     }
+
+    private void HideNavButtons()
+    {
+        if (_navButtonsVisible)
+        {
+            _navButtonsVisible = false;
+            ApplyChrome();
+        }
+    }
+
 
     private void OnDeactivated(object? sender, EventArgs e)
     {
