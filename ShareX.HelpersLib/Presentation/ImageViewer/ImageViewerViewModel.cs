@@ -26,21 +26,33 @@
 #nullable enable
 
 using Avalonia.Media.Imaging;
+using Avalonia.Threading;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
+
 
 namespace ShareX.HelpersLib;
 
 public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
 {
+    // How many decoded frames are kept aside from the displayed one.
+    private const int MaxPrefetchedImages = 2;
+
     private string[] _images = [];
     // Files that failed to decode during this viewing session, skipped without retrying.
     private readonly HashSet<string> _unreadableFiles = new(StringComparer.OrdinalIgnoreCase);
+    // Decoded neighbors kept ready so that next/previous navigation shows large images instantly.
+    private readonly Dictionary<string, Bitmap> _prefetched = new(StringComparer.OrdinalIgnoreCase);
+    private CancellationTokenSource? _navigationCancellation;
     private int _currentImageIndex;
+    private bool _disposed;
+
 
     private Bitmap? _currentImage;
     private string? _currentImageFilePath;
@@ -113,6 +125,7 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             : [filePath];
 
         _unreadableFiles.Clear();
+        ClearPrefetched();
         _currentImageIndex = Array.FindIndex(_images,
 
             path => string.Equals(path, filePath, StringComparison.OrdinalIgnoreCase));
@@ -151,6 +164,7 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
         }
 
         _unreadableFiles.Clear();
+        ClearPrefetched();
         _currentImageIndex = filteredSelectedIndex >= 0
 
             ? filteredSelectedIndex
@@ -183,13 +197,25 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
-    public void Navigate(int offset)
+    // Decoding runs off the UI thread: large images can take hundreds of milliseconds, and a
+    // synchronous decode would freeze the window. A new navigation cancels the pending decode,
+    // so rapid key presses only ever show the latest requested image.
+    public Task NavigateAsync(int offset)
     {
         if (!CanNavigate)
         {
-            return;
+            return Task.CompletedTask;
         }
 
+        // The previous source is only cancelled, never disposed here: a decode that is still
+        // awaiting it would then observe ObjectDisposedException instead of cancellation.
+        _navigationCancellation?.Cancel();
+        _navigationCancellation = new CancellationTokenSource();
+        return NavigateCoreAsync(offset, _navigationCancellation.Token);
+    }
+
+    private async Task NavigateCoreAsync(int offset, CancellationToken token)
+    {
         int startIndex = _currentImageIndex;
 
         // Walk forward/backward past files that fail to decode, so the index always matches the
@@ -206,21 +232,72 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
                 break;
             }
 
-            if (_unreadableFiles.Contains(_images[index]))
+            string filePath = _images[index];
+
+            if (_unreadableFiles.Contains(filePath))
+            {
+                continue;
+            }
+
+            Bitmap? bitmap = await LoadBitmapAsync(filePath, token);
+
+            if (token.IsCancellationRequested)
+            {
+                // A newer navigation took over; keep the currently displayed image untouched.
+                bitmap?.Dispose();
+                return;
+            }
+
+            if (bitmap == null)
             {
                 continue;
             }
 
             _currentImageIndex = index;
-
-            if (LoadCurrentImage())
-            {
-                return;
-            }
+            CurrentImageFilePath = filePath;
+            ReplaceImage(bitmap);
+            UpdateStatus();
+            PrefetchNeighbors(index, offset);
+            return;
         }
 
         // Nothing else could be loaded, keep the currently displayed image.
-        _currentImageIndex = startIndex;
+    }
+
+    private async Task<Bitmap?> LoadBitmapAsync(string filePath, CancellationToken token)
+    {
+        if (_prefetched.Remove(filePath, out Bitmap? prefetched))
+        {
+            return prefetched;
+        }
+
+        try
+        {
+            Bitmap bitmap = await Task.Run(() => new Bitmap(filePath), token);
+
+            if (token.IsCancellationRequested)
+            {
+                bitmap.Dispose();
+                return null;
+            }
+
+            return bitmap;
+        }
+        catch (OperationCanceledException)
+        {
+            return null;
+        }
+        catch (ObjectDisposedException)
+        {
+            // The navigation was cancelled and its source released while the decode was awaiting it.
+            return null;
+        }
+        catch (Exception exception)
+        {
+            _unreadableFiles.Add(filePath);
+            DebugHelper.WriteException(exception, $"Failed to load image '{filePath}'.");
+            return null;
+        }
     }
 
     private bool LoadCurrentImage()
@@ -251,9 +328,73 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
+    // Decodes the neighbor the user is most likely to open next, so that the following
+    // navigation shows an already decoded bitmap instead of waiting for the file to be read.
+    private void PrefetchNeighbors(int index, int navigationOffset)
+    {
+        if (navigationOffset > 0)
+        {
+            Prefetch(index + 1);
+            Prefetch(index - 1);
+        }
+        else
+        {
+            Prefetch(index - 1);
+            Prefetch(index + 1);
+        }
+    }
+
+    private void Prefetch(int index)
+    {
+        if (index < 0 || index >= _images.Length)
+        {
+            return;
+        }
+
+        string filePath = _images[index];
+
+        // The displayed bitmap is disposed on navigation, so it must never be cached as a spare.
+        if (_disposed || filePath == CurrentImageFilePath || _unreadableFiles.Contains(filePath) ||
+            _prefetched.ContainsKey(filePath))
+        {
+            return;
+        }
+
+        _ = Task.Run(() => new Bitmap(filePath)).ContinueWith(task =>
+        {
+            // Background continuations must not touch the UI bound collections directly.
+            Dispatcher.UIThread.Post(() =>
+            {
+                // Reading task.Result of a faulted task would throw here, so check the status first.
+                if (task.IsCompletedSuccessfully)
+                {
+                    Bitmap bitmap = task.Result;
+
+                    if (_disposed || filePath == CurrentImageFilePath)
+                    {
+                        bitmap.Dispose();
+                        return;
+                    }
+
+                    // Keeps only the frames around the current position, the rest are dropped right away.
+                    while (_prefetched.Count >= MaxPrefetchedImages)
+                    {
+                        string oldKey = _prefetched.Keys.First();
+                        _prefetched[oldKey].Dispose();
+                        _prefetched.Remove(oldKey);
+                    }
+
+                    _prefetched[filePath] = bitmap;
+                }
+                else if (task.Exception != null)
+                {
+                    _unreadableFiles.Add(filePath);
+                }
+            });
+        }, TaskScheduler.Default);
+    }
 
     private void ReplaceImage(Bitmap image)
-
     {
         CurrentImage?.Dispose();
         CurrentImage = image;
@@ -310,7 +451,22 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
 
     public void Dispose()
     {
+        _disposed = true;
+        _navigationCancellation?.Cancel();
+        _navigationCancellation?.Dispose();
+        _navigationCancellation = null;
+        ClearPrefetched();
         CurrentImage?.Dispose();
         CurrentImage = null;
+    }
+
+    private void ClearPrefetched()
+    {
+        foreach (Bitmap prefetched in _prefetched.Values)
+        {
+            prefetched.Dispose();
+        }
+
+        _prefetched.Clear();
     }
 }

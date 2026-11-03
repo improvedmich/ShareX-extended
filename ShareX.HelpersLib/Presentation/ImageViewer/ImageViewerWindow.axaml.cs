@@ -137,8 +137,8 @@ public partial class ImageViewerWindow : Window
         return loaded;
     }
 
-    private void OnPreviousClick(object? sender, RoutedEventArgs e) => _viewModel.Navigate(-1);
-    private void OnNextClick(object? sender, RoutedEventArgs e) => _viewModel.Navigate(1);
+    private void OnPreviousClick(object? sender, RoutedEventArgs e) => _ = _viewModel.NavigateAsync(-1);
+    private void OnNextClick(object? sender, RoutedEventArgs e) => _ = _viewModel.NavigateAsync(1);
 
 
     // Opacity is used instead of IsVisible so the CanNavigate bindings on the buttons keep working.
@@ -269,12 +269,12 @@ public partial class ImageViewerWindow : Window
 
         if (e.Delta.Y > 0 && _viewModel.CanNavigateLeft)
         {
-            _viewModel.Navigate(-1);
+            _ = _viewModel.NavigateAsync(-1);
             e.Handled = true;
         }
         else if (e.Delta.Y < 0 && _viewModel.CanNavigateRight)
         {
-            _viewModel.Navigate(1);
+            _ = _viewModel.NavigateAsync(1);
             e.Handled = true;
         }
     }
@@ -284,12 +284,12 @@ public partial class ImageViewerWindow : Window
         switch (e.Key)
         {
             case Key.Left:
-                _viewModel.Navigate(-1);
+                _ = _viewModel.NavigateAsync(-1);
                 HideNavButtons();
                 e.Handled = true;
                 break;
             case Key.Right:
-                _viewModel.Navigate(1);
+                _ = _viewModel.NavigateAsync(1);
                 HideNavButtons();
                 e.Handled = true;
                 break;
