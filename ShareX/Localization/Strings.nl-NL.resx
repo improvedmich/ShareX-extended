@@ -626,7 +626,10 @@
     <value>Klembordinhoudviewer weergeven</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Knop "Bewerken met ShareX" weergeven in contextmenu van Windows Verkenner</value>
+    <value>Knop "Bewerken in ShareX-afbeeldingseditor" weergeven in contextmenu van Windows Verkenner</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Knop "Bewerken in ShareX-foto-editor" weergeven in contextmenu van Windows Verkenner</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Waarschuwingsdrempel voor grote bestanden (MB)</value>
@@ -1326,7 +1329,10 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Could not write afbeelding to path:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Bewerken with ShareX</value>
+    <value>Bewerken in ShareX-afbeeldingseditor</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Bewerken in ShareX-foto-editor</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload met ShareX</value>
@@ -1532,6 +1538,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Openen</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Foto-editor</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to scherm</value>
   </data>
@@ -1579,6 +1588,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX weergeven</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistieken...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Taak eigenschappen</value>
@@ -1696,6 +1708,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Bewerken afbeelding</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Bewerken in foto-editor...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Bestand</value>
@@ -2305,6 +2320,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Venstergebieden detecteren</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Vensters en besturingselementen onder de muisaanwijzer verduisteren</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Meldingen uitschakelen bij volledig scherm</value>

@@ -626,7 +626,10 @@
     <value>클립보드 내용 뷰어 표시</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX로 편집"버튼 표시</value>
+    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX 이미지 편집기에서 편집" 버튼 표시</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX 사진 편집기에서 편집" 버튼 표시</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>대용량 파일 경고 기준(MB)</value>
@@ -1326,7 +1329,10 @@
     <value>Could not write 이미지 to 경로:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX로 편집하기</value>
+    <value>ShareX 이미지 편집기에서 편집</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX 사진 편집기에서 편집</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX로 업로드</value>
@@ -1532,6 +1538,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>열기</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>사진 편집기</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>화면에 고정</value>
   </data>
@@ -1579,6 +1588,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX 표시</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>통계...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>작업 설정</value>
@@ -1696,6 +1708,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>편집 이미지</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>사진 편집기에서 편집...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>파일</value>
@@ -2305,6 +2320,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>창 영역 감지</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>커서 아래의 창과 컨트롤 어둡게 하기</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>전체 화면에서 알림 비활성화</value>

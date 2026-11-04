@@ -626,7 +626,10 @@
     <value>Visa Urklippsvisaren</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Visa knappen ”Redigera med ShareX” i Utforskarens snabbmeny</value>
+    <value>Visa knappen ”Redigera i ShareX bildredigerare” i Utforskarens snabbmeny</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Visa knappen ”Redigera i ShareX fotoredigerare” i Utforskarens snabbmeny</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Tröskelvärde för varning om stor fil (MB)</value>
@@ -1326,7 +1329,10 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Det gick inte att skriva bilden till sökvägen:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Redigera med ShareX</value>
+    <value>Redigera i ShareX bildredigerare</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Redigera i ShareX fotoredigerare</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Ladda upp med ShareX</value>
@@ -1532,6 +1538,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Öppna</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigerare...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fäst på skärmen...</value>
   </data>
@@ -1579,6 +1588,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Visa ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistik...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Uppgiftsinställningar...</value>
@@ -1696,6 +1708,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Redigera bild...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Redigera i fotoredigeraren...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fil</value>
@@ -2305,6 +2320,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Identifiera fönsterområden</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Tona ned fönster och kontroller under markören</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Inaktivera popupaviseringar i helskärmsläge</value>

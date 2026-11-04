@@ -626,7 +626,10 @@
     <value>Vis Udklipsvisningen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Vis knappen ”Rediger med ShareX” i Stifinders hurtigmenu</value>
+    <value>Vis knappen ”Rediger i ShareX-billedredigering” i Stifinders hurtigmenu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Vis knappen ”Rediger i ShareX-fotoredigering” i Stifinders hurtigmenu</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Tærskelværdi for advarsel om stor fil (MB)</value>
@@ -1326,7 +1329,10 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
     <value>Det var ikke muligt at skrive billedet til stien:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Rediger med ShareX</value>
+    <value>Rediger i ShareX-billedredigering</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Rediger i ShareX-fotoredigering</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload med ShareX</value>
@@ -1532,6 +1538,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Åbn</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Fotoredigering...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fastgør på skærmen...</value>
   </data>
@@ -1579,6 +1588,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Vis ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistik...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Opgaveindstillinger...</value>
@@ -1696,6 +1708,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Rediger billede...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Rediger i fotoredigering...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fil</value>
@@ -2305,6 +2320,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Registrér vinduesområder</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Nedton vinduer og kontroller under markøren</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Deaktivér pop op-meddelelser i fuldskærmstilstand</value>

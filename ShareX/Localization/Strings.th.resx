@@ -626,7 +626,10 @@
     <value>แสดง คลิปบอร์ด เนื้อหา ตัวแสดง</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>แสดงปุ่ม "แก้ไขด้วย ShareX" ในเมนูบริบทของ Windows Explorer</value>
+    <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขรูปภาพ ShareX" ในเมนูบริบทของ Windows Explorer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขภาพถ่าย ShareX" ในเมนูบริบทของ Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>ใหญ่-ไฟล์ คำเตือน เกณฑ์ (MB)</value>
@@ -1326,7 +1329,10 @@
     <value>ไม่สามารถเขียนรูปภาพไปยังเส้นทาง:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>แก้ไข ด้วย ShareX</value>
+    <value>แก้ไขในตัวแก้ไขรูปภาพ ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>แก้ไขในตัวแก้ไขภาพถ่าย ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>อัปโหลด ด้วย ShareX</value>
@@ -1532,6 +1538,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>เปิด</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>ตัวแก้ไขภาพถ่าย...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>ปักหมุดบนหน้าจอ...</value>
   </data>
@@ -1579,6 +1588,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>แสดง ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>สถิติ...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>การตั้งค่างาน...</value>
@@ -1696,6 +1708,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>แก้ไข รูปภาพ...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>แก้ไขในตัวแก้ไขรูปภาพ...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ไฟล์</value>
@@ -2305,6 +2320,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>ตรวจจับพื้นที่หน้าต่าง</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>หรี่หน้าต่างและตัวควบคุมที่อยู่ใต้เคอร์เซอร์</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>ปิดการแจ้งเตือนแบบป๊อปอัปเมื่อเต็มหน้าจอ</value>

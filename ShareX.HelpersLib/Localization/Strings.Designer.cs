@@ -2149,6 +2149,15 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Photo editor.
+        /// </summary>
+        public static string HotkeyType_PhotoEditor {
+            get {
+                return ResourceManager.GetString("HotkeyType_PhotoEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pin to screen.
         /// </summary>
         public static string HotkeyType_PinToScreen {

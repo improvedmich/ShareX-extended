@@ -626,7 +626,10 @@
     <value>Zobrazit prohlížeč obsahu schránky</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Zobrazit tlačítko „Upravit pomocí ShareX“ v místní nabídce Průzkumníka Windows</value>
+    <value>Zobrazit tlačítko „Upravit v editoru obrázků ShareX“ v místní nabídce Průzkumníka Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Zobrazit tlačítko „Upravit v editoru fotografií ShareX“ v místní nabídce Průzkumníka Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Prahová hodnota upozornění na velký soubor (MB)</value>
@@ -1326,7 +1329,10 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Obrázek nelze zapsat do cesty:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Upravit pomocí ShareX</value>
+    <value>Upravit v editoru obrázků ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Upravit v editoru fotografií ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Nahrát pomocí ShareX</value>
@@ -1532,6 +1538,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Otevřít</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor fotografií...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Připnout na obrazovku...</value>
   </data>
@@ -1579,6 +1588,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Zobrazit ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistiky...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Nastavení úloh...</value>
@@ -1696,6 +1708,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Upravit obrázek...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Upravit v editoru fotografií...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Soubor</value>
@@ -2305,6 +2320,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Zjišťovat oblasti oken</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Ztlumit okna a ovládací prvky pod kurzorem</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Zakázat informační oznámení v režimu celé obrazovky</value>

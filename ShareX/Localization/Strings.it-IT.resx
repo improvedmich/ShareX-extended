@@ -626,7 +626,10 @@
     <value>Mostra il visualizzatore del contenuto degli appunti</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Mostra pulsante "Modifica con ShareX" nel menu contestuale di Esplora file</value>
+    <value>Mostra pulsante "Modifica nell'editor di immagini di ShareX" nel menu contestuale di Esplora file</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Mostra pulsante "Modifica nell'editor di foto di ShareX" nel menu contestuale di Esplora file</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Soglia di avviso per file di grandi dimensioni (MB)</value>
@@ -1326,7 +1329,10 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Could not write immagine to percorso:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Modifica with ShareX</value>
+    <value>Modifica nell'editor di immagini di ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Modifica nell'editor di foto di ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Carica con ShareX</value>
@@ -1532,6 +1538,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Apri</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor di foto</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fissa allo schermo</value>
   </data>
@@ -1579,6 +1588,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Mostra ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistiche...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Impostazioni Operazione</value>
@@ -1696,6 +1708,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Modifica immagine</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Modifica nell'editor di foto...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>File</value>
@@ -2305,6 +2320,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Rileva regioni delle finestre</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Oscura le finestre e i controlli sotto il cursore</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Disattiva notifiche a comparsa a schermo intero</value>

@@ -626,7 +626,10 @@
     <value>Mostrar el visor de contenido del portapapeles</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Mostrar el botón "Editar con ShareX" en el menú contextual del Explorador de Windows</value>
+    <value>Mostrar el botón "Editar en el editor de imágenes de ShareX" en el menú contextual del Explorador de Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Mostrar el botón "Editar en el editor de fotos de ShareX" en el menú contextual del Explorador de Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Umbral de aviso para archivos grandes (MB)</value>
@@ -1326,7 +1329,10 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>No se pudo escribir la imagen en la ruta:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Editar con ShareX</value>
+    <value>Editar en el editor de imágenes de ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Editar en el editor de fotos de ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Subir con ShareX</value>
@@ -1532,6 +1538,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Abrir</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Editor de fotos</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fijar a pantalla</value>
   </data>
@@ -1579,6 +1588,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Mostrar ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Estadísticas...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Configuración de tarea</value>
@@ -1696,6 +1708,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Editar imagen</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Editar en el editor de fotos...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Archivo</value>
@@ -2305,6 +2320,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Detectar regiones de ventana</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Oscurecer las ventanas y controles bajo el cursor</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Desactivar notificaciones emergentes en pantalla completa</value>

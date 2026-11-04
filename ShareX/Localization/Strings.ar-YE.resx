@@ -626,7 +626,10 @@
     <value>عرض عارض محتوى الحافظة</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>عرض الخيار "تعديل باستخدام ShareX" على قائمة خيارات الملفات</value>
+    <value>عرض الخيار "تعديل في محرر الصور الخاص بـ ShareX" على قائمة خيارات الملفات</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>عرض الخيار "تعديل في محرر الصور في ShareX" على قائمة خيارات الملفات</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>حد التحذير للملفات الكبيرة (ميغابايت)</value>
@@ -1326,7 +1329,10 @@
     <value>فشل إنشاء الصورة إلى:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>تعديل باستخدام ShareX</value>
+    <value>تعديل في محرر الصور الخاص بـ ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>تعديل في محرر الصور في ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>رفع باستخدام ShareX</value>
@@ -1532,6 +1538,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>فتح</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>محرر الصور الفوتوغرافية</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>تثيبت على الشاشة</value>
   </data>
@@ -1579,6 +1588,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>إظهار ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>الإحصاءات...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>إعدادات المهمة</value>
@@ -1696,6 +1708,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>تعديل الصورة</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>تعديل في محرر الصور...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ملف</value>
@@ -2305,6 +2320,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>اكتشاف مناطق النوافذ</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>تعتيم النوافذ وعناصر التحكم عند المرور فوقها</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>تعطيل الإشعارات في وضع ملء الشاشة</value>

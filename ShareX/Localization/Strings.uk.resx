@@ -626,7 +626,10 @@
     <value>Показувати переглядач вмісту буфера обміну</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Показувати кнопку „Змінити із ShareX“ у контекстному меню Провідника Windows</value>
+    <value>Показувати кнопку „Редагувати в редакторі зображень ShareX“ у контекстному меню Провідника Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Показувати кнопку „Редагувати у фоторедакторі ShareX“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Поріг попередження для великих файлів (МБ)</value>
@@ -1326,7 +1329,10 @@
     <value>Не вдалося записати зображення до шляху:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Змінити з ShareX</value>
+    <value>Редагувати в редакторі зображень ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Редагувати у фоторедакторі ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Вивантажити з ShareX</value>
@@ -1532,6 +1538,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Відкрити</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Фоторедактор</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Закріпити на екрані</value>
   </data>
@@ -1579,6 +1588,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Показати ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Статистика...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Налаштування завдань</value>
@@ -1696,6 +1708,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Редагувати зображення</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Редагувати у фоторедакторі...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Файл</value>
@@ -2305,6 +2320,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Виявляти області вікон</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Затемнювати вікна та елементи керування під курсором</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Вимкнути сповіщення в повноекранному режимі</value>

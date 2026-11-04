@@ -1762,11 +1762,20 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show &quot;Edit with ShareX&quot; button in Windows Explorer context menu.
+        ///   Looks up a localized string similar to Show &quot;Edit with ShareX Image editor&quot; button in Windows Explorer context menu.
         /// </summary>
         public static string ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show &quot;Edit with ShareX Photo editor&quot; button in Windows Explorer context menu.
+        /// </summary>
+        public static string ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu", resourceCulture);
             }
         }
         
@@ -4210,11 +4219,20 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit with ShareX.
+        ///   Looks up a localized string similar to Edit with ShareX Image editor.
         /// </summary>
         public static string IntegrationHelpers_EditWithShareX {
             get {
                 return ResourceManager.GetString("IntegrationHelpers_EditWithShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit with ShareX Photo editor.
+        /// </summary>
+        public static string IntegrationHelpers_EditWithShareXPhotoEditor {
+            get {
+                return ResourceManager.GetString("IntegrationHelpers_EditWithShareXPhotoEditor", resourceCulture);
             }
         }
         
@@ -4858,6 +4876,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Photo editor....
+        /// </summary>
+        public static string MainMenuBuilder_PhotoEditor {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_PhotoEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pin to screen....
         /// </summary>
         public static string MainMenuBuilder_PinToScreenDialog {
@@ -4998,6 +5025,15 @@ namespace ShareX.Localization {
         public static string MainMenuBuilder_ShowShareX {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_ShowShareX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stats....
+        /// </summary>
+        public static string MainMenuBuilder_Stats {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_Stats", resourceCulture);
             }
         }
         
@@ -5349,6 +5385,15 @@ namespace ShareX.Localization {
         public static string MainWindow_EditImage {
             get {
                 return ResourceManager.GetString("MainWindow_EditImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit in Photo editor....
+        /// </summary>
+        public static string MainWindow_EditImageInPhotoEditor {
+            get {
+                return ResourceManager.GetString("MainWindow_EditImageInPhotoEditor", resourceCulture);
             }
         }
         
@@ -7185,6 +7230,15 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_DetectWindowRegions {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_DetectWindowRegions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dim hovered windows and controls.
+        /// </summary>
+        public static string TaskSettingsWindow_DimHoveredWindowsAndControls {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_DimHoveredWindowsAndControls", resourceCulture);
             }
         }
         

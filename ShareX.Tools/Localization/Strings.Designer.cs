@@ -2842,7 +2842,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Lossless:.
+        ///   Looks up a localized string similar to Lossless.
         /// </summary>
         public static string ImageConverterWindow_WebPLossless {
             get {

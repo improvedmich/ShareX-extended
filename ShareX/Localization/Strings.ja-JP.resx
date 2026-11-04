@@ -626,7 +626,10 @@
     <value>クリップボード内容ビューアーを表示する</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示</value>
+    <value>エクスプローラのコンテキストメニューに「ShareX 画像エディターで編集」を表示</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>エクスプローラのコンテキストメニューに「ShareX フォトエディターで編集」を表示</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>大きなファイルの警告しきい値（MB）</value>
@@ -1326,7 +1329,10 @@
     <value>次のパスへ画像を書き込めません:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX で画像編集</value>
+    <value>ShareX 画像エディターで編集</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX フォトエディターで編集</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX でアップロード</value>
@@ -1532,6 +1538,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>開く</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>フォトエディター</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>最前面に固定</value>
   </data>
@@ -1579,6 +1588,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX を表示</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>統計...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>タスクの設定</value>
@@ -1696,6 +1708,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>画像エディタで編集</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>フォトエディターで編集...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ファイル</value>
@@ -2305,6 +2320,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>ウィンドウ範囲を検出</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>カーソル下のウィンドウとコントロールを暗くする</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>全画面表示時に通知を無効化</value>

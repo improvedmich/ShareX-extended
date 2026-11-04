@@ -465,7 +465,7 @@ internal sealed class TaskSettingsPageBuilder
 
     private Control BuildRegionCapturePage()
     {
-        RegionCaptureOptions options = _settings.CaptureSettings.RegionCaptureOptions;
+        RegionCaptureOptions options = _captureSettings.RegionCaptureOptions;
         BoundValue<bool> detectWindows = new(options.DetectWindows, value => options.DetectWindows = value);
         CheckBox detectControls = Check(Strings.TaskSettingsWindow_AlsoDetectControlsInsideWindows, () => options.DetectControls, value => options.DetectControls = value);
         BindEnabled(detectControls, detectWindows);
@@ -490,7 +490,9 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_QuickCapture, () => options.QuickCapture, value => options.QuickCapture = value),
                 Check(Strings.TaskSettingsWindow_DetectWindowRegions, detectWindows), detectControls,
                 Check(Strings.TaskSettingsWindow_RestrictCaptureAndCursorToTheActiveMonitor, () => options.ActiveMonitorMode, value => options.ActiveMonitorMode = value),
-                Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100))),
+                Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100)),
+                Check(Strings.TaskSettingsWindow_DimHoveredWindowsAndControls, () => options.DimAllExceptSelection, value => options.DimAllExceptSelection = value),
+                Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowRegionCaptureToolbarEditor(options))),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_MouseActions,
                 Row(Strings.TaskSettingsWindow_RightClick, EnumCombo(() => options.RegionCaptureActionRightClick, value => options.RegionCaptureActionRightClick = value)),
                 Row(Strings.TaskSettingsWindow_MiddleClick, EnumCombo(() => options.RegionCaptureActionMiddleClick, value => options.RegionCaptureActionMiddleClick = value)),
@@ -575,7 +577,7 @@ internal sealed class TaskSettingsPageBuilder
         Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
         foreach (Control control in new[] { systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate }) BindEnabled(control, native);
         BindEnabled(twoPass, native, invert: true);
-        // GIF tasks continue to use the existing FFmpeg options even when MP4 recording is native.
+        BindEnabled(legacyOptions, native, invert: true);
         BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, value => capture.ScreenRecordFixedDuration = value);
         NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);

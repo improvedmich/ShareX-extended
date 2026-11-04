@@ -626,7 +626,10 @@
     <value>Pokaż podgląd zawartości schowka</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Pokaż przycisk "Edytuj za pomocą ShareX" w menu kontekstowym Eksploratora Windows</value>
+    <value>Pokaż przycisk "Edytuj w edytorze obrazów ShareX" w menu kontekstowym Eksploratora Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Pokaż przycisk "Edytuj w edytorze zdjęć ShareX" w menu kontekstowym Eksploratora Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Próg ostrzeżenia dla dużych plików (MB)</value>
@@ -1326,7 +1329,10 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
     <value>Nie można zapisać obrazu do ścieżki:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Edytuj za pomocą ShareX</value>
+    <value>Edytuj w edytorze obrazów ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Edytuj w edytorze zdjęć ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Prześlij za pomocą ShareX</value>
@@ -1532,6 +1538,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Otwórz</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Edytor zdjęć</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Przypnij do ekranu</value>
   </data>
@@ -1579,6 +1588,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>Pokaż ShareX</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statystyki...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Ustawienia zadań</value>
@@ -1696,6 +1708,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Edytuj obraz</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Edytuj w edytorze zdjęć...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Plik</value>
@@ -2305,6 +2320,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Wykrywaj regiony okien</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Przyciemniaj okna i kontrolki pod kursorem</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Wyłącz powiadomienia na pełnym ekranie</value>

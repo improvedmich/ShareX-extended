@@ -626,7 +626,10 @@
     <value>क्लिपबोर्ड सामग्री दर्शक दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Windows Explorer संदर्भ मेनू में "ShareX से संपादित करें" बटन दिखाएँ</value>
+    <value>Windows Explorer संदर्भ मेनू में "ShareX छवि संपादक में संपादित करें" बटन दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Windows Explorer संदर्भ मेनू में "ShareX फ़ोटो संपादक में संपादित करें" बटन दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>बड़ी फ़ाइल चेतावनी सीमा (MB)</value>
@@ -1326,7 +1329,10 @@
     <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX से संपादित करें</value>
+    <value>ShareX छवि संपादक में संपादित करें</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>ShareX फ़ोटो संपादक में संपादित करें</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>ShareX से अपलोड करें</value>
@@ -1532,6 +1538,9 @@
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>खोलें</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>स्क्रीन पर पिन करें...</value>
   </data>
@@ -1579,6 +1588,9 @@
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX दिखाएँ</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>आँकड़े...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>कार्य सेटिंग...</value>
@@ -1696,6 +1708,9 @@
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>छवि संपादित करें...</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक में संपादित करें...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>फ़ाइल</value>
@@ -2305,6 +2320,9 @@
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>विंडो क्षेत्र पहचानें</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>कर्सर के नीचे की विंडो और नियंत्रण मंद करें</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>पूर्ण स्क्रीन में टोस्ट सूचनाएँ अक्षम करें</value>

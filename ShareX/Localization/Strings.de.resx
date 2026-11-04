@@ -626,7 +626,10 @@
     <value>Zwischenablage-Inhaltsanzeige anzeigen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Schaltfläche „Mit ShareX bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
+    <value>Schaltfläche „Im ShareX-Bildeditor bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Schaltfläche „Im ShareX-Fotoeditor bearbeiten“ im Kontextmenü des Windows-Explorers anzeigen</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Warnschwelle für große Dateien (MB)</value>
@@ -1326,7 +1329,10 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>Konnte das Bild nicht in den Pfad schreiben:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Mit ShareX bearbeiten</value>
+    <value>Im ShareX-Bildeditor bearbeiten</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Im ShareX-Fotoeditor bearbeiten</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Mit ShareX hochladen</value>
@@ -1532,6 +1538,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_Open" xml:space="preserve">
     <value>Öffnen</value>
   </data>
+  <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
+    <value>Fotoeditor</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>An Bildschirm anheften</value>
   </data>
@@ -1579,6 +1588,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_ShowShareX" xml:space="preserve">
     <value>ShareX anzeigen</value>
+  </data>
+  <data name="MainMenuBuilder_Stats" xml:space="preserve">
+    <value>Statistik...</value>
   </data>
   <data name="MainMenuBuilder_TaskSettings" xml:space="preserve">
     <value>Aufgabeneinstellungen</value>
@@ -1696,6 +1708,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Bild bearbeiten</value>
+  </data>
+  <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
+    <value>In Fotoeditor bearbeiten...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Datei</value>
@@ -2305,6 +2320,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Fensterbereiche erkennen</value>
+  </data>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Fenster und Steuerelemente unter dem Mauszeiger abdunkeln</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Toast-Benachrichtigungen im Vollbildmodus deaktivieren</value>
