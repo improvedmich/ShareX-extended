@@ -33,7 +33,7 @@ param(
     [string]$Configuration = 'Release',
     [string]$Platform = 'x64',
     [string]$DeployPath,
-    [string]$FFmpegVersion = '9',
+    [string]$FFmpegVersion = '9.0',
     [switch]$SkipFFmpeg,
     [switch]$SkipDeploy
 )
@@ -68,7 +68,8 @@ function Ensure-FFmpeg([string]$buildDirectory, [string]$platform, [string]$ffmp
 
     # Same source as the "Download FFmpeg" step of .github/workflows/build.yml.
     $architecture = $platform.ToLowerInvariant()
-    $url = "https://github.com/ShareX/FFmpeg/releases/download/v$ffmpegVersion/ffmpeg-$ffmpegVersion-win-$architecture.zip"
+    # https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n$ffmpegVersion-latest-$Platform-gpl-$ffmpegVersion.zip
+    $url = "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n$ffmpegVersion-latest-win64-gpl-$ffmpegVersion.zip"
     $tempDirectory = Join-Path ([System.IO.Path]::GetTempPath()) "ShareX-BuildRelease-ffmpeg-$([System.Guid]::NewGuid().ToString('N'))"
 
     Write-Host "Downloading FFmpeg $ffmpegVersion ($architecture) from $url..." -ForegroundColor Cyan
