@@ -55,6 +55,8 @@ public partial class ImageBrowserWindow : Window
     private const int MaxDisplayedGroups = 25;
     // Number of distinct group values rendered per page; the "show more" button adds another page.
     private const int ValuesPerPage = 100;
+    // Decode animated previews at up to this size so frames stay sharp when the splitter is widened.
+    private const int MaxAnimatedPreviewSize = 2048;
 
     private readonly ImageBrowserViewModel _viewModel = new();
     private readonly DispatcherTimer _filterTimer;
@@ -66,6 +68,7 @@ public partial class ImageBrowserWindow : Window
     private CancellationTokenSource? _statsCancellation;
     private ImageBrowserRegexStats? _lastStats;
     private Bitmap? _previewBitmap;
+    private int _previewVersion;
     private bool _suppressEvents;
 
     private static ImageBrowserOptions SharedOptions =>
@@ -124,6 +127,7 @@ public partial class ImageBrowserWindow : Window
     {
         _filterTimer.Stop();
         _statsTimer.Stop();
+        _previewVersion++;
         _loadCancellation?.Cancel();
         _loadCancellation?.Dispose();
         _previewCancellation?.Cancel();
@@ -306,6 +310,8 @@ public partial class ImageBrowserWindow : Window
 
     private async Task UpdatePreviewAsync(ImageFileInfo? file)
     {
+        int version = ++_previewVersion;
+
         _previewCancellation?.Cancel();
         _previewCancellation?.Dispose();
         _previewCancellation = new CancellationTokenSource();
@@ -351,7 +357,7 @@ public partial class ImageBrowserWindow : Window
         {
             Bitmap bitmap = await Task.Run(() => new Bitmap(file.FilePath), token);
 
-            if (token.IsCancellationRequested)
+            if (version != _previewVersion || token.IsCancellationRequested)
             {
                 bitmap.Dispose();
                 return;
@@ -363,6 +369,11 @@ public partial class ImageBrowserWindow : Window
 
             string dimensions = $"{bitmap.PixelSize.Width} × {bitmap.PixelSize.Height}";
             PreviewDetails.Text = $"{Strings.ImageBrowserWindow_Dimensions}: {dimensions}" + Environment.NewLine + detailsText;
+
+            if (AnimatedImagePreview.CanBeAnimated(file.FilePath))
+            {
+                _ = PlayPreviewAnimationAsync(version, file.FilePath, token);
+            }
         }
         catch (OperationCanceledException)
         {
@@ -371,6 +382,37 @@ public partial class ImageBrowserWindow : Window
         {
             DebugHelper.WriteException(exception, $"Failed to load preview for '{file.FilePath}'.");
         }
+    }
+
+    private async Task PlayPreviewAnimationAsync(int version, string filePath, CancellationToken token)
+    {
+        // Plays animated GIFs and WebP files the same way the image viewer does, until another file is
+        // selected or the window closes. Frames are not decoded while the window is in the background.
+        try
+        {
+            await AnimatedImagePreview.PlayAsync(filePath, MaxAnimatedPreviewSize,
+                () => version == _previewVersion && !token.IsCancellationRequested,
+                frame => ShowPreviewFrame(version, token, frame),
+                () => !IsVisible || WindowState == Avalonia.Controls.WindowState.Minimized);
+        }
+        catch (Exception exception)
+        {
+            DebugHelper.WriteException(exception, $"Failed to play animated preview for '{filePath}'.");
+        }
+    }
+
+    private void ShowPreviewFrame(int version, CancellationToken token, Bitmap frame)
+    {
+        if (version != _previewVersion || token.IsCancellationRequested)
+        {
+            frame.Dispose();
+            return;
+        }
+
+        Bitmap? previous = _previewBitmap;
+        _previewBitmap = frame;
+        PreviewImage.Source = frame;
+        previous?.Dispose();
     }
 
     private void OnFileDoubleTapped(object? sender, TappedEventArgs e) => OpenSelectedImageInViewer();
