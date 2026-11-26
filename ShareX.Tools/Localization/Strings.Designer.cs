@@ -5173,6 +5173,33 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recognition model.
+        /// </summary>
+        public static string OCRWindow_Recognition_model {
+            get {
+                return ResourceManager.GetString("OCRWindow_Recognition_model", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cyrillic (Russian, Ukrainian, and others).
+        /// </summary>
+        public static string OCRWindow_Recognition_model_Cyrillic {
+            get {
+                return ResourceManager.GetString("OCRWindow_Recognition_model_Cyrillic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latin and CJK.
+        /// </summary>
+        public static string OCRWindow_Recognition_model_Default {
+            get {
+                return ResourceManager.GetString("OCRWindow_Recognition_model_Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string OCRWindow_Remove {

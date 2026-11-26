@@ -24,12 +24,16 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.OCR;
 
 namespace ShareX.Tools;
 
 public sealed class OCROptions
 {
     public bool SingleLine { get; set; }
+    // The character set the recognition model was trained on. The default model covers Latin and CJK, the Cyrillic
+    // model adds Russian and the other Cyrillic languages.
+    public OCRRecognitionScript RecognitionScript { get; set; } = OCRRecognitionScript.Default;
     // Puts an empty line between paragraphs, which are found from the spacing and size of the lines in the image.
     public bool SeparateParagraphs { get; set; } = true;
     public bool Silent { get; set; }

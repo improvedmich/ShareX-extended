@@ -1,0 +1,9 @@
+PP-OCRv6 Cyrillic recognition models
+
+Based on PP-OCRv6 by PaddlePaddle.
+Cyrillic text recognition training by Metrika Labs.
+Contributors: vladlinv
+
+Source: https://huggingface.co/metrika-labs/PP-OCRv6_tiny_rec_cyrillic_onnx
+
+Licensed under the Apache License, Version 2.0. See PaddleOCR_license.txt for the license text.

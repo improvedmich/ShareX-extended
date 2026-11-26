@@ -220,6 +220,15 @@
                                 Padding="18,10,14,6">
                             <StackPanel Spacing="2">
                                 <Grid ColumnDefinitions="*,Auto" MinHeight="34">
+                                    <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Recognition_model}"/>
+                                    <ComboBox Grid.Column="1"
+                                              ItemsSource="{Binding RecognitionScripts}"
+                                              SelectedItem="{Binding SelectedRecognitionScript}"
+                                              IsEnabled="{Binding IsIdle}"
+                                              MinWidth="180"
+                                              VerticalAlignment="Center"/>
+                                </Grid>
+                                <Grid ColumnDefinitions="*,Auto" MinHeight="34">
                                     <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Single_line}"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding SingleLine}" OnContent="" OffContent=""/>
                                 </Grid>

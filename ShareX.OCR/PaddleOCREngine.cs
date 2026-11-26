@@ -29,7 +29,8 @@ using SkiaSharp;
 namespace ShareX.OCR;
 
 // Offline OCR with the PaddleOCR PP-OCRv6 models: a detection model finds the text lines and a recognition model
-// reads each one. The models are multilingual, so there is no language to choose.
+// reads each one. The recognition script selects the character set; the default model covers Latin and CJK, and the
+// Cyrillic model covers Russian and the other Cyrillic languages.
 public sealed class PaddleOCREngine : IDisposable
 {
     // Models in the order they are preferred, the biggest and most accurate first. The small models ship with ShareX;
@@ -37,9 +38,11 @@ public sealed class PaddleOCREngine : IDisposable
     // when the small ones have been removed. Detection and recognition are picked separately, so either one can be
     // replaced on its own.
     private static readonly string[] DetectionModelNames = ["PP-OCRv6_medium_det", "PP-OCRv6_small_det", "PP-OCRv6_tiny_det"];
-    private static readonly string[] RecognitionModelNames = ["PP-OCRv6_medium_rec", "PP-OCRv6_small_rec", "PP-OCRv6_tiny_rec"];
+    private static readonly string[] DefaultRecognitionModelNames = ["PP-OCRv6_medium_rec", "PP-OCRv6_small_rec", "PP-OCRv6_tiny_rec"];
+    private static readonly string[] CyrillicRecognitionModelNames = ["PP-OCRv6_medium_rec_cyrillic", "PP-OCRv6_tiny_rec_cyrillic"];
     private const string BuiltInDetectionModelName = "PP-OCRv6_small_det";
-    private const string BuiltInRecognitionModelName = "PP-OCRv6_small_rec";
+    private const string BuiltInDefaultRecognitionModelName = "PP-OCRv6_small_rec";
+    private const string BuiltInCyrillicRecognitionModelName = "PP-OCRv6_tiny_rec_cyrillic";
 
     // Hugging Face names the ONNX downloads with this suffix, so a folder copied from there as-is is found too.
     private const string DownloadFolderSuffix = "_onnx";
@@ -48,10 +51,13 @@ public sealed class PaddleOCREngine : IDisposable
     public const float DefaultMinScore = 0.5f;
 
     private static readonly Lock SharedLock = new();
-    private static PaddleOCREngine? _shared;
+    private static readonly Dictionary<OCRRecognitionScript, PaddleOCREngine> SharedEngines = [];
+    // The detector does not depend on the script, so all engines for the same models folder share one.
+    private static readonly Dictionary<string, TextDetector> SharedDetectors = new(StringComparer.OrdinalIgnoreCase);
 
     private readonly TextDetector _detector;
     private readonly TextRecognizer _recognizer;
+    private readonly bool _ownsDetector;
 
     // The folders of the models in use.
     public string DetectionModelFolder { get; }
@@ -60,27 +66,55 @@ public sealed class PaddleOCREngine : IDisposable
     // The models are copied next to the application under this folder.
     public static string DefaultModelsFolder => Path.Combine(AppContext.BaseDirectory, "Models");
 
-    // Loading the models takes a moment, so one engine is kept for the life of the process.
-    public static PaddleOCREngine Shared
+    public static PaddleOCREngine Shared => GetShared(OCRRecognitionScript.Default);
+
+    // Loading the models takes a moment, so one engine per script is kept for the life of the process. Detection is
+    // independent of the script, so every script engine reuses the same detector session.
+    public static PaddleOCREngine GetShared(OCRRecognitionScript script)
     {
-        get
+        lock (SharedLock)
         {
-            lock (SharedLock)
+            if (SharedEngines.TryGetValue(script, out PaddleOCREngine? engine))
             {
-                return _shared ??= new PaddleOCREngine(DefaultModelsFolder);
+                return engine;
             }
+
+            string detectionModelFolder = FindModelFolder(DefaultModelsFolder, DetectionModelNames, BuiltInDetectionModelName);
+            string recognitionModelFolder = FindModelFolder(DefaultModelsFolder, GetRecognitionModelNames(script), GetBuiltInRecognitionModelName(script));
+            TextDetector detector = GetSharedDetector(detectionModelFolder);
+
+            engine = new PaddleOCREngine(detectionModelFolder, recognitionModelFolder, detector);
+            SharedEngines[script] = engine;
+
+            return engine;
         }
     }
 
-    public PaddleOCREngine(string modelsFolder)
+    private static TextDetector GetSharedDetector(string detectionModelFolder)
     {
-        using SessionOptions sessionOptions = new()
+        if (SharedDetectors.TryGetValue(detectionModelFolder, out TextDetector? detector))
         {
-            GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
-        };
+            return detector;
+        }
+
+        using SessionOptions sessionOptions = CreateSessionOptions();
+        detector = new TextDetector(detectionModelFolder, sessionOptions);
+        SharedDetectors[detectionModelFolder] = detector;
+
+        return detector;
+    }
+
+    public PaddleOCREngine(string modelsFolder) : this(modelsFolder, OCRRecognitionScript.Default)
+    {
+    }
+
+    public PaddleOCREngine(string modelsFolder, OCRRecognitionScript script)
+    {
+        using SessionOptions sessionOptions = CreateSessionOptions();
 
         DetectionModelFolder = FindModelFolder(modelsFolder, DetectionModelNames, BuiltInDetectionModelName);
-        RecognitionModelFolder = FindModelFolder(modelsFolder, RecognitionModelNames, BuiltInRecognitionModelName);
+        RecognitionModelFolder = FindModelFolder(modelsFolder, GetRecognitionModelNames(script), GetBuiltInRecognitionModelName(script));
+        _ownsDetector = true;
         _detector = new TextDetector(DetectionModelFolder, sessionOptions);
 
         try
@@ -93,6 +127,29 @@ public sealed class PaddleOCREngine : IDisposable
             throw;
         }
     }
+
+    // Builds an engine that uses a detector owned by the shared cache, so it must not dispose it.
+    private PaddleOCREngine(string detectionModelFolder, string recognitionModelFolder, TextDetector detector)
+    {
+        using SessionOptions sessionOptions = CreateSessionOptions();
+
+        DetectionModelFolder = detectionModelFolder;
+        RecognitionModelFolder = recognitionModelFolder;
+        _ownsDetector = false;
+        _detector = detector;
+        _recognizer = new TextRecognizer(RecognitionModelFolder, sessionOptions);
+    }
+
+    private static SessionOptions CreateSessionOptions() => new()
+    {
+        GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
+    };
+
+    private static string[] GetRecognitionModelNames(OCRRecognitionScript script) =>
+        script == OCRRecognitionScript.Cyrillic ? CyrillicRecognitionModelNames : DefaultRecognitionModelNames;
+
+    private static string GetBuiltInRecognitionModelName(OCRRecognitionScript script) =>
+        script == OCRRecognitionScript.Cyrillic ? BuiltInCyrillicRecognitionModelName : BuiltInDefaultRecognitionModelName;
 
     // Returns the first model in the list that has both its files. When none does, the built-in one is returned, so
     // loading it reports that model as missing.
@@ -150,7 +207,11 @@ public sealed class PaddleOCREngine : IDisposable
 
     public void Dispose()
     {
-        _detector.Dispose();
         _recognizer.Dispose();
+
+        if (_ownsDetector)
+        {
+            _detector.Dispose();
+        }
     }
 }

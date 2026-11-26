@@ -2187,7 +2187,7 @@ namespace ShareX
                             async imageData =>
                             {
                                 using Bitmap source = SkiaImageHelpers.ByteArrayToBitmap(imageData);
-                                return await OCRHelper.Recognize(source);
+                                return await OCRHelper.Recognize(source, options.RecognitionScript);
                             },
                             async () =>
                             {
@@ -2224,7 +2224,7 @@ namespace ShareX
 
                 OCROptions options = taskSettings.CaptureSettingsReference.OCROptions;
 
-                string result = await OCRHelper.OCR(bmp, options.SingleLine, options.SeparateParagraphs);
+                string result = await OCRHelper.OCR(bmp, options.SingleLine, options.SeparateParagraphs, options.RecognitionScript);
 
                 if (!string.IsNullOrEmpty(result))
                 {

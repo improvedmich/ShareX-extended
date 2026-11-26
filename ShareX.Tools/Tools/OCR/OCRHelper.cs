@@ -30,14 +30,15 @@ namespace ShareX.Tools;
 
 public static class OCRHelper
 {
-    public static Task<OCRResult> Recognize(Bitmap bitmap)
+    public static Task<OCRResult> Recognize(Bitmap bitmap, OCRRecognitionScript script = OCRRecognitionScript.Default)
     {
-        return Task.Run(() => PaddleOCREngine.Shared.Recognize(bitmap));
+        return Task.Run(() => PaddleOCREngine.GetShared(script).Recognize(bitmap));
     }
 
-    public static async Task<string> OCR(Bitmap bitmap, bool singleLine = false, bool separateParagraphs = true)
+    public static async Task<string> OCR(Bitmap bitmap, bool singleLine = false, bool separateParagraphs = true,
+        OCRRecognitionScript script = OCRRecognitionScript.Default)
     {
-        OCRResult result = await Recognize(bitmap);
+        OCRResult result = await Recognize(bitmap, script);
         return result.GetText(singleLine, separateParagraphs);
     }
 }

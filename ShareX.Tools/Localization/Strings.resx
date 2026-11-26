@@ -617,20 +617,20 @@ File path: {0}</value>
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>XML output</value>
   </data>
-  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
-    <value>By file name</value>
-  </data>
   <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
     <value>By SHA-256 hash</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>By file name</value>
   </data>
   <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
     <value>Found {0} duplicate group(s), {1} file(s) total.</value>
   </data>
-  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
-    <value>Hashing files... ({0}/{1})</value>
-  </data>
   <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
     <value>SHA-256: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>Hashing files... ({0}/{1})</value>
   </data>
   <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
     <value>{0} files</value>
@@ -1769,6 +1769,15 @@ File path: {0}</value>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Open service...</value>
   </data>
+  <data name="OCRWindow_Recognition_model" xml:space="preserve">
+    <value>Recognition model</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Cyrillic" xml:space="preserve">
+    <value>Cyrillic (Russian, Ukrainian, and others)</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Default" xml:space="preserve">
+    <value>Latin and CJK</value>
+  </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Remove</value>
   </data>
@@ -2183,6 +2192,9 @@ File path: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stopping conversion...</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>Apply mask</value>
+  </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>Average bitrate</value>
   </data>
@@ -2239,9 +2251,6 @@ File path: {0}</value>
   </data>
   <data name="VideoConverterWindow_Start_encoding" xml:space="preserve">
     <value>Start encoding</value>
-  </data>
-  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
-    <value>Apply mask</value>
   </data>
   <data name="VideoConverterWindow_Stop_encoding" xml:space="preserve">
     <value>Stop encoding</value>

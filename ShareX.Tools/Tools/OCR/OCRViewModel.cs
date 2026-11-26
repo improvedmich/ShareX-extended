@@ -67,6 +67,11 @@ public sealed partial class OCRServiceLinkOption : ObservableObject
 public delegate Task<OCRResult> OCRRecognitionHandler(byte[] imageData);
 public delegate Task<byte[]?> OCRRegionCaptureHandler();
 
+public sealed record OCRRecognitionScriptOption(OCRRecognitionScript Script, string DisplayName)
+{
+    public override string ToString() => DisplayName;
+}
+
 public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 {
     private readonly OCROptions _options;
@@ -77,6 +82,15 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private int _recognitionVersion;
 
     public ObservableCollection<OCRServiceLinkOption> ServiceLinks { get; } = [];
+
+    public IReadOnlyList<OCRRecognitionScriptOption> RecognitionScripts { get; } =
+    [
+        new(OCRRecognitionScript.Default, Localization.Strings.OCRWindow_Recognition_model_Default),
+        new(OCRRecognitionScript.Cyrillic, Localization.Strings.OCRWindow_Recognition_model_Cyrillic)
+    ];
+
+    [ObservableProperty]
+    private OCRRecognitionScriptOption _selectedRecognitionScript;
 
     [ObservableProperty]
     private Bitmap? _sourceImage;
@@ -150,6 +164,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         _separateParagraphs = options.SeparateParagraphs;
         _autoCopy = options.AutoCopy;
         _closeAfterOpeningService = options.CloseWindowAfterOpeningServiceLink;
+        _selectedRecognitionScript = RecognitionScripts.FirstOrDefault(x => x.Script == options.RecognitionScript) ?? RecognitionScripts[0];
 
         foreach (OCRServiceLinkOption service in options.ServiceLinks)
         {
@@ -186,6 +201,23 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
     partial void OnAutoCopyChanged(bool value) => SaveOptions();
     partial void OnCloseAfterOpeningServiceChanged(bool value) => SaveOptions();
+
+    partial void OnSelectedRecognitionScriptChanged(OCRRecognitionScriptOption value)
+    {
+        if (value == null)
+        {
+            return;
+        }
+
+        _options.RecognitionScript = value.Script;
+        SaveOptions();
+
+        // The character set is part of the model, so switching it needs a new recognition pass.
+        if (!IsBusy)
+        {
+            _ = RecognizeAsync();
+        }
+    }
 
     partial void OnSelectedServiceLinkChanged(OCRServiceLinkOption? value)
     {
@@ -372,6 +404,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         _options.SeparateParagraphs = SeparateParagraphs;
         _options.AutoCopy = AutoCopy;
         _options.CloseWindowAfterOpeningServiceLink = CloseAfterOpeningService;
+        _options.RecognitionScript = SelectedRecognitionScript?.Script ?? OCRRecognitionScript.Default;
         _options.SelectedServiceLink = SelectedServiceLink == null ? 0 : Math.Max(0, ServiceLinks.IndexOf(SelectedServiceLink));
         _options.ServiceLinks = ServiceLinks.ToList();
         _optionsChanged?.Invoke(_options);
