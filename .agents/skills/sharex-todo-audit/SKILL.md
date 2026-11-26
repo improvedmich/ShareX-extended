@@ -1,6 +1,6 @@
 ---
 name: sharex-todo-audit
-description: Maintain TODO.md as the source of truth for ShareX Extended wishes, reconcile it with TODO.txt, audit each item against the current working tree, and rebuild the Russian status report. Use when asked to add or edit TODO items, update or rebuild TODO.md, or check the status of TODO items.
+description: Maintain TODO.md as the source of truth for ShareX Extended wishes, reconcile it with TODO.txt, audit each item against the current working tree, and rebuild the Russian status report. Use when asked to add or edit TODO items, update or rebuild TODO.md, check the status of TODO items, or after implementing a code change that may affect a TODO.md item.
 ---
 
 # Maintain and audit TODO.md
@@ -82,6 +82,16 @@ Rules:
 - Refresh every line reference for this audit; stale ones are wrong even if the status is unchanged.
 - Items already in `DONE:` stay there; do not move items between blocks on your own.
 - Leave code untouched and do not commit.
+
+## After implementation work
+
+Run this at the end of any code change, even when the change was not requested through this skill:
+
+1. Scan `TODO.md` for items the change touches, including partial progress and regressions.
+2. If an item now behaves differently, update its status and evidence (`File.cs:123`, commit hash or `рабочее дерево` for uncommitted work) in the same turn.
+3. Keep `## Краткая сводка`, `### Самые важные открытые места`, and the recommended order consistent with the tables.
+4. If the change makes the report's claim wrong without completing the wish, tighten the comment instead of flipping the status.
+5. Do this in the same change set as the code; do not defer it to a later audit. If the change does not touch any item, leave `TODO.md` alone and say nothing about it.
 
 ## Report
 
