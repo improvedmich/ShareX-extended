@@ -1,0 +1,7 @@
+interface:
+  display_name: "ShareX TODO Audit"
+  short_description: "Maintain TODO.md and audit its items"
+  default_prompt: "Use $sharex-todo-audit to reconcile TODO.md with TODO.txt, then check every item against the current code and update the report."
+
+policy:
+  allow_implicit_invocation: true
