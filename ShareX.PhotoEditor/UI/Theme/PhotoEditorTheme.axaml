@@ -1,5 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons">
     <!--
         Photo editor theme: a dense, dark professional-editor look.
         Applied to the Photo editor window and its dialogs only, so the rest of ShareX keeps its own styling.
@@ -78,6 +79,11 @@
     <Style Selector="AccessText">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <!-- Icons -->
+    <Style Selector="icons|IconView">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
     </Style>
 
     <!-- Buttons: flat text buttons with a thin outline, like the reference options bar -->
@@ -207,15 +213,15 @@
     </Style>
     <Style Selector="Button.primary">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
         <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
@@ -269,7 +275,7 @@
         </Style>
         <Style Selector="^:focus /template/ Border#PART_BorderElement">
             <Setter Property="Background" Value="{DynamicResource PE.Brush.Field}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
         <Style Selector="^ /template/ TextPresenter">
             <Setter Property="TextElement.Foreground" Value="{DynamicResource PE.Brush.Text}"/>
@@ -517,6 +523,10 @@
         <Style Selector="^:pointerover /template/ TextBlock#PART_InputGestureText">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <!-- Icons set their own Foreground above, so they need this to follow the hovered row onto the accent fill. -->
+        <Style Selector="^:pointerover icons|IconView">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="^:disabled">
             <Setter Property="Foreground" Value="{DynamicResource PE.Brush.TextDisabled}"/>
         </Style>
@@ -573,10 +583,14 @@
         </Style>
         <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource PE.Brush.RowSelected}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
+        </Style>
+        <Style Selector="^:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource PE.Brush.Text}"/>
         </Style>
     </Style>
     <Style Selector="ScrollBar">
-        <Setter Property="AllowAutoHide" Value="True"/>
+        <Setter Property="AllowAutoHide" Value="{DynamicResource ShareX.ScrollBar.AllowAutoHide}"/>
     </Style>
     <Style Selector="ScrollBar:vertical">
         <Setter Property="Width" Value="10"/>

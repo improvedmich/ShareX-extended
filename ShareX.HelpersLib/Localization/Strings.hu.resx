@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Szöveg felismerése (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Megnyitás a fotószerkesztőben</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Műveletek elvégzése</value>
   </data>
@@ -639,6 +642,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Feltöltés</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Vonalzó</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Feltöltés vágólapról</value>
   </data>
@@ -771,6 +777,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Pin to képernyő (From képernyő)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>Képpontszerkesztő</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Teljes képernyős képlopás</value>
   </data>
@@ -786,8 +795,11 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Téglalap régió képlopás</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Téglalap régió képlopás (Átlátszó)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Vonalzó</value>
+    <value>Mérés</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Színszedő</value>
@@ -866,6 +878,21 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Képfájlok</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Alsó</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Oldalt</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Elrejtés</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Megjelenítés</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Kép megnyitása</value>
@@ -1077,6 +1104,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Rögzítés last terület</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Kijelölt terület rögzítése</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ne tegyen semmit</value>
   </data>
@@ -1088,6 +1118,12 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Eszköztípus cseréje</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Nagyító átméretezése</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Nagyító nagyítása</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Számítógép</value>
@@ -1221,6 +1257,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatikus</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listanézet</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatűr nézet</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Egyedi szöveg feltöltő</value>
   </data>
@@ -1290,6 +1332,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Feltöltés fájl</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktív monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Elsődleges monitor</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>
@@ -1319,9 +1367,6 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Fejlesztői</value>
   </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Előzetes kiadás</value>

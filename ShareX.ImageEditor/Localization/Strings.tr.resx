@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Ok stili</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Boyutu metne göre otomatik ayarla</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Bulanıklaştır</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Yazı tipi boyutu</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Serbest ok</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Yatay hizalama</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Yinele (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Yuvarlatılmış köşeler</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Kaydet</value>
@@ -258,6 +267,9 @@ Resim düzenleyiciyi kapatmadan önce değişiklikleri kaydetmek ister misiniz?<
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Bekleme imleci</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Araç çubuğunu taşımak için sürükleyin, konumunu sıfırlamak için çift tıklayın</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Başarımın kilidi açıldı!</value>
   </data>
@@ -281,6 +293,15 @@ Resim düzenleyiciyi kapatmadan önce değişiklikleri kaydetmek ister misiniz?<
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>İptal (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Eklenen alanın dolgu rengi</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Panodan görüntü yüklenemedi.
@@ -335,6 +356,12 @@ Panoda görüntü yok.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Kenar boşluğu</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (tam ekran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (bölge)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Görüntü aç</value>
@@ -1359,8 +1386,14 @@ Panoda görüntü yok.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Sağ</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Grubu başlat</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Tüm öğeler araç çubuğunda.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Kullanılabilir öğeler</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Boş ayırıcı</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -1371,26 +1404,35 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Araç Çubuğunu Özelleştir</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Öğeleri göstermek için araç çubuğuna, gizlemek için araç çubuğunun dışına sürükleyin. Öğeleri gruplara ayırmak için aralarına bir ayırıcı sürükleyin.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} ve {1} aynı kısayolu kullanıyor ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>{0} için geçersiz kısayol. R, Ctrl+R veya Ctrl+Shift+R gibi biçimler kullanın.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Aşağı taşı</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Yukarı taşı</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Tamam</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Birincil</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Araç çubuğunu varsayılana sıfırla</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Göster / Gizle</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>İkincil</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Ayırıcı</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Ayırıcı. Genişliğini değiştirmek için sağ kenarını sürükleyin.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Ayırıcı genişliği</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Ok</value>
@@ -1400,6 +1442,9 @@ Panoda görüntü yok.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Bulanıklaştır</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tuval boyutu</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonla</value>

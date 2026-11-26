@@ -33,6 +33,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.ScreenCaptureLib.Localization;
 using SkiaSharp;
 using System;
@@ -80,7 +81,9 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private PixelPoint _dragWindowOrigin;
     private double _windowScaling = 1;
     private int _frameLeftPixels;
+    private int _frameTopPixels;
     private int _toolbarLeftPixels;
+    private int _toolbarTopPixels;
     private int _lastIconStatus = -1;
     private int _restartRequested;
     private bool _configuringGeometry;
@@ -174,7 +177,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public DrawingRectangle RecordingRegion => new(
         Position.X + _frameLeftPixels + BorderPixels,
-        Position.Y + BorderPixels,
+        Position.Y + _frameTopPixels + BorderPixels,
         _captureWidth,
         _captureHeight);
 
@@ -192,6 +195,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Position = _initialPosition;
+        ApplyToolWindowStyle();
 
         _refreshTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
         _refreshTimer.Tick += (_, _) => UpdateTimer();
@@ -205,10 +209,10 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _trayRestartItem.Click += (_, _) => RunOnUIThread(RestartRecording);
         _trayAbortItem.Click += (_, _) => RunOnUIThread(RequestAbortRecording);
 
-        SetTrayMenuIcon(_trayStartItem, LucideIcons.circle_play);
-        SetTrayMenuIcon(_trayPauseItem, LucideIcons.pause);
-        SetTrayMenuIcon(_trayRestartItem, LucideIcons.rotate_ccw);
-        SetTrayMenuIcon(_trayAbortItem, LucideIcons.x);
+        SetTrayMenuIcon(_trayStartItem, AppIcons.CirclePlay);
+        SetTrayMenuIcon(_trayPauseItem, AppIcons.Pause);
+        SetTrayMenuIcon(_trayRestartItem, AppIcons.Reset);
+        SetTrayMenuIcon(_trayAbortItem, AppIcons.Close);
 
         _trayMenu = new NativeMenu();
         foreach (NativeMenuItem item in new[] { _trayStartItem, _trayPauseItem, _trayRestartItem, _trayAbortItem }) _trayMenu.Items.Add(item);
@@ -376,7 +380,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             {
                 case ScreenRecordState.Waiting:
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Waiting___);
-                    SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video_off, DrawingColor.Gold));
+                    SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.VideoOff, DrawingColor.Gold));
                     SetTrayMenuEnabled(false);
                     _trayIcon.IsVisible = true;
                     break;
@@ -402,7 +406,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     Hide();
                     SetTrayMenuEnabled(false);
                     SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Encoding___);
-                    SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.file_video_camera));
+                    SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.FileVideo));
                     break;
             }
         });
@@ -434,12 +438,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
                     {
                         return;
                     }
-                    icon = LucideTrayIcon.CreateIconBytes(LucideIcons.file_video_camera);
+                    icon = TrayIconImage.CreateIconBytes(AppIcons.FileVideo);
                 }
             }
             else
             {
-                icon = LucideTrayIcon.CreateIconBytes(LucideIcons.file_video_camera);
+                icon = TrayIconImage.CreateIconBytes(AppIcons.FileVideo);
             }
 
             SetTrayIcon(icon);
@@ -513,12 +517,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
         {
             case ScreenRecordingStatus.Working:
                 SetTrayText("ShareX - " + Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_);
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video, DrawingColor.Red));
+                SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.Video, DrawingColor.Red));
                 StartText.Text = Strings.ScreenRecordForm_Stop;
-                StartIcon.Text = LucideIcons.square;
+                StartIcon.Icon = AppIcons.Stop;
                 _trayStartItem.Header = Strings.ScreenRecordForm_Stop;
-                SetTrayMenuIcon(_trayStartItem, LucideIcons.square);
-                SetTrayMenuIcon(_trayPauseItem, LucideIcons.pause);
+                SetTrayMenuIcon(_trayStartItem, AppIcons.Stop);
+                SetTrayMenuIcon(_trayPauseItem, AppIcons.Pause);
                 RestartButton.IsEnabled = false;
                 _trayRestartItem.IsEnabled = false;
                 SetRecordingAccent(Brushes.Goldenrod);
@@ -530,15 +534,15 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 SetTrayText("ShareX - " + (paused
                     ? Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_
                     : Strings.ScreenRecordForm_StartRecording_Click_tray_icon_to_start_recording_));
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video_off, DrawingColor.Gold));
+                SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.VideoOff, DrawingColor.Gold));
                 StartText.Text = paused ? Strings.ScreenRecordForm_Stop : Strings.ScreenRecordForm_Start;
-                StartIcon.Text = paused ? LucideIcons.square : LucideIcons.circle_play;
+                StartIcon.Icon = paused ? AppIcons.Stop : AppIcons.CirclePlay;
                 _trayStartItem.Header = StartText.Text;
-                SetTrayMenuIcon(_trayStartItem, paused ? LucideIcons.square : LucideIcons.circle_play);
+                SetTrayMenuIcon(_trayStartItem, paused ? AppIcons.Stop : AppIcons.CirclePlay);
                 PauseText.Text = Strings.Resume;
-                PauseIcon.Text = LucideIcons.play;
+                PauseIcon.Icon = AppIcons.Play;
                 _trayPauseItem.Header = Strings.Resume;
-                SetTrayMenuIcon(_trayPauseItem, LucideIcons.play);
+                SetTrayMenuIcon(_trayPauseItem, AppIcons.Play);
                 TimerDragHandle.Cursor = new Cursor(StandardCursorType.SizeAll);
                 RestartButton.IsEnabled = paused;
                 _trayRestartItem.IsEnabled = paused;
@@ -546,15 +550,15 @@ public partial class ScreenRecordWindow : Window, IDisposable
                 break;
 
             case ScreenRecordingStatus.Recording:
-                SetTrayIcon(LucideTrayIcon.CreateIconBytes(LucideIcons.video, DrawingColor.Red));
+                SetTrayIcon(TrayIconImage.CreateIconBytes(AppIcons.Video, DrawingColor.Red));
                 StartText.Text = Strings.ScreenRecordForm_Stop;
-                StartIcon.Text = LucideIcons.square;
+                StartIcon.Icon = AppIcons.Stop;
                 _trayStartItem.Header = Strings.ScreenRecordForm_Stop;
-                SetTrayMenuIcon(_trayStartItem, LucideIcons.square);
+                SetTrayMenuIcon(_trayStartItem, AppIcons.Stop);
                 PauseText.Text = Strings.Pause;
-                PauseIcon.Text = LucideIcons.pause;
+                PauseIcon.Icon = AppIcons.Pause;
                 _trayPauseItem.Header = Strings.Pause;
-                SetTrayMenuIcon(_trayPauseItem, LucideIcons.pause);
+                SetTrayMenuIcon(_trayPauseItem, AppIcons.Pause);
                 TimerDragHandle.Cursor = Cursor.Default;
                 RestartButton.IsEnabled = true;
                 _trayRestartItem.IsEnabled = true;
@@ -601,8 +605,10 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         double scaling = GetScreenScaling(_initialPosition);
         ConfigureGeometry(scaling);
-        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y);
-        ApplyToolWindowStyle();
+        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels);
+        WindowGeometryLog.Record(this, "Screen recording frame",
+            new DrawingRectangle(_initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels, 0, 0));
+        ApplyCaptureExclusion();
         ApplyNativeWindowRegion();
         Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
 
@@ -633,26 +639,46 @@ public partial class ScreenRecordWindow : Window, IDisposable
         try
         {
             int recordingLeft = Position.X + _frameLeftPixels + BorderPixels;
+            int recordingTop = Position.Y + _frameTopPixels + BorderPixels;
 
             _windowScaling = Math.Max(0.5, scaling);
 
             int frameWidthPixels = _captureWidth + BorderPixels * 2;
             int frameHeightPixels = _captureHeight + BorderPixels * 2;
             int toolbarWidthPixels = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
+            int toolbarHeightPixels = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
             int contentWidthPixels = Math.Max(frameWidthPixels, toolbarWidthPixels);
 
             _frameLeftPixels = (contentWidthPixels - frameWidthPixels) / 2;
             _toolbarLeftPixels = (contentWidthPixels - toolbarWidthPixels) / 2;
 
+            // Put the toolbar above the region when it would not fit below it on the screen.
+            bool toolbarAbove = false;
+            Avalonia.Platform.Screen? screen = Screens.ScreenFromPoint(new PixelPoint(recordingLeft, recordingTop));
+            if (screen != null)
+            {
+                PixelRect workingArea = screen.WorkingArea;
+                int frameTop = recordingTop - BorderPixels;
+                int frameBottom = frameTop + frameHeightPixels;
+                bool fitsBelow = frameBottom + ToolbarGapPixels + toolbarHeightPixels <= workingArea.Bottom;
+                bool fitsAbove = frameTop - ToolbarGapPixels - toolbarHeightPixels >= workingArea.Y;
+                toolbarAbove = !fitsBelow && fitsAbove;
+            }
+
+            _frameTopPixels = toolbarAbove ? toolbarHeightPixels + ToolbarGapPixels : 0;
+            _toolbarTopPixels = toolbarAbove ? 0 : frameHeightPixels + ToolbarGapPixels;
+
             double frameLeft = _frameLeftPixels / _windowScaling;
+            double frameTopOffset = _frameTopPixels / _windowScaling;
             double toolbarLeft = _toolbarLeftPixels / _windowScaling;
+            double toolbarTop = _toolbarTopPixels / _windowScaling;
             double frameWidth = frameWidthPixels / _windowScaling;
             double frameHeight = frameHeightPixels / _windowScaling;
             double gap = ToolbarGapPixels / _windowScaling;
 
             PixelPoint centeredPosition = new(
                 recordingLeft - _frameLeftPixels - BorderPixels,
-                Position.Y);
+                recordingTop - _frameTopPixels - BorderPixels);
 
             if (Position != centeredPosition)
             {
@@ -660,10 +686,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
             }
 
             Avalonia.Controls.Canvas.SetLeft(RegionBorder, frameLeft);
+            Avalonia.Controls.Canvas.SetTop(RegionBorder, frameTopOffset);
             RegionBorder.Width = frameWidth;
             RegionBorder.Height = frameHeight;
             Avalonia.Controls.Canvas.SetLeft(Toolbar, toolbarLeft);
-            Avalonia.Controls.Canvas.SetTop(Toolbar, frameHeight + gap);
+            Avalonia.Controls.Canvas.SetTop(Toolbar, toolbarTop);
 
             Width = contentWidthPixels / _windowScaling;
             Height = frameHeight + gap + ToolbarHeight;
@@ -684,7 +711,22 @@ public partial class ScreenRecordWindow : Window, IDisposable
         return Screens.ScreenFromPoint(point)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
     }
 
+    // Mark the frame as a tool window before it is first shown, and keep the style whenever Avalonia rewrites it.
+    // Tools such as MicaForEveryone put a system backdrop on new windows as they appear unless they are tool windows,
+    // which fills the transparent recording area.
     private void ApplyToolWindowStyle()
+    {
+        Win32Properties.AddWindowStylesCallback(this, (style, exStyle) => (style, exStyle | (uint)WindowStyles.WS_EX_TOOLWINDOW));
+
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+        if (handle != IntPtr.Zero)
+        {
+            WindowInfo info = new(handle);
+            info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
+        }
+    }
+
+    private void ApplyCaptureExclusion()
     {
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         if (handle == IntPtr.Zero)
@@ -692,8 +734,6 @@ public partial class ScreenRecordWindow : Window, IDisposable
             return;
         }
 
-        WindowInfo info = new(handle);
-        info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
         if (ExcludeFromCapture && !NativeMethods.SetWindowDisplayAffinity(handle, 0x11)) // WDA_EXCLUDEFROMCAPTURE
         {
             DebugHelper.WriteLine("Could not exclude the recording controls from capture. Win32 error: {0}", Marshal.GetLastWin32Error());
@@ -710,16 +750,17 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
-        int toolbarTop = frameHeight + ToolbarGapPixels;
+        int frameTop = _frameTopPixels;
+        int toolbarTop = _toolbarTopPixels;
         int toolbarWidth = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
-        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);
+        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, frameTop, _frameLeftPixels + frameWidth, frameTop + frameHeight);
         IntPtr apertureRegion = CreateRectRgn(
             _frameLeftPixels + BorderPixels,
-            BorderPixels,
+            frameTop + BorderPixels,
             _frameLeftPixels + frameWidth - BorderPixels,
-            frameHeight - BorderPixels);
+            frameTop + frameHeight - BorderPixels);
         IntPtr toolbarRegion = CreateRectRgn(
             _toolbarLeftPixels,
             toolbarTop,
@@ -773,7 +814,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             _dragWindowOrigin.Y + pointer.Y - _dragPointerOrigin.Y);
         DrawingRectangle recordingRegion = new(
             candidate.X + _frameLeftPixels + BorderPixels,
-            candidate.Y + BorderPixels,
+            candidate.Y + _frameTopPixels + BorderPixels,
             _captureWidth,
             _captureHeight);
 
@@ -823,12 +864,12 @@ public partial class ScreenRecordWindow : Window, IDisposable
         _trayIcon.Icon = new WindowIcon(stream);
     }
 
-    private void SetTrayMenuIcon(NativeMenuItem item, string glyph)
+    private void SetTrayMenuIcon(NativeMenuItem item, string icon)
     {
         DrawingColor color = ThemeManager.IsDarkTheme ? DrawingColor.White : DrawingColor.Black;
-        string cacheKey = $"{glyph}:{color.ToArgb()}";
+        string cacheKey = $"{icon}:{color.ToArgb()}";
         if (_trayMenuIconKeys.TryGetValue(item, out string? existing) && existing == cacheKey) return;
-        using SKBitmap bitmap = LucideTrayIcon.CreateImage(glyph, color);
+        using SKBitmap bitmap = TrayIconImage.CreateImage(icon, color);
         using MemoryStream stream = bitmap.GetStream();
         AvaloniaBitmap replacement = new(stream);
         AvaloniaBitmap? previous = item.Icon as AvaloniaBitmap;
@@ -842,11 +883,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
         bool waitingOrPaused = Status is ScreenRecordingStatus.Waiting or ScreenRecordingStatus.Paused;
         SetTrayMenuIcon(_trayStartItem,
             Status is ScreenRecordingStatus.Working or ScreenRecordingStatus.Recording or ScreenRecordingStatus.Paused
-                ? LucideIcons.square
-                : LucideIcons.circle_play);
-        SetTrayMenuIcon(_trayPauseItem, waitingOrPaused ? LucideIcons.play : LucideIcons.pause);
-        SetTrayMenuIcon(_trayRestartItem, LucideIcons.rotate_ccw);
-        SetTrayMenuIcon(_trayAbortItem, LucideIcons.x);
+                ? AppIcons.Stop
+                : AppIcons.CirclePlay);
+        SetTrayMenuIcon(_trayPauseItem, waitingOrPaused ? AppIcons.Play : AppIcons.Pause);
+        SetTrayMenuIcon(_trayRestartItem, AppIcons.Reset);
+        SetTrayMenuIcon(_trayAbortItem, AppIcons.Close);
     }
 
     private void DisposeTrayMenuIcons()

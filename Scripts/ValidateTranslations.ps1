@@ -87,6 +87,8 @@ $projects = @(
             'GIFQuality_'
             'HotkeyType_'
             'ImageDestination_'
+            'ImagePreviewLocation_'
+            'ImagePreviewVisibility_'
             'ImgurThumbnailType_'
             'PastebinExpiration_'
             'PastebinPrivacy_'
@@ -95,12 +97,15 @@ $projects = @(
             'PrivateBinFormat_'
             'ProxyMethod_'
             'RegionCaptureAction_'
+            'RegionCaptureMagnifierScrollAction_'
             'ScrollMethod_'
             'SupportedLanguage_'
+            'TaskViewMode_'
             'TextDestination_'
             'ThumbnailTitleLocation_'
             'ThumbnailViewClickAction_'
             'ToastClickAction_'
+            'ToastWindowMonitor_'
             'UpdateChannel_'
             'URLSharingServices_'
             'UrlShortenerType_'
@@ -129,6 +134,18 @@ $projects = @(
             'ImageEffectPropertyDescription_'
             'ImageEffectEnum_'
         )
+    }
+    [pscustomobject]@{
+        Name = 'ShareX.PhotoEditor'
+        ResourceBaseName = 'ShareX.PhotoEditor.Localization.Strings'
+        DynamicPrefixes = @(
+            'Enum_'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'ShareX.PixelEditor'
+        ResourceBaseName = 'ShareX.PixelEditor.Localization.Strings'
+        DynamicPrefixes = @()
     }
     [pscustomobject]@{
         Name = 'ShareX.ScreenCaptureLib'
@@ -490,6 +507,10 @@ foreach ($project in $projects)
             {
                 Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' is empty."
             }
+            if ($localized.Values[$key] -match '\\[rn]')
+            {
+                Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' contains a literal \n or \r escape; use a real line break."
+            }
             if (-not (Test-SequenceEqual (Get-FormatPlaceholders $default.Values[$key]) (Get-FormatPlaceholders $localized.Values[$key])))
             {
                 Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' has different format placeholders."
@@ -537,6 +558,10 @@ foreach ($project in $projects)
             if ([string]::IsNullOrWhiteSpace($default.Values[$key]))
             {
                 Add-ValidationError "$($project.Name)/Strings.resx: '$key' is empty."
+            }
+            if ($default.Values[$key] -match '\\[rn]')
+            {
+                Add-ValidationError "$($project.Name)/Strings.resx: '$key' contains a literal \n or \r escape; use a real line break."
             }
         }
 

@@ -169,6 +169,15 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Open in photo editor.
+        /// </summary>
+        public static string AfterCaptureTasks_OpenInPhotoEditor {
+            get {
+                return ResourceManager.GetString("AfterCaptureTasks_OpenInPhotoEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Perform actions.
         /// </summary>
         public static string AfterCaptureTasks_PerformActions {
@@ -1789,6 +1798,15 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ruler.
+        /// </summary>
+        public static string HotkeyType_ClassicRuler {
+            get {
+                return ResourceManager.GetString("HotkeyType_ClassicRuler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upload from clipboard.
         /// </summary>
         public static string HotkeyType_ClipboardUpload {
@@ -2203,6 +2221,15 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pixel editor.
+        /// </summary>
+        public static string HotkeyType_PixelEditor {
+            get {
+                return ResourceManager.GetString("HotkeyType_PixelEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capture entire screen.
         /// </summary>
         public static string HotkeyType_PrintScreen {
@@ -2248,7 +2275,16 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ruler.
+        ///   Looks up a localized string similar to Capture region (Transparent).
+        /// </summary>
+        public static string HotkeyType_RectangleTransparent {
+            get {
+                return ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Measure.
         /// </summary>
         public static string HotkeyType_Ruler {
             get {
@@ -2496,6 +2532,51 @@ namespace ShareX.HelpersLib.Localization {
         public static string ImageHelpers_Image_files {
             get {
                 return ResourceManager.GetString("ImageHelpers_Image_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        public static string ImagePreviewLocation_Bottom {
+            get {
+                return ResourceManager.GetString("ImagePreviewLocation_Bottom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Side.
+        /// </summary>
+        public static string ImagePreviewLocation_Side {
+            get {
+                return ResourceManager.GetString("ImagePreviewLocation_Side", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automatic.
+        /// </summary>
+        public static string ImagePreviewVisibility_Automatic {
+            get {
+                return ResourceManager.GetString("ImagePreviewVisibility_Automatic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide.
+        /// </summary>
+        public static string ImagePreviewVisibility_Hide {
+            get {
+                return ResourceManager.GetString("ImagePreviewVisibility_Hide", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show.
+        /// </summary>
+        public static string ImagePreviewVisibility_Show {
+            get {
+                return ResourceManager.GetString("ImagePreviewVisibility_Show", resourceCulture);
             }
         }
         
@@ -3130,6 +3211,15 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Capture selected region.
+        /// </summary>
+        public static string RegionCaptureAction_CaptureSelection {
+            get {
+                return ResourceManager.GetString("RegionCaptureAction_CaptureSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do nothing.
         /// </summary>
         public static string RegionCaptureAction_None {
@@ -3162,6 +3252,24 @@ namespace ShareX.HelpersLib.Localization {
         public static string RegionCaptureAction_SwapToolType {
             get {
                 return ResourceManager.GetString("RegionCaptureAction_SwapToolType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resize magnifier.
+        /// </summary>
+        public static string RegionCaptureMagnifierScrollAction_Resize {
+            get {
+                return ResourceManager.GetString("RegionCaptureMagnifierScrollAction_Resize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zoom magnifier.
+        /// </summary>
+        public static string RegionCaptureMagnifierScrollAction_Zoom {
+            get {
+                return ResourceManager.GetString("RegionCaptureMagnifierScrollAction_Zoom", resourceCulture);
             }
         }
         
@@ -3625,6 +3733,24 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to List view.
+        /// </summary>
+        public static string TaskViewMode_ListView {
+            get {
+                return ResourceManager.GetString("TaskViewMode_ListView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thumbnail view.
+        /// </summary>
+        public static string TaskViewMode_ThumbnailView {
+            get {
+                return ResourceManager.GetString("TaskViewMode_ThumbnailView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom text uploader.
         /// </summary>
         public static string TextDestination_CustomTextUploader {
@@ -3832,6 +3958,24 @@ namespace ShareX.HelpersLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active monitor.
+        /// </summary>
+        public static string ToastWindowMonitor_ActiveMonitor {
+            get {
+                return ResourceManager.GetString("ToastWindowMonitor_ActiveMonitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary monitor.
+        /// </summary>
+        public static string ToastWindowMonitor_PrimaryMonitor {
+            get {
+                return ResourceManager.GetString("ToastWindowMonitor_PrimaryMonitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ASCII.
         /// </summary>
         public static string Translator_ASCII {
@@ -3873,15 +4017,6 @@ namespace ShareX.HelpersLib.Localization {
         public static string Translator_Text {
             get {
                 return ResourceManager.GetString("Translator_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Dev.
-        /// </summary>
-        public static string UpdateChannel_Dev {
-            get {
-                return ResourceManager.GetString("UpdateChannel_Dev", resourceCulture);
             }
         }
         

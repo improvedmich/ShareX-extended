@@ -47,10 +47,12 @@ namespace ShareX.ScreenCaptureLib
         private int bestMatchCount, bestMatchIndex, bestIgnoreBottomOffset;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
+        private readonly RegionCaptureOptions regionCaptureOptions;
 
-        public ScrollingCaptureManager(ScrollingCaptureOptions options)
+        public ScrollingCaptureManager(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions = null)
         {
             Options = options;
+            this.regionCaptureOptions = regionCaptureOptions;
         }
 
         public void Dispose()
@@ -212,7 +214,13 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task<bool> SelectWindowAsync()
         {
-            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(new RegionCaptureOptions());
+            // Window detection must stay on to select a window to scroll, so only the active monitor setting is taken from the user's region capture options.
+            RegionCaptureOptions selectionOptions = new RegionCaptureOptions()
+            {
+                ActiveMonitorMode = regionCaptureOptions != null && regionCaptureOptions.ActiveMonitorMode
+            };
+
+            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(selectionOptions);
             if (selection == null)
             {
                 return false;
@@ -262,6 +270,16 @@ namespace ShareX.ScreenCaptureLib
                 status = ScrollingCaptureStatus.Successful;
 
                 return currentImage.Copy();
+            }
+
+            // Rows of both images are addressed with the result's stride below. Each capture is clipped to the current screen, so
+            // a display that changes size mid-capture gives a frame that cannot be stitched on, and comparing it would read past
+            // its pixel buffer. It is treated like a frame with no match: the capture ends with what it has.
+            if (currentImage.Width != result.Width || currentImage.Height > result.Height)
+            {
+                status = ScrollingCaptureStatus.Failed;
+
+                return null;
             }
 
             int matchCount = 0;

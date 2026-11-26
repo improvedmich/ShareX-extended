@@ -700,6 +700,15 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drag on the preview to crop.
+        /// </summary>
+        public static string AnimatedGifTrimmer_CropHint {
+            get {
+                return ResourceManager.GetString("AnimatedGifTrimmer_CropHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This cut starts on a frame that needs earlier frames. Choose another start frame for lossless export..
         /// </summary>
         public static string AnimatedGifTrimmer_DependentFrame {
@@ -844,6 +853,24 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reset crop and size.
+        /// </summary>
+        public static string AnimatedGifTrimmer_ResetCrop {
+            get {
+                return ResourceManager.GetString("AnimatedGifTrimmer_ResetCrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output size.
+        /// </summary>
+        public static string AnimatedGifTrimmer_Size {
+            get {
+                return ResourceManager.GetString("AnimatedGifTrimmer_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save the trimmed GIF with a different file name or in another folder..
         /// </summary>
         public static string AnimatedGifTrimmer_SourceOverwrite {
@@ -898,7 +925,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Image saved.\nFile path: {0}.
+        ///   Looks up a localized string similar to Image saved. File path: {0}.
         /// </summary>
         public static string BackgroundRemoverViewModel_Image_saved_file_path {
             get {
@@ -1177,6 +1204,42 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distance: {0:0.00} px | Angle: {1:0.00}°.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Distance {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Distance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0} | Y: {1} | Right: {2} | Bottom: {3}.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Position {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width: {0} px | Height: {1} px | Area: {2} px | Perimeter: {3} px.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Size {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Ruler.
+        /// </summary>
+        public static string ClassicRulerWindow_Title {
+            get {
+                return ResourceManager.GetString("ClassicRulerWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clipboard content.
         /// </summary>
         public static string ClipboardViewerViewModel_Clipboard_content {
@@ -1231,7 +1294,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This clipboard format could not be previewed.\n\n{0}.
+        ///   Looks up a localized string similar to This clipboard format could not be previewed.  {0}.
         /// </summary>
         public static string ClipboardViewerViewModel_Preview_failed {
             get {
@@ -1267,7 +1330,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to read the clipboard\n{0}.
+        ///   Looks up a localized string similar to Unable to read the clipboard {0}.
         /// </summary>
         public static string ClipboardViewerViewModel_Unable_read_clipboard {
             get {
@@ -4120,7 +4183,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to read metadata\n{0}.
+        ///   Looks up a localized string similar to Unable to read metadata {0}.
         /// </summary>
         public static string MetadataViewModel_Unable_read {
             get {
@@ -4129,7 +4192,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to strip metadata\n{0}.
+        ///   Looks up a localized string similar to Unable to strip metadata {0}.
         /// </summary>
         public static string MetadataViewModel_Unable_strip {
             get {
@@ -4957,24 +5020,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} language is not available in this system for OCR..
-        /// </summary>
-        public static string OCRHelper_Language_unavailable {
-            get {
-                return ResourceManager.GetString("OCRHelper_Language_unavailable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Optical character recognition is only available with Windows version {0} or newer..
-        /// </summary>
-        public static string OCRHelper_Requires_Windows_version {
-            get {
-                return ResourceManager.GetString("OCRHelper_Requires_Windows_version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bing.
         /// </summary>
         public static string OCROptions_Bing {
@@ -5056,6 +5101,15 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied to clipboard.
+        /// </summary>
+        public static string OCRWindow_Copied_to_clipboard {
+            get {
+                return ResourceManager.GetString("OCRWindow_Copied_to_clipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copy all.
         /// </summary>
         public static string OCRWindow_Copy_all {
@@ -5083,15 +5137,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Language.
-        /// </summary>
-        public static string OCRWindow_Language {
-            get {
-                return ResourceManager.GetString("OCRWindow_Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string OCRWindow_Name {
@@ -5110,11 +5155,11 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OCR help.
+        ///   Looks up a localized string similar to No text found.
         /// </summary>
-        public static string OCRWindow_OCR_help {
+        public static string OCRWindow_No_text_found {
             get {
-                return ResourceManager.GetString("OCRWindow_OCR_help", resourceCulture);
+                return ResourceManager.GetString("OCRWindow_No_text_found", resourceCulture);
             }
         }
         
@@ -5124,15 +5169,6 @@ namespace ShareX.Tools.Localization {
         public static string OCRWindow_Open_service {
             get {
                 return ResourceManager.GetString("OCRWindow_Open_service", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recognition.
-        /// </summary>
-        public static string OCRWindow_Recognition {
-            get {
-                return ResourceManager.GetString("OCRWindow_Recognition", resourceCulture);
             }
         }
         
@@ -5160,15 +5196,6 @@ namespace ShareX.Tools.Localization {
         public static string OCRWindow_Result {
             get {
                 return ResourceManager.GetString("OCRWindow_Result", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Scale factor.
-        /// </summary>
-        public static string OCRWindow_Scale_factor {
-            get {
-                return ResourceManager.GetString("OCRWindow_Scale_factor", resourceCulture);
             }
         }
         
@@ -5209,11 +5236,11 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Services.
+        ///   Looks up a localized string similar to Separate paragraphs.
         /// </summary>
-        public static string OCRWindow_Services {
+        public static string OCRWindow_Separate_paragraphs {
             get {
-                return ResourceManager.GetString("OCRWindow_Services", resourceCulture);
+                return ResourceManager.GetString("OCRWindow_Separate_paragraphs", resourceCulture);
             }
         }
         
@@ -6253,7 +6280,7 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShareX - Ruler.
+        ///   Looks up a localized string similar to ShareX - Measure.
         /// </summary>
         public static string RulerWindow_ShareX_Ruler {
             get {
@@ -6397,6 +6424,15 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Average bitrate.
+        /// </summary>
+        public static string VideoConverterWindow_Average_bitrate {
+            get {
+                return ResourceManager.GetString("VideoConverterWindow_Average_bitrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browse....
         /// </summary>
         public static string VideoConverterWindow_Browse {
@@ -6447,6 +6483,15 @@ namespace ShareX.Tools.Localization {
         public static string VideoConverterWindow_File_name {
             get {
                 return ResourceManager.GetString("VideoConverterWindow_File_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File size.
+        /// </summary>
+        public static string VideoConverterWindow_File_size {
+            get {
+                return ResourceManager.GetString("VideoConverterWindow_File_size", resourceCulture);
             }
         }
         
@@ -6510,6 +6555,24 @@ namespace ShareX.Tools.Localization {
         public static string VideoConverterWindow_Quality {
             get {
                 return ResourceManager.GetString("VideoConverterWindow_Quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resolution.
+        /// </summary>
+        public static string VideoConverterWindow_Resolution {
+            get {
+                return ResourceManager.GetString("VideoConverterWindow_Resolution", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Result.
+        /// </summary>
+        public static string VideoConverterWindow_Result {
+            get {
+                return ResourceManager.GetString("VideoConverterWindow_Result", resourceCulture);
             }
         }
         

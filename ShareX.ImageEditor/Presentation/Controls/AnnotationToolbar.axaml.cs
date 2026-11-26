@@ -30,6 +30,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
@@ -52,8 +53,27 @@ public partial class AnnotationToolbar : UserControl
     public static readonly StyledProperty<CornerRadius> MainToolbarCornerRadiusProperty =
         AvaloniaProperty.Register<AnnotationToolbar, CornerRadius>(nameof(MainToolbarCornerRadius), new CornerRadius(0, 0, 4, 4));
 
+    public static readonly StyledProperty<bool> IsCompactProperty =
+        AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(IsCompact));
+
+    public static readonly StyledProperty<bool> InlineToolOptionsProperty =
+        AvaloniaProperty.Register<AnnotationToolbar, bool>(nameof(InlineToolOptions));
+
     private IAnnotationToolbarAdapter? _toolbarAdapter;
     private ContentControl _mainToolbarLeadingContentHost = null!;
+    // Room the single row needs beyond its contents: the separator before the tool options and the toolbar padding.
+    private const double InlineToolOptionsExtraWidth = 12;
+    // Moving back to a single row needs this much spare room, so a toolbar right at the limit does not flip back and forth.
+    private const double InlineToolOptionsHysteresis = 8;
+
+    private readonly StackPanel _mainToolbarRow;
+    private readonly Panel _inlineToolOptionsArea;
+    private readonly ContentControl _inlineToolOptionsHost;
+    private readonly ScrollViewer _toolOptionsScrollViewer;
+    private readonly Control _toolOptionsPanel;
+    private readonly ContentControl _toolOptionsOverflowHost;
+    private readonly Popup _toolOptionsOverflowPopup;
+    private bool _inlineToolOptionsFit = true;
 
     public event EventHandler<IBrush>? ColorChanged;
     public event EventHandler<IBrush>? FillColorChanged;
@@ -71,7 +91,10 @@ public partial class AnnotationToolbar : UserControl
     public event EventHandler<bool>? TextItalicChanged;
     public event EventHandler<bool>? ShadowChanged;
     public event EventHandler? ShadowSettingsChanged;
+    public event EventHandler<bool>? ArrowRoundedCornersChanged;
+    public event EventHandler<bool>? FreehandArrowChanged;
     public event EventHandler<bool>? SpeechBalloonTailChanged;
+    public event EventHandler<bool>? SpeechBalloonAutoSizeChanged;
     public event EventHandler<bool>? EffectEllipseChanged;
     public event EventHandler<Control>? FavoriteEffectsMenuRequested;
 
@@ -79,7 +102,15 @@ public partial class AnnotationToolbar : UserControl
     {
         InitializeComponent();
         _mainToolbarLeadingContentHost = this.FindControl<ContentControl>("MainToolbarLeadingContentHost")!;
+        _mainToolbarRow = this.FindControl<StackPanel>("MainToolbarRow")!;
+        _inlineToolOptionsArea = this.FindControl<Panel>("InlineToolOptionsArea")!;
+        _inlineToolOptionsHost = this.FindControl<ContentControl>("InlineToolOptionsHost")!;
+        _toolOptionsScrollViewer = this.FindControl<ScrollViewer>("ToolOptionsScrollViewer")!;
+        _toolOptionsPanel = this.FindControl<StackPanel>("ToolOptionsPanel")!;
+        _toolOptionsOverflowHost = this.FindControl<ContentControl>("ToolOptionsOverflowHost")!;
+        _toolOptionsOverflowPopup = this.FindControl<Popup>("ToolOptionsOverflowPopup")!;
         WireCompatibilityEvents();
+        LayoutUpdated += OnLayoutUpdated;
         DataContextChanged += OnDataContextChanged;
         Loaded += OnLoaded;
         Unloaded += OnUnloaded;
@@ -109,6 +140,27 @@ public partial class AnnotationToolbar : UserControl
         set => SetValue(MainToolbarCornerRadiusProperty, value);
     }
 
+    /// <summary>
+    /// Uses the dense layout of the ShareX 21 region capture toolbar:
+    /// small flat buttons, square corners and tight spacing.
+    /// </summary>
+    public bool IsCompact
+    {
+        get => GetValue(IsCompactProperty);
+        set => SetValue(IsCompactProperty, value);
+    }
+
+    /// <summary>
+    /// Shows the tool options at the end of the main toolbar row instead of in a second row below it,
+    /// like the single toolbar strip of the ShareX 21 image editor. When they do not fit, a button at the
+    /// end of the row opens them in a popup, so the toolbar stays one row high.
+    /// </summary>
+    public bool InlineToolOptions
+    {
+        get => GetValue(InlineToolOptionsProperty);
+        set => SetValue(InlineToolOptionsProperty, value);
+    }
+
     public Control? MainToolbarLeadingContent
     {
         get => _mainToolbarLeadingContentHost.Content as Control;
@@ -129,6 +181,96 @@ public partial class AnnotationToolbar : UserControl
         {
             flyout.ShowAt(fileButton);
         }
+    }
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == IsCompactProperty)
+        {
+            PseudoClasses.Set(":compact", change.GetNewValue<bool>());
+        }
+        else if (change.Property == InlineToolOptionsProperty || change.Property == ShowToolOptionsProperty)
+        {
+            UpdateToolOptionsPlacement();
+        }
+    }
+
+    private void OnLayoutUpdated(object? sender, EventArgs e)
+    {
+        CheckInlineToolOptionsFit();
+    }
+
+    private void CheckInlineToolOptionsFit()
+    {
+        if (!InlineToolOptions || !ShowToolOptions)
+        {
+            return;
+        }
+
+        bool isInline = _inlineToolOptionsHost.Content == _toolOptionsPanel;
+        bool isInPopup = _toolOptionsOverflowHost.Content == _toolOptionsPanel;
+
+        // Without visible tool options there is nothing to measure, so keep the current placement.
+        if (DataContext is not IAnnotationToolbarAdapter { ShowToolOptionsSeparator: true } ||
+            (!isInPopup && !_toolOptionsPanel.IsEffectivelyVisible))
+        {
+            return;
+        }
+
+        double available = double.IsFinite(MaxWidth) ? MaxWidth : (Parent as Control)?.Bounds.Width ?? double.PositiveInfinity;
+        if (!double.IsFinite(available) || available <= 0)
+        {
+            return;
+        }
+
+        // A closed popup does not lay out its content, so measure the options here to get their width.
+        if (isInPopup && !_toolOptionsPanel.IsAttachedToVisualTree())
+        {
+            _toolOptionsPanel.Measure(Size.Infinity);
+        }
+
+        // The main row measures its contents at full width inside its scroll viewer, so these are the natural widths
+        // wherever the tool options currently are.
+        double mainRowWidth = _mainToolbarRow.DesiredSize.Width - (isInline ? _inlineToolOptionsArea.DesiredSize.Width : 0);
+        double needed = mainRowWidth + _toolOptionsPanel.DesiredSize.Width + InlineToolOptionsExtraWidth;
+        bool fits = isInline ? needed <= available : needed + InlineToolOptionsHysteresis <= available;
+
+        if (fits != _inlineToolOptionsFit)
+        {
+            _inlineToolOptionsFit = fits;
+            // Moving the panel during a layout pass would start another one, so do it afterwards.
+            Dispatcher.UIThread.Post(UpdateToolOptionsPlacement);
+        }
+    }
+
+    private void UpdateToolOptionsPlacement()
+    {
+        bool inline = InlineToolOptions && ShowToolOptions && _inlineToolOptionsFit;
+        bool overflow = InlineToolOptions && ShowToolOptions && !_inlineToolOptionsFit;
+        PseudoClasses.Set(":inline-options", inline);
+        PseudoClasses.Set(":overflow-options", overflow);
+
+        if (!overflow)
+        {
+            _toolOptionsOverflowPopup.IsOpen = false;
+        }
+
+        // The same panel moves between its hosts, so its named pickers and their event wiring stay as they are.
+        ContentControl target = inline ? _inlineToolOptionsHost : overflow ? _toolOptionsOverflowHost : _toolOptionsScrollViewer;
+        if (target.Content != _toolOptionsPanel)
+        {
+            _inlineToolOptionsHost.Content = null;
+            _toolOptionsOverflowHost.Content = null;
+            _toolOptionsScrollViewer.Content = null;
+            target.Content = _toolOptionsPanel;
+        }
+    }
+
+    private void OnToolOptionsOverflowClick(object? sender, RoutedEventArgs e)
+    {
+        _toolOptionsOverflowPopup.IsOpen = !_toolOptionsOverflowPopup.IsOpen;
     }
 
     private void InitializeComponent()
@@ -236,6 +378,13 @@ public partial class AnnotationToolbar : UserControl
 
     private void OnToolbarAdapterPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
+        // A different tool or option can change how wide the options are, and options in a closed popup
+        // do not cause a layout pass that would check again.
+        if (_toolOptionsOverflowHost.Content == _toolOptionsPanel)
+        {
+            Dispatcher.UIThread.Post(CheckInlineToolOptionsFit);
+        }
+
         if (e.PropertyName is nameof(IAnnotationToolbarAdapter.ShadowColorBrush)
             or nameof(IAnnotationToolbarAdapter.ShadowBlurRadius)
             or nameof(IAnnotationToolbarAdapter.ShadowOpacity)
@@ -361,12 +510,39 @@ public partial class AnnotationToolbar : UserControl
         }
     }
 
+    private void OnArrowRoundedCornersClick(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is IAnnotationToolbarAdapter toolbar)
+        {
+            toolbar.ArrowRoundedCorners = !toolbar.ArrowRoundedCorners;
+            ArrowRoundedCornersChanged?.Invoke(this, toolbar.ArrowRoundedCorners);
+        }
+    }
+
+    private void OnFreehandArrowClick(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is IAnnotationToolbarAdapter toolbar)
+        {
+            toolbar.FreehandArrow = !toolbar.FreehandArrow;
+            FreehandArrowChanged?.Invoke(this, toolbar.FreehandArrow);
+        }
+    }
+
     private void OnSpeechBalloonTailClick(object? sender, RoutedEventArgs e)
     {
         if (DataContext is IAnnotationToolbarAdapter toolbar)
         {
             toolbar.SpeechBalloonTail = !toolbar.SpeechBalloonTail;
             SpeechBalloonTailChanged?.Invoke(this, toolbar.SpeechBalloonTail);
+        }
+    }
+
+    private void OnSpeechBalloonAutoSizeClick(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is IAnnotationToolbarAdapter toolbar)
+        {
+            toolbar.SpeechBalloonAutoSize = !toolbar.SpeechBalloonAutoSize;
+            SpeechBalloonAutoSizeChanged?.Invoke(this, toolbar.SpeechBalloonAutoSize);
         }
     }
 

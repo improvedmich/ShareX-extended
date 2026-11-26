@@ -1,30 +1,52 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:local="using:ShareX.ImageEditor.Presentation.Controls"
              mc:Ignorable="d" d:DesignWidth="120" d:DesignHeight="40"
              x:Class="ShareX.ImageEditor.Presentation.Controls.ZoomPickerDropdown"
              x:Name="ZoomPickerDropdownRoot">
+    <UserControl.Styles>
+        <Style Selector="Button#DropdownButton">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinWidth" Value="80"/>
+        </Style>
+
+        <Style Selector="controls|IconPresenter#ZoomIcon">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="0,0,6,0"/>
+        </Style>
+
+        <Style Selector="local|ZoomPickerDropdown:compact">
+            <Style Selector="^ Button#DropdownButton">
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="MinWidth" Value="0"/>
+                <Setter Property="Padding" Value="6,0,2,0"/>
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+
+            <Style Selector="^ controls|IconPresenter#ZoomIcon">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="0,0,4,0"/>
+            </Style>
+        </Style>
+    </UserControl.Styles>
 
     <Grid>
         <!-- Dropdown Button -->
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                Height="40"
-                MinWidth="80"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,*,Auto">
                 <!-- Zoom Icon -->
-                <TextBlock Grid.Column="0"
-                           Text="{x:Static theming:EditorIcons.Zoom}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="16"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"
-                           Margin="0,0,6,0"/>
+                <controls:IconPresenter x:Name="ZoomIcon"
+                                        Grid.Column="0"
+                                        Icon="{x:Static theming:EditorIcons.Zoom}"
+                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                        VerticalAlignment="Center"/>
 
                 <!-- Zoom Display -->
                 <TextBlock Grid.Column="1"
@@ -34,17 +56,15 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
 
-                <!-- Chevron Icon (Lucide ChevronDown) -->
-                <TextBlock Grid.Column="2"
-                           Classes="dropdown-chevron"
-                           Classes.open="{Binding #ZoomPopup.IsOpen}"
-                           Text="{x:Static theming:EditorIcons.ChevronDown}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="10"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"
-                           Margin="8,0,4,0"/>
+                <!-- Chevron icon -->
+                <controls:IconPresenter Grid.Column="2"
+                                        Classes="dropdown-chevron"
+                                        Classes.open="{Binding #ZoomPopup.IsOpen}"
+                                        Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                        FontSize="10"
+                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                        VerticalAlignment="Center"
+                                        Margin="8,0,4,0"/>
             </Grid>
         </Button>
 

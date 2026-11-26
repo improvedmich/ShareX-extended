@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>Efter upload</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Desuden</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Annuller</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>Filnavn</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Kopiér fil</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Lægger den gemte fil i udklipsholderen.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Kopiér filsti</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Kopierer stien til den gemte fil.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Kopiér mappesti</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Kopierer mappen med den gemte fil.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Kopiér billede</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Lægger billedet i udklipsholderen.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>Kopiér URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Uploader den og kopierer derefter linket.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>De nødvendige trin følger af dit mål. Tilføj de ekstra handlinger, du ønsker.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>Hvad vil du have i udklipsholderen?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Efter optagelse</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>Ingen billedeksempel tilgængelig</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Påkrævet for dette mål</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Gennemgå det optagede indhold, og vælg, hvad der skal ske derefter.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Vis altid rullepaneler i fuld bredde</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Program</value>
   </data>
@@ -358,6 +403,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Udklipsformat</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Kompakt tilstand</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Brugerdefineret sti til genvejstastkonfiguration</value>
   </data>
@@ -381,6 +429,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>Beskrivelse</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>Beskrivelsen må ikke være tom.</value>
   </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>Udviklertilstand</value>
@@ -460,6 +511,9 @@
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Format</value>
   </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>Formatet må ikke være tomt.</value>
+  </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>Generelt</value>
   </data>
@@ -471,6 +525,24 @@
   </data>
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Interval for gentagelse af genvejstast (millisekunder)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Ikonpakke:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Klassisk</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Moderne</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Ikoner</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Synlighed af billedeksempel:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Placering af billedeksempel:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Billedudskriftsindstillinger...</value>
@@ -504,6 +576,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Lys</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listevisning</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Hovedvindue</value>
@@ -598,6 +673,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Gem</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Gør tekst i optagelser søgbar i historikken</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Gem seneste opgaver</value>
   </data>
@@ -625,11 +703,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Vis Udklipsvisningen</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Vis kolonner</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Vis knappen ”Rediger i ShareX-billedredigering” i Stifinders hurtigmenu</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Vis knappen ”Rediger i ShareX-fotoredigering” i Stifinders hurtigmenu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Bed om bekræftelse før sletning af filer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Tærskelværdi for advarsel om stor fil (MB)</value>
@@ -667,6 +751,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Grænse for samtidige uploads:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Mellemrum</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompakt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menuer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menuer:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Eksempelvisning:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Indstillingsvinduer:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Sidepanel</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Sidepanel:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Værktøjsmenuer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Værktøjsmenuer:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -675,6 +792,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Mønster for undermappe:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Visningstilstand for opgaver:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1189,6 +1309,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>Upload fejlfindingsloggen?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>Rapporten blev kopieret til udklipsholderen.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>Kopiér til udklipsholder</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>Vedhæft denne rapport, når du rapporterer et problem med skalering, flere skærme eller optagelser det forkerte sted.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>Skærmlayout</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>Musemarkør</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>Primær skærm</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>Opdater</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>Proceslinje eller appbjælke</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>Gem som .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>Gem skærmdiagnosticering</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>Rapporten blev gemt i {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>Tekstfil</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - Skærmdiagnosticering</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>Slip her</value>
   </data>
@@ -1215,6 +1374,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Det var ikke muligt at gemme indstillingerne</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Mind mig ikke om det igen</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Annuller</value>
@@ -1325,6 +1487,21 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Genvejstastindstillinger</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Du kan altid ændre dette under programindstillinger.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Farverige, detaljerede ikoner i en klassisk stil.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Enkle stregikoner, der følger dit temas farver.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX har nye ikoner. Vælg det udseende, du foretrækker.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Vælg dine ikoner</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Det var ikke muligt at skrive billedet til stien:</value>
   </data>
@@ -1403,6 +1580,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Tag billede</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Lineal...</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Udklipsholdervisning...</value>
   </data>
@@ -1429,6 +1609,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>Skærmdiagnosticering...</value>
   </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Donér...</value>
@@ -1526,6 +1709,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netværksovervågning...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Ny</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Ingen forudindstillinger for billedeffekter</value>
   </data>
@@ -1544,6 +1730,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fastgør på skærmen...</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Pixel-editor...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR-kode...</value>
   </data>
@@ -1553,6 +1742,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Område...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Område (gennemsigtigt)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Fjernlagringsbrowser...</value>
   </data>
@@ -1560,7 +1752,7 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
     <value>Genstart som administrator</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Lineal...</value>
+    <value>Måling...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Skærmfarvevælger...</value>
@@ -1570,6 +1762,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Skærmoptagelse (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Kun én gang</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Skærmbilledmappe...</value>
@@ -1676,6 +1871,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Forskøn billede...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Ryd opgavelisten</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Ryd miniaturevisningen</value>
   </data>
@@ -1711,6 +1909,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Rediger i fotoredigering...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Rediger i Pixel-editor...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fil</value>
@@ -1837,6 +2038,12 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Stop upload</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Skift til listevisning</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Skift til miniaturevisning</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Tekst</value>
@@ -2095,23 +2302,20 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kom i gang</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Vælg, hvordan appen skal se ud og føles.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Gør ShareX til dit eget</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Bygget til Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Rummelig</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Tak, fordi du downloadede ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Brug systemindstilling</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Velkommen til ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Optag, rediger og del alt på din måde.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Vil du tilføje til den brugerdefinerede uploader "{0}"?</value>
@@ -2137,6 +2341,33 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Genvejstaster har aktiveret.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Forløbet</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Filnavn</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historik</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>I kø</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Fremskridt</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Resterende</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Hastighed</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Uploaden blev fuldført. URL: {0}</value>
@@ -2213,11 +2444,17 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Kopiér billedet automatisk til Udklipsholder</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Udvid arbejdsområdet automatisk, når tekst eller figurer går ud over kanten</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Forøg nummer automatisk:</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Længde for automatisk URL-forkortelse</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Tilpas vinduets størrelse til billedet</value>
   </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>Automatisk JPEG</value>
@@ -2245,6 +2482,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Annuller</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Fyldfarve til tilføjet arbejdsområde:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Optagelse</value>
@@ -2291,6 +2531,12 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Luk OCR-vinduet efter at en tjenestelink er blevet åbnet</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Kompakt værktøjslinje til billedredigering</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Kompakt værktøjslinje til områdeoptagelse</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Konfigurér...</value>
   </data>
@@ -2305,9 +2551,6 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Tilpas værktøjslinje...</value>
-  </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Standardsprog:</value>
   </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Fjern inputfil</value>
@@ -2362,6 +2605,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Filtypenavn:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Bruges kun af FFmpeg-optageren. Slå den indbyggede skærmoptager fra for at ændre dette.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP-konto:</value>
@@ -2495,6 +2741,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Handling ved midterklik:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Skærm:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Museklik 4:</value>
   </data>
@@ -2507,6 +2756,12 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Indstillinger for musemarkering...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Musehjul:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Hvad rulning gør ved forstørrelsesglasset. Hold Ctrl nede, mens du ruller, for at gøre det modsatte.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Flyt ned</value>
   </data>
@@ -2515,6 +2770,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Flyt op</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Tilstand med flere områder</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Navn</value>
@@ -2585,6 +2843,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Brug den indbyggede skærmoptager</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR-tonemapping</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Kræv hardwarekodning af video</value>
   </data>
@@ -2626,12 +2887,6 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-hjælp...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR-sprog er ikke tilgængelige</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Anvend kun effekter ved områdeoptagelse</value>
@@ -2795,6 +3050,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Handling ved højreklik:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Højreklik sletter formen under markøren</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Højreklik for at indsætte et token for in- eller outputfil.</value>
   </data>
@@ -2930,8 +3188,17 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Tidszon:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Skærm {0} (ikke tilsluttet)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Skærm {0}: {1} ({2} ved {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Pop op-meddelelse</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Størrelse på værktøjslinjeknapper (pixels):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Værktøjer</value>
@@ -2981,6 +3248,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Brug brugerdefineret tidszon</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Brug brugerdefineret størrelse på værktøjslinjeknapper</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Brug fast varighed</value>
   </data>
@@ -3010,6 +3280,18 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave-lyd</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP-komprimeringsindsats:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lavere værdier giver hurtigere kodning. Højere værdier giver mindre filer. Alle værdier bevarer billedkvaliteten.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Tabsfri</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP-kvalitet:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Bredde:</value>

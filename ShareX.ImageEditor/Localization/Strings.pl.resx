@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Styl strzałki</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Automatycznie dopasuj rozmiar do tekstu</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Rozmycie</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Rozmiar czcionki</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Strzałka odręczna</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Wyrównanie w poziomie</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Ponów (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Zaokrąglone rogi</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Zapisz</value>
@@ -258,6 +267,9 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Kursor oczekiwania</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Przeciągnij, aby przenieść pasek narzędzi; kliknij dwukrotnie, aby przywrócić jego położenie</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Osiągnięcie odblokowane!</value>
   </data>
@@ -281,6 +293,15 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Anuluj (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Zastosuj</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Kolor wypełnienia dodanego obszaru</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Nie udało się wczytać obrazu ze schowka.
@@ -335,6 +356,12 @@ Schowek nie zawiera obrazu.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margines</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nowy ze zrzutu ekranu (pełny ekran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nowy ze zrzutu ekranu (obszar)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Otwórz obraz</value>
@@ -1359,8 +1386,14 @@ Schowek nie zawiera obrazu.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Do prawej</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Rozpocznij grupę</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Wszystkie elementy są na pasku narzędzi.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Dostępne elementy</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Pusty separator</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Anuluj</value>
@@ -1371,26 +1404,35 @@ Schowek nie zawiera obrazu.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Dostosuj pasek narzędzi</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Przeciągnij elementy na pasek narzędzi, aby je pokazać, lub poza niego, aby je ukryć. Przeciągnij separator między elementy, aby podzielić je na grupy.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} i {1} używają tego samego skrótu ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Nieprawidłowy skrót dla {0}. Użyj formatu R, Ctrl+R lub Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Przenieś w dół</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Przenieś w górę</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Główny</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Przywróć domyślny pasek narzędzi</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Pokaż / Ukryj</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Dodatkowy</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Separator. Przeciągnij prawą krawędź, aby zmienić jego szerokość.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Szerokość separatora</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Strzałka</value>
@@ -1400,6 +1442,9 @@ Schowek nie zawiera obrazu.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Rozmycie</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Rozmiar płótna</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonuj</value>
@@ -1420,7 +1465,8 @@ Schowek nie zawiera obrazu.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nUlubione efekty obrazu (Prawy przycisk)</value>
+    <value>{0}
+Ulubione efekty obrazu (Prawy przycisk)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Plik</value>

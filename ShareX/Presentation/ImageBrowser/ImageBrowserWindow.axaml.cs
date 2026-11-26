@@ -36,6 +36,7 @@ using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Collections.Generic;
@@ -225,9 +226,9 @@ public partial class ImageBrowserWindow : Window
 
     private void UpdateSortIcons()
     {
-        SortNameIcon.Text = GetSortIcon(ImageBrowserSortColumn.Name);
-        SortSizeIcon.Text = GetSortIcon(ImageBrowserSortColumn.Size);
-        SortModifiedIcon.Text = GetSortIcon(ImageBrowserSortColumn.ModifiedAt);
+        SortNameIcon.Icon = GetSortIcon(ImageBrowserSortColumn.Name);
+        SortSizeIcon.Icon = GetSortIcon(ImageBrowserSortColumn.Size);
+        SortModifiedIcon.Icon = GetSortIcon(ImageBrowserSortColumn.ModifiedAt);
     }
 
     private string GetSortIcon(ImageBrowserSortColumn column)
@@ -239,8 +240,8 @@ public partial class ImageBrowserWindow : Window
 
         return _viewModel.SortOrder switch
         {
-            ImageBrowserSortOrder.Ascending => LucideIcons.arrow_up,
-            ImageBrowserSortOrder.Descending => LucideIcons.arrow_down,
+            ImageBrowserSortOrder.Ascending => AppIcons.ArrowUp,
+            ImageBrowserSortOrder.Descending => AppIcons.ArrowDown,
             _ => string.Empty
         };
     }

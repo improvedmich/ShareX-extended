@@ -3211,7 +3211,7 @@ namespace ShareX.UploadersLib.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Status: {0}\r\nStatus code: {1}\r\nMessage: {2}.
+        ///   Looks up a localized string similar to Status: {0} Status code: {1} Message: {2}.
         /// </summary>
         public static string OwnCloud_Error_details {
             get {
@@ -3778,7 +3778,7 @@ namespace ShareX.UploadersLib.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Code: {0}, Method: {1}\r\nText: {2}.
+        ///   Looks up a localized string similar to Code: {0}, Method: {1} Text: {2}.
         /// </summary>
         public static string SendSpace_Error_details {
             get {

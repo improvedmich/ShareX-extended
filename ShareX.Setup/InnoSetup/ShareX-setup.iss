@@ -53,19 +53,72 @@ Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupD
 Name: "EnableBrowserExtensionSupport"; Description: "Enable browser extension support"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 Name: "DisablePrintScreenKeyForSnippingTool"; Description: "Disable Print Screen key for Snipping Tool"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 
+[InstallDelete]
+; ShareX 18 installed languages next to the executable. .NET loads those before the Languages folder, so remove them.
+Type: files; Name: "{app}\ar-YE\*.resources.dll"
+Type: files; Name: "{app}\de\*.resources.dll"
+Type: files; Name: "{app}\es\*.resources.dll"
+Type: files; Name: "{app}\es-MX\*.resources.dll"
+Type: files; Name: "{app}\fa-IR\*.resources.dll"
+Type: files; Name: "{app}\fr\*.resources.dll"
+Type: files; Name: "{app}\he-IL\*.resources.dll"
+Type: files; Name: "{app}\hu\*.resources.dll"
+Type: files; Name: "{app}\id-ID\*.resources.dll"
+Type: files; Name: "{app}\it-IT\*.resources.dll"
+Type: files; Name: "{app}\ja-JP\*.resources.dll"
+Type: files; Name: "{app}\ko-KR\*.resources.dll"
+Type: files; Name: "{app}\nl-NL\*.resources.dll"
+Type: files; Name: "{app}\pl\*.resources.dll"
+Type: files; Name: "{app}\pt-BR\*.resources.dll"
+Type: files; Name: "{app}\pt-PT\*.resources.dll"
+Type: files; Name: "{app}\ro\*.resources.dll"
+Type: files; Name: "{app}\ru\*.resources.dll"
+Type: files; Name: "{app}\tr\*.resources.dll"
+Type: files; Name: "{app}\uk\*.resources.dll"
+Type: files; Name: "{app}\vi-VN\*.resources.dll"
+Type: files; Name: "{app}\zh-CN\*.resources.dll"
+Type: files; Name: "{app}\zh-TW\*.resources.dll"
+Type: dirifempty; Name: "{app}\ar-YE"
+Type: dirifempty; Name: "{app}\de"
+Type: dirifempty; Name: "{app}\es"
+Type: dirifempty; Name: "{app}\es-MX"
+Type: dirifempty; Name: "{app}\fa-IR"
+Type: dirifempty; Name: "{app}\fr"
+Type: dirifempty; Name: "{app}\he-IL"
+Type: dirifempty; Name: "{app}\hu"
+Type: dirifempty; Name: "{app}\id-ID"
+Type: dirifempty; Name: "{app}\it-IT"
+Type: dirifempty; Name: "{app}\ja-JP"
+Type: dirifempty; Name: "{app}\ko-KR"
+Type: dirifempty; Name: "{app}\nl-NL"
+Type: dirifempty; Name: "{app}\pl"
+Type: dirifempty; Name: "{app}\pt-BR"
+Type: dirifempty; Name: "{app}\pt-PT"
+Type: dirifempty; Name: "{app}\ro"
+Type: dirifempty; Name: "{app}\ru"
+Type: dirifempty; Name: "{app}\tr"
+Type: dirifempty; Name: "{app}\uk"
+Type: dirifempty; Name: "{app}\vi-VN"
+Type: dirifempty; Name: "{app}\zh-CN"
+Type: dirifempty; Name: "{app}\zh-TW"
+
 [Files]
 Source: "{#MyAppReleaseDirectory}\*.exe"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.dll"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\*.json"; DestDir: {app}; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\Models\*"; DestDir: {app}\Models; Flags: ignoreversion recursesubdirs
 Source: "{#MyAppRootDirectory}\Licenses\*.txt"; DestDir: {app}\Licenses; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ShareX_File_Icon.ico"; DestDir: {app}; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ar-YE\*.resources.dll"; DestDir: {app}\Languages\ar-YE; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\cs\*.resources.dll"; DestDir: {app}\Languages\cs; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\da\*.resources.dll"; DestDir: {app}\Languages\da; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\de\*.resources.dll"; DestDir: {app}\Languages\de; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\es\*.resources.dll"; DestDir: {app}\Languages\es; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\es-MX\*.resources.dll"; DestDir: {app}\Languages\es-MX; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\fa-IR\*.resources.dll"; DestDir: {app}\Languages\fa-IR; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\fr\*.resources.dll"; DestDir: {app}\Languages\fr; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\he-IL\*.resources.dll"; DestDir: {app}\Languages\he-IL; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\hi\*.resources.dll"; DestDir: {app}\Languages\hi; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\hu\*.resources.dll"; DestDir: {app}\Languages\hu; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\id-ID\*.resources.dll"; DestDir: {app}\Languages\id-ID; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\it-IT\*.resources.dll"; DestDir: {app}\Languages\it-IT; Flags: ignoreversion
@@ -77,6 +130,8 @@ Source: "{#MyAppReleaseDirectory}\pt-BR\*.resources.dll"; DestDir: {app}\Languag
 Source: "{#MyAppReleaseDirectory}\pt-PT\*.resources.dll"; DestDir: {app}\Languages\pt-PT; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ro\*.resources.dll"; DestDir: {app}\Languages\ro; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\ru\*.resources.dll"; DestDir: {app}\Languages\ru; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\sv\*.resources.dll"; DestDir: {app}\Languages\sv; Flags: ignoreversion
+Source: "{#MyAppReleaseDirectory}\th\*.resources.dll"; DestDir: {app}\Languages\th; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\tr\*.resources.dll"; DestDir: {app}\Languages\tr; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\uk\*.resources.dll"; DestDir: {app}\Languages\uk; Flags: ignoreversion
 Source: "{#MyAppReleaseDirectory}\vi-VN\*.resources.dll"; DestDir: {app}\Languages\vi-VN; Flags: ignoreversion

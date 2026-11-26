@@ -166,19 +166,17 @@ public static class ToolsIntegration
 
     public static Task<string?> ShowOCRWindowAsync(
         byte[] imageData,
-        IReadOnlyList<OCRLanguageOption> languages,
         OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
-        Action<OCROptions>? optionsChanged = null,
-        Action? openHelp = null)
+        Action<OCROptions>? optionsChanged = null)
     {
         AvaloniaBootstrapper.EnsureInitialized();
         TaskCompletionSource<string?> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
         Dispatcher.UIThread.Post(() =>
         {
-            OCRWindow window = new(imageData, languages, options, recognize, selectRegion, optionsChanged, openHelp);
+            OCRWindow window = new(imageData, options, recognize, selectRegion, optionsChanged);
             window.Closed += (_, _) => completion.TrySetResult(window.Result);
             window.Show();
         });
@@ -240,6 +238,11 @@ public static class ToolsIntegration
     public static void ShowRulerWindow()
     {
         Show(() => new RulerWindow());
+    }
+
+    public static void ShowClassicRulerWindow(ClassicRulerOptions options)
+    {
+        Show(() => new ClassicRulerWindow(options));
     }
 
     public static void ShowMouseHighlighterWindow(MouseHighlighterOptions options, Action? settingsChanged = null)

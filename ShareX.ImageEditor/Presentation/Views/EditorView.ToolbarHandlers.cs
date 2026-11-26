@@ -72,7 +72,10 @@ namespace ShareX.ImageEditor.Presentation.Views
             toolbar.TextItalicChanged += OnToolbarTextItalicChanged;
             toolbar.ShadowChanged += OnToolbarShadowChanged;
             toolbar.ShadowSettingsChanged += OnToolbarShadowSettingsChanged;
+            toolbar.ArrowRoundedCornersChanged += OnToolbarArrowRoundedCornersChanged;
+            toolbar.FreehandArrowChanged += OnToolbarFreehandArrowChanged;
             toolbar.SpeechBalloonTailChanged += OnToolbarSpeechBalloonTailChanged;
+            toolbar.SpeechBalloonAutoSizeChanged += OnToolbarSpeechBalloonAutoSizeChanged;
             toolbar.EffectEllipseChanged += OnToolbarEffectEllipseChanged;
             toolbar.FavoriteEffectsMenuRequested += OnFavoriteEffectsMenuRequested;
         }
@@ -112,7 +115,10 @@ namespace ShareX.ImageEditor.Presentation.Views
             toolbar.TextItalicChanged -= OnToolbarTextItalicChanged;
             toolbar.ShadowChanged -= OnToolbarShadowChanged;
             toolbar.ShadowSettingsChanged -= OnToolbarShadowSettingsChanged;
+            toolbar.ArrowRoundedCornersChanged -= OnToolbarArrowRoundedCornersChanged;
+            toolbar.FreehandArrowChanged -= OnToolbarFreehandArrowChanged;
             toolbar.SpeechBalloonTailChanged -= OnToolbarSpeechBalloonTailChanged;
+            toolbar.SpeechBalloonAutoSizeChanged -= OnToolbarSpeechBalloonAutoSizeChanged;
             toolbar.EffectEllipseChanged -= OnToolbarEffectEllipseChanged;
             toolbar.FavoriteEffectsMenuRequested -= OnFavoriteEffectsMenuRequested;
         }
@@ -281,9 +287,36 @@ namespace ShareX.ImageEditor.Presentation.Views
             ApplySelectedShadowSettings();
         }
 
+        private void OnToolbarArrowRoundedCornersChanged(object? sender, bool isEnabled)
+        {
+            var selected = _selectionController.SelectedShape;
+
+            if (selected?.Tag is ArrowAnnotation arrowAnnotation && selected is global::Avalonia.Controls.Shapes.Path arrowPath)
+            {
+                arrowAnnotation.RoundedCorners = isEnabled;
+                AnnotationVisualFactory.UpdateVisualControl(arrowPath, arrowAnnotation);
+            }
+        }
+
+        private void OnToolbarFreehandArrowChanged(object? sender, bool isEnabled)
+        {
+            var selected = _selectionController.SelectedShape;
+
+            if (selected?.Tag is FreehandAnnotation freehandAnnotation && selected is global::Avalonia.Controls.Shapes.Path freehandPath)
+            {
+                freehandAnnotation.ShowArrowHead = isEnabled;
+                AnnotationVisualFactory.UpdateVisualControl(freehandPath, freehandAnnotation);
+            }
+        }
+
         private void OnToolbarSpeechBalloonTailChanged(object? sender, bool isEnabled)
         {
             ApplySelectedSpeechBalloonTail(isEnabled);
+        }
+
+        private void OnToolbarSpeechBalloonAutoSizeChanged(object? sender, bool isEnabled)
+        {
+            ApplySelectedSpeechBalloonAutoSize(isEnabled);
         }
 
         private void OnToolbarEffectEllipseChanged(object? sender, bool isEllipse)
@@ -323,11 +356,6 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private void OnSidebarScrollChanged(object? sender, ScrollChangedEventArgs e)
-        {
-            // TODO: Restore sidebar scrollbar overlay logic
-        }
-
         private void OnToolbarScrollChanged(object? sender, ScrollChangedEventArgs e)
         {
             // TODO: Restore toolbar scrollbar overlay logic
@@ -360,6 +388,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                     else if (selected is SpeechBalloonControl balloon)
                     {
                         balloon.InvalidateVisual();
+                    }
+                    else if (shape.Tag is MagnifyAnnotation magnifyAnnotation)
+                    {
+                        ApplyMagnifyShape(shape, magnifyAnnotation);
                     }
                     break;
                 case OutlinedTextControl textBox:
@@ -480,6 +512,10 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 case Shape shape:
                     shape.StrokeThickness = width;
+                    if (shape.Tag is MagnifyAnnotation magnifyAnnotation)
+                    {
+                        ApplyMagnifyShape(shape, magnifyAnnotation);
+                    }
                     break;
                 case OutlinedTextControl textBox:
                     textBox.InvalidateMeasure();
@@ -688,6 +724,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                     rectangle.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(borderStyle);
                     rectangle.StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(borderStyle);
                     break;
+                case MagnifyAnnotation magnifyAnnotation:
+                    magnifyAnnotation.BorderStyle = borderStyle;
+                    ApplyMagnifyShape(selected, magnifyAnnotation);
+                    break;
                 case EllipseAnnotation ellipseAnnotation when selected is global::Avalonia.Controls.Shapes.Ellipse ellipse:
                     ellipseAnnotation.BorderStyle = borderStyle;
                     ellipse.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(borderStyle);
@@ -763,7 +803,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             if (selected?.Tag is MagnifyAnnotation magnifyAnnotation)
             {
                 magnifyAnnotation.IsEllipse = isEllipse;
-                selected.Clip = CreateEllipseClipIfNeeded(selected, isEllipse);
+                ApplyMagnifyShape(selected, magnifyAnnotation);
                 OnRequestUpdateEffect(selected);
                 _selectionController.UpdateSelectionHandles();
             }
@@ -775,22 +815,17 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private static Geometry? CreateEllipseClipIfNeeded(Control control, bool isEllipse)
+        private static void ApplyMagnifyShape(Control control, MagnifyAnnotation annotation)
         {
-            if (!isEllipse)
-            {
-                return null;
-            }
-
-            double width = Math.Max(1, control.Width);
-            double height = Math.Max(1, control.Height);
+            double width = control.Width;
+            double height = control.Height;
             if (double.IsNaN(width) || double.IsNaN(height))
             {
-                width = Math.Max(1, control.Bounds.Width);
-                height = Math.Max(1, control.Bounds.Height);
+                width = control.Bounds.Width;
+                height = control.Bounds.Height;
             }
 
-            return new EllipseGeometry(new Rect(0, 0, width, height));
+            AnnotationVisualHelpers.ApplyMagnifyShape(control, annotation, width, height);
         }
 
         private void ApplySelectedShadowState(bool isEnabled)
@@ -837,7 +872,12 @@ namespace ShareX.ImageEditor.Presentation.Views
                 balloonControl.Annotation is SpeechBalloonAnnotation balloonAnnotation)
             {
                 balloonAnnotation.TailEnabled = isEnabled;
-                balloonControl.InvalidateVisual();
+                AnnotationVisualFactory.UpdateVisualControl(
+                    balloonControl,
+                    balloonAnnotation,
+                    AnnotationVisualMode.Persisted,
+                    _editorCore.CanvasSize.Width,
+                    _editorCore.CanvasSize.Height);
                 _selectionController.UpdateSelectionHandles();
                 return;
             }
@@ -848,6 +888,20 @@ namespace ShareX.ImageEditor.Presentation.Views
                 numberAnnotation.TailEnabled = isEnabled;
                 AnnotationVisualFactory.UpdateVisualControl(stepControl, numberAnnotation);
                 _selectionController.UpdateSelectionHandles();
+            }
+        }
+
+        private void ApplySelectedSpeechBalloonAutoSize(bool isEnabled)
+        {
+            if (_selectionController.SelectedShape is SpeechBalloonControl { Annotation: SpeechBalloonAnnotation balloonAnnotation })
+            {
+                balloonAnnotation.AutoSize = isEnabled;
+
+                if (isEnabled)
+                {
+                    _selectionController.FitSelectedSpeechBalloonToText();
+                    ScheduleAutoExpandCanvas(balloonAnnotation);
+                }
             }
         }
 

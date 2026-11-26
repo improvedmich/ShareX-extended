@@ -70,6 +70,15 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto size to text.
+        /// </summary>
+        public static string AnnotationToolbar_Autosizetotext {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Autosizetotext", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blur.
         /// </summary>
         public static string AnnotationToolbar_Blur {
@@ -196,6 +205,15 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Freehand arrow.
+        /// </summary>
+        public static string AnnotationToolbar_Freehandarrow {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Freehandarrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Horizontal alignment.
         /// </summary>
         public static string AnnotationToolbar_Horizontalalignment {
@@ -264,6 +282,15 @@ namespace ShareX.ImageEditor.Localization {
         public static string AnnotationToolbar_RedoCtrlY {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_RedoCtrlY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rounded corners.
+        /// </summary>
+        public static string AnnotationToolbar_Roundedcorners {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Roundedcorners", resourceCulture);
             }
         }
         
@@ -790,6 +817,15 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drag to move the toolbar, double-click to reset its position.
+        /// </summary>
+        public static string EditorBuiltInToolbars_MoveToolbar {
+            get {
+                return ResourceManager.GetString("EditorBuiltInToolbars_MoveToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Achievement unlocked!.
         /// </summary>
         public static string EditorView_AchievementUnlocked {
@@ -858,6 +894,33 @@ namespace ShareX.ImageEditor.Localization {
         public static string EditorView_CancelEsc {
             get {
                 return ResourceManager.GetString("EditorView_CancelEsc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply.
+        /// </summary>
+        public static string EditorView_CanvasSizeApply {
+            get {
+                return ResourceManager.GetString("EditorView_CanvasSizeApply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string EditorView_CanvasSizeCancel {
+            get {
+                return ResourceManager.GetString("EditorView_CanvasSizeCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill color for the added area.
+        /// </summary>
+        public static string EditorView_CanvasSizeFillColor {
+            get {
+                return ResourceManager.GetString("EditorView_CanvasSizeFillColor", resourceCulture);
             }
         }
         
@@ -1011,6 +1074,24 @@ namespace ShareX.ImageEditor.Localization {
         public static string EditorView_Margin {
             get {
                 return ResourceManager.GetString("EditorView_Margin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New from screenshot (full screen).
+        /// </summary>
+        public static string EditorView_NewFromScreenshotFullScreen {
+            get {
+                return ResourceManager.GetString("EditorView_NewFromScreenshotFullScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New from screenshot (region)....
+        /// </summary>
+        public static string EditorView_NewFromScreenshotRegionEllipsis {
+            get {
+                return ResourceManager.GetString("EditorView_NewFromScreenshotRegionEllipsis", resourceCulture);
             }
         }
         
@@ -4084,11 +4165,29 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Begin group.
+        ///   Looks up a localized string similar to Every item is on the toolbar..
         /// </summary>
-        public static string ToolbarCustomizationDialogView_Begingroup {
+        public static string ToolbarCustomizationDialogView_AllItemsOnToolbar {
             get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Begingroup", resourceCulture);
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_AllItemsOnToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available items.
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_AvailableItems {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_AvailableItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blank spacer.
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_BlankSpacer {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_BlankSpacer", resourceCulture);
             }
         }
         
@@ -4120,6 +4219,15 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drag items onto the toolbar to show them, or off it to hide them. Drag a spacer between items to split them into groups..
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_DragHint {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_DragHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} and {1} use the same hotkey ({2})..
         /// </summary>
         public static string ToolbarCustomizationDialogView_DuplicateHotkey {
@@ -4138,29 +4246,20 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Move down.
-        /// </summary>
-        public static string ToolbarCustomizationDialogView_Movedown {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Movedown", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Move up.
-        /// </summary>
-        public static string ToolbarCustomizationDialogView_Moveup {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Moveup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string ToolbarCustomizationDialogView_OK {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary.
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_Primary {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Primary", resourceCulture);
             }
         }
         
@@ -4174,11 +4273,38 @@ namespace ShareX.ImageEditor.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show / Hide.
+        ///   Looks up a localized string similar to Secondary.
         /// </summary>
-        public static string ToolbarCustomizationDialogView_ShowHide {
+        public static string ToolbarCustomizationDialogView_Secondary {
             get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_ShowHide", resourceCulture);
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Secondary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacer.
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_Spacer {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Spacer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacer. Drag its right edge to change its width..
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_SpacerToolTip {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spacer width.
+        /// </summary>
+        public static string ToolbarCustomizationDialogView_SpacerWidth {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerWidth", resourceCulture);
             }
         }
         
@@ -4206,6 +4332,15 @@ namespace ShareX.ImageEditor.Localization {
         public static string ToolbarCustomizationItemViewModel_Blur {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationItemViewModel_Blur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canvas size.
+        /// </summary>
+        public static string ToolbarCustomizationItemViewModel_CanvasSize {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationItemViewModel_CanvasSize", resourceCulture);
             }
         }
         

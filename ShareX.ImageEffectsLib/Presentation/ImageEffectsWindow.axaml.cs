@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using Newtonsoft.Json.Serialization;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -62,7 +63,15 @@ public partial class ImageEffectsWindow : Window
         ViewModel.CloseRequested = accepted => { Accepted = accepted; Close(); };
         ViewModel.PropertyChanged += OnViewModelPropertyChanged;
         UpdateEffectOptions();
-        Opened += async (_, _) => await ViewModel.InitializeAsync();
+        Opened += async (_, _) =>
+        {
+            if (ViewModel.IsEditorMode)
+            {
+                Dispatcher.UIThread.Post(() => this.FindControl<Button>("ContinueButton")?.Focus(), DispatcherPriority.Input);
+            }
+
+            await ViewModel.InitializeAsync();
+        };
         Closed += (_, _) =>
         {
             ViewModel.PropertyChanged -= OnViewModelPropertyChanged;
@@ -172,6 +181,11 @@ public partial class ImageEffectsWindow : Window
         else if (e.Key == Key.F5)
         {
             ViewModel.RefreshPreviewCommand.Execute(null);
+            e.Handled = true;
+        }
+        else if (e.Key == Key.Escape)
+        {
+            Close();
             e.Handled = true;
         }
     }

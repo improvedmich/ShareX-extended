@@ -57,8 +57,12 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
     private Bitmap? _currentImage;
     private string? _currentImageFilePath;
     private string _statusText = string.Empty;
+    private int _imageVersion;
 
     public event PropertyChangedEventHandler? PropertyChanged;
+
+    /// <summary>Raised when a different image is shown, but not for each frame of an animated one.</summary>
+    public event EventHandler? ImageReplaced;
 
     public Bitmap? CurrentImage
     {
@@ -317,6 +321,7 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
             CurrentImageFilePath = filePath;
             ReplaceImage(bitmap);
             UpdateStatus();
+            PlayAnimation(CurrentImageFilePath);
             return true;
         }
         catch (Exception exception)
@@ -396,9 +401,32 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
 
     private void ReplaceImage(Bitmap image)
     {
+        // Stops the previous image's animation, if it had one.
+        _imageVersion++;
         CurrentImage?.Dispose();
         CurrentImage = image;
+        ImageReplaced?.Invoke(this, EventArgs.Empty);
         NotifyNavigationChanged();
+    }
+
+    // Plays animated GIFs at full size, like ShareX 21's viewer, until another image is shown or the viewer closes.
+    private void PlayAnimation(string filePath)
+    {
+        if (!AnimatedImagePreview.CanBeAnimated(filePath))
+        {
+            return;
+        }
+
+        int version = _imageVersion;
+        _ = AnimatedImagePreview.PlayAsync(filePath, int.MaxValue, () => version == _imageVersion, ShowFrame);
+    }
+
+    // Unlike ReplaceImage, this keeps the zoom, so a zoomed-in GIF keeps playing where it is.
+    private void ShowFrame(Bitmap frame)
+    {
+        Bitmap? previous = CurrentImage;
+        CurrentImage = frame;
+        previous?.Dispose();
     }
 
     private void UpdateStatus()
@@ -456,6 +484,7 @@ public sealed class ImageViewerViewModel : INotifyPropertyChanged, IDisposable
         _navigationCancellation?.Dispose();
         _navigationCancellation = null;
         ClearPrefetched();
+        _imageVersion++;
         CurrentImage?.Dispose();
         CurrentImage = null;
     }

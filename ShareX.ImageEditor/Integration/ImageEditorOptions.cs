@@ -57,13 +57,42 @@ namespace ShareX.ImageEditor.Integration
         public bool IsWindowMaximized { get; set; } = true;
         public double WindowWidth { get; set; } = 1280;
         public double WindowHeight { get; set; } = 720;
+        // The normal (not maximized) window's position in screen pixels, when Remember window state is on.
+        public int? WindowX { get; set; }
+        public int? WindowY { get; set; }
+        public bool AutoSizeWindow { get; set; } = false;
+        // How far the user dragged the top toolbar from its default top center position, in DIPs.
+        public double TopToolbarOffsetX { get; set; }
+        public double TopToolbarOffsetY { get; set; }
+        // Uses the smaller, denser toolbar layout of ShareX 21, like the compact region capture toolbar.
+        public bool CompactToolbar { get; set; } = false;
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;
+        // Like ShareX 21 and region capture: right-clicking a shape deletes it instead of opening the context menu.
+        public bool RightClickDeletesShape { get; set; } = false;
         public bool AutoCloseEditorOnTask { get; set; } = false;
         public bool AutoCopyImageToClipboard { get; set; } = false;
         public bool ShowInsertImageDialog { get; set; } = true;
         public bool ShowNotifications { get; set; } = true;
+        /// <summary>
+        /// Grow the canvas automatically when text or shapes go beyond the image edge.
+        /// </summary>
+        public bool AutoExpandCanvas { get; set; } = true;
+        /// <summary>
+        /// Fill color for the area added to the canvas (auto-expand and the canvas size tool). Transparent by default.
+        /// </summary>
+        public string CanvasFillColorHex { get; set; } = "#00000000";
+        [JsonIgnore]
+        public Color CanvasFillColor
+        {
+            get
+            {
+                try { return HexToColor(CanvasFillColorHex); }
+                catch { return Colors.Transparent; }
+            }
+            set => CanvasFillColorHex = ColorToHex(value);
+        }
         public List<ImageEditorToolbarItemOptions> ToolbarItems { get; set; } = new List<ImageEditorToolbarItemOptions>();
 
         // Shared
@@ -87,6 +116,8 @@ namespace ShareX.ImageEditor.Integration
         public double ShadowOffsetY { get; set; } = Annotation.DefaultShadowOffsetY;
         public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
         public ArrowStyle ArrowStyle { get; set; } = ArrowStyle.Classic;
+        public bool ArrowRoundedCorners { get; set; } = true;
+        public bool FreehandArrow { get; set; } = false;
         public CursorType CursorType { get; set; } = CursorType.Default;
 
         // Text
@@ -125,6 +156,8 @@ namespace ShareX.ImageEditor.Integration
         public bool SpeechBalloonTextBold { get; set; } = true;
         public bool SpeechBalloonTextItalic { get; set; } = false;
         public bool SpeechBalloonTail { get; set; } = true;
+        // Sizes the balloon to its text as it is typed, so every balloon has the same padding around its text.
+        public bool SpeechBalloonAutoSize { get; set; } = false;
 
         // Step
         public string StepBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);
@@ -155,6 +188,11 @@ namespace ShareX.ImageEditor.Integration
         public float PixelateStrength { get; set; } = 20;
         public float MagnifierStrength { get; set; } = 2;
         public bool MagnifierEllipse { get; set; }
+        public string MagnifierBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);
+        [JsonIgnore]
+        public Color MagnifierBorderColor { get => HexToColor(MagnifierBorderColorHex); set => MagnifierBorderColorHex = ColorToHex(value); }
+        public int MagnifierThickness { get; set; } = 4;
+        public BorderStyle MagnifierBorderStyle { get; set; } = BorderStyle.Solid;
         public float SpotlightStrength { get; set; } = 30;
         public float SpotlightBlur { get; set; } = 0;
         public bool SpotlightEllipse { get; set; }

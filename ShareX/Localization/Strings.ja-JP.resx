@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>アップロード後</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>その他</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>ファイル名</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>ファイルをコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>保存したファイルをクリップボードに入れます。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>ファイルパスをコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>保存したファイルのパスをコピーします。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>フォルダーパスをコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>保存したファイルのフォルダーをコピーします。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>画像をクリップボードに入れます。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>URL をコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>アップロードしてリンクをコピーします。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>必要な手順は目的に応じて決まります。追加の操作は自由に選べます。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>クリップボードに何を入れますか?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>キャプチャ後</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>画像プレビューを利用できません</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>この目的に必要</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>キャプチャした内容を確認し、次の処理を選択してください。</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>アップロード</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>スクロールバーを常に全幅で表示</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>アプリケーション</value>
   </data>
@@ -358,6 +403,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>クリップボードの書式</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>コンパクト モード</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>ホットキー設定のカスタムパス</value>
   </data>
@@ -381,6 +429,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>説明</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>説明を入力してください。</value>
   </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>開発者モード</value>
@@ -460,6 +511,9 @@
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>書式</value>
   </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>書式を入力してください。</value>
+  </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>全般</value>
   </data>
@@ -471,6 +525,24 @@
   </data>
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>ホットキーの繰り返し間隔（ミリ秒）</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>アイコン パック:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>クラシック</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>モダン</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>アイコン</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>画像プレビューの表示設定:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>画像プレビューの表示位置:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>画像の印刷設定...</value>
@@ -504,6 +576,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>ライト</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>リスト表示</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>メインウィンドウ</value>
@@ -598,6 +673,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>保存</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>キャプチャ内のテキストを履歴で検索できるようにする</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>最近使用したタスクを保存</value>
   </data>
@@ -625,11 +703,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>クリップボード内容ビューアーを表示する</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>カラム名を表示</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>エクスプローラのコンテキストメニューに「ShareX 画像エディターで編集」を表示</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>エクスプローラのコンテキストメニューに「ShareX フォトエディターで編集」を表示</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>ファイルを削除する前に確認する</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>大きなファイルの警告しきい値（MB）</value>
@@ -667,6 +751,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>同時アップロード数の上限:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>コンパクト</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>標準</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>メニュー</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>メニュー:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>プレビュー:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>設定ウィンドウ:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>サイドバー</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>サイドバー:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>ツール メニュー</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>ツール メニュー:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -675,6 +792,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>サブフォルダー名の規則:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>タスクの表示方法:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>テーマ</value>
@@ -1189,6 +1309,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>デバッグログをアップロードしますか？</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>レポートをクリップボードにコピーしました。</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>クリップボードにコピー</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>スケーリング、複数モニター、キャプチャ位置のずれに関する問題を報告するときは、このレポートを添付してください。</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>ディスプレイの配置</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>マウスカーソル</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>メインモニター</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>タスクバーまたはアプリバー</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>.txt として保存...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>ディスプレイ診断を保存</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>レポートを {0} に保存しました</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>テキストファイル</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - ディスプレイ診断</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>ここにドロップ</value>
   </data>
@@ -1215,6 +1374,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>設定の保存に失敗しました</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>今後は確認しない</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>キャンセル</value>
@@ -1325,6 +1487,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - ホットキー設定</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>これはアプリケーション設定でいつでも変更できます。</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>クラシックなスタイルの、カラフルで精細なアイコン。</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>テーマの色に合わせたシンプルな線画アイコン。</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX のアイコンが新しくなりました。お好みの見た目を選んでください。</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>アイコンを選択</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>次のパスへ画像を書き込めません:</value>
   </data>
@@ -1403,6 +1580,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>キャプチャー</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>定規</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>クリップボードビューアー</value>
   </data>
@@ -1429,6 +1609,9 @@
   </data>
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>ディスプレイ診断...</value>
   </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>寄付</value>
@@ -1526,6 +1709,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>ネットワーク モニター...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>新機能</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>画像効果のプリセットがありません</value>
   </data>
@@ -1544,6 +1730,9 @@
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>最前面に固定</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>ピクセルエディター...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR コード</value>
   </data>
@@ -1553,6 +1742,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>領域...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>領域 (透過モード)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>リモート ストレージ ブラウザ...</value>
   </data>
@@ -1560,7 +1752,7 @@
     <value>管理者として再起動</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>定規</value>
+    <value>計測</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>スクリーン カラー ピッカー</value>
@@ -1570,6 +1762,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>画面録画 (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>1 回だけ</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>スクリーンショット フォルダー...</value>
@@ -1676,6 +1871,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>画像装飾</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>一覧を消去</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>サムネイル表示をクリア</value>
   </data>
@@ -1711,6 +1909,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>フォトエディターで編集...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>ピクセルエディターで編集...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ファイル</value>
@@ -1837,6 +2038,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>アップロードを停止</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>リスト表示に切り替え</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>サムネイル表示に切り替え</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>テキスト</value>
@@ -2095,23 +2302,20 @@
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>始める</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>アプリの外観と操作感を選択します。</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>ShareX を自分好みに</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>オープンソース • Windows 向け</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>これらのオプションは、アプリケーション設定でいつでも変更できます。</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>ゆったり</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX をダウンロードしていただきありがとうございます</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>システム設定を使用</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX へようこそ</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>自分らしい方法で、あらゆるものをキャプチャ、編集、共有できます。</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>カスタムアップローダー「{0}」を追加しますか？</value>
@@ -2137,6 +2341,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>ホットキーを有効にしました。</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>経過時間</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>履歴</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>処理待ち</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>進行状況</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>残り</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>アップロードが完了しました。URL: {0}</value>
@@ -2213,11 +2444,17 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>画像をクリップボードに自動コピー</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>テキストや図形が端からはみ出したらキャンバスを自動的に拡張する</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>自動増分番号:</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>自動 URL 短縮の文字数</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>ウィンドウのサイズを画像に合わせる</value>
   </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>自動 JPEG</value>
@@ -2245,6 +2482,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>キャンセル</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>追加されたキャンバス領域の塗りつぶし色:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>キャプチャ</value>
@@ -2291,6 +2531,12 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>サービスリンクを開いた後に OCR ウィンドウを閉じる</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>画像エディターのツールバーをコンパクトにする</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>領域キャプチャのツールバーをコンパクトにする</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>設定...</value>
   </data>
@@ -2305,9 +2551,6 @@
   </data>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>ツールバーをカスタマイズ...</value>
-  </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>既定の言語:</value>
   </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>入力ファイルを削除</value>
@@ -2362,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>拡張子:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>FFmpeg 録画でのみ使用されます。変更するには内蔵の画面録画機能をオフにしてください。</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP アカウント:</value>
@@ -2495,6 +2741,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>中央クリック時の動作:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>モニター:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>マウスボタン 4 クリック:</value>
   </data>
@@ -2507,6 +2756,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>マウス ハイライターのオプション...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>マウスホイール:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>スクロールで拡大鏡に対して行う操作です。Ctrl キーを押しながらスクロールすると、もう一方の操作になります。</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>下へ移動</value>
   </data>
@@ -2515,6 +2770,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>上へ移動</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>複数領域選択モード</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>名前</value>
@@ -2585,6 +2843,9 @@
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>内蔵の画面録画機能を使用する</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR トーン マッピング</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>動画のハードウェアエンコードを必須にする</value>
   </data>
@@ -2626,12 +2887,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR ヘルプ...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR 言語を利用できません</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>範囲キャプチャにのみ効果を適用</value>
@@ -2795,6 +3050,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>右クリック時の動作:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>右クリックでカーソル下の図形を削除する</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>右クリックして入力または出力ファイルのトークンを挿入します。</value>
   </data>
@@ -2930,8 +3188,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>タイムゾーン:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>モニター {0} (未接続)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>モニター {0}: {1} ({2}、位置 {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>通知</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>ツールバーボタンのサイズ (ピクセル):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>ツール</value>
@@ -2981,6 +3248,9 @@
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>カスタムタイムゾーンを使用</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>ツールバーボタンのサイズをカスタマイズする</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>固定時間を使用</value>
   </data>
@@ -3010,6 +3280,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave オーディオ</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP 圧縮にかける処理量:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>値を低くするとエンコードが速くなります。値を高くするとファイルサイズが小さくなります。どの値でも画質は維持されます。</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>ロスレス</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP 品質:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>幅:</value>

@@ -56,6 +56,10 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern bool BringWindowToTop(IntPtr hWnd);
 
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool GetMonitorInfo(IntPtr hMonitor, ref MONITORINFOEX lpmi);
+
         [DllImport("user32.dll")]
         public static extern IntPtr CopyIcon(IntPtr hIcon);
 
@@ -96,7 +100,7 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern bool DrawIconEx(IntPtr hdc, int xLeft, int yTop, IntPtr hIcon, int cxWidth, int cyHeight, int istepIfAniCur, IntPtr hbrFlickerFreeDraw, int diFlags);
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll")]
@@ -392,7 +396,7 @@ namespace ShareX.HelpersLib
 
         #region gdi32.dll
 
-        [DllImport("gdi32.dll")]
+        [DllImport("gdi32.dll", SetLastError = true)]
         public static extern bool BitBlt(IntPtr hdc, int nXDest, int nYDest, int nWidth, int nHeight, IntPtr hdcSrc, int nXSrc, int nYSrc, NativeRasterOperation dwRop);
 
         [DllImport("gdi32.dll")]
@@ -419,7 +423,7 @@ namespace ShareX.HelpersLib
         [DllImport("gdi32.dll")]
         public static extern IntPtr SelectObject(IntPtr hdc, IntPtr hgdiobj);
 
-        [DllImport("gdi32.dll")]
+        [DllImport("gdi32.dll", SetLastError = true)]
         public static extern IntPtr CreateDIBSection(IntPtr hdc, [In] ref BITMAPINFOHEADER pbmi, uint pila, out IntPtr ppvBits, IntPtr hSection, uint dwOffset);
 
         [DllImport("gdi32.dll")]
@@ -457,7 +461,7 @@ namespace ShareX.HelpersLib
         [DllImport("shell32.dll", EntryPoint = "#727")]
         public extern static int SHGetImageList(int iImageList, ref Guid riid, ref IImageList ppv);
 
-        [DllImport("shell32.dll", CharSet = CharSet.Auto)]
+        [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbFileInfo, uint uFlags);
 
         [DllImport("shell32.dll")]

@@ -219,10 +219,28 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
         set => _viewModel.ShadowOffsetY = value;
     }
 
+    public bool ArrowRoundedCorners
+    {
+        get => _viewModel.ArrowRoundedCorners;
+        set => _viewModel.ArrowRoundedCorners = value;
+    }
+
+    public bool FreehandArrow
+    {
+        get => _viewModel.FreehandArrow;
+        set => _viewModel.FreehandArrow = value;
+    }
+
     public bool SpeechBalloonTail
     {
         get => _viewModel.SpeechBalloonTail;
         set => _viewModel.SpeechBalloonTail = value;
+    }
+
+    public bool SpeechBalloonAutoSize
+    {
+        get => _viewModel.SpeechBalloonAutoSize;
+        set => _viewModel.SpeechBalloonAutoSize = value;
     }
 
     public bool EffectEllipse
@@ -287,7 +305,13 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
 
     public bool ShowShadow => _viewModel.ShowShadow;
 
+    public bool ShowArrowRoundedCorners => _viewModel.ShowArrowRoundedCorners;
+
+    public bool ShowFreehandArrow => _viewModel.ShowFreehandArrow;
+
     public bool ShowSpeechBalloonTail => _viewModel.ShowSpeechBalloonTail;
+
+    public bool ShowSpeechBalloonAutoSize => _viewModel.ShowSpeechBalloonAutoSize;
 
     public bool ShowEffectEllipse => _viewModel.ShowEffectEllipse;
 
@@ -376,6 +400,14 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
     public ICommand NewImageCommand => _viewModel.NewImageCommand;
 
     public ICommand OpenImageCommand => _viewModel.OpenImageCommand;
+
+    public bool CanCaptureRegion => _viewModel.CanCaptureRegion;
+
+    public bool CanCaptureFullscreen => _viewModel.CanCaptureFullscreen;
+
+    public ICommand NewFromScreenshotRegionCommand => _viewModel.NewFromScreenshotRegionCommand;
+
+    public ICommand NewFromScreenshotFullscreenCommand => _viewModel.NewFromScreenshotFullscreenCommand;
 
     public ICommand OpenRecentImageCommand => _viewModel.OpenRecentImageCommand;
 

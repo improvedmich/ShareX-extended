@@ -26,16 +26,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
-using Avalonia.Interactivity;
-using Avalonia.Layout;
-using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
-using ShareX.PhotoEditor.Integration;
-using ShareX.PhotoEditor.Tools;
-using ShareX.PhotoEditor.UI.Commands;
-using ShareX.PhotoEditor.UI.Dialogs;
-using ShareX.PhotoEditor.UI.Panels;
 
 namespace ShareX.PhotoEditor.UI;
 
@@ -51,7 +43,7 @@ public sealed partial class PhotoEditorWindow
             SuggestedStartLocation = start,
             FileTypeFilter =
             [
-                new FilePickerFileType("All supported images") { Patterns = ImageIO.Formats.SelectMany(f => f.Extensions).Select(x => "*" + x).ToArray() },
+                new FilePickerFileType(Strings.ImageIO_AllSupportedImages) { Patterns = ImageIO.Formats.SelectMany(f => f.Extensions).Select(x => "*" + x).ToArray() },
                 .. ImageIO.Formats.Select(f => new FilePickerFileType(f.Name) { Patterns = f.Extensions.Select(x => "*" + x).ToArray() }),
                 FilePickerFileTypes.All
             ]
@@ -117,7 +109,7 @@ public sealed partial class PhotoEditorWindow
             SaveSettings();
             return;
         }
-        if (_views.Any(v => v.Document.IsDirty))
+        if (_views.Any(v => v.Document.IsDirty && v.Document != TaskDocument))
         {
             e.Cancel = true;
             foreach (DocumentView view in _views.ToList())
@@ -133,6 +125,7 @@ public sealed partial class PhotoEditorWindow
         _view = null;
         foreach (DocumentView view in _views.ToList())
         {
+            CaptureTaskResult(view);
             view.Dispose();
             view.Document.Dispose();
         }

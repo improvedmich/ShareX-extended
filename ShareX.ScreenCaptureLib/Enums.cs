@@ -218,7 +218,14 @@ namespace ShareX.ScreenCaptureLib
         SwapToolType,
         CaptureFullscreen,
         CaptureActiveMonitor,
-        CaptureLastRegion
+        CaptureLastRegion,
+        CaptureSelection
+    }
+
+    public enum RegionCaptureMagnifierScrollAction // Localized
+    {
+        Resize,
+        Zoom
     }
 
     public enum ScreenRecordState

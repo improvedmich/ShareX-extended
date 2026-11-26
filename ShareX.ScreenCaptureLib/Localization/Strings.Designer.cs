@@ -1177,11 +1177,38 @@ namespace ShareX.ScreenCaptureLib.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rectangle region (Tab).
+        ///   Looks up a localized string similar to Ellipse region.
         /// </summary>
-        public static string RegionCaptureWindow_RectangleRegionTab {
+        public static string RegionCaptureWindow_EllipseRegion {
             get {
-                return ResourceManager.GetString("RegionCaptureWindow_RectangleRegionTab", resourceCulture);
+                return ResourceManager.GetString("RegionCaptureWindow_EllipseRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Freehand region.
+        /// </summary>
+        public static string RegionCaptureWindow_FreehandRegion {
+            get {
+                return ResourceManager.GetString("RegionCaptureWindow_FreehandRegion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drag to move the toolbar, double-click to reset its position.
+        /// </summary>
+        public static string RegionCaptureWindow_MoveToolbar {
+            get {
+                return ResourceManager.GetString("RegionCaptureWindow_MoveToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rectangle region.
+        /// </summary>
+        public static string RegionCaptureWindow_RectangleRegion {
+            get {
+                return ResourceManager.GetString("RegionCaptureWindow_RectangleRegion", resourceCulture);
             }
         }
         

@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>برای شروع، یک GIF متحرک را باز کنید یا بکشید و رها کنید</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>برای برش، روی پیش‌نمایش بکشید</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>این برش از فریمی آغاز می‌شود که به فریم‌های قبلی نیاز دارد. برای خروجی بدون افت کیفیت، فریم شروع دیگری انتخاب کنید.</value>
   </data>
@@ -319,6 +322,12 @@
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>کدگذاری مجدد</value>
   </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>بازنشانی برش و اندازه</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>اندازه خروجی</value>
+  </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>GIF برش‌خورده را با نام فایل دیگری یا در پوشه‌ای دیگر ذخیره کنید.</value>
   </data>
@@ -338,7 +347,8 @@
     <value>پس‌زمینه در {0} میلی‌ثانیه حذف شد.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>تصویر ذخیره شد.\nمسیر فایل: {0}</value>
+    <value>تصویر ذخیره شد.
+مسیر فایل: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>انتخاب تصویر</value>
@@ -430,6 +440,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>عنوان پنجره</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>فاصله: {0:0.00} px | زاویه: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | راست: {2} | پایین: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>عرض: {0} px | ارتفاع: {1} px | مساحت: {2} px | محیط: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - خط‌کش</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>محتوای کلیپ‌بورد</value>
   </data>
@@ -449,7 +471,9 @@
     <value>۱ قالب</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>پیش‌نمایش این قالب حافظه موقت ممکن نیست.\n\n{0}</value>
+    <value>پیش‌نمایش این قالب حافظه موقت ممکن نیست.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>پیش‌نمایش در دسترس نیست</value>
@@ -461,7 +485,8 @@
     <value>متن  |  {0:N0} نویسه</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>خواندن حافظه موقت ممکن نیست\n{0}</value>
+    <value>خواندن حافظه موقت ممکن نیست
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>پاک کردن</value>
@@ -1322,10 +1347,12 @@
     <value>{0:N0} برچسب</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>خواندن فراداده ممکن نیست\n{0}</value>
+    <value>خواندن فراداده ممکن نیست
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>حذف فراداده ممکن نیست\n{0}</value>
+    <value>حذف فراداده ممکن نیست
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - فراداده</value>
@@ -1600,12 +1627,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>هدف</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>زبان {0} برای OCR در این سیستم در دسترس نیست.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>تشخیص نوری نویسه‌ها فقط در نسخه {0} یا جدیدتر Windows در دسترس است.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1633,6 +1654,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>بستن پس از باز کردن</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>در کلیپ‌بورد کپی شد</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>کپی همه</value>
   </data>
@@ -1642,23 +1666,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>ویرایش سرویس‌ها</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>زبان</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>نام</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>جدید</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>راهنمای OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>متنی یافت نشد</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>باز کردن سرویس...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>شناسایی</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>حذف</value>
@@ -1668,9 +1686,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>نتیجه</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>ضریب مقیاس</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>انتخاب یک سرویس</value>
@@ -1684,8 +1699,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>انتخاب ناحیه...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>سرویس‌ها</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>جدا کردن پاراگراف‌ها</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - تشخیص نوری نویسه‌ها</value>
@@ -2033,7 +2048,7 @@
     <value>تلرانس: {0}٪</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - خط‌کش</value>
+    <value>ShareX - اندازه‌گیری</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>برای شروع یک ویدئو انتخاب کنید.</value>
@@ -2077,6 +2092,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>در حال توقف تبدیل...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>میانگین نرخ بیت</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>مرور...</value>
   </data>
@@ -2095,6 +2113,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>نام فایل</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>اندازه فایل</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>پوشه</value>
   </data>
@@ -2112,6 +2133,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>کیفیت</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>وضوح</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>نتیجه</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - تبدیل‌کننده ویدئو</value>

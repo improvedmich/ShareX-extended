@@ -121,6 +121,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 case EditorTool.Text:
                     Options.TextBorderColor = color;
                     break;
+                case EditorTool.Magnify:
+                    Options.MagnifierBorderColor = color;
+                    break;
                 default:
                     Options.BorderColor = color;
                     break;
@@ -144,11 +147,16 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 Options.TextThickness = value;
             }
+            else if (ActiveTool == EditorTool.Magnify)
+            {
+                Options.MagnifierThickness = value;
+            }
             else if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 if (SelectedAnnotation is NumberAnnotation) Options.StepThickness = value;
                 else if (SelectedAnnotation is SpeechBalloonAnnotation) Options.SpeechBalloonThickness = value;
                 else if (SelectedAnnotation is TextAnnotation) Options.TextThickness = value;
+                else if (SelectedAnnotation is MagnifyAnnotation) Options.MagnifierThickness = value;
                 else if (SelectedAnnotation is SmartEraserAnnotation) return;
                 else Options.Thickness = value;
             }
@@ -434,16 +442,15 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 return;
             }
 
-            bool supportsBorderStyle = ActiveTool is EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand;
+            EditorTool tool = ActiveTool == EditorTool.Select && SelectedAnnotation != null ? SelectedAnnotation.ToolType : ActiveTool;
 
-            if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
-            {
-                supportsBorderStyle = SelectedAnnotation.ToolType is EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand;
-            }
-
-            if (supportsBorderStyle)
+            if (tool is EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand)
             {
                 Options.BorderStyle = normalizedBorderStyle;
+            }
+            else if (tool == EditorTool.Magnify)
+            {
+                Options.MagnifierBorderStyle = normalizedBorderStyle;
             }
         }
 
@@ -733,6 +740,42 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         }
 
         [ObservableProperty]
+        private bool _arrowRoundedCorners = true;
+
+        partial void OnArrowRoundedCornersChanged(bool value)
+        {
+            bool isArrow = ActiveTool == EditorTool.Arrow;
+
+            if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
+            {
+                isArrow = SelectedAnnotation is ArrowAnnotation;
+            }
+
+            if (isArrow)
+            {
+                Options.ArrowRoundedCorners = value;
+            }
+        }
+
+        [ObservableProperty]
+        private bool _freehandArrow;
+
+        partial void OnFreehandArrowChanged(bool value)
+        {
+            bool isFreehand = ActiveTool == EditorTool.Freehand;
+
+            if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
+            {
+                isFreehand = SelectedAnnotation is FreehandAnnotation;
+            }
+
+            if (isFreehand)
+            {
+                Options.FreehandArrow = value;
+            }
+        }
+
+        [ObservableProperty]
         private bool _speechBalloonTail = true;
 
         partial void OnSpeechBalloonTailChanged(bool value)
@@ -753,6 +796,18 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             else if (appliesToStep)
             {
                 Options.StepTail = value;
+            }
+        }
+
+        [ObservableProperty]
+        private bool _speechBalloonAutoSize;
+
+        partial void OnSpeechBalloonAutoSizeChanged(bool value)
+        {
+            if (ActiveTool == EditorTool.SpeechBalloon ||
+                (ActiveTool == EditorTool.Select && SelectedAnnotation is SpeechBalloonAnnotation))
+            {
+                Options.SpeechBalloonAutoSize = value;
             }
         }
 
@@ -815,10 +870,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step => true,
+                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step or EditorTool.Magnify => true,
                 _ => false
             },
-            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step => true,
+            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step or EditorTool.Magnify => true,
             _ => false
         };
 
@@ -847,11 +902,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public bool ShowThickness => ActiveTool switch
         {
             EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text => true,
+                or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text or EditorTool.Magnify => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
                 EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                    or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text => true,
+                    or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text or EditorTool.Magnify => true,
                 _ => false
             },
             _ => false
@@ -896,10 +951,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowBorderStyle => ActiveTool switch
         {
-            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand => true,
+            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand or EditorTool.Magnify => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand => true,
+                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand or EditorTool.Magnify => true,
                 _ => false
             },
             _ => false
@@ -968,10 +1023,26 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             _ => false
         };
 
+        public bool ShowArrowRoundedCorners => ShowArrowStyle;
+
+        public bool ShowFreehandArrow => ActiveTool switch
+        {
+            EditorTool.Freehand => true,
+            EditorTool.Select => _selectedAnnotation is FreehandAnnotation,
+            _ => false
+        };
+
         public bool ShowSpeechBalloonTail => ActiveTool switch
         {
             EditorTool.SpeechBalloon or EditorTool.Step => true,
             EditorTool.Select => SelectedAnnotation is SpeechBalloonAnnotation or NumberAnnotation,
+            _ => false
+        };
+
+        public bool ShowSpeechBalloonAutoSize => ActiveTool switch
+        {
+            EditorTool.SpeechBalloon => true,
+            EditorTool.Select => SelectedAnnotation is SpeechBalloonAnnotation,
             _ => false
         };
 
@@ -1079,6 +1150,8 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             OnPropertyChanged(nameof(ShowFontFamily));
             OnPropertyChanged(nameof(ShowBorderStyle));
             OnPropertyChanged(nameof(ShowArrowStyle));
+            OnPropertyChanged(nameof(ShowArrowRoundedCorners));
+            OnPropertyChanged(nameof(ShowFreehandArrow));
             OnPropertyChanged(nameof(ShowCursorType));
             OnPropertyChanged(nameof(ShowCornerRadius));
             OnPropertyChanged(nameof(ShowStrength));
@@ -1088,13 +1161,14 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             OnPropertyChanged(nameof(ShowTextItalic));
             OnPropertyChanged(nameof(ShowShadow));
             OnPropertyChanged(nameof(ShowSpeechBalloonTail));
+            OnPropertyChanged(nameof(ShowSpeechBalloonAutoSize));
             OnPropertyChanged(nameof(ActiveToolIcon));
             OnPropertyChanged(nameof(ActiveToolName));
             OnPropertyChanged(nameof(EffectStrengthMaximum));
             OnPropertyChanged(nameof(ShowToolOptionsSeparator));
         }
 
-        public bool ShowToolOptionsSeparator => ShowBorderColor || ShowFillColor || ShowTextColor || ShowThickness || ShowFontSize || ShowStepStartNumber || ShowStepType || ShowTextHorizontalAlignment || ShowFontFamily || ShowBorderStyle || ShowArrowStyle || ShowCursorType || ShowCornerRadius || ShowStrength || ShowSpotlightBlur || ShowEffectEllipse || ShowTextStyle || ShowShadow || ShowSpeechBalloonTail;
+        public bool ShowToolOptionsSeparator => ShowBorderColor || ShowFillColor || ShowTextColor || ShowThickness || ShowFontSize || ShowStepStartNumber || ShowStepType || ShowTextHorizontalAlignment || ShowFontFamily || ShowBorderStyle || ShowArrowStyle || ShowCursorType || ShowCornerRadius || ShowStrength || ShowSpotlightBlur || ShowEffectEllipse || ShowTextStyle || ShowShadow || ShowSpeechBalloonTail || ShowSpeechBalloonAutoSize;
 
         [ObservableProperty]
         private EditorTool _activeTool = EditorTool.Rectangle;
@@ -1203,6 +1277,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     ShadowEnabled = Options.Shadow;
                     SelectedBorderStyle = NormalizeBorderStyle(Options.BorderStyle);
                     FontSize = Options.TextFontSize;
+                    FreehandArrow = Options.FreehandArrow;
                     break;
                 case EditorTool.Arrow:
                     SelectedColorValue = Options.BorderColor;
@@ -1212,6 +1287,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     ShadowEnabled = Options.Shadow;
                     FontSize = Options.TextFontSize;
                     SelectedArrowStyle = NormalizeArrowStyle(Options.ArrowStyle);
+                    ArrowRoundedCorners = Options.ArrowRoundedCorners;
                     break;
                 case EditorTool.Cursor:
                     SelectedCursorType = NormalizeCursorType(Options.CursorType);
@@ -1235,6 +1311,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     CornerRadius = Options.CornerRadius;
                     ShadowEnabled = Options.Shadow;
                     SpeechBalloonTail = Options.SpeechBalloonTail;
+                    SpeechBalloonAutoSize = Options.SpeechBalloonAutoSize;
                     FontSize = Options.SpeechBalloonFontSize;
                     SelectedFontFamily = NormalizeFontFamily(Options.SpeechBalloonFontFamily);
                     SelectedTextHorizontalAlignment = NormalizeTextHorizontalAlignment(Options.SpeechBalloonTextHorizontalAlignment);
@@ -1265,6 +1342,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 case EditorTool.Magnify:
                     EffectStrength = Options.MagnifierStrength;
                     EffectEllipse = Options.MagnifierEllipse;
+                    SelectedColorValue = Options.MagnifierBorderColor;
+                    StrokeWidth = Options.MagnifierThickness;
+                    SelectedBorderStyle = NormalizeBorderStyle(Options.MagnifierBorderStyle);
                     break;
                 case EditorTool.Spotlight:
                     EffectStrength = Options.SpotlightStrength;

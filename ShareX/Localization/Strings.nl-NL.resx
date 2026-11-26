@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>Na het uploaden</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Ook</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Annuleren</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>Bestandsnaam</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Bestand kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Zet het opgeslagen bestand op het klembord.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Bestandspad kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Kopieert het pad van het opgeslagen bestand.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Mappad kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Kopieert de map van het opgeslagen bestand.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Afbeelding kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Zet de afbeelding op het klembord.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>URL kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Uploadt het en kopieert daarna de link.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>De vereiste stappen volgen uit je doel. Voeg naar wens extra's toe.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>Wat wil je op het klembord?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Na de opname</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>Geen afbeeldingsvoorbeeld beschikbaar</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Vereist voor dit doel</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Controleer de opgenomen inhoud en kies wat er vervolgens gebeurt.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Uploaden</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Schuifbalken altijd op volle breedte weergeven</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Toepassing</value>
   </data>
@@ -358,6 +403,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Klembordindelingen</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Compacte modus</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Aangepast pad voor sneltoetsconfiguratie</value>
   </data>
@@ -381,6 +429,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>Beschrijving</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>De beschrijving kan niet leeg zijn.</value>
   </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>Ontwikkelaarsmodus</value>
@@ -460,6 +511,9 @@
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Indeling</value>
   </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>De indeling kan niet leeg zijn.</value>
+  </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>Algemeen</value>
   </data>
@@ -471,6 +525,24 @@
   </data>
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Herhalingsinterval voor sneltoetsen (milliseconden)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Pictogrammenpakket:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Klassiek</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Pictogrammen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Zichtbaarheid afbeeldingsvoorbeeld:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Positie afbeeldingsvoorbeeld:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Afbeeldingsafdrukinstellingen...</value>
@@ -504,6 +576,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Licht</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Lijstweergave</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Hoofdvenster</value>
@@ -598,6 +673,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Opslaan</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Tekst in opnamen doorzoekbaar maken in de geschiedenis</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Recente taken opslaan</value>
   </data>
@@ -625,11 +703,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Klembordinhoudviewer weergeven</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Kolommen weergeven</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Knop "Bewerken in ShareX-afbeeldingseditor" weergeven in contextmenu van Windows Verkenner</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Knop "Bewerken in ShareX-foto-editor" weergeven in contextmenu van Windows Verkenner</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Om bevestiging vragen voordat bestanden worden verwijderd</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Waarschuwingsdrempel voor grote bestanden (MB)</value>
@@ -667,6 +751,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Limiet voor gelijktijdige uploads:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Afstand</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compact</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menu's</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menu's:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Voorbeeld:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Instellingenvensters:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Zijbalk</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Zijbalk:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Hulpmiddelmenu's</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Hulpmiddelmenu's:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -675,6 +792,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Submappatroon:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Taakweergavemodus:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Thema</value>
@@ -1189,6 +1309,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>Debuglogboek uploaden?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>Het rapport is naar het klembord gekopieerd.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>Naar klembord kopiëren</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>Voeg dit rapport toe als je een probleem meldt met schaal, meerdere monitoren of opnames op de verkeerde plek.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>Indeling van beeldschermen</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>Muiscursor</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>Hoofdmonitor</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>Taakbalk of app-balk</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>Opslaan als .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>Beeldschermdiagnose opslaan</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>Het rapport is opgeslagen in {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>Tekstbestand</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - Beeldschermdiagnose</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>Hier neerzetten</value>
   </data>
@@ -1215,6 +1374,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Failed to opslaan instellingen</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Niet meer herinneren</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Annuleren</value>
@@ -1325,6 +1487,21 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Sneltoetsinstellingen</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Je kunt dit op elk moment wijzigen in de applicatie-instellingen.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Kleurrijke, gedetailleerde pictogrammen in een klassieke stijl.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Strakke lijnpictogrammen die de kleuren van je thema volgen.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX heeft nieuwe pictogrammen. Kies de stijl die je het mooist vindt.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Kies je pictogrammen</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write afbeelding to path:</value>
   </data>
@@ -1398,13 +1575,16 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Achtergrondverwijderaar...</value>
   </data>
   <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
-    <value>Borderless venster</value>
+    <value>Raamloos venster</value>
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Vastleggen</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Meetlat</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
-    <value>Klembord weergaveer</value>
+    <value>Klembord weergave</value>
   </data>
   <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
     <value>Kleurenkiezer</value>
@@ -1429,6 +1609,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>Beeldschermdiagnose...</value>
   </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Doneren</value>
@@ -1479,7 +1662,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Afbeeldingsconverter...</value>
   </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
-    <value>Afbeelding bewerkenor</value>
+    <value>Afbeelding bewerken</value>
   </data>
   <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
     <value>Afbeeldingseffecten</value>
@@ -1491,13 +1674,13 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Afbeeldingsformaat wijzigen...</value>
   </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
-    <value>Afbeelding splitter</value>
+    <value>Afbeelding splitsen</value>
   </data>
   <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
-    <value>Afbeelding miniatuurer</value>
+    <value>Afbeelding miniatuur</value>
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
-    <value>Afbeelding weergaveer</value>
+    <value>Afbeelding weergave</value>
   </data>
   <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
     <value>Afbeeldingswatermerk...</value>
@@ -1526,6 +1709,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Netwerkmonitor...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Nieuw</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Geen voorinstellingen voor afbeeldingseffecten</value>
   </data>
@@ -1544,6 +1730,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to scherm</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Pixeleditor...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR code</value>
   </data>
@@ -1553,6 +1742,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Regio...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Regio (transparant)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Browser voor externe opslag...</value>
   </data>
@@ -1560,7 +1752,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Opnieuw starten als beheerder</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Meetlat</value>
+    <value>Meten</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Kleurenkiezer op het scherm</value>
@@ -1570,6 +1762,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Schermopname (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Slechts één keer</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Schermafbeeldingenmap...</value>
@@ -1676,6 +1871,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Beautify afbeelding</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Leeg lijst</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Miniatuurweergave wissen</value>
   </data>
@@ -1711,6 +1909,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Bewerken in foto-editor...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Bewerken in pixeleditor...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Bestand</value>
@@ -1837,6 +2038,12 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Upload stoppen</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Overschakelen naar lijstweergave</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Overschakelen naar miniatuurweergave</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Tekst</value>
@@ -2095,23 +2302,20 @@ Do you want to abort the active scherm opname?</value>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Aan de slag</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Kies hoe de app eruitziet en aanvoelt.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Maak ShareX helemaal van jou</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Gebouwd voor Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Je kunt deze opties op elk moment wijzigen in de applicatie-instellingen.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Ruim</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Bedankt voor het downloaden van ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Systeeminstelling gebruiken</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Welkom bij ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Leg alles vast, bewerk het en deel het op jouw manier.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Wilt u de aangepaste uploader ''{0}'' toevoegen?</value>
@@ -2137,6 +2341,33 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Sneltoetsen ingeschakeld.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Verstreken</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Bestandsnaam</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Geschiedenis</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>In wachtrij</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Vooruitgang</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Te gaan</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Snelheid</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Upload voltooid. URL: {0}</value>
@@ -2213,11 +2444,17 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Afbeelding automatisch naar klembord kopiëren</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Canvas automatisch vergroten als tekst of vormen buiten de rand komen</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Automatisch oplopend nummer:</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Lengte voor automatisch verkorten van URL</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Venstergrootte aanpassen aan afbeelding</value>
   </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>Automatische JPEG</value>
@@ -2245,6 +2482,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Annuleren</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Opvulkleur voor toegevoegd canvasgebied:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Vastleggen</value>
@@ -2291,6 +2531,12 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>OCR-venster sluiten na openen van servicelink</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Compacte werkbalk voor de afbeeldingseditor</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Compacte werkbalk voor gebiedsopname</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Configureren...</value>
   </data>
@@ -2305,9 +2551,6 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Werkbalk aanpassen...</value>
-  </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Standaardtaal:</value>
   </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Invoerbestand verwijderen</value>
@@ -2362,6 +2605,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Extensies:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Alleen gebruikt door de FFmpeg-recorder. Schakel de ingebouwde schermrecorder uit om dit te wijzigen.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP-account:</value>
@@ -2495,6 +2741,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Actie bij middelklikken:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Beeldscherm:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Muisknop 4 klikken:</value>
   </data>
@@ -2507,6 +2756,12 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opties voor muisklikmarkering...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Muiswiel:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Wat scrollen met het vergrootglas doet. Houd Ctrl ingedrukt tijdens het scrollen om de andere actie uit te voeren.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Omlaag</value>
   </data>
@@ -2515,6 +2770,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Omhoog</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Modus voor meerdere gebieden</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Naam</value>
@@ -2585,6 +2843,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Ingebouwde schermrecorder gebruiken</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR-tonemapping</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Hardwarematige videocodering vereisen</value>
   </data>
@@ -2626,12 +2887,6 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-help...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR-talen zijn niet beschikbaar</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Effecten alleen toepassen op gebiedsopname</value>
@@ -2795,6 +3050,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Actie bij rechtsklikken:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Rechtsklikken verwijdert de vorm onder de cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Klik met de rechtermuisknop om een invoer- of uitvoerbestandstoken in te voegen.</value>
   </data>
@@ -2930,8 +3188,17 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Tijdzone:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Beeldscherm {0} (niet verbonden)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Beeldscherm {0}: {1} ({2} op {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Melding</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Grootte van werkbalkknoppen (pixels):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Gereedschappen</value>
@@ -2981,6 +3248,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Aangepaste tijdzone gebruiken</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Aangepaste grootte voor werkbalkknoppen gebruiken</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Vaste duur gebruiken</value>
   </data>
@@ -3010,6 +3280,18 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave-audio</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP-compressie-inspanning:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lagere waarden zorgen voor snellere codering. Hogere waarden leveren kleinere bestanden op. Alle waarden behouden de beeldkwaliteit.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Verliesvrij</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP-kwaliteit:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Breedte:</value>

@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>애니메이션 GIF를 열거나 끌어다 놓아 시작하세요</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>미리 보기에서 끌어서 자르기</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>이 구간은 이전 프레임이 필요한 프레임에서 시작합니다. 무손실로 내보내려면 다른 시작 프레임을 선택하세요.</value>
   </data>
@@ -319,6 +322,12 @@
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>재인코딩</value>
   </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>자르기 및 크기 재설정</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>출력 크기</value>
+  </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>잘라낸 GIF를 다른 파일 이름이나 다른 폴더에 저장하세요.</value>
   </data>
@@ -338,7 +347,8 @@
     <value>{0}ms 만에 배경을 제거했습니다.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>이미지를 저장했습니다.\n파일 경로: {0}</value>
+    <value>이미지를 저장했습니다.
+파일 경로: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>이미지 선택</value>
@@ -430,6 +440,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>창 제목</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>거리: {0:0.00} px | 각도: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | 오른쪽: {2} | 아래쪽: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>너비: {0} px | 높이: {1} px | 면적: {2} px | 둘레: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - 눈금자</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>클립보드 내용</value>
   </data>
@@ -449,7 +471,9 @@
     <value>형식 1개</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>이 클립보드 형식을 미리 볼 수 없습니다.\n\n{0}</value>
+    <value>이 클립보드 형식을 미리 볼 수 없습니다.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>미리 보기를 사용할 수 없음</value>
@@ -461,7 +485,8 @@
     <value>텍스트  |  {0:N0}자</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>클립보드를 읽을 수 없습니다\n{0}</value>
+    <value>클립보드를 읽을 수 없습니다
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>지우기</value>
@@ -1322,10 +1347,12 @@
     <value>태그 {0:N0}개</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>메타데이터를 읽을 수 없습니다\n{0}</value>
+    <value>메타데이터를 읽을 수 없습니다
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>메타데이터를 제거할 수 없습니다\n{0}</value>
+    <value>메타데이터를 제거할 수 없습니다
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - 메타데이터</value>
@@ -1600,12 +1627,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>대상</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>이 시스템에서는 OCR용 {0} 언어를 사용할 수 없습니다.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>광학 문자 인식은 Windows 버전 {0} 이상에서만 사용할 수 있습니다.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1633,6 +1654,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>연 후 닫기</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>클립보드에 복사됨</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>모두 복사</value>
   </data>
@@ -1642,23 +1666,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>서비스 편집</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>언어</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>이름</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>새로 만들기</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR 도움말</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>텍스트를 찾을 수 없음</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>서비스 열기...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>인식</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>제거</value>
@@ -1668,9 +1686,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>결과</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>배율</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>서비스 선택</value>
@@ -1684,8 +1699,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>영역 선택...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>서비스</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>문단 구분</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - 광학 문자 인식</value>
@@ -2033,7 +2048,7 @@
     <value>허용 오차: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - 눈금자</value>
+    <value>ShareX - 측정</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>시작하려면 비디오를 선택하세요.</value>
@@ -2077,6 +2092,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>변환 중지 중...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>평균 비트레이트</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>찾아보기...</value>
   </data>
@@ -2095,6 +2113,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>파일 이름</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>파일 크기</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>폴더</value>
   </data>
@@ -2112,6 +2133,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>품질</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>해상도</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>결과</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - 비디오 변환기</value>

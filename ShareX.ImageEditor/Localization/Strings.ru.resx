@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Стиль стрелки</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Автоматически подгонять размер под текст</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Размытие</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Размер шрифта</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Стрелка от руки</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Выравнивание по горизонтали</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Повторить (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Скруглённые углы</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Сохранить</value>
@@ -258,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Курсор ожидания</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Перетащите, чтобы переместить панель инструментов; дважды щёлкните, чтобы сбросить её положение</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Достижение разблокировано!</value>
   </data>
@@ -281,6 +293,15 @@
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Отмена (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Цвет заливки нового места</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Не удалось загрузить изображение из буфера обмена.
@@ -335,6 +356,12 @@
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Поля</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Новый из снимка экрана (весь экран)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Новый из снимка экрана (область)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Открыть изображение</value>
@@ -1359,8 +1386,14 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Справа</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Начать группу</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Все элементы находятся на панели инструментов.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Доступные элементы</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Пустой разделитель</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Отмена</value>
@@ -1371,26 +1404,35 @@
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Настроить панель инструментов</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Перетащите элементы на панель инструментов, чтобы показать их, или за её пределы, чтобы скрыть. Перетащите разделитель между элементами, чтобы разбить их на группы.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} и {1} используют одно сочетание клавиш ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Недопустимое сочетание для {0}. Используйте формат R, Ctrl+R или Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Переместить вниз</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Переместить вверх</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>ОК</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Основное</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Восстановить панель инструментов по умолчанию</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Показать / Скрыть</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Дополнительное</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Разделитель</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Разделитель. Перетащите его правый край, чтобы изменить ширину.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Ширина разделителя</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Стрелка</value>
@@ -1400,6 +1442,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Размытие</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Размер холста</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Клонировать</value>
@@ -1420,7 +1465,8 @@
     <value>Эмодзи</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nИзбранные эффекты изображения (Правая кнопка)</value>
+    <value>{0}
+Избранные эффекты изображения (Правая кнопка)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Файл</value>

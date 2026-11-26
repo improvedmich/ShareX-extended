@@ -30,6 +30,17 @@ using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    public struct MONITORINFOEX
+    {
+        public int cbSize;
+        public RECT rcMonitor;
+        public RECT rcWork;
+        public uint dwFlags;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+        public string szDevice;
+    }
+
     [StructLayout(LayoutKind.Sequential)]
     public struct RECT
     {
@@ -844,7 +855,7 @@ namespace ShareX.HelpersLib
         public int dwThreadId;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public struct SHFILEINFO
     {
         public const int NAMESIZE = 80;

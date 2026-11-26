@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -35,6 +36,11 @@ namespace ShareX
 {
     public class CaptureRegion : CaptureBase
     {
+        // Lets the region capture window disappear and the window's title bar finish fading to its active color, which
+        // Windows starts when the region capture window closes. Shorter waits failed on Windows 11 because the two white
+        // background captures differed.
+        private const int TransparentCaptureDelay = 300;
+
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             return null;
@@ -55,13 +61,10 @@ namespace ShareX
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
 
-            SKBitmap frozenScreenshot;
-            using (Bitmap canvas = activeMonitorMode
+            // The capture is already a new bitmap owned by this request, so it is handed over without a copy.
+            SKBitmap frozenScreenshot = activeMonitorMode
                 ? screenshot.CaptureActiveMonitor()
-                : screenshot.CaptureFullscreen())
-            {
-                frozenScreenshot = canvas.Copy();
-            }
+                : screenshot.CaptureFullscreen();
 
             SKBitmap cursorBitmap = null;
             Point cursorPosition = Point.Empty;
@@ -71,8 +74,7 @@ namespace ShareX
                 CursorData cursorData = new CursorData();
                 if (cursorData.IsVisible)
                 {
-                    using Bitmap cursor = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
-                    cursorBitmap = cursor.Copy();
+                    cursorBitmap = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
                     cursorPosition = new Point(
                         cursorData.DrawPosition.X - screenBounds.X,
                         cursorData.DrawPosition.Y - screenBounds.Y);
@@ -82,10 +84,13 @@ namespace ShareX
             AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
             {
                 Screenshot = frozenScreenshot,
+                // Screen captures are opaque: WindowsImageInterop.Capture and HDR correction set alpha to 255.
+                ScreenshotIsOpaque = true,
                 ScreenBounds = screenBounds,
                 RegionCaptureOptions = taskSettings.CaptureSettingsReference.RegionCaptureOptions,
                 ImageEditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,
                 EnableAnnotations = !taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation,
+                AllowMultipleRegions = true,
                 CursorBitmap = cursorBitmap,
                 CursorPosition = cursorPosition
             };
@@ -98,7 +103,14 @@ namespace ShareX
 
             using (result.Image)
             {
-                Bitmap output = result.Image.Copy();
+                Bitmap output = null;
+
+                if (result.WindowHandle != IntPtr.Zero && taskSettings.CaptureSettings.CaptureTransparent)
+                {
+                    output = await CaptureWindowTransparentAsync(taskSettings, result);
+                }
+
+                output ??= result.Image.Copy();
                 TaskMetadata metadata = new TaskMetadata(output);
 
                 if (result.ImageModified)
@@ -112,6 +124,28 @@ namespace ShareX
                 }
 
                 return metadata;
+            }
+        }
+
+        /// <summary>
+        /// When a detected window was captured whole, gives it the rounded corners and, with "Capture window with
+        /// shadow", the shadow that window capture has with "Capture window with transparency". The pixels inside the
+        /// window, annotations included, still come from the region capture. Returns null if that isn't possible.
+        /// </summary>
+        private static async Task<Bitmap> CaptureWindowTransparentAsync(TaskSettings taskSettings, AvaloniaRegionCaptureResult result)
+        {
+            await Task.Delay(TransparentCaptureDelay);
+
+            try
+            {
+                Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+                screenshot.CaptureCursor = false;
+                return screenshot.CaptureWindowTransparent(result.WindowHandle, result.Image, result.ScreenRectangle);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Transparent window capture failed.");
+                return null;
             }
         }
     }

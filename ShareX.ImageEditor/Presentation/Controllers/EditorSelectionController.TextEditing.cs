@@ -61,19 +61,25 @@ public partial class EditorSelectionController
         var balloonWidth = balloonRect.Width;
         var balloonHeight = balloonRect.Height;
 
-        // Check if balloon is too small (e.g. user just clicked without dragging)
-        if (balloonWidth < 50 || balloonHeight < 30)
+        // Check if balloon is too small (e.g. user just clicked without dragging).
+        // An auto-sized balloon keeps its size until its text changes, then fits the text.
+        if (!annotation.AutoSize && (balloonWidth < 50 || balloonHeight < 30))
         {
             balloonWidth = Math.Max(balloonWidth, 200);
             balloonHeight = Math.Max(balloonHeight, 100);
+
+            SKRect previousBounds = annotation.GetBounds();
 
             annotation.EndPoint = new SKPoint(
                 annotation.StartPoint.X + (float)balloonWidth,
                 annotation.StartPoint.Y + (float)balloonHeight
             );
 
+            // Keep a placed tail fixed on the canvas and move a default tail with the body
+            annotation.ResizeTail(previousBounds, annotation.GetBounds());
+
             // Fix Tail Point if it was at 0,0 or default
-            if (annotation.TailEnabled &&
+            if (!annotation.TailPointPlaced && annotation.TailEnabled &&
                 (!annotation.HasTailPoint ||
                 (Math.Abs(annotation.TailPoint.X - annotation.StartPoint.X) < 1 && Math.Abs(annotation.TailPoint.Y - annotation.StartPoint.Y) < 1)))
             {
@@ -103,6 +109,18 @@ public partial class EditorSelectionController
                 balloonControl.InvalidateVisual();
                 (tb.Parent as Panel)?.Children.Remove(tb); // Remove from OverlayCanvas
                 _balloonTextEditor = null;
+                _view.ScheduleAutoExpandCanvas(annotation);
+            }
+        };
+
+        // TextChanged is also raised for the initial text, which must not undo a size drawn or set by hand.
+        string? fittedText = textBox.Text;
+        textBox.TextChanged += (s, args) =>
+        {
+            if (annotation.AutoSize && ReferenceEquals(_balloonTextEditor, textBox) && textBox.Text != fittedText)
+            {
+                fittedText = textBox.Text;
+                FitSpeechBalloonToText(balloonControl, textBox.Text);
             }
         };
 
@@ -112,6 +130,42 @@ public partial class EditorSelectionController
         _balloonTextEditor = textBox;
         textBox.Focus();
         textBox.CaretIndex = textBox.Text?.Length ?? 0; // Place caret at end
+    }
+
+    /// <summary>
+    /// Fits the selected speech balloon to its text, or to the text being typed when its editor is open.
+    /// </summary>
+    public void FitSelectedSpeechBalloonToText()
+    {
+        if (_selectedShape is not SpeechBalloonControl { Annotation: SpeechBalloonAnnotation annotation } balloonControl) return;
+
+        FitSpeechBalloonToText(balloonControl, _balloonTextEditor != null ? _balloonTextEditor.Text : annotation.Text);
+    }
+
+    private void FitSpeechBalloonToText(SpeechBalloonControl balloonControl, string? text)
+    {
+        if (balloonControl.Annotation is not SpeechBalloonAnnotation annotation) return;
+
+        annotation.FitToText(text);
+
+        AnnotationVisualFactory.UpdateVisualControl(
+            balloonControl,
+            annotation,
+            AnnotationVisualMode.Persisted,
+            _view.EditorCore.CanvasSize.Width,
+            _view.EditorCore.CanvasSize.Height);
+        balloonControl.InvalidateVisual();
+
+        if (_balloonTextEditor != null && ReferenceEquals(_selectedShape, balloonControl))
+        {
+            var bodyBounds = annotation.GetBounds();
+            ApplySpeechBalloonTextEditorLayout(_balloonTextEditor, annotation, bodyBounds.Left, bodyBounds.Top, bodyBounds.Width, bodyBounds.Height);
+        }
+
+        if (ReferenceEquals(_selectedShape, balloonControl))
+        {
+            UpdateSelectionHandles();
+        }
     }
 
     public void UpdateActiveTextEditorProperties()
@@ -188,6 +242,8 @@ public partial class EditorSelectionController
 
             UpdateSelectionHandles();
             UpdateHoverOutline();
+
+            _view.ScheduleAutoExpandCanvas(annotation);
         }
 
         lostFocusHandler = (s, args) => CompleteEditing();

@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
@@ -163,31 +164,9 @@ namespace ShareX.ImageEditor.Presentation.Views
             // Clone again from clipboard so we can paste multiple times
             var newAnnotation = _clipboardAnnotation.Clone();
 
-            // Offset position so it's visible (10px offset)
+            // Offset position so it's visible (20px offset)
             const float offset = 20f;
-
-            // Adjust points based on type
-            if (newAnnotation is ImageAnnotation img)
-            {
-                // Check if the image bitmap is valid (disposed?)
-                if (img.ImageBitmap == null && _clipboardAnnotation is ImageAnnotation clipImg)
-                {
-                    // Resurrect bitmap if needed (unlikely if deep cloned correctly)
-                    // But Clone() manages it.
-                }
-            }
-
-            // General offset logic
-            newAnnotation.StartPoint = new SKPoint(newAnnotation.StartPoint.X + offset, newAnnotation.StartPoint.Y + offset);
-            newAnnotation.EndPoint = new SKPoint(newAnnotation.EndPoint.X + offset, newAnnotation.EndPoint.Y + offset);
-
-            if (newAnnotation is FreehandAnnotation freehand)
-            {
-                for (int i = 0; i < freehand.Points.Count; i++)
-                {
-                    freehand.Points[i] = new SKPoint(freehand.Points[i].X + offset, freehand.Points[i].Y + offset);
-                }
-            }
+            OffsetClonedAnnotation(newAnnotation, offset);
 
             // Add to Core
             _editorCore.AddAnnotation(newAnnotation);
@@ -275,13 +254,26 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
+        private void QueueClipboardStatusCheck()
+        {
+            Dispatcher.UIThread.Post(() => _ = CheckClipboardStatus(), DispatcherPriority.ApplicationIdle);
+        }
+
         /// <summary>
         /// Checks if there is content on the system clipboard or internal clipboard
         /// and updates the ViewModel's CanPaste property.
         /// </summary>
         private async Task CheckClipboardStatus()
         {
-            if (DataContext is not MainViewModel vm) return;
+            if (_workspaceDisposed || DataContext is not MainViewModel vm) return;
+
+            // Embedded hosts (region capture) open right after ShareX copied the previous capture to the clipboard,
+            // and decoding it would delay the first mouse moves. Ctrl+V does not check CanPaste either.
+            if (_isWorkspaceHostMode)
+            {
+                vm.CanPaste = true;
+                return;
+            }
 
             bool canPaste = false;
 
@@ -348,18 +340,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             // Offset the duplicate by 20px
             const float offset = 20f;
-            clone.StartPoint = new SkiaSharp.SKPoint(clone.StartPoint.X + offset, clone.StartPoint.Y + offset);
-            clone.EndPoint = new SkiaSharp.SKPoint(clone.EndPoint.X + offset, clone.EndPoint.Y + offset);
-
-            // Offset freehand points if applicable
-            if (clone is FreehandAnnotation freehandClone)
-            {
-                for (int i = 0; i < freehandClone.Points.Count; i++)
-                {
-                    var pt = freehandClone.Points[i];
-                    freehandClone.Points[i] = new SkiaSharp.SKPoint(pt.X + offset, pt.Y + offset);
-                }
-            }
+            OffsetClonedAnnotation(clone, offset);
 
             // Add to EditorCore (captures undo history before adding)
             _editorCore.AddAnnotation(clone);
@@ -385,6 +366,25 @@ namespace ShareX.ImageEditor.Presentation.Views
         private void OnDuplicateRequested(object? sender, EventArgs e)
         {
             DuplicateSelectedAnnotation();
+        }
+
+        private static void OffsetClonedAnnotation(Annotation clone, float offset)
+        {
+            clone.StartPoint = new SKPoint(clone.StartPoint.X + offset, clone.StartPoint.Y + offset);
+            clone.EndPoint = new SKPoint(clone.EndPoint.X + offset, clone.EndPoint.Y + offset);
+
+            if (clone is FreehandAnnotation freehand)
+            {
+                for (int i = 0; i < freehand.Points.Count; i++)
+                {
+                    freehand.Points[i] = new SKPoint(freehand.Points[i].X + offset, freehand.Points[i].Y + offset);
+                }
+            }
+            else if (clone is SpeechBalloonAnnotation balloon && balloon.HasTailPoint)
+            {
+                // TailPointPlaced is copied by Clone(), so only the position needs to move with the body
+                balloon.SetTailPoint(new SKPoint(balloon.TailPoint.X + offset, balloon.TailPoint.Y + offset));
+            }
         }
     }
 }

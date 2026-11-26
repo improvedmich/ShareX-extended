@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Gaya panah</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Ukuran otomatis sesuai teks</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Buram</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Ukuran font</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Panah bebas</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Perataan horizontal</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Ulangi (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Sudut membulat</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Simpan</value>
@@ -258,6 +267,9 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Kursor tunggu</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Seret untuk memindahkan bilah alat, klik dua kali untuk mengatur ulang posisinya</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Pencapaian terbuka!</value>
   </data>
@@ -281,6 +293,15 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Batal (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Warna isian untuk area yang ditambahkan</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Gagal memuat gambar dari papan klip.
@@ -335,6 +356,12 @@ Papan klip tidak berisi gambar.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margin</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Baru dari tangkapan layar (layar penuh)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Baru dari tangkapan layar (wilayah)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Buka gambar</value>
@@ -1359,8 +1386,14 @@ Papan klip tidak berisi gambar.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Kanan</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Mulai grup</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Semua item ada di bilah alat.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Item yang tersedia</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Pemisah kosong</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Batal</value>
@@ -1371,26 +1404,35 @@ Papan klip tidak berisi gambar.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Sesuaikan Bilah Alat</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Seret item ke bilah alat untuk menampilkannya, atau keluar dari bilah alat untuk menyembunyikannya. Seret pemisah di antara item untuk membaginya ke dalam grup.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} dan {1} menggunakan pintasan yang sama ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Pintasan tidak valid untuk {0}. Gunakan format seperti R, Ctrl+R, atau Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Pindah ke bawah</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Pindah ke atas</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Oke</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Utama</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Atur ulang bilah alat ke bawaan</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Tampilkan / Sembunyikan</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Sekunder</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Pemisah</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Pemisah. Seret tepi kanannya untuk mengubah lebarnya.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Lebar pemisah</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Panah</value>
@@ -1400,6 +1442,9 @@ Papan klip tidak berisi gambar.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Buram</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Ukuran kanvas</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klon</value>
@@ -1420,7 +1465,8 @@ Papan klip tidak berisi gambar.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEfek gambar favorit (Klik kanan)</value>
+    <value>{0}
+Efek gambar favorit (Klik kanan)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>File</value>

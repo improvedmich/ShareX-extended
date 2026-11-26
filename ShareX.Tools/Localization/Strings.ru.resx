@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Откройте или перетащите анимированный GIF, чтобы начать</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Перетащите на предпросмотре, чтобы обрезать</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Этот фрагмент начинается с кадра, которому нужны предыдущие кадры. Выберите другой начальный кадр для экспорта без потерь.</value>
   </data>
@@ -319,6 +322,12 @@
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Перекодирование</value>
   </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Сбросить обрезку и размер</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Размер на выходе</value>
+  </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Сохраните обрезанный GIF под другим именем или в другой папке.</value>
   </data>
@@ -338,7 +347,8 @@
     <value>Фон удалён за {0} мс.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>Изображение сохранено.\nПуть к файлу: {0}</value>
+    <value>Изображение сохранено.
+Путь к файлу: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Выбрать изображение</value>
@@ -430,6 +440,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Заголовок окна</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Расстояние: {0:0.00} px | Угол: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Справа: {2} | Снизу: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Ширина: {0} px | Высота: {1} px | Площадь: {2} px | Периметр: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX — линейка</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Содержимое буфера обмена</value>
   </data>
@@ -449,7 +471,9 @@
     <value>1 формат</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Не удалось просмотреть этот формат буфера обмена.\n\n{0}</value>
+    <value>Не удалось просмотреть этот формат буфера обмена.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Предварительный просмотр недоступен</value>
@@ -461,7 +485,8 @@
     <value>Текст  |  {0:N0} символов</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>Не удалось прочитать буфер обмена\n{0}</value>
+    <value>Не удалось прочитать буфер обмена
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Очистить</value>
@@ -1412,10 +1437,12 @@
     <value>Тегов: {0:N0}</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>Не удалось прочитать метаданные\n{0}</value>
+    <value>Не удалось прочитать метаданные
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>Не удалось удалить метаданные\n{0}</value>
+    <value>Не удалось удалить метаданные
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX — метаданные</value>
@@ -1690,12 +1717,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Цель</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Язык {0} недоступен в этой системе для OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Оптическое распознавание символов доступно только в Windows версии {0} или новее.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1723,6 +1744,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Закрывать после открытия</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Скопировано в буфер обмена</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Копировать всё</value>
   </data>
@@ -1732,23 +1756,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Изменить службы</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Язык</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Имя</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Создать</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Справка по OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Текст не найден</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Открыть службу...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Распознавание</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Удалить</value>
@@ -1758,9 +1776,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Результат</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Коэффициент масштаба</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Выберите службу</value>
@@ -1774,8 +1789,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Выбрать область...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Службы</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Разделять абзацы</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX — оптическое распознавание символов</value>
@@ -2123,7 +2138,7 @@
     <value>Допуск: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX — линейка</value>
+    <value>ShareX — измерение</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Выберите видео, чтобы начать.</value>
@@ -2167,6 +2182,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Остановка преобразования...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Средний битрейт</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Обзор...</value>
   </data>
@@ -2185,6 +2203,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Имя файла</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Размер файла</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Папка</value>
   </data>
@@ -2202,6 +2223,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Качество</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Разрешение</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Результат</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX — конвертер видео</value>

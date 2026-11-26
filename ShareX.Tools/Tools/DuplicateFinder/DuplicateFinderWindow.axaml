@@ -4,7 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         mc:Ignorable="d" d:DesignWidth="920" d:DesignHeight="640"
         x:Class="ShareX.Tools.DuplicateFinderWindow"
         x:DataType="vm:DuplicateFinderViewModel"
@@ -173,12 +174,10 @@
                                                 <ListBox.ItemTemplate>
                                                     <DataTemplate x:DataType="vm:DuplicateFileData">
                                                         <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8" Margin="0,2">
-                                                            <TextBlock Grid.Column="0"
-                                                                       Text="{x:Static theming:LucideIcons.file}"
-                                                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                                       FontWeight="Normal"
-                                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                                       VerticalAlignment="Center"/>
+                                                             <controls:IconPresenter Grid.Column="0"
+                                                                                     Icon="{x:Static icons:AppIcons.File}"
+                                                                                     Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                                     VerticalAlignment="Center"/>
                                                             <TextBox Grid.Column="1"
                                                                      Text="{Binding Path}"
                                                                      Classes="path-text"
@@ -190,19 +189,15 @@
                                                                      CommandParameter="{Binding Path}"
                                                                      ToolTip.Tip="{x:Static localization:Strings.DuplicateFinderWindow_Copy_path}"
                                                                      Padding="6">
-                                                                <TextBlock Text="{x:Static theming:LucideIcons.copy}"
-                                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                                           FontWeight="Normal"/>
-                                                            </Button>
+                                                                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
+                                                             </Button>
                                                              <Button Grid.Column="3"
                                                                      Command="{Binding $parent[Window].((vm:DuplicateFinderViewModel)DataContext).OpenParentFolderCommand}"
                                                                      CommandParameter="{Binding Path}"
                                                                      ToolTip.Tip="{x:Static localization:Strings.DuplicateFinderWindow_Open_folder}"
                                                                      Padding="6">
-                                                                <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
-                                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                                                           FontWeight="Normal"/>
-                                                            </Button>
+                                                                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
+                                                             </Button>
                                                         </Grid>
                                                     </DataTemplate>
                                                 </ListBox.ItemTemplate>
@@ -220,12 +215,10 @@
                                     Spacing="10"
                                     MaxWidth="420"
                                     IsHitTestVisible="False">
-                            <TextBlock Text="{x:Static theming:LucideIcons.search}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontWeight="Normal"
-                                       FontSize="48"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       HorizontalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Search}"
+                                                    FontSize="48"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                    HorizontalAlignment="Center"/>
                             <TextBlock Text="{Binding NoDuplicatesMessage}"
                                        FontWeight="Normal"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"

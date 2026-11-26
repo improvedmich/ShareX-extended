@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Rozpoznaj tekst (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Otwórz w edytorze zdjęć</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Wykonaj działania</value>
   </data>
@@ -639,6 +642,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Przeslij</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Linijka</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Prześlij ze schowka</value>
   </data>
@@ -771,6 +777,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Przypnij do ekranu (z ekranu)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>Edytor pikseli</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Przechwytywanie całego ekranu</value>
   </data>
@@ -786,8 +795,11 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Przechwytywanie regionu</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Przechwytywanie regionu (przezroczysty)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Linijka</value>
+    <value>Pomiar</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Selektor kolorów ekranu</value>
@@ -866,6 +878,21 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Pliki obrazów</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Dół</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Bok</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatycznie</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ukryj</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Pokaż</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Otwórz obraz</value>
@@ -1077,6 +1104,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Przechwycenie ostatniego regionu</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Przechwyć zaznaczony region</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Nie rób nic</value>
   </data>
@@ -1088,6 +1118,12 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Zmiana typu narzędzia</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Zmiana rozmiaru lupy</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Powiększanie lupy</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Komputer</value>
@@ -1221,6 +1257,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatycznie</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Widok listy</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Widok miniatur</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Własny serwis tekstu</value>
   </data>
@@ -1290,6 +1332,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Prześlij plik</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktywny monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Główny monitor</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>
@@ -1319,9 +1367,6 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Deweloperski</value>
   </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Wersja przedpremierowa</value>

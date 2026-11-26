@@ -358,6 +358,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Also.
+        /// </summary>
+        public static string AfterCaptureWindow_AlsoHeading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_AlsoHeading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string AfterCaptureWindow_Cancel {
@@ -421,6 +430,114 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy file.
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyFile {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Puts the saved file on the clipboard..
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyFileDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFileDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy file path.
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyFilePath {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copies the path of the saved file..
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyFilePathDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFilePathDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy folder path.
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyFolderPath {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFolderPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copies the folder of the saved file..
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyFolderPathDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFolderPathDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy image.
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Puts the picture on the clipboard..
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyImageDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyImageDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy URL.
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyUrl {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploads it, then copies the link..
+        /// </summary>
+        public static string AfterCaptureWindow_GoalCopyUrlDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required steps follow from your goal. Add any extras you want..
+        /// </summary>
+        public static string AfterCaptureWindow_GoalDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What do you want on the clipboard?.
+        /// </summary>
+        public static string AfterCaptureWindow_GoalHeading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalHeading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to After capture.
         /// </summary>
         public static string AfterCaptureWindow_Heading {
@@ -435,6 +552,15 @@ namespace ShareX.Localization {
         public static string AfterCaptureWindow_NoPreview {
             get {
                 return ResourceManager.GetString("AfterCaptureWindow_NoPreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required for this goal.
+        /// </summary>
+        public static string AfterCaptureWindow_RequiredHeading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_RequiredHeading", resourceCulture);
             }
         }
         
@@ -754,6 +880,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always show full-width scroll bars.
+        /// </summary>
+        public static string ApplicationSettingsWindow_AlwaysExpandScrollBars {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_AlwaysExpandScrollBars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Application.
         /// </summary>
         public static string ApplicationSettingsWindow_Application {
@@ -961,6 +1096,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compact mode.
+        /// </summary>
+        public static string ApplicationSettingsWindow_CompactMode {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_CompactMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom hotkeys configuration path.
         /// </summary>
         public static string ApplicationSettingsWindow_CustomHotkeysConfigPath {
@@ -1029,6 +1173,15 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_Description {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description can&apos;t be empty..
+        /// </summary>
+        public static string ApplicationSettingsWindow_DescriptionCantBeEmpty {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_DescriptionCantBeEmpty", resourceCulture);
             }
         }
         
@@ -1267,6 +1420,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Format can&apos;t be empty..
+        /// </summary>
+        public static string ApplicationSettingsWindow_FormatCantBeEmpty {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_FormatCantBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string ApplicationSettingsWindow_General {
@@ -1299,6 +1461,60 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_HotkeyRepeatLimit {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_HotkeyRepeatLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icon pack:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_IconPackLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_IconPackLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Legacy.
+        /// </summary>
+        public static string ApplicationSettingsWindow_IconPackLegacy {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_IconPackLegacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modern.
+        /// </summary>
+        public static string ApplicationSettingsWindow_IconPackModern {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_IconPackModern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Icons.
+        /// </summary>
+        public static string ApplicationSettingsWindow_Icons {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_Icons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image preview visibility:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_ImagePreviewLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image preview location:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_ImagePreviewLocationLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLocationLabel", resourceCulture);
             }
         }
         
@@ -1398,6 +1614,15 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_Light {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Light", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List view.
+        /// </summary>
+        public static string ApplicationSettingsWindow_ListView {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ListView", resourceCulture);
             }
         }
         
@@ -1681,6 +1906,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Make text in captures searchable in history.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SaveOCRTextToHistory {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SaveOCRTextToHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save recent tasks.
         /// </summary>
         public static string ApplicationSettingsWindow_SaveRecentTasks {
@@ -1762,6 +1996,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show columns.
+        /// </summary>
+        public static string ApplicationSettingsWindow_ShowColumns {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowColumns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show &quot;Edit with ShareX Image editor&quot; button in Windows Explorer context menu.
         /// </summary>
         public static string ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu {
@@ -1776,6 +2019,15 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask for confirmation before deleting files.
+        /// </summary>
+        public static string ApplicationSettingsWindow_ShowFileDeleteConfirmation {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_ShowFileDeleteConfirmation", resourceCulture);
             }
         }
         
@@ -1888,6 +2140,105 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spacing.
+        /// </summary>
+        public static string ApplicationSettingsWindow_Spacing {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_Spacing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compact.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingCompact {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingCompact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingDefault {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menus.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingMenus {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingMenus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menus:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingMenusLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingMenusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingPreviewLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingPreviewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings windows:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingSettingsWindowsLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingSettingsWindowsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sidebar.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingSidebar {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sidebar:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingSidebarLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebarLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tool menus.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingToolMenus {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tool menus:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_SpacingToolMenusLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Steam.
         /// </summary>
         public static string ApplicationSettingsWindow_Steam {
@@ -1911,6 +2262,15 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_SubFolderPatternLabel {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_SubFolderPatternLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Task view mode:.
+        /// </summary>
+        public static string ApplicationSettingsWindow_TaskViewModeLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_TaskViewModeLabel", resourceCulture);
             }
         }
         
@@ -3454,6 +3814,123 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied the report to the clipboard..
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_Copied {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_Copied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy to clipboard.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_CopyToClipboard {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_CopyToClipboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include this report when you report a problem with scaling, multiple monitors or captures in the wrong place..
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_Description {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display layout.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_DisplayLayout {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_DisplayLayout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mouse cursor.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_MouseCursor {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_MouseCursor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Primary monitor.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_PrimaryMonitor {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_PrimaryMonitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_Refresh {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Taskbar or app bar.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_ReservedArea {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_ReservedArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save as .txt....
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_SaveAs {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_SaveAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved the report to {0}.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_Saved0 {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_Saved0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save display diagnostics.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_SaveDialogTitle {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_SaveDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text file.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_TextFile {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_TextFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Display diagnostics.
+        /// </summary>
+        public static string DisplayDiagnosticsWindow_Title {
+            get {
+                return ResourceManager.GetString("DisplayDiagnosticsWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drop here.
         /// </summary>
         public static string DragDropUploadWindow_DropHere {
@@ -3531,6 +4008,15 @@ namespace ShareX.Localization {
         public static string FFmpegOnlySupports64BitOperatingSystems {
             get {
                 return ResourceManager.GetString("FFmpegOnlySupports64BitOperatingSystems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t remind me again.
+        /// </summary>
+        public static string FileDeleteConfirmation_DontRemindAgain {
+            get {
+                return ResourceManager.GetString("FileDeleteConfirmation_DontRemindAgain", resourceCulture);
             }
         }
         
@@ -3850,6 +4336,51 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can change this anytime in Application settings..
+        /// </summary>
+        public static string IconPackPrompt_ChangeLater {
+            get {
+                return ResourceManager.GetString("IconPackPrompt_ChangeLater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colorful, detailed icons in a classic style..
+        /// </summary>
+        public static string IconPackPrompt_LegacyDescription {
+            get {
+                return ResourceManager.GetString("IconPackPrompt_LegacyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clean line icons that follow your theme colors..
+        /// </summary>
+        public static string IconPackPrompt_ModernDescription {
+            get {
+                return ResourceManager.GetString("IconPackPrompt_ModernDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX has new icons. Pick the look you prefer..
+        /// </summary>
+        public static string IconPackPrompt_Subtitle {
+            get {
+                return ResourceManager.GetString("IconPackPrompt_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose your icons.
+        /// </summary>
+        public static string IconPackPrompt_Title {
+            get {
+                return ResourceManager.GetString("IconPackPrompt_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose folder to browse.
         /// </summary>
         public static string ImageBrowserWindow_Choose_folder {
@@ -3909,15 +4440,6 @@ namespace ShareX.Localization {
         public static string ImageBrowserWindow_Copy_file_path {
             get {
                 return ResourceManager.GetString("ImageBrowserWindow_Copy_file_path", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Created.
-        /// </summary>
-        public static string ImageBrowserWindow_Created {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Created", resourceCulture);
             }
         }
         
@@ -4444,6 +4966,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ruler....
+        /// </summary>
+        public static string MainMenuBuilder_ClassicRuler {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ClassicRuler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clipboard viewer....
         /// </summary>
         public static string MainMenuBuilder_ClipboardViewer {
@@ -4539,6 +5070,15 @@ namespace ShareX.Localization {
         public static string MainMenuBuilder_Discord {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_Discord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display diagnostics....
+        /// </summary>
+        public static string MainMenuBuilder_DisplayDiagnostics {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_DisplayDiagnostics", resourceCulture);
             }
         }
         
@@ -4849,6 +5389,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string MainMenuBuilder_NewBadge {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_NewBadge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No image effect presets.
         /// </summary>
         public static string MainMenuBuilder_NoImageEffectPresets {
@@ -4903,6 +5452,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pixel editor....
+        /// </summary>
+        public static string MainMenuBuilder_PixelEditor {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_PixelEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to QR code....
         /// </summary>
         public static string MainMenuBuilder_QRCode {
@@ -4930,6 +5488,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Region (Transparent)....
+        /// </summary>
+        public static string MainMenuBuilder_RegionTransparent {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_RegionTransparent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remote storage browser....
         /// </summary>
         public static string MainMenuBuilder_RemoteStorageBrowser {
@@ -4948,7 +5515,7 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ruler....
+        ///   Looks up a localized string similar to Measure....
         /// </summary>
         public static string MainMenuBuilder_Ruler {
             get {
@@ -4980,6 +5547,15 @@ namespace ShareX.Localization {
         public static string MainMenuBuilder_ScreenRecordingGif {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_ScreenRecordingGif", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Just once.
+        /// </summary>
+        public static string MainMenuBuilder_ScreenshotDelayJustOnce {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ScreenshotDelayJustOnce", resourceCulture);
             }
         }
         
@@ -5299,6 +5875,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear task list.
+        /// </summary>
+        public static string MainWindow_ClearTaskList {
+            get {
+                return ResourceManager.GetString("MainWindow_ClearTaskList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear thumbnail view.
         /// </summary>
         public static string MainWindow_ClearThumbnailView {
@@ -5403,6 +5988,15 @@ namespace ShareX.Localization {
         public static string MainWindow_EditImageInPhotoEditor {
             get {
                 return ResourceManager.GetString("MainWindow_EditImageInPhotoEditor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit in Pixel editor....
+        /// </summary>
+        public static string MainWindow_EditImageInPixelEditor {
+            get {
+                return ResourceManager.GetString("MainWindow_EditImageInPixelEditor", resourceCulture);
             }
         }
         
@@ -5781,6 +6375,24 @@ namespace ShareX.Localization {
         public static string MainWindow_StopUpload {
             get {
                 return ResourceManager.GetString("MainWindow_StopUpload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to list view.
+        /// </summary>
+        public static string MainWindow_SwitchToListView {
+            get {
+                return ResourceManager.GetString("MainWindow_SwitchToListView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch to thumbnail view.
+        /// </summary>
+        public static string MainWindow_SwitchToThumbnailView {
+            get {
+                return ResourceManager.GetString("MainWindow_SwitchToThumbnailView", resourceCulture);
             }
         }
         
@@ -6541,33 +7153,6 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose how the app should look and feel..
-        /// </summary>
-        public static string StartScreen_PersonalizeSubtitle {
-            get {
-                return ResourceManager.GetString("StartScreen_PersonalizeSubtitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Make ShareX yours.
-        /// </summary>
-        public static string StartScreen_PersonalizeTitle {
-            get {
-                return ResourceManager.GetString("StartScreen_PersonalizeTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open source • Built for Windows.
-        /// </summary>
-        public static string StartScreen_PlatformNote {
-            get {
-                return ResourceManager.GetString("StartScreen_PlatformNote", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to You can change these options anytime in Application settings..
         /// </summary>
         public static string StartScreen_SettingsNote {
@@ -6577,20 +7162,38 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Spacious.
+        /// </summary>
+        public static string StartScreen_Spacious {
+            get {
+                return ResourceManager.GetString("StartScreen_Spacious", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for downloading ShareX.
+        /// </summary>
+        public static string StartScreen_ThankYou {
+            get {
+                return ResourceManager.GetString("StartScreen_ThankYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use system setting.
+        /// </summary>
+        public static string StartScreen_UseSystemSetting {
+            get {
+                return ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to ShareX.
         /// </summary>
         public static string StartScreen_Welcome {
             get {
                 return ResourceManager.GetString("StartScreen_Welcome", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Capture, edit and share anything your way..
-        /// </summary>
-        public static string StartScreen_WelcomeSubtitle {
-            get {
-                return ResourceManager.GetString("StartScreen_WelcomeSubtitle", resourceCulture);
             }
         }
         
@@ -6681,6 +7284,87 @@ namespace ShareX.Localization {
         public static string TaskHelpers_ToggleHotkeys_Hotkeys_enabled_ {
             get {
                 return ResourceManager.GetString("TaskHelpers_ToggleHotkeys_Hotkeys_enabled_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elapsed.
+        /// </summary>
+        public static string TaskListView_Elapsed {
+            get {
+                return ResourceManager.GetString("TaskListView_Elapsed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filename.
+        /// </summary>
+        public static string TaskListView_Filename {
+            get {
+                return ResourceManager.GetString("TaskListView_Filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string TaskListView_History {
+            get {
+                return ResourceManager.GetString("TaskListView_History", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In queue.
+        /// </summary>
+        public static string TaskListView_InQueue {
+            get {
+                return ResourceManager.GetString("TaskListView_InQueue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Progress.
+        /// </summary>
+        public static string TaskListView_Progress {
+            get {
+                return ResourceManager.GetString("TaskListView_Progress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remaining.
+        /// </summary>
+        public static string TaskListView_Remaining {
+            get {
+                return ResourceManager.GetString("TaskListView_Remaining", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speed.
+        /// </summary>
+        public static string TaskListView_Speed {
+            get {
+                return ResourceManager.GetString("TaskListView_Speed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string TaskListView_Status {
+            get {
+                return ResourceManager.GetString("TaskListView_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to URL.
+        /// </summary>
+        public static string TaskListView_URL {
+            get {
+                return ResourceManager.GetString("TaskListView_URL", resourceCulture);
             }
         }
         
@@ -6910,6 +7594,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto-expand canvas when text or shapes go beyond the edge.
+        /// </summary>
+        public static string TaskSettingsWindow_AutoExpandCanvas {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoExpandCanvas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Auto increment number:.
         /// </summary>
         public static string TaskSettingsWindow_AutoIncrementNumber {
@@ -6964,6 +7657,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size window to fit image.
+        /// </summary>
+        public static string TaskSettingsWindow_AutoSizeWindow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoSizeWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Background dim strength (%):.
         /// </summary>
         public static string TaskSettingsWindow_BackgroundDimStrengthPercent {
@@ -7005,6 +7707,15 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_Cancel {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fill color for added canvas area:.
+        /// </summary>
+        public static string TaskSettingsWindow_CanvasFillColor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CanvasFillColor", resourceCulture);
             }
         }
         
@@ -7153,6 +7864,24 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Compact image editor toolbar.
+        /// </summary>
+        public static string TaskSettingsWindow_CompactImageEditorToolbar {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CompactImageEditorToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compact region capture toolbar.
+        /// </summary>
+        public static string TaskSettingsWindow_CompactRegionCaptureToolbar {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CompactRegionCaptureToolbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configure....
         /// </summary>
         public static string TaskSettingsWindow_ConfigureWithEllipsis {
@@ -7194,15 +7923,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_CustomUploader {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_CustomUploader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Default language:.
-        /// </summary>
-        public static string TaskSettingsWindow_DefaultLanguage {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_DefaultLanguage", resourceCulture);
             }
         }
         
@@ -7374,6 +8094,15 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_FadeDurationSeconds {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_FadeDurationSeconds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only used by the FFmpeg recorder. Turn off the built-in screen recorder to change this..
+        /// </summary>
+        public static string TaskSettingsWindow_FFmpegRecorderOnly {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_FFmpegRecorderOnly", resourceCulture);
             }
         }
         
@@ -7765,6 +8494,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monitor:.
+        /// </summary>
+        public static string TaskSettingsWindow_Monitor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_Monitor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mouse 4 click:.
         /// </summary>
         public static string TaskSettingsWindow_Mouse4Click {
@@ -7801,6 +8539,24 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mouse wheel:.
+        /// </summary>
+        public static string TaskSettingsWindow_MouseWheel {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MouseWheel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to What scrolling does to the magnifier. Hold Ctrl while scrolling to do the other one..
+        /// </summary>
+        public static string TaskSettingsWindow_MouseWheelTooltip {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MouseWheelTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Move down.
         /// </summary>
         public static string TaskSettingsWindow_MoveDown {
@@ -7824,6 +8580,15 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_MoveUp {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_MoveUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multi region mode.
+        /// </summary>
+        public static string TaskSettingsWindow_MultiRegionMode {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_MultiRegionMode", resourceCulture);
             }
         }
         
@@ -8044,6 +8809,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HDR tone mapping.
+        /// </summary>
+        public static string TaskSettingsWindow_NativeRecorderHDRToneMapping {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHDRToneMapping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Record microphone.
         /// </summary>
         public static string TaskSettingsWindow_NativeRecorderMicrophone {
@@ -8157,24 +8931,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_OCR {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_OCR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OCR help....
-        /// </summary>
-        public static string TaskSettingsWindow_OCRHelp {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OCRHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to OCR languages are unavailable.
-        /// </summary>
-        public static string TaskSettingsWindow_OCRLanguagesAreUnavailable {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OCRLanguagesAreUnavailable", resourceCulture);
             }
         }
         
@@ -8665,6 +9421,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Right-click deletes the shape under the cursor.
+        /// </summary>
+        public static string TaskSettingsWindow_RightClickDeletesShape {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_RightClickDeletesShape", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Right-click to insert an input or output file token..
         /// </summary>
         public static string TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken {
@@ -9079,11 +9844,38 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monitor {0} (not connected).
+        /// </summary>
+        public static string TaskSettingsWindow_ToastMonitorNotConnected0 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ToastMonitorNotConnected0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monitor {0}: {1} ({2} at {3}).
+        /// </summary>
+        public static string TaskSettingsWindow_ToastMonitorScreen0123 {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ToastMonitorScreen0123", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Toast notification.
         /// </summary>
         public static string TaskSettingsWindow_ToastNotification {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ToastNotification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toolbar button size (pixels):.
+        /// </summary>
+        public static string TaskSettingsWindow_ToolbarButtonSizePixels {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_ToolbarButtonSizePixels", resourceCulture);
             }
         }
         
@@ -9232,6 +10024,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use custom toolbar button size.
+        /// </summary>
+        public static string TaskSettingsWindow_UseCustomToolbarButtonSize {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_UseCustomToolbarButtonSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use fixed duration.
         /// </summary>
         public static string TaskSettingsWindow_UseFixedDuration {
@@ -9336,6 +10137,42 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_WaveAudio {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_WaveAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WebP compression effort:.
+        /// </summary>
+        public static string TaskSettingsWindow_WebPCompressionEffort {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPCompressionEffort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lower values encode faster. Higher values produce smaller files. All values preserve image quality..
+        /// </summary>
+        public static string TaskSettingsWindow_WebPCompressionEffortHint {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPCompressionEffortHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lossless.
+        /// </summary>
+        public static string TaskSettingsWindow_WebPLossless {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPLossless", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WebP quality:.
+        /// </summary>
+        public static string TaskSettingsWindow_WebPQuality {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_WebPQuality", resourceCulture);
             }
         }
         

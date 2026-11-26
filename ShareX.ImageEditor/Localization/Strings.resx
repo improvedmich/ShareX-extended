@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Arrow style</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Auto size to text</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Blur</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Font size</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Freehand arrow</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Horizontal alignment</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Redo (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Rounded corners</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Save</value>
@@ -258,6 +267,9 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Wait cursor</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Drag to move the toolbar, double-click to reset its position</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Achievement unlocked!</value>
   </data>
@@ -281,6 +293,15 @@ Would you like to save the changes before closing the image editor?</value>
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Cancel (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Fill color for the added area</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Failed to load image from clipboard.
@@ -335,6 +356,12 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margin</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>New from screenshot (full screen)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>New from screenshot (region)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Open image</value>
@@ -1361,8 +1388,14 @@ Clipboard does not contain an image.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Begin group</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Every item is on the toolbar.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Available items</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Blank spacer</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -1373,26 +1406,37 @@ Clipboard does not contain an image.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Customize Toolbar</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Drag items onto the toolbar to show them, or off it to hide them. Drag a spacer between items to split them into groups.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} and {1} use the same hotkey ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Invalid hotkey for {0}. Use formats like R, Ctrl+R, or Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Move down</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Move up</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primary</value>
+    <comment>Column header in the Customize Toolbar dialog for the main keyboard shortcut of a tool.</comment>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Reset toolbar to default</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Show / Hide</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondary</value>
+    <comment>Column header in the Customize Toolbar dialog for the alternate keyboard shortcut of a tool.</comment>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Spacer</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Spacer. Drag its right edge to change its width.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Spacer width</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Arrow</value>
@@ -1402,6 +1446,9 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Blur</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Canvas size</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clone</value>

@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Stile freccia</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Adatta automaticamente le dimensioni al testo</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Sfocatura</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Dimensione carattere</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Freccia a mano libera</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Allineamento orizzontale</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Ripeti (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Angoli arrotondati</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salva</value>
@@ -258,6 +267,9 @@ Salvare le modifiche prima di chiudere l'editor di immagini?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Cursore di attesa</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Trascina per spostare la barra degli strumenti, fai doppio clic per ripristinarne la posizione</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Obiettivo sbloccato!</value>
   </data>
@@ -281,6 +293,15 @@ Salvare le modifiche prima di chiudere l'editor di immagini?</value>
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annulla (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Colore di riempimento dell'area aggiunta</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Impossibile caricare l’immagine dagli appunti.
@@ -335,6 +356,12 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margine</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nuovo da screenshot (schermo intero)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nuovo da screenshot (area)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Apri immagine</value>
@@ -1359,8 +1386,14 @@ Gli appunti non contengono un’immagine.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Destra</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Inizia gruppo</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Tutti gli elementi sono nella barra degli strumenti.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Elementi disponibili</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Separatore vuoto</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Annulla</value>
@@ -1371,26 +1404,35 @@ Gli appunti non contengono un’immagine.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Personalizza barra degli strumenti</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Trascina gli elementi sulla barra degli strumenti per mostrarli, o fuori da essa per nasconderli. Trascina un separatore tra gli elementi per dividerli in gruppi.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} e {1} usano la stessa scorciatoia ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Scorciatoia non valida per {0}. Usa formati come R, Ctrl+R o Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Sposta giù</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Sposta su</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principale</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Ripristina barra degli strumenti predefinita</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Mostra / Nascondi</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondaria</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Separatore</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Separatore. Trascina il bordo destro per cambiarne la larghezza.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Larghezza separatore</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Freccia</value>
@@ -1400,6 +1442,9 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Sfocatura</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Dimensione tela</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clona</value>
@@ -1420,7 +1465,8 @@ Gli appunti non contengono un’immagine.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEffetti immagine preferiti (Clic destro)</value>
+    <value>{0}
+Effetti immagine preferiti (Clic destro)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>File</value>

@@ -71,7 +71,10 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     double ShadowOpacity { get; set; }
     double ShadowOffsetX { get; set; }
     double ShadowOffsetY { get; set; }
+    bool ArrowRoundedCorners { get; set; }
+    bool FreehandArrow { get; set; }
     bool SpeechBalloonTail { get; set; }
+    bool SpeechBalloonAutoSize { get; set; }
     bool EffectEllipse { get; set; }
     bool TextBold { get; set; }
     bool TextItalic { get; set; }
@@ -99,7 +102,10 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     bool ShowTextStyle { get; }
     bool ShowTextItalic { get; }
     bool ShowShadow { get; }
+    bool ShowArrowRoundedCorners { get; }
+    bool ShowFreehandArrow { get; }
     bool ShowSpeechBalloonTail { get; }
+    bool ShowSpeechBalloonAutoSize { get; }
     bool ShowEffectEllipse { get; }
     bool ShowToolOptions { get; }
     bool ShowToolOptionsSeparator { get; }
@@ -109,6 +115,10 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     bool IsEffectsButtonActive { get; }
     ICommand NewImageCommand { get; }
     ICommand OpenImageCommand { get; }
+    bool CanCaptureRegion { get; }
+    bool CanCaptureFullscreen { get; }
+    ICommand NewFromScreenshotRegionCommand { get; }
+    ICommand NewFromScreenshotFullscreenCommand { get; }
     ICommand SaveCommand { get; }
     ICommand SaveAsCommand { get; }
     ICommand ExitEditorCommand { get; }

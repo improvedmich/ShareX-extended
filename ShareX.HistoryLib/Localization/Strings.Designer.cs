@@ -241,6 +241,15 @@ namespace ShareX.HistoryLib.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Process name.
+        /// </summary>
+        public static string HistoryWindow_ProcessName {
+            get {
+                return ResourceManager.GetString("HistoryWindow_ProcessName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rename.
         /// </summary>
         public static string HistoryWindow_Rename {
@@ -255,6 +264,15 @@ namespace ShareX.HistoryLib.Localization {
         public static string HistoryWindow_RenameFile {
             get {
                 return ResourceManager.GetString("HistoryWindow_RenameFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset columns.
+        /// </summary>
+        public static string HistoryWindow_ResetColumns {
+            get {
+                return ResourceManager.GetString("HistoryWindow_ResetColumns", resourceCulture);
             }
         }
         
@@ -282,6 +300,15 @@ namespace ShareX.HistoryLib.Localization {
         public static string HistoryWindow_SuccessfullyImportedFilesFormat {
             get {
                 return ResourceManager.GetString("HistoryWindow_SuccessfullyImportedFilesFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tag.
+        /// </summary>
+        public static string HistoryWindow_Tag {
+            get {
+                return ResourceManager.GetString("HistoryWindow_Tag", resourceCulture);
             }
         }
         
@@ -327,6 +354,15 @@ namespace ShareX.HistoryLib.Localization {
         public static string HistoryWindow_Unfavorite {
             get {
                 return ResourceManager.GetString("HistoryWindow_Unfavorite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Window title.
+        /// </summary>
+        public static string HistoryWindow_WindowTitle {
+            get {
+                return ResourceManager.GetString("HistoryWindow_WindowTitle", resourceCulture);
             }
         }
         
@@ -507,6 +543,15 @@ namespace ShareX.HistoryLib.Localization {
         public static string HistoryWindows_Edit_tag {
             get {
                 return ResourceManager.GetString("HistoryWindows_Edit_tag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit in Photo editor....
+        /// </summary>
+        public static string HistoryWindows_EditImageInPhotoEditor {
+            get {
+                return ResourceManager.GetString("HistoryWindows_EditImageInPhotoEditor", resourceCulture);
             }
         }
         

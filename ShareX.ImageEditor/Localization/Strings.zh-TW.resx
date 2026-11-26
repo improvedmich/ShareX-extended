@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>箭頭樣式</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>依文字自動調整大小</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>模糊</value>
   </data>
@@ -57,6 +60,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>字型大小</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>手繪箭頭</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>水平對齊</value>
   </data>
@@ -80,6 +86,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>重做 (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>圓角</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>儲存</value>
@@ -258,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>等待游標</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>拖曳以移動工具列，按兩下以重設其位置</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>成就已解鎖！</value>
   </data>
@@ -281,6 +293,15 @@
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>取消 (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>套用</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>新增區域的填滿色彩</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>無法從剪貼簿載入影像。
@@ -335,6 +356,12 @@
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>邊界</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>從螢幕擷取畫面新增 (全螢幕)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>從螢幕擷取畫面新增 (區域)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>開啟影像</value>
@@ -1359,8 +1386,14 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>靠右</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>開始群組</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>所有項目都已在工具列上。</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>可用項目</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>空白分隔線</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>取消</value>
@@ -1371,26 +1404,35 @@
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>自訂工具列</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>將項目拖曳到工具列上即可顯示，拖曳到工具列外即可隱藏。將分隔線拖曳到項目之間可將它們分組。</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} 和 {1} 使用相同的快速鍵 ({2})。</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>{0} 的快速鍵無效。請使用 R、Ctrl+R 或 Ctrl+Shift+R 等格式。</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>下移</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>上移</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>確定</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>主要</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>將工具列重設為預設值</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>顯示 / 隱藏</value>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>次要</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>分隔線</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>分隔線。拖曳其右邊緣可變更寬度。</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>分隔線寬度</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>箭頭</value>
@@ -1400,6 +1442,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>模糊</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>畫布大小</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>複製</value>
@@ -1420,7 +1465,8 @@
     <value>表情符號</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\n最愛的影像效果（按右鍵）</value>
+    <value>{0}
+最愛的影像效果（按右鍵）</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>檔案</value>

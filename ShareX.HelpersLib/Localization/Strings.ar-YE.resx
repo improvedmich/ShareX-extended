@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>تعرف على النصوص (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>فتح في محرر الصور الفوتوغرافية</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>تنفيذ إجراء</value>
   </data>
@@ -639,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>رفع</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>المسطرة</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>رفع من الحافظة</value>
   </data>
@@ -771,6 +777,9 @@
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>تثيبت على الشاشة (من الشاشة)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>محرر البكسل</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>التقاط الشاشة كاملة</value>
   </data>
@@ -786,8 +795,11 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>التقاط مساحة</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>التقاط مساحة (شفافة)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>المسطرة</value>
+    <value>القياس</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>منتقي الألوان</value>
@@ -866,6 +878,21 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>ملفات الصور</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>أسفل</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>جانبي</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>تلقائي</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>إخفاء</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>عرض</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>فتح صورة</value>
@@ -1077,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>التقاط المنطقة السابقة</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>التقاط المنطقة المحددة</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>تجاهل</value>
   </data>
@@ -1088,6 +1118,12 @@
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>تبديل نوع الأدلة</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>تغيير حجم المكبر</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>تكبير/تصغير المكبر</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>الجهاز</value>
@@ -1221,6 +1257,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>تلقائي</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>عرض كقائمة</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>عرض كـ شبكة</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>رافع نصوص مخصص</value>
   </data>
@@ -1290,6 +1332,12 @@
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>رفع الملف</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>الشاشة النشطة</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>الشاشة الرئيسية</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>
@@ -1319,9 +1367,6 @@
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>الإصدارات الاختبارية - Dev</value>
   </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>الإصدارات التجريبية - Pre</value>

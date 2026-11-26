@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>अपलोड के बाद</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>इसके अलावा</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>फ़ाइल नाम</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>फ़ाइल कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>सहेजी गई फ़ाइल को क्लिपबोर्ड पर रखता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>फ़ाइल पथ कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>सहेजी गई फ़ाइल का पथ कॉपी करता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>फ़ोल्डर पथ कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>सहेजी गई फ़ाइल का फ़ोल्डर कॉपी करता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>छवि कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>चित्र को क्लिपबोर्ड पर रखता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>URL कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>इसे अपलोड करता है, फिर लिंक कॉपी करता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>ज़रूरी चरण आपके लक्ष्य से तय होते हैं। अपनी पसंद के अतिरिक्त विकल्प जोड़ें।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>आप क्लिपबोर्ड पर क्या चाहते हैं?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>चित्र लेने के बाद</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>कोई छवि पूर्वावलोकन उपलब्ध नहीं</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>इस लक्ष्य के लिए आवश्यक</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>कैप्चर की गई सामग्री की समीक्षा करें और आगे क्या हो चुनें।</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>अपलोड करें</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>स्क्रॉल बार हमेशा पूरी चौड़ाई में दिखाएँ</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>अनुप्रयोग</value>
   </data>
@@ -358,6 +403,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>क्लिपबोर्ड प्रारूप</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>कॉम्पैक्ट मोड</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>अनुकूलित हॉटकी कॉन्फ़िगरेशन पथ</value>
   </data>
@@ -381,6 +429,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>विवरण</value>
+  </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>विवरण खाली नहीं हो सकता।</value>
   </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>डेवलपर मोड</value>
@@ -460,6 +511,9 @@
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>प्रारूप</value>
   </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>प्रारूप खाली नहीं हो सकता।</value>
+  </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>सामान्य</value>
   </data>
@@ -471,6 +525,24 @@
   </data>
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>हॉटकी पुनरावृत्ति अंतराल (मिलीसेकंड)</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>आइकन पैक:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>पुराना</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>आधुनिक</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>आइकन</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>छवि पूर्वावलोकन दृश्यता:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>छवि पूर्वावलोकन का स्थान:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>छवि मुद्रण सेटिंग...</value>
@@ -504,6 +576,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>हल्का</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>सूची दृश्य</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>मुख्य विंडो</value>
@@ -598,6 +673,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>सहेजें</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>कैप्चर में मौजूद टेक्स्ट को इतिहास में खोजने योग्य बनाएं</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>हाल के कार्य सहेजें</value>
   </data>
@@ -625,11 +703,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>क्लिपबोर्ड सामग्री दर्शक दिखाएँ</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>कॉलम दिखाएँ</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX छवि संपादक में संपादित करें" बटन दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX फ़ोटो संपादक में संपादित करें" बटन दिखाएँ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>फ़ाइलें हटाने से पहले पुष्टि माँगें</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>बड़ी फ़ाइल चेतावनी सीमा (MB)</value>
@@ -667,6 +751,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>एक साथ अपलोड सीमा:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>कॉम्पैक्ट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>डिफ़ॉल्ट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>मेनू</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>मेनू:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>पूर्वावलोकन:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>सेटिंग विंडो:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>साइडबार</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>साइडबार:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>उपकरण मेनू</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>उपकरण मेनू:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -675,6 +792,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>उपफ़ोल्डर पैटर्न:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>कार्य दृश्य मोड:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>थीम</value>
@@ -1189,6 +1309,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>डीबग लॉग अपलोड करें?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>रिपोर्ट क्लिपबोर्ड पर कॉपी हो गई।</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड पर कॉपी करें</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>स्केलिंग, एक से अधिक मॉनिटर या गलत जगह कैप्चर की समस्या रिपोर्ट करते समय यह रिपोर्ट साथ में भेजें।</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>डिस्प्ले लेआउट</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>माउस कर्सर</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>मुख्य मॉनिटर</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>रीफ़्रेश करें</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>टास्कबार या ऐप बार</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>.txt के रूप में सहेजें...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>डिस्प्ले निदान सहेजें</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>रिपोर्ट {0} में सहेजी गई</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>टेक्स्ट फ़ाइल</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - डिस्प्ले निदान</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>यहाँ छोड़ें</value>
   </data>
@@ -1215,6 +1374,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>सेटिंग सहेजने में विफल</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>मुझे फिर से याद न दिलाएँ</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
@@ -1325,6 +1487,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - हॉटकी सेटिंग</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>आप इसे कभी भी ऐप्लिकेशन सेटिंग्स में बदल सकते हैं।</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>क्लासिक शैली में रंगीन, विस्तृत आइकन।</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>साफ़ रेखा वाले आइकन जो आपकी थीम के रंगों का पालन करते हैं।</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX में नए आइकन हैं। अपनी पसंद का रूप चुनें।</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>अपने आइकन चुनें</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
   </data>
@@ -1403,6 +1580,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>कैप्चर करें</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>मापनी...</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>क्लिपबोर्ड दर्शक...</value>
   </data>
@@ -1429,6 +1609,9 @@
   </data>
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>डिस्प्ले निदान...</value>
   </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>दान करें...</value>
@@ -1526,6 +1709,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>नेटवर्क मॉनिटर...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>नया</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>कोई छवि प्रभाव प्रीसेट नहीं</value>
   </data>
@@ -1544,6 +1730,9 @@
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>स्क्रीन पर पिन करें...</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>पिक्सेल संपादक...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR कोड...</value>
   </data>
@@ -1553,6 +1742,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>क्षेत्र...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>क्षेत्र (पारदर्शी)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>रिमोट स्टोरेज ब्राउज़र...</value>
   </data>
@@ -1560,7 +1752,7 @@
     <value>व्यवस्थापक के रूप में पुनः आरंभ करें</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>मापनी...</value>
+    <value>मापन...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>स्क्रीन रंग चयनकर्ता...</value>
@@ -1570,6 +1762,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>स्क्रीन रिकॉर्डिंग (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>केवल एक बार</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>स्क्रीनशॉट फ़ोल्डर...</value>
@@ -1676,6 +1871,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>छवि सुंदर बनाएँ...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>कार्य सूची साफ़ करें</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>थंबनेल दृश्य साफ़ करें</value>
   </data>
@@ -1711,6 +1909,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>फ़ोटो संपादक में संपादित करें...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>पिक्सेल संपादक में संपादित करें...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>फ़ाइल</value>
@@ -1837,6 +2038,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>अपलोड रोकें</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>सूची दृश्य पर स्विच करें</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>थंबनेल दृश्य पर स्विच करें</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>पाठ</value>
@@ -2095,23 +2302,20 @@
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>शुरू करें</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>चुनें कि ऐप कैसा दिखे और महसूस हो।</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>ShareX को अपना बनाएँ</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>ओपन सोर्स • Windows के लिए निर्मित</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>आप इन विकल्पों को एप्लिकेशन सेटिंग में कभी भी बदल सकते हैं।</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>विस्तृत</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX डाउनलोड करने के लिए धन्यवाद</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>सिस्टम सेटिंग का उपयोग करें</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX में आपका स्वागत है</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>अपनी पसंद से कुछ भी कैप्चर करें, संपादित करें और साझा करें।</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>क्या आप "{0}" अनुकूलित अपलोडर जोड़ना चाहते हैं?</value>
@@ -2137,6 +2341,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>हॉटकी सक्षम हैं।</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>बीता समय</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>फ़ाइल नाम</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>इतिहास</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>कतार में</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>प्रगति</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>शेष</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>गति</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>स्थिति</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>अपलोड पूरा हुआ। URL: {0}</value>
@@ -2213,11 +2444,17 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>छवि को क्लिपबोर्ड पर स्वतः कॉपी करें</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>टेक्स्ट या आकृतियाँ किनारे से बाहर जाने पर कैनवास अपने आप बढ़ाएँ</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>स्वतः बढ़ने वाली संख्या:</value>
   </data>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>स्वचालित URL संक्षिप्तीकरण लंबाई</value>
+  </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>विंडो का आकार छवि के अनुसार करें</value>
   </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>स्वचालित JPEG</value>
@@ -2245,6 +2482,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>जोड़े गए कैनवास क्षेत्र का भराव रंग:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>कैप्चर करें</value>
@@ -2291,6 +2531,12 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>सेवा लिंक खोलने के बाद OCR विंडो बंद करें</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>छवि संपादक के लिए कॉम्पैक्ट टूलबार</value>
+  </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>क्षेत्र कैप्चर के लिए कॉम्पैक्ट टूलबार</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>कॉन्फ़िगर करें...</value>
   </data>
@@ -2305,9 +2551,6 @@
   </data>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>टूलबार अनुकूलित करें...</value>
-  </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>डिफ़ॉल्ट भाषा:</value>
   </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>इनपुट फ़ाइल हटाएँ</value>
@@ -2362,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>एक्सटेंशन:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>केवल FFmpeg रिकॉर्डर द्वारा उपयोग किया जाता है। इसे बदलने के लिए अंतर्निहित स्क्रीन रिकॉर्डर बंद करें।</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP खाता:</value>
@@ -2495,6 +2741,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>मध्य क्लिक क्रिया:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>मॉनिटर:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>माउस 4 क्लिक:</value>
   </data>
@@ -2507,6 +2756,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>माउस हाइलाइटर विकल्प...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>माउस व्हील:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>स्क्रॉल करने से आवर्धक पर क्या होता है। दूसरी क्रिया करने के लिए स्क्रॉल करते समय Ctrl दबाए रखें।</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>नीचे ले जाएँ</value>
   </data>
@@ -2515,6 +2770,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>बहु-क्षेत्र मोड</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>नाम</value>
@@ -2585,6 +2843,9 @@
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>अंतर्निहित स्क्रीन रिकॉर्डर का उपयोग करें</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR टोन मैपिंग</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>हार्डवेयर वीडियो एन्कोडिंग आवश्यक करें</value>
   </data>
@@ -2626,12 +2887,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR सहायता...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR भाषाएँ अनुपलब्ध हैं</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>केवल क्षेत्र कैप्चर पर प्रभाव लागू करें</value>
@@ -2795,6 +3050,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>दायाँ क्लिक क्रिया:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>राइट-क्लिक करने पर कर्सर के नीचे का आकार हट जाता है</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>इनपुट या आउटपुट फ़ाइल टोकन सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>
   </data>
@@ -2930,8 +3188,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>समय क्षेत्र:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>मॉनिटर {0} (कनेक्ट नहीं है)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>मॉनिटर {0}: {1} ({3} पर {2})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>टोस्ट सूचना</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>टूलबार बटन का आकार (पिक्सेल):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>उपकरण</value>
@@ -2981,6 +3248,9 @@
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>अनुकूलित समय क्षेत्र उपयोग करें</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>टूलबार बटन के लिए कस्टम आकार का उपयोग करें</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>निश्चित अवधि उपयोग करें</value>
   </data>
@@ -3010,6 +3280,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>वेव ऑडियो</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP संपीड़न प्रयास:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>कम मानों पर एन्कोडिंग तेज़ होती है। अधिक मान छोटे आकार की फ़ाइलें बनाते हैं। सभी मान छवि की गुणवत्ता बनाए रखते हैं।</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>दोषरहित</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP गुणवत्ता:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>चौड़ाई:</value>

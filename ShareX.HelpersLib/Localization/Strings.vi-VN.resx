@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Nhận dạng chữ (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Mở trong trình chỉnh sửa ảnh</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Thực hiện các tác vụ</value>
   </data>
@@ -639,6 +642,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Tải lên</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Thước kẻ</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Tải lên từ vùng nhớ tạm</value>
   </data>
@@ -771,6 +777,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Ghim vào màn hình (Từ màn hình)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>Trình chỉnh sửa điểm ảnh</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Chụp toàn màn hình</value>
   </data>
@@ -786,8 +795,11 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Chụp theo vùng</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Chụp theo vùng (Trong suốt)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Thước đo</value>
+    <value>Đo</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Lấy màu từ màn hình</value>
@@ -866,6 +878,21 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Tệp hình ảnh</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Dưới</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Bên cạnh</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Tự động</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ẩn</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Hiện</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Mở ảnh</value>
@@ -1077,6 +1104,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Chụp vùng cuối cùng</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Chụp vùng đã chọn</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Không làm gì</value>
   </data>
@@ -1088,6 +1118,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   </data>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Hoán đổi kiểu công cụ</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Đổi kích thước kính lúp</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Thu phóng kính lúp</value>
   </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Máy tính</value>
@@ -1221,6 +1257,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Tự động</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Chế độ xem danh sách</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Chế độ xem hình thu nhỏ</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản tùy chọn</value>
   </data>
@@ -1290,6 +1332,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Tải file lên</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Màn hình đang hoạt động</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Màn hình chính</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>
@@ -1319,9 +1367,6 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   </data>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Tìm kiếm hình ảnh trên Google</value>
-  </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Phát triển</value>
   </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Bản phát hành trước</value>

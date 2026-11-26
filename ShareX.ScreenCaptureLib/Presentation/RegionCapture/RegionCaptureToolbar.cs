@@ -25,9 +25,12 @@
 
 #nullable enable
 
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
+using ShareX.ScreenCaptureLib.Localization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,10 +38,53 @@ namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
 public static class RegionCaptureToolbar
 {
+    public const string RectangleRegionItemId = "RegionRectangle";
+    public const string EllipseRegionItemId = "RegionEllipse";
+    public const string FreehandRegionItemId = "RegionFreehand";
+
+    // The rectangle region tool has Tab and the ShareX 21 NumPad0 key, which keep working when it is hidden. The
+    // ShareX 21 ellipse and freehand region tools are hidden until turned on in the toolbar customization.
+    private static IReadOnlyList<ToolbarHostItemDefinition> CreateRegionItems() =>
+    [
+        new(RectangleRegionItemId, Strings.RegionCaptureWindow_RectangleRegion, ImageEditorIcons.Region, "Tab",
+            DefaultSecondaryHotkey: "NumPad0"),
+        new(EllipseRegionItemId, Strings.RegionCaptureWindow_EllipseRegion, ImageEditorIcons.RegionEllipse, IsVisibleByDefault: false),
+        new(FreehandRegionItemId, Strings.RegionCaptureWindow_FreehandRegion, ImageEditorIcons.RegionFreehand, IsVisibleByDefault: false)
+    ];
+
     public static IReadOnlyList<ToolbarCustomizationItemViewModel> CreateItems(IReadOnlyList<ImageEditorToolbarItemOptions>? options = null)
     {
-        return ToolbarCustomizationItemViewModel.CreateFromOptions(options)
-            .Where(item => item.Tool.HasValue && item.Tool.Value is not EditorTool.Crop and not EditorTool.CutOut)
+        return ToolbarCustomizationItemViewModel.CreateFromOptions(options, CreateRegionItems())
+            .Where(item => item.IsHostItem ||
+                (item.Tool.HasValue && item.Tool.Value is not EditorTool.Crop and not EditorTool.CutOut))
             .ToList();
     }
+
+    internal static RegionShape? GetRegionShape(string id)
+    {
+        if (string.Equals(id, RectangleRegionItemId, StringComparison.OrdinalIgnoreCase))
+        {
+            return RegionShape.Rectangle;
+        }
+
+        if (string.Equals(id, EllipseRegionItemId, StringComparison.OrdinalIgnoreCase))
+        {
+            return RegionShape.Ellipse;
+        }
+
+        if (string.Equals(id, FreehandRegionItemId, StringComparison.OrdinalIgnoreCase))
+        {
+            return RegionShape.Freehand;
+        }
+
+        return null;
+    }
+
+    /// <summary>Returns the toolbar item of a region shape.</summary>
+    internal static string GetItemId(RegionShape shape) => shape switch
+    {
+        RegionShape.Ellipse => EllipseRegionItemId,
+        RegionShape.Freehand => FreehandRegionItemId,
+        _ => RectangleRegionItemId
+    };
 }
