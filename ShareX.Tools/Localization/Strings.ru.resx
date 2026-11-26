@@ -592,6 +592,96 @@
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>Вывод XML</value>
   </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>По имени файла</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
+    <value>По SHA-256 хешу</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
+    <value>Найдено {0} групп дубликатов, всего {1} файл(ов).</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>Хеширование файлов... ({0}/{1})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
+    <value>SHA-256: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
+    <value>{0} файл(ов)</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
+    <value>Дубликатов не найдено.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
+    <value>В выбранной папке файлы не найдены.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Press_scan" xml:space="preserve">
+    <value>Выберите папку и нажмите «Сканировать».</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Reading_files" xml:space="preserve">
+    <value>Чтение файлов... ({0})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_failed" xml:space="preserve">
+    <value>Ошибка сканирования: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_stopped" xml:space="preserve">
+    <value>Сканирование остановлено.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Select_a_folder" xml:space="preserve">
+    <value>Выберите папку для поиска дубликатов.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Stopping" xml:space="preserve">
+    <value>Остановка...</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
+    <value>{0} файлов-дубликатов</value>
+  </data>
+  <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
+    <value>(0 = без ограничений)</value>
+  </data>
+  <data name="DuplicateFinderWindow_Browse" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="DuplicateFinderWindow_Copy_path" xml:space="preserve">
+    <value>Копировать путь в буфер обмена</value>
+  </data>
+  <data name="DuplicateFinderWindow_Folder" xml:space="preserve">
+    <value>Папка</value>
+  </data>
+  <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
+    <value>Макс. глубина</value>
+  </data>
+  <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="DuplicateFinderWindow_Results" xml:space="preserve">
+    <value>Результаты</value>
+  </data>
+  <data name="DuplicateFinderWindow_Scan" xml:space="preserve">
+    <value>Сканировать</value>
+  </data>
+  <data name="DuplicateFinderWindow_Search_mode" xml:space="preserve">
+    <value>Режим поиска</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
+    <value>Выберите папку для поиска дубликатов</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
+    <value>Выберите папку или перетащите её сюда</value>
+  </data>
+  <data name="DuplicateFinderWindow_Skip_hidden" xml:space="preserve">
+    <value>Пропускать скрытые элементы</value>
+  </data>
+  <data name="DuplicateFinderWindow_Stop" xml:space="preserve">
+    <value>Остановить</value>
+  </data>
+  <data name="DuplicateFinderWindow_Title" xml:space="preserve">
+    <value>ShareX - Поиск дубликатов файлов</value>
+  </data>
+  <data name="DuplicateFinderWindow_Total_reclaimable" xml:space="preserve">
+    <value>Всего можно освободить: {0}</value>
+  </data>
   <data name="GeminiProvider_API_error" xml:space="preserve">
     <value>Ошибка API Gemini: {0}</value>
   </data>

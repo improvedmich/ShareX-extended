@@ -1,0 +1,257 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:ShareX.Tools"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        mc:Ignorable="d" d:DesignWidth="920" d:DesignHeight="640"
+        x:Class="ShareX.Tools.DuplicateFinderWindow"
+        x:DataType="vm:DuplicateFinderViewModel"
+        Title="{x:Static localization:Strings.DuplicateFinderWindow_Title}"
+        Width="920"
+        Height="640"
+        MinWidth="760"
+        MinHeight="480"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="ListBox.duplicate-group ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,0,0,4"/>
+        </Style>
+        <Style Selector="TextBox.path-text">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Padding" Value="8,6"/>
+        </Style>
+        <Style Selector="TextBlock.size-text">
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="16" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
+            <!-- Settings Panel -->
+            <Border Grid.Row="0" Classes="tool-panel">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                    <StackPanel Grid.Column="0" Orientation="Vertical" Spacing="8">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                            <TextBlock Grid.Column="0" Classes="section-heading" Text="{x:Static localization:Strings.DuplicateFinderWindow_Folder}"/>
+                            <TextBox Grid.Column="1"
+                                     Text="{Binding FolderPath}"
+                                     PlaceholderText="{x:Static localization:Strings.DuplicateFinderWindow_Select_folder_placeholder}"
+                                     VerticalAlignment="Center"
+                                     IsEnabled="{Binding IsIdle}"/>
+                        </Grid>
+
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+                            <TextBlock Grid.Column="0" Classes="section-heading" Text="{x:Static localization:Strings.DuplicateFinderWindow_Search_mode}"/>
+                            <ComboBox Grid.Column="1"
+                                      ItemsSource="{x:Static vm:DuplicateFinderSearchModeExtensions.All}"
+                                      SelectedItem="{Binding SelectedMode}"
+                                      IsEnabled="{Binding IsIdle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:DataType="vm:SearchModeItem">
+                                        <TextBlock Text="{Binding DisplayName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Spacing="16">
+                            <CheckBox IsChecked="{Binding SkipHiddenItems}" Content="{x:Static localization:Strings.DuplicateFinderWindow_Skip_hidden}" IsEnabled="{Binding IsIdle}"/>
+                            <Grid ColumnDefinitions="Auto,60,*" ColumnSpacing="8">
+                                <TextBlock Grid.Column="0" Text="{x:Static localization:Strings.DuplicateFinderWindow_Max_depth}"/>
+                                <NumericUpDown Grid.Column="1"
+                                               Minimum="0"
+                                               Maximum="100"
+                                               FormatString="0"
+                                               Value="{Binding MaxDepth}"
+                                               IsEnabled="{Binding IsIdle}"/>
+                                <TextBlock Grid.Column="2"
+                                           Text="{x:Static localization:Strings.DuplicateFinderWindow_0_is_unlimited}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Spacing="8">
+                        <Button Command="{Binding BrowseFolderCommand}"
+                                IsEnabled="{Binding IsIdle}"
+                                Content="{x:Static localization:Strings.DuplicateFinderWindow_Browse}"/>
+                        <Button Command="{Binding ScanCommand}"
+                                IsEnabled="{Binding CanScan}"
+                                Content="{x:Static localization:Strings.DuplicateFinderWindow_Scan}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Progress & Status -->
+            <Border Grid.Row="1" Classes="tool-panel" IsVisible="{Binding IsScanning}">
+                <StackPanel Spacing="6">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <ProgressBar Grid.Column="0"
+                                     Minimum="0"
+                                     Maximum="100"
+                                     Value="{Binding Progress}"
+                                     Height="6"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="{Binding StatusText}"
+                                   FontWeight="Normal"
+                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                        <Button Command="{Binding StopCommand}"
+                                Content="{x:Static localization:Strings.DuplicateFinderWindow_Stop}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Results Panel -->
+            <Border Grid.Row="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
+                <Grid RowDefinitions="Auto,*">
+                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="12" Margin="12">
+                        <StackPanel Grid.Column="0" Spacing="2">
+                            <TextBlock Text="{x:Static localization:Strings.DuplicateFinderWindow_Results}" Classes="section-heading"/>
+                            <TextBlock Text="{Binding TotalDuplicatesText}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       IsVisible="{Binding HasResults}"/>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1"
+                                   Text="{Binding TotalReclaimableText}"
+                                   Classes="size-text"
+                                   VerticalAlignment="Center"
+                                   IsVisible="{Binding HasResults}"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <ListBox Classes="duplicate-group"
+                                 ItemsSource="{Binding Groups}"
+                                 SelectionMode="Single">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate x:DataType="vm:DuplicateGroup">
+                                    <Border BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                            BorderThickness="1"
+                                            CornerRadius="4"
+                                            Padding="12"
+                                            Background="{DynamicResource ShareX.Brush.Control.Background}">
+                                        <StackPanel Spacing="8">
+                                            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="12">
+                                                <StackPanel Grid.Column="0" Spacing="2">
+                                                    <TextBlock Text="{Binding Title}" FontWeight="Normal"/>
+                                                    <TextBlock Text="{Binding FilesText}"
+                                                               FontWeight="Normal"
+                                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                                </StackPanel>
+                                                <TextBlock Grid.Column="1"
+                                                           Text="{Binding TotalSizeText}"
+                                                           Classes="size-text"/>
+                                                <TextBlock Grid.Column="2"
+                                                           Text="{Binding ReclaimableText}"
+                                                           Classes="size-text"
+                                                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Text}"/>
+                                            </Grid>
+
+                                            <TextBlock Text="{Binding HashText}"
+                                                       IsVisible="{Binding HasHash}"
+                                                       Classes="size-text"
+                                                       FontSize="11"
+                                                       TextTrimming="CharacterEllipsis"/>
+
+                                            <ListBox ItemsSource="{Binding Files}"
+                                                     Margin="0,0,0,0"
+                                                     BorderThickness="0"
+                                                     Background="Transparent">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate x:DataType="vm:DuplicateFileData">
+                                                        <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="8" Margin="0,2">
+                                                            <TextBlock Grid.Column="0"
+                                                                       Text="{x:Static theming:LucideIcons.file}"
+                                                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                                       FontWeight="Normal"
+                                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                       VerticalAlignment="Center"/>
+                                                            <TextBox Grid.Column="1"
+                                                                     Text="{Binding Path}"
+                                                                     Classes="path-text"
+                                                                     IsReadOnly="True"
+                                                                     VerticalContentAlignment="Center"
+                                                                     FontSize="12"/>
+                                                             <Button Grid.Column="2"
+                                                                     Command="{Binding $parent[Window].((vm:DuplicateFinderViewModel)DataContext).CopyPathCommand}"
+                                                                     CommandParameter="{Binding Path}"
+                                                                     ToolTip.Tip="{x:Static localization:Strings.DuplicateFinderWindow_Copy_path}"
+                                                                     Padding="6">
+                                                                <TextBlock Text="{x:Static theming:LucideIcons.copy}"
+                                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                                           FontWeight="Normal"/>
+                                                            </Button>
+                                                             <Button Grid.Column="3"
+                                                                     Command="{Binding $parent[Window].((vm:DuplicateFinderViewModel)DataContext).OpenParentFolderCommand}"
+                                                                     CommandParameter="{Binding Path}"
+                                                                     ToolTip.Tip="{x:Static localization:Strings.DuplicateFinderWindow_Open_folder}"
+                                                                     Padding="6">
+                                                                <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
+                                                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                                                           FontWeight="Normal"/>
+                                                            </Button>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                        <!-- Empty State -->
+                        <StackPanel IsVisible="{Binding ShowEmptyState}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Spacing="10"
+                                    MaxWidth="420"
+                                    IsHitTestVisible="False">
+                            <TextBlock Text="{x:Static theming:LucideIcons.search}"
+                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
+                                       FontWeight="Normal"
+                                       FontSize="48"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding NoDuplicatesMessage}"
+                                       FontWeight="Normal"
+                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <!-- Summary Footer -->
+            <Grid Grid.Row="3" ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <TextBlock Grid.Column="0"
+                           Text="{Binding StatusText}"
+                           IsVisible="{Binding HasStatus}"
+                           FontWeight="Normal"
+                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                           TextTrimming="CharacterEllipsis"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1"
+                           Text="{Binding TotalReclaimableDescription}"
+                           FontWeight="Normal"
+                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                           IsVisible="{Binding HasResults}"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -4561,6 +4561,15 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Duplicate file finder....
+        /// </summary>
+        public static string MainMenuBuilder_DuplicateFinder {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_DuplicateFinder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
         public static string MainMenuBuilder_EditTools {
