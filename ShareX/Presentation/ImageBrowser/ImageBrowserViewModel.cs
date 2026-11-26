@@ -32,7 +32,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -66,26 +65,6 @@ public enum ImageBrowserSortOrder
     Descending
 }
 
-public sealed record ImageBrowserGroupValue(string Value, int Count, long Size)
-{
-    public string SizeText => Size.ToSizeString();
-}
-
-// Values hold the full sorted breakdown; the window decides how many to display.
-public sealed record ImageBrowserGroupStats(string GroupName, int FilesWithGroup, IReadOnlyList<ImageBrowserGroupValue> Values);
-
-public sealed record ImageBrowserRegexStats(
-    int TotalFiles,
-    int MatchedFiles,
-    long MatchedSize,
-    int UnmatchedFiles,
-    long UnmatchedSize,
-    string? Error = null,
-    IReadOnlyList<ImageBrowserGroupStats>? Groups = null)
-{
-    public bool HasError => !string.IsNullOrEmpty(Error);
-}
-
 public sealed class ImageBrowserViewModel : INotifyPropertyChanged
 {
     // Safety limit so huge recursive scans do not freeze the list.
@@ -104,6 +83,9 @@ public sealed class ImageBrowserViewModel : INotifyPropertyChanged
 
     // Raised whenever filter inputs change; the window debounces the actual refresh.
     public event Action? FilterRequested;
+
+    // Raised after the filtered list has been rebuilt, so observers can refresh derived views.
+    public event Action? FilterApplied;
 
     public string FolderPath
     {
@@ -201,6 +183,8 @@ public sealed class ImageBrowserViewModel : INotifyPropertyChanged
     public long TotalSize => _allFiles.Sum(file => file.Size);
 
     public ImageFileInfo[] FilteredFiles => _filteredFiles;
+
+    public IReadOnlyList<ImageFileInfo> AllFiles => _allFiles;
 
     public void ToggleSort(ImageBrowserSortColumn column)
     {
@@ -335,118 +319,8 @@ public sealed class ImageBrowserViewModel : INotifyPropertyChanged
         OnPropertyChanged(nameof(TotalFiles));
         OnPropertyChanged(nameof(TotalSize));
         OnPropertyChanged(nameof(FilteredFiles));
+        FilterApplied?.Invoke();
         return _filteredFiles;
-    }
-
-    private readonly record struct GroupValueStats(int Count, long Size);
-
-    public Task<ImageBrowserRegexStats> ComputeRegexStatsAsync(string pattern, CancellationToken cancellationToken = default)
-    {
-        // Snapshot for the worker thread; ApplyFilterAndSort always replaces the array instead of mutating it.
-        ImageFileInfo[] files = _filteredFiles;
-
-        return Task.Run(() =>
-        {
-            Regex? regex = null;
-            string[] groupNames = [];
-
-            if (!string.IsNullOrWhiteSpace(pattern))
-            {
-                try
-                {
-                    regex = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant,
-                        TimeSpan.FromMilliseconds(500));
-                    // GetGroupNames returns "0", "1", ... plus declared named groups; keep only the named ones.
-                    groupNames = regex.GetGroupNames().Where(name => !int.TryParse(name, out _)).ToArray();
-                }
-                catch (ArgumentException exception)
-                {
-                    return new ImageBrowserRegexStats(files.Length, 0, 0, 0, 0, Error: exception.Message);
-                }
-            }
-
-            int matchedFiles = 0;
-            long matchedSize = 0;
-
-            Dictionary<string, Dictionary<string, GroupValueStats>>? groupData =
-                regex != null && groupNames.Length > 0
-                    ? groupNames.ToDictionary(name => name, _ => new Dictionary<string, GroupValueStats>(StringComparer.OrdinalIgnoreCase))
-                    : null;
-
-            long totalSize = 0;
-
-            try
-            {
-                foreach (ImageFileInfo file in files)
-                {
-                    cancellationToken.ThrowIfCancellationRequested();
-                    totalSize += file.Size;
-
-                    if (regex == null)
-                    {
-                        matchedFiles++;
-                        matchedSize += file.Size;
-                        continue;
-                    }
-
-                    Match match = regex.Match(file.FileName);
-
-                    if (!match.Success)
-                    {
-                        continue;
-                    }
-
-                    matchedFiles++;
-                    matchedSize += file.Size;
-
-                    if (groupData != null)
-                    {
-                        foreach (string groupName in groupNames)
-                        {
-                            Group group = match.Groups[groupName];
-
-                            if (group.Success && !string.IsNullOrEmpty(group.Value))
-                            {
-                                Dictionary<string, GroupValueStats> values = groupData[groupName];
-                                values.TryGetValue(group.Value, out GroupValueStats stats);
-                                values[group.Value] = new GroupValueStats(stats.Count + 1, stats.Size + file.Size);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (RegexMatchTimeoutException exception)
-            {
-                return new ImageBrowserRegexStats(files.Length, 0, 0, 0, 0, exception.Message);
-            }
-
-            // Groups stay in declaration order of the regular expression (GetGroupNames order).
-            List<ImageBrowserGroupStats> groupStats = [];
-
-            if (groupData != null)
-            {
-                foreach (string groupName in groupNames)
-                {
-                    KeyValuePair<string, GroupValueStats>[] sortedValues = groupData[groupName]
-                        .OrderByDescending(pair => pair.Value.Count)
-                        .ThenBy(pair => pair.Key, StringComparer.OrdinalIgnoreCase)
-                        .ToArray();
-
-                    if (sortedValues.Length == 0)
-                    {
-                        continue;
-                    }
-
-                    int filesWithGroup = sortedValues.Sum(pair => pair.Value.Count);
-
-                    groupStats.Add(new ImageBrowserGroupStats(groupName, filesWithGroup,
-                        [.. sortedValues.Select(pair => new ImageBrowserGroupValue(pair.Key, pair.Value.Count, pair.Value.Size))]));
-                }
-            }
-
-            return new ImageBrowserRegexStats(files.Length, matchedFiles, matchedSize,
-                files.Length - matchedFiles, totalSize - matchedSize, Groups: groupStats);
-        }, cancellationToken);
     }
 
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null)

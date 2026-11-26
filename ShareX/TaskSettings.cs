@@ -536,8 +536,12 @@ namespace ShareX
 
     public class ImageBrowserOptions
     {
-        // Regex used by the "Statistics" button to match file names (e.g. "^(.+?)_\d{8}_\d{6}").
+        // Rules used by the "Statistics" window to group the scanned files.
+        public List<ImageBrowserStatsRule> StatsRules = ImageBrowserStatsRule.CreateDefaultRules();
+        // Legacy regex setting, migrated to a regex rule when the statistics window first opens.
         public string StatsRegexPattern = "";
+        // When enabled, the statistics window counts every scanned file instead of the current filter.
+        public bool StatsUseAllFiles = false;
         // When enabled, folder scan traverses subfolders recursively.
         public bool RecursiveSearch = false;
     }

@@ -4705,6 +4705,267 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add rule.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_AddRule {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_AddRule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All files.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_AllFiles {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_AllFiles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group by.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket_Day {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket_Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Day of week.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket_DayOfWeek {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket_DayOfWeek", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hour.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket_Hour {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket_Hour", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Month.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket_Month {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket_Month", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Week.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket_Week {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket_Week", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Year.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Bucket_Year {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Bucket_Year", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Collapse.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Collapse {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Collapse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Created {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a regular expression to see a breakdown..
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_EmptyPattern {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_EmptyPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add a rule to group the current files..
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_EmptyRules {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_EmptyRules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Example: {0}.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Example_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Example_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Group {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Group", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rules group the current file list. For example, &quot;Modified date → Month&quot; shows how many screenshots you took each month..
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Hint {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Hint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group &apos;{0}&apos; does not exist in this regular expression..
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_InvalidGroup_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_InvalidGroup_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No value.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_NoValue {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_NoValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} without value.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_NoValue_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_NoValue_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Part.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Part {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Part", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (root).
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_RootFolder {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_RootFolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date and time.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Rule_Date {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Rule_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extension.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Rule_Extension {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Rule_Extension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File name part.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Rule_FileNamePart {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Rule_FileNamePart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} of {1} files.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Scope_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Scope_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show all {0} values.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_ShowAll_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_ShowAll_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Source.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Source {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Source", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} values.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_Values_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_Values_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Week of {0}.
+        /// </summary>
+        public static string ImageBrowserWindow_Stats_WeekOf_format {
+            get {
+                return ResourceManager.GetString("ImageBrowserWindow_Stats_WeekOf_format", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ShareX - Image browser.
         /// </summary>
         public static string ImageBrowserWindow_Title {

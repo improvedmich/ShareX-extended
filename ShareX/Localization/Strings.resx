@@ -1613,6 +1613,93 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="ImageBrowserWindow_Stats" xml:space="preserve">
     <value>Statistics</value>
   </data>
+  <data name="ImageBrowserWindow_Stats_AddRule" xml:space="preserve">
+    <value>Add rule</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AllFiles" xml:space="preserve">
+    <value>All files</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket" xml:space="preserve">
+    <value>Group by</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_DayOfWeek" xml:space="preserve">
+    <value>Day of week</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Collapse" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyPattern" xml:space="preserve">
+    <value>Enter a regular expression to see a breakdown.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyRules" xml:space="preserve">
+    <value>Add a rule to group the current files.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Example_format" xml:space="preserve">
+    <value>Example: {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Hint" xml:space="preserve">
+    <value>Rules group the current file list. For example, "Modified date → Month" shows how many screenshots you took each month.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_InvalidGroup_format" xml:space="preserve">
+    <value>Group '{0}' does not exist in this regular expression.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue" xml:space="preserve">
+    <value>No value</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue_format" xml:space="preserve">
+    <value>{0} without value</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Part" xml:space="preserve">
+    <value>Part</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_RootFolder" xml:space="preserve">
+    <value>(root)</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Date" xml:space="preserve">
+    <value>Date and time</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Extension" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_FileNamePart" xml:space="preserve">
+    <value>File name part</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Scope_format" xml:space="preserve">
+    <value>{0} of {1} files</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_ShowAll_format" xml:space="preserve">
+    <value>Show all {0} values</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Values_format" xml:space="preserve">
+    <value>{0} values</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_WeekOf_format" xml:space="preserve">
+    <value>Week of {0}</value>
+  </data>
   <data name="ImageBrowserWindow_Title" xml:space="preserve">
     <value>ShareX - Image browser</value>
   </data>

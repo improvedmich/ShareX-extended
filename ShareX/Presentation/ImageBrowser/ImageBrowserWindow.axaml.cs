@@ -25,12 +25,9 @@
 
 #nullable enable
 
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.Layout;
-using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
@@ -51,22 +48,15 @@ namespace ShareX;
 public partial class ImageBrowserWindow : Window
 {
     private const int FilterDebounceMilliseconds = 220;
-    // Guard against extremely wide group breakdowns.
-    private const int MaxDisplayedGroups = 25;
-    // Number of distinct group values rendered per page; the "show more" button adds another page.
-    private const int ValuesPerPage = 100;
     // Decode animated previews at up to this size so frames stay sharp when the splitter is widened.
     private const int MaxAnimatedPreviewSize = 2048;
 
     private readonly ImageBrowserViewModel _viewModel = new();
     private readonly DispatcherTimer _filterTimer;
-    private readonly DispatcherTimer _statsTimer;
     private readonly ImageBrowserOptions _fallbackOptions = new();
-    private readonly Dictionary<string, int> _groupValueLimits = [];
     private CancellationTokenSource? _loadCancellation;
     private CancellationTokenSource? _previewCancellation;
-    private CancellationTokenSource? _statsCancellation;
-    private ImageBrowserRegexStats? _lastStats;
+    private ImageBrowserStatsWindow? _statsWindow;
     private Bitmap? _previewBitmap;
     private int _previewVersion;
     private bool _suppressEvents;
@@ -81,8 +71,6 @@ public partial class ImageBrowserWindow : Window
 
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(FilterDebounceMilliseconds) };
         _filterTimer.Tick += OnFilterTimerTick;
-        _statsTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(FilterDebounceMilliseconds) };
-        _statsTimer.Tick += OnStatsTimerTick;
         _viewModel.FilterRequested += ScheduleFilter;
 
         Opened += OnOpened;
@@ -114,7 +102,6 @@ public partial class ImageBrowserWindow : Window
 
         _suppressEvents = true;
         RecursiveCheckBox.IsChecked = Options.RecursiveSearch;
-        StatsRegexTextBox.Text = Options.StatsRegexPattern;
         _suppressEvents = false;
 
         _viewModel.RecursiveSearch = Options.RecursiveSearch;
@@ -126,14 +113,13 @@ public partial class ImageBrowserWindow : Window
     private void OnClosed(object? sender, EventArgs e)
     {
         _filterTimer.Stop();
-        _statsTimer.Stop();
         _previewVersion++;
+        _statsWindow?.Close();
+        _statsWindow = null;
         _loadCancellation?.Cancel();
         _loadCancellation?.Dispose();
         _previewCancellation?.Cancel();
         _previewCancellation?.Dispose();
-        _statsCancellation?.Cancel();
-        _statsCancellation?.Dispose();
         _previewBitmap?.Dispose();
     }
 
@@ -474,261 +460,27 @@ public partial class ImageBrowserWindow : Window
         }
     }
 
-    private async void OnStatsClick(object? sender, RoutedEventArgs e)
+    private void OnStatsClick(object? sender, RoutedEventArgs e)
     {
-        ModalOverlay.IsVisible = true;
-        StatsDialog.IsVisible = true;
-        StatsRegexTextBox.Focus();
-        await RefreshStatsAsync();
-    }
-
-    private void OnStatsRegexTextChanged(object? sender, TextChangedEventArgs e)
-    {
-        if (_suppressEvents)
+        if (_statsWindow != null)
         {
-            return;
-        }
-
-        Options.StatsRegexPattern = StatsRegexTextBox.Text ?? string.Empty;
-
-        // Recompute only while the statistics dialog is open; opening the window must not trigger stats work.
-        if (ModalOverlay.IsVisible && !string.IsNullOrEmpty(_viewModel.FolderPath))
-        {
-            _statsTimer.Stop();
-            _statsTimer.Start();
-        }
-    }
-
-    private async void OnStatsTimerTick(object? sender, EventArgs e)
-    {
-        _statsTimer.Stop();
-
-        if (ModalOverlay.IsVisible)
-        {
-            await RefreshStatsAsync();
-        }
-    }
-
-    private async Task RefreshStatsAsync()
-    {
-        _statsCancellation?.Cancel();
-        _statsCancellation?.Dispose();
-        _statsCancellation = new CancellationTokenSource();
-        CancellationToken token = _statsCancellation.Token;
-
-        try
-        {
-            ImageBrowserRegexStats stats = await _viewModel.ComputeRegexStatsAsync(
-                StatsRegexTextBox.Text ?? string.Empty, token);
-
-            if (token.IsCancellationRequested)
+            if (!_statsWindow.IsVisible)
             {
-                return;
+                _statsWindow.Show(this);
             }
 
-            _lastStats = stats;
-            _groupValueLimits.Clear();
-            RenderStats();
-        }
-        catch (OperationCanceledException)
-        {
-        }
-        catch (Exception exception)
-        {
-            DebugHelper.WriteException(exception, "Failed to compute statistics.");
-        }
-    }
-
-    private void RenderStats()
-    {
-        ImageBrowserRegexStats? stats = _lastStats;
-
-        StatsGroupsPanel.Children.Clear();
-
-        if (stats == null)
-        {
-            StatsSummaryText.Text = string.Empty;
-            return;
-        }
-
-        StatsErrorText.IsVisible = stats.HasError;
-        StatsErrorText.Text = stats.Error ?? string.Empty;
-
-        if (stats.HasError)
-        {
-            StatsSummaryText.Text = string.Empty;
-            return;
-        }
-
-        NumberFormatInfo format = CultureInfo.CurrentCulture.NumberFormat;
-
-        StatsSummaryText.Text = string.Join("  |  ",
-        [
-            $"{Strings.ImageBrowserWindow_Total}: {_viewModel.TotalFiles.ToString(format)} ({_viewModel.TotalSize.ToSizeString()})",
-            $"{Strings.ImageBrowserWindow_Filtered}: {stats.TotalFiles.ToString(format)} ({(stats.MatchedSize + stats.UnmatchedSize).ToSizeString()})",
-            $"{Strings.ImageBrowserWindow_Matched}: {stats.MatchedFiles.ToString(format)} ({stats.MatchedSize.ToSizeString()})",
-            $"{Strings.ImageBrowserWindow_Unmatched}: {stats.UnmatchedFiles.ToString(format)} ({stats.UnmatchedSize.ToSizeString()})"
-        ]);
-
-        string pattern = StatsRegexTextBox.Text ?? string.Empty;
-
-        if (string.IsNullOrWhiteSpace(pattern))
-        {
-            StatsGroupsPanel.Children.Add(CreateStatsNote(Strings.ImageBrowserWindow_Groups_hint));
-            return;
-        }
-
-        IReadOnlyList<ImageBrowserGroupStats> groups = stats.Groups ?? [];
-
-        if (groups.Count == 0)
-        {
-            StatsGroupsPanel.Children.Add(CreateStatsNote(Strings.ImageBrowserWindow_Groups_no_named_groups));
-            return;
-        }
-
-        foreach (ImageBrowserGroupStats group in groups.Take(MaxDisplayedGroups))
-        {
-            StatsGroupsPanel.Children.Add(CreateStatsGroupPanel(group, format));
-        }
-
-        if (groups.Count > MaxDisplayedGroups)
-        {
-            StatsGroupsPanel.Children.Add(CreateStatsNote(
-                string.Format(Strings.ImageBrowserWindow_More_groups_format, groups.Count - MaxDisplayedGroups)));
-        }
-    }
-
-    private Control CreateStatsGroupPanel(ImageBrowserGroupStats group, NumberFormatInfo format)
-    {
-        StackPanel panel = new() { Spacing = 3 };
-
-        panel.Children.Add(new TextBlock
-        {
-            Text = $"(?<{group.GroupName}>)  ·  {string.Format(Strings.ImageBrowserWindow_Group_files_format, group.FilesWithGroup.ToString(format))}",
-            FontWeight = FontWeight.SemiBold
-        });
-
-        panel.Children.Add(CreateStatsRow(Strings.ImageBrowserWindow_Group_value,
-            Strings.ImageBrowserWindow_Group_count, Strings.ImageBrowserWindow_Size, isHeader: true));
-
-        int limit = _groupValueLimits.TryGetValue(group.GroupName, out int savedLimit)
-            ? savedLimit
-            : ValuesPerPage;
-
-        foreach (ImageBrowserGroupValue value in group.Values.Take(limit))
-        {
-            panel.Children.Add(CreateStatsRow(value.Value, value.Count.ToString(format), value.SizeText, isHeader: false));
-        }
-
-        int remaining = group.Values.Count - limit;
-
-        if (remaining > 0)
-        {
-            Button showMoreButton = new()
+            if (_statsWindow.WindowState == Avalonia.Controls.WindowState.Minimized)
             {
-                Content = string.Format(Strings.ImageBrowserWindow_More_values_format, remaining),
-                Tag = group.GroupName,
-                HorizontalAlignment = HorizontalAlignment.Left,
-                Height = 28,
-                Padding = new Thickness(8, 2),
-                Background = null,
-                BorderThickness = new Thickness(0),
-                FontWeight = FontWeight.Normal,
-                Foreground = SecondaryTextBrush
-            };
-            showMoreButton.Click += OnShowMoreValuesClick;
-            panel.Children.Add(showMoreButton);
+                _statsWindow.WindowState = Avalonia.Controls.WindowState.Normal;
+            }
+
+            _statsWindow.Activate();
+            return;
         }
 
-        return panel;
-    }
-
-    private void OnShowMoreValuesClick(object? sender, RoutedEventArgs e)
-    {
-        if (sender is Button { Tag: string groupName })
-        {
-            _groupValueLimits[groupName] =
-                (_groupValueLimits.TryGetValue(groupName, out int limit) ? limit : ValuesPerPage) + ValuesPerPage;
-            RenderStats();
-        }
-    }
-
-    private Grid CreateStatsRow(string value, string count, string size, bool isHeader)
-    {
-        Grid row = new()
-        {
-            ColumnDefinitions = new ColumnDefinitions("*,80,100"),
-            ColumnSpacing = 8
-        };
-
-        // Never assign a null local value: it would override the themed Foreground style setter
-        // and render the text invisible.
-        IBrush? foreground = isHeader ? SecondaryTextBrush : PrimaryTextBrush;
-        FontWeight weight = isHeader ? FontWeight.SemiBold : FontWeight.Normal;
-
-        TextBlock valueText = new()
-        {
-            Text = value,
-            TextTrimming = TextTrimming.CharacterEllipsis,
-            FontWeight = weight
-        };
-
-        if (foreground != null)
-        {
-            valueText.Foreground = foreground;
-        }
-
-        row.Children.Add(valueText);
-
-        TextBlock countText = new()
-        {
-            Text = count,
-            HorizontalAlignment = HorizontalAlignment.Right,
-            FontWeight = weight
-        };
-
-        if (foreground != null)
-        {
-            countText.Foreground = foreground;
-        }
-
-        Grid.SetColumn(countText, 1);
-        row.Children.Add(countText);
-
-        TextBlock sizeText = new()
-        {
-            Text = size,
-            HorizontalAlignment = HorizontalAlignment.Right,
-            FontWeight = weight
-        };
-
-        if (foreground != null)
-        {
-            sizeText.Foreground = foreground;
-        }
-
-        Grid.SetColumn(sizeText, 2);
-        row.Children.Add(sizeText);
-
-        return row;
-    }
-
-    private TextBlock CreateStatsNote(string text) => new()
-    {
-        Text = text,
-        FontWeight = FontWeight.Normal,
-        FontSize = 12,
-        TextWrapping = TextWrapping.Wrap
-    };
-
-    private IBrush? SecondaryTextBrush => this.FindResource("ShareX.Brush.Text.Secondary") as IBrush;
-
-    private IBrush? PrimaryTextBrush => this.FindResource("ShareX.Brush.Text") as IBrush;
-
-    private void OnCloseModalClick(object? sender, RoutedEventArgs e)
-    {
-        ModalOverlay.IsVisible = false;
-        StatsDialog.IsVisible = false;
+        _statsWindow = new ImageBrowserStatsWindow(_viewModel, Options);
+        _statsWindow.Closed += (_, _) => _statsWindow = null;
+        _statsWindow.Show(this);
     }
 
     private void OnWindowKeyDown(object? sender, KeyEventArgs e)
@@ -736,14 +488,7 @@ public partial class ImageBrowserWindow : Window
         switch (e.Key)
         {
             case Key.Escape:
-                if (ModalOverlay.IsVisible)
-                {
-                    OnCloseModalClick(sender, e);
-                }
-                else
-                {
-                    Close();
-                }
+                Close();
                 e.Handled = true;
                 break;
             case Key.F5:

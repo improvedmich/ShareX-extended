@@ -1,0 +1,363 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localization="using:ShareX.Localization"
+        xmlns:local="using:ShareX"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:history="using:ShareX.HistoryLib"
+        mc:Ignorable="d"
+        d:DesignWidth="1100"
+        d:DesignHeight="800"
+        x:Class="ShareX.ImageBrowserStatsWindow"
+        x:DataType="local:ImageBrowserStatsViewModel"
+        Title="{x:Static localization:Strings.ImageBrowserWindow_Statistics}"
+        Width="1100"
+        Height="800"
+        MinWidth="900"
+        MinHeight="600"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Styles>
+        <Style Selector="TextBlock.page-title-text">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.page-title-icon">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.section-title">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+        <Style Selector="TextBlock.hint">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="TextBlock.param-label">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="TextBlock.error-text">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+        </Style>
+        <Style Selector="Border.stats-card">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="TextBlock.row-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.row-value">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Border.stats-row">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="Height" Value="26"/>
+        </Style>
+        <Style Selector="Border.stats-row:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="ListBox.stats-values">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="ListBox.stats-values ListBoxItem">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="MinHeight" Value="26"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="Button.link-button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="Button.stats-sort-header">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style Selector="TextBlock.sort-indicator">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+        <Grid Margin="16" RowDefinitions="Auto,Auto,*" RowSpacing="10">
+            <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="10">
+                <controls:IconPresenter Grid.Column="0"
+                                        Classes="page-title-icon"
+                                        Icon="{x:Static icons:AppIcons.BarChart}"/>
+
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Classes="page-title-text" Text="{x:Static localization:Strings.ImageBrowserWindow_Statistics}"/>
+                    <TextBlock Classes="hint" Text="{Binding ScopeText}"/>
+                </StackPanel>
+
+                <CheckBox Grid.Column="2"
+                          Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_AllFiles}"
+                          IsChecked="{Binding UseAllFiles, Mode=TwoWay}"
+                          VerticalAlignment="Center"/>
+
+                <Button Grid.Column="3" Classes="toolbar-button" VerticalAlignment="Center">
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Stats_Rule_Date}"
+                                      Tag="Date"
+                                      Click="OnAddRuleClick"/>
+                            <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Stats_Rule_Extension}"
+                                      Tag="Extension"
+                                      Click="OnAddRuleClick"/>
+                            <MenuItem Header="{x:Static localization:Strings.MainWindow_Folder}"
+                                      Tag="Folder"
+                                      Click="OnAddRuleClick"/>
+                            <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Stats_Rule_FileNamePart}"
+                                      Tag="FileNamePart"
+                                      Click="OnAddRuleClick"/>
+                            <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Size}"
+                                      Tag="Size"
+                                      Click="OnAddRuleClick"/>
+                            <MenuItem Header="{x:Static localization:Strings.ImageBrowserWindow_Regex_pattern}"
+                                      Tag="Regex"
+                                      Click="OnAddRuleClick"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
+                        <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_AddRule}"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Grid.Column="4"
+                        Classes="toolbar-button"
+                        Height="32"
+                        Width="32"
+                        VerticalAlignment="Center"
+                        Click="OnCloseClick"
+                        ToolTip.Tip="{x:Static localization:Strings.ImageBrowserWindow_Close}">
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"/>
+                </Button>
+            </Grid>
+
+            <TextBlock Grid.Row="1"
+                       Classes="hint"
+                       Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_Hint}"
+                       TextWrapping="Wrap"/>
+
+            <Grid Grid.Row="2">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Cards}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="2"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="local:ImageBrowserStatsRuleCardViewModel">
+                                <Border Classes="stats-card" Margin="0,0,8,8">
+                                    <StackPanel Spacing="8">
+                                        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                            <StackPanel Spacing="2">
+                                                <TextBlock Classes="section-title" Text="{Binding Title}"/>
+                                                <TextBlock Classes="hint" Text="{Binding Example}" TextWrapping="Wrap"/>
+                                            </StackPanel>
+                                            <Button Grid.Column="1"
+                                                    Classes="toolbar-button"
+                                                    Height="28"
+                                                    Width="28"
+                                                    VerticalAlignment="Top"
+                                                    Tag="{Binding}"
+                                                    Click="OnRemoveRuleClick"
+                                                    ToolTip.Tip="{x:Static localization:Strings.TaskSettingsWindow_Remove}">
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
+                                            </Button>
+                                        </Grid>
+
+                                        <Grid IsVisible="{Binding ShowDateOptions}" ColumnDefinitions="*,*" ColumnSpacing="8">
+                                            <StackPanel Spacing="3">
+                                                <TextBlock Classes="param-label" Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_Source}"/>
+                                                <ComboBox SelectedIndex="{Binding DateSourceIndex, Mode=TwoWay}"
+                                                          HorizontalAlignment="Stretch">
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Modified}"/>
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Created}"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" Spacing="3">
+                                                <TextBlock Classes="param-label" Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket}"/>
+                                                <ComboBox SelectedIndex="{Binding DateBucketIndex, Mode=TwoWay}"
+                                                          HorizontalAlignment="Stretch">
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket_DayOfWeek}"/>
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket_Hour}"/>
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket_Day}"/>
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket_Week}"/>
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket_Month}"/>
+                                                    <ComboBoxItem Content="{x:Static localization:Strings.ImageBrowserWindow_Stats_Bucket_Year}"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <Grid IsVisible="{Binding ShowPartOptions}" ColumnDefinitions="*,*" ColumnSpacing="8">
+                                            <StackPanel Spacing="3">
+                                                <TextBlock Classes="param-label" Text="{x:Static localization:Strings.QuickTaskMenuEditorWindow_Separator}"/>
+                                                <TextBox Text="{Binding Separator, Mode=TwoWay}"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" Spacing="3">
+                                                <TextBlock Classes="param-label" Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_Part}"/>
+                                                <TextBox Text="{Binding PartIndexText, Mode=TwoWay}" Width="80" HorizontalAlignment="Left"/>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <Grid IsVisible="{Binding ShowRegexOptions}" ColumnDefinitions="*,*" ColumnSpacing="8">
+                                            <StackPanel Spacing="3">
+                                                <TextBlock Classes="param-label" Text="{x:Static localization:Strings.TaskSettingsWindow_Pattern}"/>
+                                                <TextBox Text="{Binding RegexPattern, Mode=TwoWay}" PlaceholderText="^(?&lt;app&gt;.+?)_\d{4}-"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" Spacing="3">
+                                                <TextBlock Classes="param-label" Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_Group}"/>
+                                                <TextBox Text="{Binding RegexGroup, Mode=TwoWay}" PlaceholderText="1"/>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <TextBlock Classes="error-text"
+                                                   Text="{Binding ErrorText}"
+                                                   IsVisible="{Binding HasError}"
+                                                   TextWrapping="Wrap"/>
+
+                                        <TextBlock Classes="hint" Text="{Binding SummaryText}" TextWrapping="Wrap"/>
+
+                                        <Grid ColumnDefinitions="*,100,60,80,55" ColumnSpacing="8" Margin="4,0">
+                                            <Button Grid.Column="0"
+                                                    Classes="stats-sort-header"
+                                                    Tag="Label"
+                                                    Click="OnSortValuesClick">
+                                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                                    <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Group_value}"/>
+                                                    <TextBlock Classes="sort-indicator" Text="{Binding ValueSortIndicator}"/>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button Grid.Column="2"
+                                                    Classes="stats-sort-header"
+                                                    HorizontalContentAlignment="Right"
+                                                    Tag="Count"
+                                                    Click="OnSortValuesClick">
+                                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                                    <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Group_count}"/>
+                                                    <TextBlock Classes="sort-indicator" Text="{Binding CountSortIndicator}"/>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button Grid.Column="3"
+                                                    Classes="stats-sort-header"
+                                                    HorizontalContentAlignment="Right"
+                                                    Tag="Size"
+                                                    Click="OnSortValuesClick">
+                                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                                    <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Size}"/>
+                                                    <TextBlock Classes="sort-indicator" Text="{Binding SizeSortIndicator}"/>
+                                                </StackPanel>
+                                            </Button>
+                                            <Button Grid.Column="4"
+                                                    Classes="stats-sort-header"
+                                                    HorizontalContentAlignment="Right"
+                                                    Tag="Share"
+                                                    Click="OnSortValuesClick">
+                                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                                    <TextBlock Text="%"/>
+                                                    <TextBlock Classes="sort-indicator" Text="{Binding ShareSortIndicator}"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </Grid>
+
+                                        <ListBox Classes="stats-values"
+                                                 ItemsSource="{Binding VisibleValues}"
+                                                 MaxHeight="340"
+                                                 SelectionMode="Single"
+                                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate x:DataType="local:ImageBrowserStatsValue">
+                                                    <Border Classes="stats-row" ToolTip.Tip="{Binding ToolTip}">
+                                                        <Grid ColumnDefinitions="*,100,60,80,55" ColumnSpacing="8">
+                                                            <TextBlock Grid.Column="0" Classes="row-label" Text="{Binding Label}"/>
+                                                            <history:StatsMeter Grid.Column="1"
+                                                                                Fraction="{Binding Fraction}"
+                                                                                IsPeak="{Binding IsPeak}"
+                                                                                VerticalAlignment="Center"/>
+                                                            <TextBlock Grid.Column="2" Classes="row-value" Text="{Binding CountText}"/>
+                                                            <TextBlock Grid.Column="3" Classes="row-value" Text="{Binding SizeText}"/>
+                                                            <TextBlock Grid.Column="4" Classes="row-value" Text="{Binding ShareText}"/>
+                                                        </Grid>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+
+                                        <Button Classes="link-button"
+                                                Content="{Binding ToggleText}"
+                                                IsVisible="{Binding HasMore}"
+                                                Tag="{Binding}"
+                                                Click="OnToggleValuesClick"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+                <StackPanel IsVisible="{Binding HasNoRules}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Spacing="8">
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.BarChart}"
+                                            FontSize="42"
+                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                            HorizontalAlignment="Center"/>
+                    <TextBlock Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_EmptyRules}"
+                               Classes="hint"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <ProgressBar IsIndeterminate="True"
+                             IsVisible="{Binding IsBusy}"
+                             Height="2"
+                             VerticalAlignment="Top"
+                             Margin="0,0,0,4"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

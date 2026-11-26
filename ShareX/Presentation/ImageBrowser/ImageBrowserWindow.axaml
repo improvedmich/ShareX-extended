@@ -306,38 +306,5 @@
                 </Border>
             </Grid>
         </Grid>
-
-        <Grid x:Name="ModalOverlay"
-              IsVisible="False"
-              Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
-            <Border x:Name="StatsDialog" Classes="tool-panel" Width="720" Height="540" Padding="18"
-                    IsVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" RowSpacing="12">
-                    <Grid ColumnDefinitions="*,Auto">
-                        <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.ImageBrowserWindow_Statistics}"/>
-                        <Button Grid.Column="1" Classes="toolbar-button" Height="32" Width="32" Click="OnCloseModalClick"
-                                ToolTip.Tip="{x:Static localization:Strings.ImageBrowserWindow_Close}">
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"/>
-                        </Button>
-                    </Grid>
-                    <TextBox x:Name="StatsRegexTextBox" Grid.Row="1"
-                             PlaceholderText="{x:Static localization:Strings.ImageBrowserWindow_Regex_pattern}"
-                             TextChanged="OnStatsRegexTextChanged"/>
-                    <TextBlock x:Name="StatsErrorText" Grid.Row="2"
-                               FontWeight="Normal"
-                               Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                               TextWrapping="Wrap"
-                               IsVisible="False"/>
-                    <TextBlock x:Name="StatsSummaryText" Grid.Row="3"
-                               FontWeight="Normal"
-                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                               TextWrapping="Wrap"/>
-                    <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Disabled"
-                                  VerticalScrollBarVisibility="Auto">
-                        <StackPanel x:Name="StatsGroupsPanel" Spacing="14"/>
-                    </ScrollViewer>
-                </Grid>
-            </Border>
-        </Grid>
     </Grid>
 </Window>
