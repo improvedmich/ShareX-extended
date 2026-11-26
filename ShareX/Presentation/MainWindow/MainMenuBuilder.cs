@@ -291,6 +291,7 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_CopyUUID), Strings.MainMenuBuilder_CopyUUID, LucideIcons.fingerprint, () => TaskHelpers.CopyUUIDToClipboard()),
             Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, LucideIcons.hash, () => TaskHelpers.OpenHashCheck()),
             Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, LucideIcons.folder_tree, () => TaskHelpers.OpenDirectoryIndexer()),
+            Tool(nameof(Strings.MainMenuBuilder_DuplicateFinder), Strings.MainMenuBuilder_DuplicateFinder, LucideIcons.search_check, () => TaskHelpers.OpenDuplicateFinder()),
             Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, LucideIcons.tags, () => TaskHelpers.OpenMetadataWindow()),
             Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, LucideIcons.scan_text, async () => await TaskHelpers.OCRImage()),
             Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, LucideIcons.qr_code, () => TaskHelpers.OpenQRCode()),

@@ -1505,6 +1505,9 @@
   <data name="MainMenuBuilder_IndexFolder" xml:space="preserve">
     <value>Индексировать папку...</value>
   </data>
+  <data name="MainMenuBuilder_DuplicateFinder" xml:space="preserve">
+    <value>Поиск дубликатов файлов...</value>
+  </data>
   <data name="MainMenuBuilder_InspectWindow" xml:space="preserve">
     <value>Исследовать окно</value>
   </data>

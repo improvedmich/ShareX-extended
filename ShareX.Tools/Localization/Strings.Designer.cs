@@ -1663,6 +1663,276 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By SHA-256 hash.
+        /// </summary>
+        public static string DuplicateFinderViewModel_ByHash {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_ByHash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By file name.
+        /// </summary>
+        public static string DuplicateFinderViewModel_ByName {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_ByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Found {0} duplicate group(s), {1} file(s) total..
+        /// </summary>
+        public static string DuplicateFinderViewModel_Duplicates_found {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Duplicates_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SHA-256: {0}.
+        /// </summary>
+        public static string DuplicateFinderViewModel_Hash {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Hash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hashing files... ({0}/{1}).
+        /// </summary>
+        public static string DuplicateFinderViewModel_Hashing_files {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Hashing_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} files.
+        /// </summary>
+        public static string DuplicateFinderViewModel_N_files {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_N_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No duplicates found..
+        /// </summary>
+        public static string DuplicateFinderViewModel_No_duplicates_found {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_No_duplicates_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No files found in the selected folder..
+        /// </summary>
+        public static string DuplicateFinderViewModel_No_files_in_folder {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_No_files_in_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a folder and press Scan..
+        /// </summary>
+        public static string DuplicateFinderViewModel_Press_scan {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Press_scan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reading files... ({0}).
+        /// </summary>
+        public static string DuplicateFinderViewModel_Reading_files {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Reading_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan failed: {0}.
+        /// </summary>
+        public static string DuplicateFinderViewModel_Scan_failed {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Scan_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan stopped..
+        /// </summary>
+        public static string DuplicateFinderViewModel_Scan_stopped {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Scan_stopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a folder to search for duplicates..
+        /// </summary>
+        public static string DuplicateFinderViewModel_Select_a_folder {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Select_a_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopping....
+        /// </summary>
+        public static string DuplicateFinderViewModel_Stopping {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Stopping", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} duplicate files.
+        /// </summary>
+        public static string DuplicateFinderViewModel_Total_duplicates {
+            get {
+                return ResourceManager.GetString("DuplicateFinderViewModel_Total_duplicates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (0 = unlimited).
+        /// </summary>
+        public static string DuplicateFinderWindow_0_is_unlimited {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_0_is_unlimited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Browse....
+        /// </summary>
+        public static string DuplicateFinderWindow_Browse {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Browse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy path to clipboard.
+        /// </summary>
+        public static string DuplicateFinderWindow_Copy_path {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Copy_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Folder.
+        /// </summary>
+        public static string DuplicateFinderWindow_Folder {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max depth.
+        /// </summary>
+        public static string DuplicateFinderWindow_Max_depth {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Max_depth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open containing folder.
+        /// </summary>
+        public static string DuplicateFinderWindow_Open_folder {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Open_folder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Results.
+        /// </summary>
+        public static string DuplicateFinderWindow_Results {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Results", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Scan.
+        /// </summary>
+        public static string DuplicateFinderWindow_Scan {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Scan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search mode.
+        /// </summary>
+        public static string DuplicateFinderWindow_Search_mode {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Search_mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select folder to search for duplicates.
+        /// </summary>
+        public static string DuplicateFinderWindow_Select_folder_dialog {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Select_folder_dialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a folder or drop it here.
+        /// </summary>
+        public static string DuplicateFinderWindow_Select_folder_placeholder {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Select_folder_placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Skip hidden items.
+        /// </summary>
+        public static string DuplicateFinderWindow_Skip_hidden {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Skip_hidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop.
+        /// </summary>
+        public static string DuplicateFinderWindow_Stop {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Duplicate File Finder.
+        /// </summary>
+        public static string DuplicateFinderWindow_Title {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total reclaimable space: {0}.
+        /// </summary>
+        public static string DuplicateFinderWindow_Total_reclaimable {
+            get {
+                return ResourceManager.GetString("DuplicateFinderWindow_Total_reclaimable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error from Gemini API: {0}.
         /// </summary>
         public static string GeminiProvider_API_error {

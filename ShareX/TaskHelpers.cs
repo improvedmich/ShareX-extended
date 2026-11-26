@@ -1077,6 +1077,11 @@ namespace ShareX
             });
         }
 
+        public static void OpenDuplicateFinder()
+        {
+            ToolsIntegration.ShowDuplicateFinderWindow();
+        }
+
         public static void OpenImageCombiner(IEnumerable<string> imageFiles = null, TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
