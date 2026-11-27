@@ -6,14 +6,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="575"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="725"
         x:Class="ShareX.Tools.VideoConverterWindow"
         x:DataType="vm:VideoConverterViewModel"
         Title="{x:Static localization:Strings.VideoConverterWindow_ShareX_Video_Converter}"
         Width="850"
-        Height="550"
+        Height="700"
         MinWidth="700"
-        MinHeight="550"
+        MinHeight="660"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
@@ -63,8 +63,10 @@
 
                 <Grid Grid.Row="1"
                       ColumnDefinitions="360,*"
-                      ColumnSpacing="12">
-                    <Border Grid.Column="0" Classes="tool-panel" Padding="16">
+                      RowDefinitions="*,Auto"
+                      ColumnSpacing="12"
+                      RowSpacing="12">
+                    <Border Grid.Row="0" Grid.Column="0" Classes="tool-panel" Padding="16">
                         <ScrollViewer VerticalScrollBarVisibility="Auto">
                             <StackPanel Spacing="18">
                                 <StackPanel>
@@ -127,7 +129,7 @@
                         </ScrollViewer>
                     </Border>
 
-                    <Border Grid.Column="1" Classes="tool-panel" Padding="16">
+                    <Border Grid.Row="0" Grid.Column="1" Classes="tool-panel" Padding="16">
                             <StackPanel>
                                 <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.VideoConverterWindow_Output}"/>
                                 <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Folder}"/>
@@ -164,6 +166,33 @@
                                                TextWrapping="Wrap"/>
                                 </CheckBox>
                             </StackPanel>
+                    </Border>
+
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Classes="tool-panel" Padding="16,12">
+                        <Grid RowDefinitions="Auto,Auto" RowSpacing="8">
+                            <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                                <TextBlock Grid.Column="0"
+                                           Classes="section-heading"
+                                           Text="{x:Static localization:Strings.VideoConverterWindow_FFmpeg_arguments}"
+                                           Margin="0"
+                                           VerticalAlignment="Center"/>
+                                <CheckBox Grid.Column="1"
+                                          IsChecked="{Binding UseCustomArguments}"
+                                          IsEnabled="{Binding IsIdle}">
+                                    <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Custom}" FontWeight="Normal"/>
+                                </CheckBox>
+                            </Grid>
+                            <TextBox Grid.Row="1"
+                                     Text="{Binding Arguments}"
+                                     IsReadOnly="{Binding !UseCustomArguments}"
+                                     IsEnabled="{Binding IsIdle}"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalContentAlignment="Top"
+                                     FontFamily="Consolas"
+                                     FontSize="12"
+                                     Height="72"/>
+                        </Grid>
                     </Border>
 
                 </Grid>

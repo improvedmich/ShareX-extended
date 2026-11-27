@@ -6487,11 +6487,29 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Custom.
+        /// </summary>
+        public static string VideoConverterWindow_Custom {
+            get {
+                return ResourceManager.GetString("VideoConverterWindow_Custom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encoding.
         /// </summary>
         public static string VideoConverterWindow_Encoding {
             get {
                 return ResourceManager.GetString("VideoConverterWindow_Encoding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FFmpeg arguments.
+        /// </summary>
+        public static string VideoConverterWindow_FFmpeg_arguments {
+            get {
+                return ResourceManager.GetString("VideoConverterWindow_FFmpeg_arguments", resourceCulture);
             }
         }
         

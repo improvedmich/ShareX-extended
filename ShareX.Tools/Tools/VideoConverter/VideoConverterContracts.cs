@@ -47,7 +47,7 @@ public enum VideoConverterCodec
     Apng
 }
 
-public sealed record VideoConversionRequest(string Arguments, string OutputFilePath, bool AutoOpenFolder);
+public sealed record VideoConversionRequest(IReadOnlyList<string> Arguments, string OutputFilePath, bool AutoOpenFolder);
 
 public sealed record VideoConversionResult(bool Succeeded, bool WasCancelled, string? ErrorMessage = null, VideoConversionOutputInfo? OutputInfo = null);
 

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -41,6 +42,22 @@ namespace ShareX.HelpersLib
 
         public virtual int Open(string path, string args = null)
         {
+            return OpenProcess(path, startInfo => startInfo.Arguments = args);
+        }
+
+        public virtual int Open(string path, IReadOnlyList<string> args)
+        {
+            return OpenProcess(path, startInfo =>
+            {
+                foreach (string arg in args)
+                {
+                    startInfo.ArgumentList.Add(arg);
+                }
+            });
+        }
+
+        private int OpenProcess(string path, Action<ProcessStartInfo> configureArguments)
+        {
             if (File.Exists(path))
             {
                 using (process = new Process())
@@ -49,7 +66,6 @@ namespace ShareX.HelpersLib
                     {
                         FileName = path,
                         WorkingDirectory = Path.GetDirectoryName(path),
-                        Arguments = args,
                         UseShellExecute = false,
                         CreateNoWindow = true,
                         RedirectStandardInput = true,
@@ -59,12 +75,14 @@ namespace ShareX.HelpersLib
                         StandardErrorEncoding = Encoding.UTF8
                     };
 
+                    configureArguments(psi);
+
                     process.EnableRaisingEvents = true;
                     if (psi.RedirectStandardOutput) process.OutputDataReceived += cli_OutputDataReceived;
                     if (psi.RedirectStandardError) process.ErrorDataReceived += cli_ErrorDataReceived;
                     process.StartInfo = psi;
 
-                    DebugHelper.WriteLine($"CLI: \"{psi.FileName}\" {psi.Arguments}");
+                    DebugHelper.WriteLine($"CLI: \"{psi.FileName}\" {(psi.ArgumentList.Count > 0 ? string.Join(" ", psi.ArgumentList) : psi.Arguments)}");
                     process.Start();
 
                     if (psi.RedirectStandardOutput) process.BeginOutputReadLine();

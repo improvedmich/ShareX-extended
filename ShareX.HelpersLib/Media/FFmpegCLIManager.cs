@@ -26,6 +26,7 @@
 #nullable disable
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -84,7 +85,22 @@ namespace ShareX.HelpersLib
             return Run(FFmpegPath, args);
         }
 
+        public bool Run(IReadOnlyList<string> args)
+        {
+            return Run(FFmpegPath, args);
+        }
+
         protected bool Run(string path, string args)
+        {
+            return Run(path, () => Open(path, args));
+        }
+
+        protected bool Run(string path, IReadOnlyList<string> args)
+        {
+            return Run(path, () => Open(path, args));
+        }
+
+        private bool Run(string path, Func<int> startProcess)
         {
             if (!string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
             {
@@ -92,7 +108,7 @@ namespace ShareX.HelpersLib
             }
 
             StopRequested = false;
-            int errorCode = Open(path, args);
+            int errorCode = startProcess();
             IsEncoding = false;
             bool result = errorCode == 0;
             if (!result && ShowError)

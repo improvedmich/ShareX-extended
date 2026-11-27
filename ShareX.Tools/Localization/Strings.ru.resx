@@ -2203,8 +2203,14 @@
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>Постоянное качество</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>Свои</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>Кодирование</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>Аргументы FFmpeg</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg недоступен.</value>

@@ -2207,8 +2207,14 @@ File path: {0}</value>
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>Constant quality</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>Encoding</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>FFmpeg arguments</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg is unavailable.</value>

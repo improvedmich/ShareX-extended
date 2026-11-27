@@ -1350,7 +1350,7 @@ namespace ShareX
                 };
 
                 // "ffmpeg -i" without an output exits with an error, but still prints the stream summary.
-                probe.Run($"-hide_banner -i \"{outputFilePath}\"");
+                probe.Run(["-hide_banner", "-i", outputFilePath]);
                 return VideoConversionOutputInfo.FromFFmpegOutput(probe.Output.ToString(), fileInfo.Length);
             }
             catch (Exception e)

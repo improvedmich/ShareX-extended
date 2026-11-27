@@ -27,7 +27,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
 using System.Globalization;
-using System.Text;
 
 namespace ShareX.Tools;
 
@@ -56,22 +55,30 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     private static readonly string[] AnimationOnlyExtensions = [".gif", ".webp", ".png", ".apng"];
 
+    // Only these extensions are treated as a container chosen by the user. Any other dot in the
+    // file name (for example "my.video" or "Movie.2024") is part of the name, not an extension.
+    private static readonly string[] KnownOutputExtensions =
+        [".mp4", ".m4v", ".mkv", ".webm", ".avi", ".mov", ".wmv", ".gif", ".webp", ".apng"];
+
     private readonly VideoConverterOptions _options;
     private readonly VideoConversionHandler _conversionHandler;
     private CancellationTokenSource? _cancellationTokenSource;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(InputFileDisplay))]
     [NotifyPropertyChangedFor(nameof(OutputFileNamePreview))]
     private string _inputFilePath;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(OutputFileNamePreview))]
     private string _outputFolderPath;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(OutputFileNamePreview))]
     private string _outputFileName;
@@ -80,6 +87,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private string _outputFileNameMask;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(OutputFilePath))]
     [NotifyPropertyChangedFor(nameof(ShowsQualityControls))]
     [NotifyPropertyChangedFor(nameof(CanChooseRateControl))]
@@ -90,18 +98,29 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     private VideoConverterCodecItem _selectedCodec;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     [NotifyPropertyChangedFor(nameof(ShowsQualitySlider))]
     [NotifyPropertyChangedFor(nameof(ShowsBitrate))]
     private bool _useBitrate;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     private double _videoQuality;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
     private decimal _videoBitrate;
 
     [ObservableProperty]
     private bool _autoOpenFolder;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
+    private bool _useCustomArguments;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(Arguments))]
+    private string _customArguments;
 
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsIdle))]
@@ -138,6 +157,8 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _videoQuality = options.VideoQuality;
         _videoBitrate = options.VideoQualityBitrate;
         _autoOpenFolder = options.AutoOpenFolder;
+        _useCustomArguments = options.UseCustomArguments;
+        _customArguments = options.CustomArguments ?? string.Empty;
         _statusText = string.IsNullOrWhiteSpace(_inputFilePath)
             ? Localization.Strings.VideoConverterViewModel_Choose_video_or_animation
             : string.Empty;
@@ -212,7 +233,19 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             }
 
             string path = Path.Combine(OutputFolderPath, fileName);
-            return Path.HasExtension(fileName) ? path : Path.ChangeExtension(path, GetFileExtension());
+            return AddOutputExtension(path, fileName);
+        }
+    }
+
+    public string Arguments
+    {
+        get => UseCustomArguments ? CustomArguments : FormatArguments(BuildArguments(OutputFilePath));
+        set
+        {
+            if (UseCustomArguments && value != CustomArguments)
+            {
+                CustomArguments = value;
+            }
         }
     }
 
@@ -228,7 +261,24 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         }
 
         string path = Path.Combine(OutputFolderPath, fileName);
-        return Path.HasExtension(fileName) ? path : Path.ChangeExtension(path, GetFileExtension());
+        return AddOutputExtension(path, fileName);
+    }
+
+    private static bool HasKnownOutputExtension(string fileName)
+    {
+        string extension = Path.GetExtension(fileName);
+        return extension.Length > 0 && KnownOutputExtensions.Contains(extension, StringComparer.OrdinalIgnoreCase);
+    }
+
+    private string AddOutputExtension(string path, string fileName)
+    {
+        if (HasKnownOutputExtension(fileName))
+        {
+            return path;
+        }
+
+        string extension = GetFileExtension();
+        return path.EndsWith('.') ? $"{path}{extension}" : $"{path}.{extension}";
     }
 
     [RelayCommand]
@@ -331,7 +381,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
         try
         {
-            VideoConversionRequest request = new(BuildArguments(outputFilePath), outputFilePath, AutoOpenFolder);
+            VideoConversionRequest request = new(GetArguments(outputFilePath), outputFilePath, AutoOpenFolder);
             VideoConversionResult result = await _conversionHandler(request, progress, _cancellationTokenSource.Token);
 
             if (result.Succeeded && !result.WasCancelled)
@@ -396,6 +446,19 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     partial void OnVideoBitrateChanged(decimal value) => SettingsValueChanged();
     partial void OnAutoOpenFolderChanged(bool value) => SettingsValueChanged();
     partial void OnOutputFileNameMaskChanged(string value) => SettingsValueChanged();
+
+    partial void OnUseCustomArgumentsChanged(bool value)
+    {
+        if (value && string.IsNullOrWhiteSpace(CustomArguments))
+        {
+            _customArguments = FormatArguments(BuildArguments(OutputFilePath));
+            OnPropertyChanged(nameof(CustomArguments));
+        }
+
+        SettingsValueChanged();
+    }
+
+    partial void OnCustomArgumentsChanged(string value) => SettingsValueChanged();
     private void SettingsValueChanged()
     {
         PersistSettings();
@@ -413,75 +476,196 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _options.VideoQuality = (int)Math.Round(VideoQuality);
         _options.VideoQualityBitrate = (int)VideoBitrate;
         _options.AutoOpenFolder = AutoOpenFolder;
+        _options.UseCustomArguments = UseCustomArguments;
+        _options.CustomArguments = CustomArguments;
     }
 
-    private string BuildArguments(string outputFilePath)
+    private IReadOnlyList<string> GetArguments(string outputFilePath)
     {
-        StringBuilder args = new();
-        args.Append($"-i \"{InputFilePath}\" ");
+        if (UseCustomArguments && !string.IsNullOrWhiteSpace(CustomArguments))
+        {
+            List<string> customArguments = ParseArguments(CustomArguments);
+
+            if (customArguments.Count > 0)
+            {
+                return customArguments;
+            }
+        }
+
+        return BuildArguments(outputFilePath);
+    }
+
+    private static string FormatArguments(IEnumerable<string> arguments)
+    {
+        return string.Join(' ', arguments.Select(QuoteArgument));
+    }
+
+    private static string QuoteArgument(string argument)
+    {
+        if (argument.Length > 0 && !argument.Any(char.IsWhiteSpace) && !argument.Contains('"'))
+        {
+            return argument;
+        }
+
+        return $"\"{argument.Replace("\"", "\\\"")}\"";
+    }
+
+    private static List<string> ParseArguments(string input)
+    {
+        List<string> arguments = [];
+
+        if (string.IsNullOrWhiteSpace(input))
+        {
+            return arguments;
+        }
+
+        System.Text.StringBuilder current = new();
+        bool inQuotes = false;
+        int backslashes = 0;
+
+        foreach (char c in input)
+        {
+            if (c == '\\')
+            {
+                backslashes++;
+                continue;
+            }
+
+            if (c == '"')
+            {
+                current.Append('\\', backslashes / 2);
+
+                if (backslashes % 2 == 1)
+                {
+                    current.Append('"');
+                }
+                else
+                {
+                    inQuotes = !inQuotes;
+                }
+
+                backslashes = 0;
+                continue;
+            }
+
+            if (char.IsWhiteSpace(c) && !inQuotes)
+            {
+                current.Append('\\', backslashes);
+                backslashes = 0;
+
+                if (current.Length > 0)
+                {
+                    arguments.Add(current.ToString());
+                    current.Clear();
+                }
+
+                continue;
+            }
+
+            current.Append('\\', backslashes);
+            backslashes = 0;
+            current.Append(c);
+        }
+
+        current.Append('\\', backslashes);
+
+        if (current.Length > 0)
+        {
+            arguments.Add(current.ToString());
+        }
+
+        return arguments;
+    }
+
+    private IReadOnlyList<string> BuildArguments(string outputFilePath)
+    {
+        List<string> args = ["-i", InputFilePath];
         int quality = Math.Clamp((int)Math.Round(VideoQuality), (int)QualityMinimum, (int)QualityMaximum);
         int bitrate = Math.Max(0, (int)VideoBitrate);
 
         switch (SelectedCodec.Codec)
         {
             case VideoConverterCodec.X264:
-                args.Append("-c:v libx264 -preset medium ");
-                args.Append(UseBitrate ? $"-b:v {bitrate}k " : $"-crf {quality} ");
-                args.Append("-pix_fmt yuv420p -movflags +faststart ");
+                args.AddRange(["-c:v", "libx264", "-preset", "medium"]);
+                AddRateControl(args, quality, bitrate);
+                args.AddRange(["-pix_fmt", "yuv420p", "-movflags", "+faststart"]);
                 break;
             case VideoConverterCodec.X265:
-                args.Append("-c:v libx265 -preset medium ");
-                args.Append(UseBitrate ? $"-b:v {bitrate}k " : $"-crf {quality} ");
+                args.AddRange(["-c:v", "libx265", "-preset", "medium"]);
+                AddRateControl(args, quality, bitrate);
                 break;
             case VideoConverterCodec.H264Nvenc:
-                args.Append($"-c:v h264_nvenc -preset p4 -tune hq -profile:v high -b:v {bitrate}k ");
+                args.AddRange(["-c:v", "h264_nvenc", "-preset", "p4", "-tune", "hq", "-profile:v", "high", "-b:v", $"{bitrate}k"]);
                 break;
             case VideoConverterCodec.HevcNvenc:
-                args.Append($"-c:v hevc_nvenc -preset p4 -tune hq -profile:v main -b:v {bitrate}k ");
+                args.AddRange(["-c:v", "hevc_nvenc", "-preset", "p4", "-tune", "hq", "-profile:v", "main", "-b:v", $"{bitrate}k"]);
                 break;
             case VideoConverterCodec.H264Amf:
-                args.Append($"-c:v h264_amf -usage transcoding -profile main -quality balanced -b:v {bitrate}k ");
+                args.AddRange(["-c:v", "h264_amf", "-usage", "transcoding", "-profile", "main", "-quality", "balanced", "-b:v", $"{bitrate}k"]);
                 break;
             case VideoConverterCodec.HevcAmf:
-                args.Append($"-c:v hevc_amf -usage transcoding -profile main -quality balanced -b:v {bitrate}k ");
+                args.AddRange(["-c:v", "hevc_amf", "-usage", "transcoding", "-profile", "main", "-quality", "balanced", "-b:v", $"{bitrate}k"]);
                 break;
             case VideoConverterCodec.H264Qsv:
-                args.Append($"-c:v h264_qsv -preset medium -b:v {bitrate}k ");
+                args.AddRange(["-c:v", "h264_qsv", "-preset", "medium", "-b:v", $"{bitrate}k"]);
                 break;
             case VideoConverterCodec.HevcQsv:
-                args.Append($"-c:v hevc_qsv -preset medium -b:v {bitrate}k ");
+                args.AddRange(["-c:v", "hevc_qsv", "-preset", "medium", "-b:v", $"{bitrate}k"]);
                 break;
             case VideoConverterCodec.Vp8:
-                args.Append("-c:v libvpx ");
-                args.Append(UseBitrate ? $"-b:v {bitrate}k " : $"-crf {quality} -b:v 100M ");
+                args.Add("-c:v");
+                args.Add("libvpx");
+                if (UseBitrate)
+                {
+                    args.AddRange(["-b:v", $"{bitrate}k"]);
+                }
+                else
+                {
+                    args.AddRange(["-crf", quality.ToString(CultureInfo.InvariantCulture), "-b:v", "100M"]);
+                }
                 break;
             case VideoConverterCodec.Vp9:
-                args.Append("-c:v libvpx-vp9 ");
-                args.Append(UseBitrate ? $"-b:v {bitrate}k " : $"-crf {quality} -b:v 0 ");
+                args.Add("-c:v");
+                args.Add("libvpx-vp9");
+                if (UseBitrate)
+                {
+                    args.AddRange(["-b:v", $"{bitrate}k"]);
+                }
+                else
+                {
+                    args.AddRange(["-crf", quality.ToString(CultureInfo.InvariantCulture), "-b:v", "0"]);
+                }
                 break;
             case VideoConverterCodec.Av1:
-                args.Append("-c:v libsvtav1 ");
-                args.Append(UseBitrate ? $"-b:v {bitrate}k " : $"-crf {quality} ");
+                args.AddRange(["-c:v", "libsvtav1"]);
+                AddRateControl(args, quality, bitrate);
                 break;
             case VideoConverterCodec.Xvid:
-                args.Append("-c:v libxvid ");
-                args.Append(UseBitrate ? $"-b:v {bitrate}k " : $"-q:v {quality} ");
+                args.AddRange(["-c:v", "libxvid"]);
+                if (UseBitrate)
+                {
+                    args.AddRange(["-b:v", $"{bitrate}k"]);
+                }
+                else
+                {
+                    args.AddRange(["-q:v", quality.ToString(CultureInfo.InvariantCulture)]);
+                }
                 break;
             case VideoConverterCodec.Gif:
-                args.Append("-lavfi \"palettegen=stats_mode=full[palette],[0:v][palette]paletteuse=dither=sierra2_4a\" ");
+                args.AddRange(["-lavfi", "palettegen=stats_mode=full[palette],[0:v][palette]paletteuse=dither=sierra2_4a"]);
                 break;
             case VideoConverterCodec.Webp:
-                args.Append("-c:v libwebp -lossless 0 -preset default -loop 0 ");
+                args.AddRange(["-c:v", "libwebp", "-lossless", "0", "-preset", "default", "-loop", "0"]);
                 break;
             case VideoConverterCodec.Apng:
-                args.Append("-f apng -plays 0 ");
+                args.AddRange(["-f", "apng", "-plays", "0"]);
                 break;
         }
 
         if (SelectedCodec.Codec is VideoConverterCodec.X265 or VideoConverterCodec.HevcNvenc
             or VideoConverterCodec.HevcAmf or VideoConverterCodec.HevcQsv)
         {
-            args.Append("-tag:v hvc1 ");
+            args.AddRange(["-tag:v", "hvc1"]);
         }
 
         bool animationOnly = AnimationOnlyExtensions.Any(extension => InputFilePath.EndsWith(extension, StringComparison.OrdinalIgnoreCase));
@@ -497,23 +681,36 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
                 case VideoConverterCodec.HevcAmf:
                 case VideoConverterCodec.H264Qsv:
                 case VideoConverterCodec.HevcQsv:
-                    args.Append("-c:a aac -b:a 128k ");
+                    args.AddRange(["-c:a", "aac", "-b:a", "128k"]);
                     break;
                 case VideoConverterCodec.Vp8:
                 case VideoConverterCodec.Vp9:
-                    args.Append("-c:a libvorbis -q:a 3 ");
+                    args.AddRange(["-c:a", "libvorbis", "-q:a", "3"]);
                     break;
                 case VideoConverterCodec.Av1:
-                    args.Append("-c:a libopus -b:a 128k ");
+                    args.AddRange(["-c:a", "libopus", "-b:a", "128k"]);
                     break;
                 case VideoConverterCodec.Xvid:
-                    args.Append("-c:a libmp3lame -q:a 4 ");
+                    args.AddRange(["-c:a", "libmp3lame", "-q:a", "4"]);
                     break;
             }
         }
 
-        args.Append($"-y \"{outputFilePath}\"");
-        return args.ToString();
+        args.Add("-y");
+        args.Add(outputFilePath);
+        return args;
+    }
+
+    private void AddRateControl(List<string> args, int quality, int bitrate)
+    {
+        if (UseBitrate)
+        {
+            args.AddRange(["-b:v", $"{bitrate}k"]);
+        }
+        else
+        {
+            args.AddRange(["-crf", quality.ToString(CultureInfo.InvariantCulture)]);
+        }
     }
 
     private string GetFileExtension() => SelectedCodec.Codec switch
