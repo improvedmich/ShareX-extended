@@ -1502,6 +1502,186 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="IconPackPrompt_Title" xml:space="preserve">
     <value>Simgelerinizi seçin</value>
   </data>
+  <data name="ImageBrowserWindow_Choose_folder" xml:space="preserve">
+    <value>Gözatılacak klasörü seç</value>
+  </data>
+  <data name="ImageBrowserWindow_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_modified" xml:space="preserve">
+    <value>Değiştirilme</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_size" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_name" xml:space="preserve">
+    <value>Dosya adını kopyala</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_path" xml:space="preserve">
+    <value>Dosya yolunu kopyala</value>
+  </data>
+  <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
+    <value>Boyutlar</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder" xml:space="preserve">
+    <value>Klasör...</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_missing" xml:space="preserve">
+    <value>Klasör bulunamadı</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_path" xml:space="preserve">
+    <value>Klasör</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_count" xml:space="preserve">
+    <value>Sayım</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_files_format" xml:space="preserve">
+    <value>{0} dosya</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
+    <value>Değer</value>
+  </data>
+  <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
+    <value>{0} öğe</value>
+  </data>
+  <data name="ImageBrowserWindow_Loading" xml:space="preserve">
+    <value>Yükleniyor...</value>
+  </data>
+  <data name="ImageBrowserWindow_Modified" xml:space="preserve">
+    <value>Değiştirilme</value>
+  </data>
+  <data name="ImageBrowserWindow_No_files" xml:space="preserve">
+    <value>Görsel dosyası bulunamadı</value>
+  </data>
+  <data name="ImageBrowserWindow_No_matches" xml:space="preserve">
+    <value>Geçerli filtreyle eşleşen dosya yok</value>
+  </data>
+  <data name="ImageBrowserWindow_No_preview" xml:space="preserve">
+    <value>Görsel ön izlemesi kullanılamıyor</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_file" xml:space="preserve">
+    <value>Dosyayı aç</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_folder" xml:space="preserve">
+    <value>Klasör aç</value>
+  </data>
+  <data name="ImageBrowserWindow_Recursive" xml:space="preserve">
+    <value>Özyinelemeli</value>
+  </data>
+  <data name="ImageBrowserWindow_Refresh" xml:space="preserve">
+    <value>Yenile</value>
+  </data>
+  <data name="ImageBrowserWindow_Regex_pattern" xml:space="preserve">
+    <value>Düzenli ifade (dosya adı)</value>
+  </data>
+  <data name="ImageBrowserWindow_Search_placeholder" xml:space="preserve">
+    <value>Dosya adlarını ve yollarını ara</value>
+  </data>
+  <data name="ImageBrowserWindow_Select_file" xml:space="preserve">
+    <value>Önizlenecek dosyayı seçin</value>
+  </data>
+  <data name="ImageBrowserWindow_Size" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="ImageBrowserWindow_Statistics" xml:space="preserve">
+    <value>İstatistikler</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats" xml:space="preserve">
+    <value>İstatistikler</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AddRule" xml:space="preserve">
+    <value>Kural ekle</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AllFiles" xml:space="preserve">
+    <value>Tüm dosyalar</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket" xml:space="preserve">
+    <value>Grupla</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Day" xml:space="preserve">
+    <value>Güncel gün</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_DayOfWeek" xml:space="preserve">
+    <value>Haftanın günü</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Hour" xml:space="preserve">
+    <value>Güncel saat</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Month" xml:space="preserve">
+    <value>Güncel ay</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Week" xml:space="preserve">
+    <value>Hafta</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Year" xml:space="preserve">
+    <value>Güncel yıl</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Collapse" xml:space="preserve">
+    <value>Daralt</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Created" xml:space="preserve">
+    <value>Oluşturulma</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyPattern" xml:space="preserve">
+    <value>Dökümü görmek için bir düzenli ifade girin.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyRules" xml:space="preserve">
+    <value>Geçerli dosyaları gruplamak için bir kural ekleyin.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Example_format" xml:space="preserve">
+    <value>Örnek: {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Group" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Hint" xml:space="preserve">
+    <value>Kurallar geçerli dosya listesini gruplar. Örneğin «Değiştirme tarihi → Ay», her ay kaç ekran görüntüsü aldığınızı gösterir.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_InvalidGroup_format" xml:space="preserve">
+    <value>'{0}' grubu bu düzenli ifadede yok.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue" xml:space="preserve">
+    <value>Değer yok</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue_format" xml:space="preserve">
+    <value>{0} değersiz</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Part" xml:space="preserve">
+    <value>Bölüm</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_RootFolder" xml:space="preserve">
+    <value>(kök)</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Date" xml:space="preserve">
+    <value>Tarih ve zaman</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Extension" xml:space="preserve">
+    <value>Uzantı</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_FileNamePart" xml:space="preserve">
+    <value>Dosya adı bölümü</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Scope_format" xml:space="preserve">
+    <value>{1} dosyadan {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_ShowAll_format" xml:space="preserve">
+    <value>Tüm {0} değeri göster</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Source" xml:space="preserve">
+    <value>Kaynak</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Values_format" xml:space="preserve">
+    <value>{0} değer</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_WeekOf_format" xml:space="preserve">
+    <value>{0} haftası</value>
+  </data>
+  <data name="ImageBrowserWindow_Title" xml:space="preserve">
+    <value>ShareX - Görsel tarayıcısı</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Resim buraya kaydedilemedi:</value>
   </data>
@@ -1592,6 +1772,12 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_Copy" xml:space="preserve">
     <value>Kopyala</value>
   </data>
+  <data name="MainMenuBuilder_CopyTimestamp" xml:space="preserve">
+    <value>Zaman damgasını kopyala</value>
+  </data>
+  <data name="MainMenuBuilder_CopyUUID" xml:space="preserve">
+    <value>UUID'yi kopyala</value>
+  </data>
   <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
     <value>Özel yükleyici ayarları...</value>
   </data>
@@ -1618,6 +1804,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Sürükleyip bırakarak yükle...</value>
+  </data>
+  <data name="MainMenuBuilder_DuplicateFinder" xml:space="preserve">
+    <value>Yinelenen dosya bulucu...</value>
   </data>
   <data name="MainMenuBuilder_EditTools" xml:space="preserve">
     <value>Düzenle</value>
@@ -1651,6 +1840,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>Resim güzelleştirici...</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBrowser" xml:space="preserve">
+    <value>Görsel tarayıcısı...</value>
   </data>
   <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
     <value>Resim birleştirici...</value>
@@ -2320,6 +2512,12 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>"{0}" özel yükleyicisini eklemek istiyor musunuz?</value>
   </data>
+  <data name="TaskHelpers_CopyTimestamp" xml:space="preserve">
+    <value>Zaman damgasını kopyala</value>
+  </data>
+  <data name="TaskHelpers_CopyUUID" xml:space="preserve">
+    <value>UUID'yi kopyala</value>
+  </data>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX - Özel yükleyici onayı</value>
   </data>
@@ -2530,6 +2728,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Hizmet bağlantısını açtıktan sonra OCR penceresini kapat</value>
+  </data>
+  <data name="TaskSettingsWindow_CommonOutputFileName" xml:space="preserve">
+    <value>Ortak çıktı dosyası adı</value>
   </data>
   <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
     <value>Kompakt resim düzenleyici araç çubuğu</value>
@@ -3188,6 +3389,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Saat dilimi:</value>
   </data>
+  <data name="TaskSettingsWindow_TimestampCopy" xml:space="preserve">
+    <value>Zaman damgasını kopyala</value>
+  </data>
   <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
     <value>Monitör {0} (bağlı değil)</value>
   </data>
@@ -3205,6 +3409,12 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
     <value>URL değiştirme</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDCopy" xml:space="preserve">
+    <value>UUID'yi kopyala</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDVersion" xml:space="preserve">
+    <value>UUID sürümü:</value>
   </data>
   <data name="TaskSettingsWindow_Update" xml:space="preserve">
     <value>Güncelle</value>

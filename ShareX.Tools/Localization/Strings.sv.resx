@@ -617,6 +617,96 @@ Filsökväg: {0}</value>
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>XML-utdata</value>
   </data>
+  <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
+    <value>Efter SHA-256-hash</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>Efter filnamn</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
+    <value>Hittade {0} dubblettgrupper, totalt {1} filer.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
+    <value>SHA-256-hash: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>Hashtar filer... ({0}/{1})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
+    <value>{0} filer</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
+    <value>Inga dubbletter hittades.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
+    <value>Inga filer hittades i den valda mappen.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Press_scan" xml:space="preserve">
+    <value>Välj en mapp och tryck på Skanna.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Reading_files" xml:space="preserve">
+    <value>Läser filer... ({0})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_failed" xml:space="preserve">
+    <value>Skanningen misslyckades: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_stopped" xml:space="preserve">
+    <value>Skanningen stoppades.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Select_a_folder" xml:space="preserve">
+    <value>Välj en mapp att söka efter dubbletter i.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Stopping" xml:space="preserve">
+    <value>Stoppar...</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
+    <value>{0} dubblettfiler</value>
+  </data>
+  <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
+    <value>(0 = obegränsat)</value>
+  </data>
+  <data name="DuplicateFinderWindow_Browse" xml:space="preserve">
+    <value>Bläddra...</value>
+  </data>
+  <data name="DuplicateFinderWindow_Copy_path" xml:space="preserve">
+    <value>Kopiera sökväg till urklipp</value>
+  </data>
+  <data name="DuplicateFinderWindow_Folder" xml:space="preserve">
+    <value>Mapp</value>
+  </data>
+  <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
+    <value>Maxdjup</value>
+  </data>
+  <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
+    <value>Öppna överordnad mapp</value>
+  </data>
+  <data name="DuplicateFinderWindow_Results" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="DuplicateFinderWindow_Scan" xml:space="preserve">
+    <value>Skanna</value>
+  </data>
+  <data name="DuplicateFinderWindow_Search_mode" xml:space="preserve">
+    <value>Sökläge</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
+    <value>Välj mapp att söka efter dubbletter i</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
+    <value>Välj en mapp eller släpp den här</value>
+  </data>
+  <data name="DuplicateFinderWindow_Skip_hidden" xml:space="preserve">
+    <value>Hoppa över dolda objekt</value>
+  </data>
+  <data name="DuplicateFinderWindow_Stop" xml:space="preserve">
+    <value>Stoppa</value>
+  </data>
+  <data name="DuplicateFinderWindow_Title" xml:space="preserve">
+    <value>ShareX – Sökning efter dubblettfiler</value>
+  </data>
+  <data name="DuplicateFinderWindow_Total_reclaimable" xml:space="preserve">
+    <value>Totalt frigörbart utrymme: {0}</value>
+  </data>
   <data name="GeminiProvider_API_error" xml:space="preserve">
     <value>Fel från Gemini API: {0}</value>
   </data>
@@ -1678,6 +1768,15 @@ Filsökväg: {0}</value>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Öppna tjänst...</value>
   </data>
+  <data name="OCRWindow_Recognition_model" xml:space="preserve">
+    <value>Igenkänningsmodell</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Cyrillic" xml:space="preserve">
+    <value>Kyrillisk (ryska, ukrainska och andra)</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Default" xml:space="preserve">
+    <value>Latin och CJK</value>
+  </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Ta bort</value>
   </data>
@@ -2092,6 +2191,9 @@ Filsökväg: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stoppar konverteringen...</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>Tillämpa mask</value>
+  </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>Genomsnittlig bithastighet</value>
   </data>
@@ -2104,8 +2206,14 @@ Filsökväg: {0}</value>
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>Konstant kvalitet</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>Anpassat</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>Kodning</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>FFmpeg-argument</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg är inte tillgängligt.</value>

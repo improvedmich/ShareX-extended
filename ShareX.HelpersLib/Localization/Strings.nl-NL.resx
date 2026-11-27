@@ -657,6 +657,12 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Kleurenkiezer</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Tijdstempel naar klembord kopiëren</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>UUID naar klembord kopiëren</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Leg aangepaste regio vast</value>
   </data>
@@ -1137,6 +1143,12 @@ Wilt u het toch uitvoeren?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incrementeel</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Invoerbestand</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Invoermap</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Willekeurig</value>
   </data>
@@ -1148,6 +1160,21 @@ Wilt u het toch uitvoeren?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Huidige dag</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Extensie van invoerbestand</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Pad van de map van het invoerbestand</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Naam van invoerbestand (zonder extensie)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Naam van de map van het invoerbestand</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Volledig pad van invoerbestand</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Willekeurige GUID</value>

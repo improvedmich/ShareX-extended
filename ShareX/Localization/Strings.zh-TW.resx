@@ -1502,6 +1502,186 @@
   <data name="IconPackPrompt_Title" xml:space="preserve">
     <value>選擇圖示</value>
   </data>
+  <data name="ImageBrowserWindow_Choose_folder" xml:space="preserve">
+    <value>選擇要瀏覽的資料夾</value>
+  </data>
+  <data name="ImageBrowserWindow_Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_modified" xml:space="preserve">
+    <value>修改時間</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_name" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_size" xml:space="preserve">
+    <value>尺寸：</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_name" xml:space="preserve">
+    <value>複製檔案名稱</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_path" xml:space="preserve">
+    <value>複製檔案路徑</value>
+  </data>
+  <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
+    <value>尺寸</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder" xml:space="preserve">
+    <value>資料夾...</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_missing" xml:space="preserve">
+    <value>找不到資料夾</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_path" xml:space="preserve">
+    <value>資料夾</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_count" xml:space="preserve">
+    <value>計數</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_files_format" xml:space="preserve">
+    <value>{0} 個檔案</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
+    <value>{0} 個項目</value>
+  </data>
+  <data name="ImageBrowserWindow_Loading" xml:space="preserve">
+    <value>正在載入...</value>
+  </data>
+  <data name="ImageBrowserWindow_Modified" xml:space="preserve">
+    <value>修改時間</value>
+  </data>
+  <data name="ImageBrowserWindow_No_files" xml:space="preserve">
+    <value>找不到影像檔案</value>
+  </data>
+  <data name="ImageBrowserWindow_No_matches" xml:space="preserve">
+    <value>沒有檔案符合目前篩選條件</value>
+  </data>
+  <data name="ImageBrowserWindow_No_preview" xml:space="preserve">
+    <value>沒有可用的影像預覽</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_file" xml:space="preserve">
+    <value>開啟檔案</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_folder" xml:space="preserve">
+    <value>開啟資料夾</value>
+  </data>
+  <data name="ImageBrowserWindow_Recursive" xml:space="preserve">
+    <value>遞迴</value>
+  </data>
+  <data name="ImageBrowserWindow_Refresh" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="ImageBrowserWindow_Regex_pattern" xml:space="preserve">
+    <value>規則運算式（檔案名稱）</value>
+  </data>
+  <data name="ImageBrowserWindow_Search_placeholder" xml:space="preserve">
+    <value>搜尋檔案名稱和路徑</value>
+  </data>
+  <data name="ImageBrowserWindow_Select_file" xml:space="preserve">
+    <value>選擇要預覽的檔案</value>
+  </data>
+  <data name="ImageBrowserWindow_Size" xml:space="preserve">
+    <value>尺寸：</value>
+  </data>
+  <data name="ImageBrowserWindow_Statistics" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AddRule" xml:space="preserve">
+    <value>新增規則</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AllFiles" xml:space="preserve">
+    <value>所有檔案</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket" xml:space="preserve">
+    <value>分組依據</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Day" xml:space="preserve">
+    <value>目前日期</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_DayOfWeek" xml:space="preserve">
+    <value>星期幾</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Hour" xml:space="preserve">
+    <value>目前小時</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Month" xml:space="preserve">
+    <value>目前月份</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Week" xml:space="preserve">
+    <value>週</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Year" xml:space="preserve">
+    <value>目前年份</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Collapse" xml:space="preserve">
+    <value>摺疊</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Created" xml:space="preserve">
+    <value>建立時間</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyPattern" xml:space="preserve">
+    <value>輸入規則運算式以查看明細。</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyRules" xml:space="preserve">
+    <value>新增規則以將目前檔案分組。</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Example_format" xml:space="preserve">
+    <value>範例：{0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Group" xml:space="preserve">
+    <value>群組</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Hint" xml:space="preserve">
+    <value>規則會將目前檔案清單分組。例如，「修改日期 → 月份」會顯示你每個月拍攝了多少張螢幕擷取畫面。</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_InvalidGroup_format" xml:space="preserve">
+    <value>此規則運算式中沒有群組 '{0}'。</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue" xml:space="preserve">
+    <value>無值</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue_format" xml:space="preserve">
+    <value>{0} 個無值</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Part" xml:space="preserve">
+    <value>部分</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_RootFolder" xml:space="preserve">
+    <value>(根目錄)</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Date" xml:space="preserve">
+    <value>日期時間</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Extension" xml:space="preserve">
+    <value>副檔名</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_FileNamePart" xml:space="preserve">
+    <value>檔案名稱部分</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Scope_format" xml:space="preserve">
+    <value>{0} / {1} 個檔案</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_ShowAll_format" xml:space="preserve">
+    <value>顯示全部 {0} 個值</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Source" xml:space="preserve">
+    <value>來源</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Values_format" xml:space="preserve">
+    <value>{0} 個值</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_WeekOf_format" xml:space="preserve">
+    <value>{0} 當週</value>
+  </data>
+  <data name="ImageBrowserWindow_Title" xml:space="preserve">
+    <value>ShareX - 圖片瀏覽器</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>無法寫入圖片至路徑：</value>
   </data>
@@ -1592,6 +1772,12 @@
   <data name="MainMenuBuilder_Copy" xml:space="preserve">
     <value>複製</value>
   </data>
+  <data name="MainMenuBuilder_CopyTimestamp" xml:space="preserve">
+    <value>複製時間戳記</value>
+  </data>
+  <data name="MainMenuBuilder_CopyUUID" xml:space="preserve">
+    <value>複製 UUID</value>
+  </data>
   <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
     <value>自訂上傳器設定...</value>
   </data>
@@ -1618,6 +1804,9 @@
   </data>
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>拖放上傳</value>
+  </data>
+  <data name="MainMenuBuilder_DuplicateFinder" xml:space="preserve">
+    <value>重複檔案尋找器...</value>
   </data>
   <data name="MainMenuBuilder_EditTools" xml:space="preserve">
     <value>編輯</value>
@@ -1651,6 +1840,9 @@
   </data>
   <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>圖片美化工具</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBrowser" xml:space="preserve">
+    <value>圖片瀏覽器...</value>
   </data>
   <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
     <value>圖片合併工具</value>
@@ -2320,6 +2512,12 @@
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>要新增自訂上傳器「{0}」嗎？</value>
   </data>
+  <data name="TaskHelpers_CopyTimestamp" xml:space="preserve">
+    <value>複製時間戳記</value>
+  </data>
+  <data name="TaskHelpers_CopyUUID" xml:space="preserve">
+    <value>複製 UUID</value>
+  </data>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX - 自訂上傳器確認</value>
   </data>
@@ -2530,6 +2728,9 @@
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>開啟服務連結後關閉 OCR 視窗</value>
+  </data>
+  <data name="TaskSettingsWindow_CommonOutputFileName" xml:space="preserve">
+    <value>通用輸出檔案名稱</value>
   </data>
   <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
     <value>精簡型圖片編輯器工具列</value>
@@ -3188,6 +3389,9 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>時區：</value>
   </data>
+  <data name="TaskSettingsWindow_TimestampCopy" xml:space="preserve">
+    <value>複製時間戳記</value>
+  </data>
   <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
     <value>顯示器 {0}（未連接）</value>
   </data>
@@ -3205,6 +3409,12 @@
   </data>
   <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
     <value>URL 取代</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDCopy" xml:space="preserve">
+    <value>複製 UUID</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDVersion" xml:space="preserve">
+    <value>UUID 版本：</value>
   </data>
   <data name="TaskSettingsWindow_Update" xml:space="preserve">
     <value>更新</value>

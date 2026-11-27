@@ -1502,6 +1502,186 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="IconPackPrompt_Title" xml:space="preserve">
     <value>Pilih ikon Anda</value>
   </data>
+  <data name="ImageBrowserWindow_Choose_folder" xml:space="preserve">
+    <value>Pilih folder untuk dijelajahi</value>
+  </data>
+  <data name="ImageBrowserWindow_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_modified" xml:space="preserve">
+    <value>Diubah</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_size" xml:space="preserve">
+    <value>Ukuran:</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_name" xml:space="preserve">
+    <value>Salin nama file</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_path" xml:space="preserve">
+    <value>Salin jalur berkas</value>
+  </data>
+  <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
+    <value>Dimensi</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder" xml:space="preserve">
+    <value>Folder...</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_missing" xml:space="preserve">
+    <value>Folder tidak ditemukan</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_path" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_count" xml:space="preserve">
+    <value>Hitungan</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_files_format" xml:space="preserve">
+    <value>{0} file</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
+    <value>Nilai</value>
+  </data>
+  <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
+    <value>{0} item</value>
+  </data>
+  <data name="ImageBrowserWindow_Loading" xml:space="preserve">
+    <value>Memuat...</value>
+  </data>
+  <data name="ImageBrowserWindow_Modified" xml:space="preserve">
+    <value>Diubah</value>
+  </data>
+  <data name="ImageBrowserWindow_No_files" xml:space="preserve">
+    <value>Tidak ada file gambar ditemukan</value>
+  </data>
+  <data name="ImageBrowserWindow_No_matches" xml:space="preserve">
+    <value>Tidak ada file yang cocok dengan filter saat ini</value>
+  </data>
+  <data name="ImageBrowserWindow_No_preview" xml:space="preserve">
+    <value>Pratinjau gambar tidak tersedia</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_file" xml:space="preserve">
+    <value>Buka file</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_folder" xml:space="preserve">
+    <value>Buka folder</value>
+  </data>
+  <data name="ImageBrowserWindow_Recursive" xml:space="preserve">
+    <value>Rekursif</value>
+  </data>
+  <data name="ImageBrowserWindow_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="ImageBrowserWindow_Regex_pattern" xml:space="preserve">
+    <value>Ekspresi reguler (nama file)</value>
+  </data>
+  <data name="ImageBrowserWindow_Search_placeholder" xml:space="preserve">
+    <value>Cari nama file dan jalur</value>
+  </data>
+  <data name="ImageBrowserWindow_Select_file" xml:space="preserve">
+    <value>Pilih file untuk pratinjau</value>
+  </data>
+  <data name="ImageBrowserWindow_Size" xml:space="preserve">
+    <value>Ukuran:</value>
+  </data>
+  <data name="ImageBrowserWindow_Statistics" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats" xml:space="preserve">
+    <value>Statistik</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AddRule" xml:space="preserve">
+    <value>Tambah aturan</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AllFiles" xml:space="preserve">
+    <value>Semua file</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket" xml:space="preserve">
+    <value>Kelompokkan berdasarkan</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Day" xml:space="preserve">
+    <value>Hari ini</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_DayOfWeek" xml:space="preserve">
+    <value>Hari dalam seminggu</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Hour" xml:space="preserve">
+    <value>Jam ini</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Month" xml:space="preserve">
+    <value>Bulan ini</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Week" xml:space="preserve">
+    <value>Minggu</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Year" xml:space="preserve">
+    <value>Tahun ini</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Collapse" xml:space="preserve">
+    <value>Ciutkan</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Created" xml:space="preserve">
+    <value>Dibuat</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyPattern" xml:space="preserve">
+    <value>Masukkan ekspresi reguler untuk melihat rincian.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyRules" xml:space="preserve">
+    <value>Tambahkan aturan untuk mengelompokkan file saat ini.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Example_format" xml:space="preserve">
+    <value>Contoh: {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Group" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Hint" xml:space="preserve">
+    <value>Aturan mengelompokkan daftar file saat ini. Misalnya, «Tanggal dimodifikasi → Bulan» menunjukkan berapa banyak tangkapan layar yang Anda ambil setiap bulan.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_InvalidGroup_format" xml:space="preserve">
+    <value>Grup '{0}' tidak ada dalam ekspresi reguler ini.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue" xml:space="preserve">
+    <value>Tanpa nilai</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue_format" xml:space="preserve">
+    <value>{0} tanpa nilai</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Part" xml:space="preserve">
+    <value>Bagian</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_RootFolder" xml:space="preserve">
+    <value>(akar)</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Date" xml:space="preserve">
+    <value>Tanggal dan waktu</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Extension" xml:space="preserve">
+    <value>Ekstensi</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_FileNamePart" xml:space="preserve">
+    <value>Bagian nama file</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Scope_format" xml:space="preserve">
+    <value>{0} dari {1} file</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_ShowAll_format" xml:space="preserve">
+    <value>Tampilkan semua {0} nilai</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Source" xml:space="preserve">
+    <value>Sumber</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Values_format" xml:space="preserve">
+    <value>{0} nilai</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_WeekOf_format" xml:space="preserve">
+    <value>Minggu {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Title" xml:space="preserve">
+    <value>ShareX - Browser gambar</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Tidak dapat menulis gambar ke jalur:</value>
   </data>
@@ -1592,6 +1772,12 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_Copy" xml:space="preserve">
     <value>Salin</value>
   </data>
+  <data name="MainMenuBuilder_CopyTimestamp" xml:space="preserve">
+    <value>Salin stempel waktu</value>
+  </data>
+  <data name="MainMenuBuilder_CopyUUID" xml:space="preserve">
+    <value>Salin UUID</value>
+  </data>
   <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
     <value>Pengaturan pengunggah khusus...</value>
   </data>
@@ -1618,6 +1804,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Unggah seret dan jatuhkan</value>
+  </data>
+  <data name="MainMenuBuilder_DuplicateFinder" xml:space="preserve">
+    <value>Pencari file duplikat...</value>
   </data>
   <data name="MainMenuBuilder_EditTools" xml:space="preserve">
     <value>Sunting</value>
@@ -1651,6 +1840,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>Pemercantik gambar</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBrowser" xml:space="preserve">
+    <value>Browser gambar...</value>
   </data>
   <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
     <value>Penggabung gambar</value>
@@ -2320,6 +2512,12 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Tambahkan pengunggah khusus "{0}"?</value>
   </data>
+  <data name="TaskHelpers_CopyTimestamp" xml:space="preserve">
+    <value>Salin stempel waktu</value>
+  </data>
+  <data name="TaskHelpers_CopyUUID" xml:space="preserve">
+    <value>Salin UUID</value>
+  </data>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX - Konfirmasi pengunggah khusus</value>
   </data>
@@ -2530,6 +2728,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Tutup jendela OCR setelah membuka tautan layanan</value>
+  </data>
+  <data name="TaskSettingsWindow_CommonOutputFileName" xml:space="preserve">
+    <value>Nama file output umum</value>
   </data>
   <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
     <value>Bilah alat editor gambar yang ringkas</value>
@@ -3188,6 +3389,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Zona waktu:</value>
   </data>
+  <data name="TaskSettingsWindow_TimestampCopy" xml:space="preserve">
+    <value>Salin stempel waktu</value>
+  </data>
   <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
     <value>Monitor {0} (tidak terhubung)</value>
   </data>
@@ -3205,6 +3409,12 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
     <value>Penggantian URL</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDCopy" xml:space="preserve">
+    <value>Salin UUID</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDVersion" xml:space="preserve">
+    <value>Versi UUID:</value>
   </data>
   <data name="TaskSettingsWindow_Update" xml:space="preserve">
     <value>Perbarui</value>

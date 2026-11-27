@@ -657,6 +657,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Renk seçici</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Zaman damgasını panoya kopyala</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>UUID'yi panoya kopyala</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Özel bölge yakala</value>
   </data>
@@ -1137,6 +1143,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Artan</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Giriş dosyası</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Giriş klasörü</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Rastgele</value>
   </data>
@@ -1148,6 +1160,21 @@ Yine de çalıştırmak istiyor musunuz?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Güncel gün</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Giriş dosyası uzantısı</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Giriş dosyası klasör yolu</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Giriş dosyası adı (uzantı olmadan)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Giriş dosyası klasör adı</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Giriş dosyası tam yolu</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Rastgele GUID</value>

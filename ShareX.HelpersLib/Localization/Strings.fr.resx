@@ -657,6 +657,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Copier l’horodatage dans le presse-papiers</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Copier l’UUID dans le presse-papiers</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Capturer une région personnalisée</value>
   </data>
@@ -1137,6 +1143,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incrémentation</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Fichier d’entrée</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Dossier d’entrée</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Aléatoire</value>
   </data>
@@ -1148,6 +1160,21 @@ Voulez-vous quand même l’exécuter ?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Journée en cours</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Extension du fichier d’entrée</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Chemin du dossier du fichier d’entrée</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Nom du fichier d’entrée (sans extension)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Nom du dossier du fichier d’entrée</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Chemin complet du fichier d’entrée</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID aléatoire</value>

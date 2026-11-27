@@ -1502,6 +1502,186 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="IconPackPrompt_Title" xml:space="preserve">
     <value>Kies je pictogrammen</value>
   </data>
+  <data name="ImageBrowserWindow_Choose_folder" xml:space="preserve">
+    <value>Map kiezen om te bladeren</value>
+  </data>
+  <data name="ImageBrowserWindow_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_modified" xml:space="preserve">
+    <value>Gewijzigd</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_size" xml:space="preserve">
+    <value>Grootte:</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_name" xml:space="preserve">
+    <value>Bestandsnaam kopiëren</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_path" xml:space="preserve">
+    <value>Bestandspad kopiëren</value>
+  </data>
+  <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
+    <value>Afmetingen</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder" xml:space="preserve">
+    <value>Map...</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_missing" xml:space="preserve">
+    <value>Map niet gevonden</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_path" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_count" xml:space="preserve">
+    <value>Telling</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_files_format" xml:space="preserve">
+    <value>{0} bestanden</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
+    <value>Waarde</value>
+  </data>
+  <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="ImageBrowserWindow_Loading" xml:space="preserve">
+    <value>Laden...</value>
+  </data>
+  <data name="ImageBrowserWindow_Modified" xml:space="preserve">
+    <value>Gewijzigd</value>
+  </data>
+  <data name="ImageBrowserWindow_No_files" xml:space="preserve">
+    <value>Geen afbeeldingsbestanden gevonden</value>
+  </data>
+  <data name="ImageBrowserWindow_No_matches" xml:space="preserve">
+    <value>Geen bestanden komen overeen met het huidige filter</value>
+  </data>
+  <data name="ImageBrowserWindow_No_preview" xml:space="preserve">
+    <value>Geen afbeeldingsvoorbeeld beschikbaar</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_file" xml:space="preserve">
+    <value>Bestand openen</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_folder" xml:space="preserve">
+    <value>Openen map</value>
+  </data>
+  <data name="ImageBrowserWindow_Recursive" xml:space="preserve">
+    <value>Recursief</value>
+  </data>
+  <data name="ImageBrowserWindow_Refresh" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="ImageBrowserWindow_Regex_pattern" xml:space="preserve">
+    <value>Reguliere expressie (bestandsnaam)</value>
+  </data>
+  <data name="ImageBrowserWindow_Search_placeholder" xml:space="preserve">
+    <value>Bestandsnamen en paden zoeken</value>
+  </data>
+  <data name="ImageBrowserWindow_Select_file" xml:space="preserve">
+    <value>Selecteer een bestand voor voorbeeld</value>
+  </data>
+  <data name="ImageBrowserWindow_Size" xml:space="preserve">
+    <value>Grootte:</value>
+  </data>
+  <data name="ImageBrowserWindow_Statistics" xml:space="preserve">
+    <value>Statistieken</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats" xml:space="preserve">
+    <value>Statistieken</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AddRule" xml:space="preserve">
+    <value>Regel toevoegen</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AllFiles" xml:space="preserve">
+    <value>Alle bestanden</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket" xml:space="preserve">
+    <value>Groeperen op</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Day" xml:space="preserve">
+    <value>Huidige dag</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_DayOfWeek" xml:space="preserve">
+    <value>Dag van de week</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Hour" xml:space="preserve">
+    <value>Huidig uur</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Month" xml:space="preserve">
+    <value>Huidige maand</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Week" xml:space="preserve">
+    <value>Week</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Year" xml:space="preserve">
+    <value>Huidig jaar</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Collapse" xml:space="preserve">
+    <value>Samenvouwen</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Created" xml:space="preserve">
+    <value>Aangemaakt</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyPattern" xml:space="preserve">
+    <value>Voer een reguliere expressie in om een uitsplitsing te zien.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyRules" xml:space="preserve">
+    <value>Voeg een regel toe om de huidige bestanden te groeperen.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Example_format" xml:space="preserve">
+    <value>Voorbeeld: {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Group" xml:space="preserve">
+    <value>Groep</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Hint" xml:space="preserve">
+    <value>Regels groeperen de huidige bestandslijst. Bijvoorbeeld «Wijzigingsdatum → Maand» toont hoeveel schermafbeeldingen u elke maand hebt gemaakt.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_InvalidGroup_format" xml:space="preserve">
+    <value>De groep '{0}' bestaat niet in deze reguliere expressie.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue" xml:space="preserve">
+    <value>Geen waarde</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue_format" xml:space="preserve">
+    <value>{0} zonder waarde</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Part" xml:space="preserve">
+    <value>Deel</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_RootFolder" xml:space="preserve">
+    <value>(hoofdmap)</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Date" xml:space="preserve">
+    <value>Datum en tijd</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Extension" xml:space="preserve">
+    <value>Extensie</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_FileNamePart" xml:space="preserve">
+    <value>Deel van bestandsnaam</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Scope_format" xml:space="preserve">
+    <value>{0} van {1} bestanden</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_ShowAll_format" xml:space="preserve">
+    <value>Alle {0} waarden tonen</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Source" xml:space="preserve">
+    <value>Bron</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Values_format" xml:space="preserve">
+    <value>{0} waarden</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_WeekOf_format" xml:space="preserve">
+    <value>Week van {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Title" xml:space="preserve">
+    <value>ShareX - Afbeeldingsbrowser</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write afbeelding to path:</value>
   </data>
@@ -1592,6 +1772,12 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_Copy" xml:space="preserve">
     <value>Kopieer</value>
   </data>
+  <data name="MainMenuBuilder_CopyTimestamp" xml:space="preserve">
+    <value>Tijdstempel kopiëren</value>
+  </data>
+  <data name="MainMenuBuilder_CopyUUID" xml:space="preserve">
+    <value>UUID kopiëren</value>
+  </data>
   <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
     <value>Aangepaste uploaderinstellingen...</value>
   </data>
@@ -1618,6 +1804,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Uploaden via slepen</value>
+  </data>
+  <data name="MainMenuBuilder_DuplicateFinder" xml:space="preserve">
+    <value>Dubbele bestanden zoeken...</value>
   </data>
   <data name="MainMenuBuilder_EditTools" xml:space="preserve">
     <value>Bewerken</value>
@@ -1651,6 +1840,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>Afbeelding beautifier</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBrowser" xml:space="preserve">
+    <value>Afbeeldingsbrowser...</value>
   </data>
   <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
     <value>Combineer afbeeldingen</value>
@@ -2320,6 +2512,12 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Wilt u de aangepaste uploader ''{0}'' toevoegen?</value>
   </data>
+  <data name="TaskHelpers_CopyTimestamp" xml:space="preserve">
+    <value>Tijdstempel kopiëren</value>
+  </data>
+  <data name="TaskHelpers_CopyUUID" xml:space="preserve">
+    <value>UUID kopiëren</value>
+  </data>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX - Bevestiging aangepaste uploader</value>
   </data>
@@ -2530,6 +2728,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>OCR-venster sluiten na openen van servicelink</value>
+  </data>
+  <data name="TaskSettingsWindow_CommonOutputFileName" xml:space="preserve">
+    <value>Algemene naam van uitvoerbestand</value>
   </data>
   <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
     <value>Compacte werkbalk voor de afbeeldingseditor</value>
@@ -3188,6 +3389,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Tijdzone:</value>
   </data>
+  <data name="TaskSettingsWindow_TimestampCopy" xml:space="preserve">
+    <value>Tijdstempel kopiëren</value>
+  </data>
   <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
     <value>Beeldscherm {0} (niet verbonden)</value>
   </data>
@@ -3205,6 +3409,12 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
     <value>URL-vervanging</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDCopy" xml:space="preserve">
+    <value>UUID kopiëren</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDVersion" xml:space="preserve">
+    <value>UUID-versie:</value>
   </data>
   <data name="TaskSettingsWindow_Update" xml:space="preserve">
     <value>Bijwerken</value>

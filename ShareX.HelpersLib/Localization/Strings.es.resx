@@ -657,6 +657,12 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Selector de color</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Copiar marca de tiempo al portapapeles</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Copiar UUID al portapapeles</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Captura pre configured región</value>
   </data>
@@ -1137,6 +1143,12 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incremental</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Archivo de entrada</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Carpeta de entrada</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Aleatorio</value>
   </data>
@@ -1148,6 +1160,21 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Día actual</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Extensión del archivo de entrada</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Ruta de la carpeta del archivo de entrada</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Nombre del archivo de entrada (sin extensión)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Nombre de la carpeta del archivo de entrada</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Ruta completa del archivo de entrada</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID aleatorio</value>

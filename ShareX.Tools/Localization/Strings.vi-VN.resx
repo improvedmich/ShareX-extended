@@ -617,6 +617,96 @@
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>Đầu ra XML</value>
   </data>
+  <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
+    <value>Theo mã băm SHA-256</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>Theo tên tệp</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
+    <value>Đã tìm thấy {0} nhóm trùng lặp, tổng cộng {1} tệp.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
+    <value>Mã băm SHA-256: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>Đang băm tệp... ({0}/{1})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
+    <value>{0} tệp</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
+    <value>Không tìm thấy tệp trùng lặp.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
+    <value>Không tìm thấy tệp trong thư mục đã chọn.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Press_scan" xml:space="preserve">
+    <value>Chọn một thư mục và nhấn Quét.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Reading_files" xml:space="preserve">
+    <value>Đang đọc tệp... ({0})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_failed" xml:space="preserve">
+    <value>Quét thất bại: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_stopped" xml:space="preserve">
+    <value>Đã dừng quét.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Select_a_folder" xml:space="preserve">
+    <value>Chọn thư mục để tìm tệp trùng lặp.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Stopping" xml:space="preserve">
+    <value>Đang dừng...</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
+    <value>{0} tệp trùng lặp</value>
+  </data>
+  <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
+    <value>(0 = không giới hạn)</value>
+  </data>
+  <data name="DuplicateFinderWindow_Browse" xml:space="preserve">
+    <value>Duyệt...</value>
+  </data>
+  <data name="DuplicateFinderWindow_Copy_path" xml:space="preserve">
+    <value>Sao chép đường dẫn vào bộ nhớ tạm</value>
+  </data>
+  <data name="DuplicateFinderWindow_Folder" xml:space="preserve">
+    <value>Thư mục</value>
+  </data>
+  <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
+    <value>Độ sâu tối đa</value>
+  </data>
+  <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
+    <value>Mở thư mục chứa</value>
+  </data>
+  <data name="DuplicateFinderWindow_Results" xml:space="preserve">
+    <value>Kết quả</value>
+  </data>
+  <data name="DuplicateFinderWindow_Scan" xml:space="preserve">
+    <value>Quét</value>
+  </data>
+  <data name="DuplicateFinderWindow_Search_mode" xml:space="preserve">
+    <value>Chế độ tìm kiếm</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
+    <value>Chọn thư mục để tìm tệp trùng lặp</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
+    <value>Chọn thư mục hoặc thả vào đây</value>
+  </data>
+  <data name="DuplicateFinderWindow_Skip_hidden" xml:space="preserve">
+    <value>Bỏ qua mục ẩn</value>
+  </data>
+  <data name="DuplicateFinderWindow_Stop" xml:space="preserve">
+    <value>Dừng</value>
+  </data>
+  <data name="DuplicateFinderWindow_Title" xml:space="preserve">
+    <value>ShareX - Tìm tệp trùng lặp</value>
+  </data>
+  <data name="DuplicateFinderWindow_Total_reclaimable" xml:space="preserve">
+    <value>Tổng dung lượng có thể thu hồi: {0}</value>
+  </data>
   <data name="GeminiProvider_API_error" xml:space="preserve">
     <value>Lỗi từ API Gemini: {0}</value>
   </data>
@@ -1678,6 +1768,15 @@
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Mở dịch vụ...</value>
   </data>
+  <data name="OCRWindow_Recognition_model" xml:space="preserve">
+    <value>Mô hình nhận dạng</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Cyrillic" xml:space="preserve">
+    <value>Kirin (tiếng Nga, tiếng Ukraina và các ngôn ngữ khác)</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Default" xml:space="preserve">
+    <value>Latinh và CJK</value>
+  </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Xóa</value>
   </data>
@@ -2092,6 +2191,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Đang dừng chuyển đổi...</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>Áp dụng mặt nạ</value>
+  </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>Tốc độ bit trung bình</value>
   </data>
@@ -2104,8 +2206,14 @@
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>Chất lượng không đổi</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>Tùy chỉnh</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>Mã hóa</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>Đối số FFmpeg</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg không khả dụng.</value>

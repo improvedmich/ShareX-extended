@@ -4453,15 +4453,6 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Filtered.
-        /// </summary>
-        public static string ImageBrowserWindow_Filtered {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Filtered", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Folder....
         /// </summary>
         public static string ImageBrowserWindow_Folder {
@@ -4516,24 +4507,6 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter a regular expression with named groups, for example (?&lt;extension&gt;\w+), to see a breakdown by group value..
-        /// </summary>
-        public static string ImageBrowserWindow_Groups_hint {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Groups_hint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The regular expression has no named groups..
-        /// </summary>
-        public static string ImageBrowserWindow_Groups_no_named_groups {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Groups_no_named_groups", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to {0} items.
         /// </summary>
         public static string ImageBrowserWindow_Items_format {
@@ -4552,38 +4525,11 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Matched.
-        /// </summary>
-        public static string ImageBrowserWindow_Matched {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Matched", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Modified.
         /// </summary>
         public static string ImageBrowserWindow_Modified {
             get {
                 return ResourceManager.GetString("ImageBrowserWindow_Modified", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ... {0} more groups.
-        /// </summary>
-        public static string ImageBrowserWindow_More_groups_format {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_More_groups_format", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ... {0} more values.
-        /// </summary>
-        public static string ImageBrowserWindow_More_values_format {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_More_values_format", resourceCulture);
             }
         }
         
@@ -4971,24 +4917,6 @@ namespace ShareX.Localization {
         public static string ImageBrowserWindow_Title {
             get {
                 return ResourceManager.GetString("ImageBrowserWindow_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total.
-        /// </summary>
-        public static string ImageBrowserWindow_Total {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Total", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unmatched.
-        /// </summary>
-        public static string ImageBrowserWindow_Unmatched {
-            get {
-                return ResourceManager.GetString("ImageBrowserWindow_Unmatched", resourceCulture);
             }
         }
         

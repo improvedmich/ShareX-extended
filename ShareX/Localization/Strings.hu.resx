@@ -1502,6 +1502,186 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="IconPackPrompt_Title" xml:space="preserve">
     <value>Válassza ki az ikonokat</value>
   </data>
+  <data name="ImageBrowserWindow_Choose_folder" xml:space="preserve">
+    <value>Tallózandó mappa kiválasztása</value>
+  </data>
+  <data name="ImageBrowserWindow_Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_modified" xml:space="preserve">
+    <value>Módosítva</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="ImageBrowserWindow_Column_size" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_name" xml:space="preserve">
+    <value>Fájlnév másolása</value>
+  </data>
+  <data name="ImageBrowserWindow_Copy_file_path" xml:space="preserve">
+    <value>Fájl elérési útjának másolása</value>
+  </data>
+  <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
+    <value>Méretek</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder" xml:space="preserve">
+    <value>Mappa...</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_missing" xml:space="preserve">
+    <value>A mappa nem található</value>
+  </data>
+  <data name="ImageBrowserWindow_Folder_path" xml:space="preserve">
+    <value>Mappa</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_count" xml:space="preserve">
+    <value>Számlálás</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_files_format" xml:space="preserve">
+    <value>{0} fájl</value>
+  </data>
+  <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
+    <value>Érték</value>
+  </data>
+  <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
+    <value>{0} elem</value>
+  </data>
+  <data name="ImageBrowserWindow_Loading" xml:space="preserve">
+    <value>Betöltés...</value>
+  </data>
+  <data name="ImageBrowserWindow_Modified" xml:space="preserve">
+    <value>Módosítva</value>
+  </data>
+  <data name="ImageBrowserWindow_No_files" xml:space="preserve">
+    <value>Nem találhatók képfájlok</value>
+  </data>
+  <data name="ImageBrowserWindow_No_matches" xml:space="preserve">
+    <value>Egyetlen fájl sem felel meg a jelenlegi szűrőnek</value>
+  </data>
+  <data name="ImageBrowserWindow_No_preview" xml:space="preserve">
+    <value>Nincs elérhető képelőnézet</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_file" xml:space="preserve">
+    <value>Fájl megnyitása</value>
+  </data>
+  <data name="ImageBrowserWindow_Open_folder" xml:space="preserve">
+    <value>Megnyitás mappa</value>
+  </data>
+  <data name="ImageBrowserWindow_Recursive" xml:space="preserve">
+    <value>Rekurzív</value>
+  </data>
+  <data name="ImageBrowserWindow_Refresh" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="ImageBrowserWindow_Regex_pattern" xml:space="preserve">
+    <value>Reguláris kifejezés (fájlnév)</value>
+  </data>
+  <data name="ImageBrowserWindow_Search_placeholder" xml:space="preserve">
+    <value>Fájlnevek és elérési utak keresése</value>
+  </data>
+  <data name="ImageBrowserWindow_Select_file" xml:space="preserve">
+    <value>Válasszon fájlt az előnézethez</value>
+  </data>
+  <data name="ImageBrowserWindow_Size" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="ImageBrowserWindow_Statistics" xml:space="preserve">
+    <value>Statisztikák</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats" xml:space="preserve">
+    <value>Statisztikák</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AddRule" xml:space="preserve">
+    <value>Szabály hozzáadása</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_AllFiles" xml:space="preserve">
+    <value>Minden fájl</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket" xml:space="preserve">
+    <value>Csoportosítás</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Day" xml:space="preserve">
+    <value>Jelenlegi nap</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_DayOfWeek" xml:space="preserve">
+    <value>A hét napja</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Hour" xml:space="preserve">
+    <value>Jelenlegi óra</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Month" xml:space="preserve">
+    <value>Jelenlegi hónap</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Week" xml:space="preserve">
+    <value>Hét</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Bucket_Year" xml:space="preserve">
+    <value>Jelenlegi év</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Collapse" xml:space="preserve">
+    <value>Összecsukás</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Created" xml:space="preserve">
+    <value>Létrehozva</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyPattern" xml:space="preserve">
+    <value>Adjon meg egy reguláris kifejezést a bontás megtekintéséhez.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_EmptyRules" xml:space="preserve">
+    <value>Adjon hozzá egy szabályt az aktuális fájlok csoportosításához.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Example_format" xml:space="preserve">
+    <value>Példa: {0}</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Group" xml:space="preserve">
+    <value>Csoport</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Hint" xml:space="preserve">
+    <value>A szabályok a jelenlegi fájllistát csoportosítják. Például a «Módosítás dátuma → Hónap» megmutatja, hány képernyőképet készített havonta.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_InvalidGroup_format" xml:space="preserve">
+    <value>A(z) '{0}' csoport nem létezik ebben a reguláris kifejezésben.</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue" xml:space="preserve">
+    <value>Nincs érték</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_NoValue_format" xml:space="preserve">
+    <value>{0} érték nélkül</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Part" xml:space="preserve">
+    <value>Rész</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_RootFolder" xml:space="preserve">
+    <value>(gyökér)</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Date" xml:space="preserve">
+    <value>Dátum és idő</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_Extension" xml:space="preserve">
+    <value>Kiterjesztés</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Rule_FileNamePart" xml:space="preserve">
+    <value>Fájlnév része</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Scope_format" xml:space="preserve">
+    <value>{0} / {1} fájl</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_ShowAll_format" xml:space="preserve">
+    <value>Mind a(z) {0} érték megjelenítése</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Source" xml:space="preserve">
+    <value>Forrás</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_Values_format" xml:space="preserve">
+    <value>{0} érték</value>
+  </data>
+  <data name="ImageBrowserWindow_Stats_WeekOf_format" xml:space="preserve">
+    <value>{0} hete</value>
+  </data>
+  <data name="ImageBrowserWindow_Title" xml:space="preserve">
+    <value>ShareX – Képböngésző</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write kép to elérési út:</value>
   </data>
@@ -1592,6 +1772,12 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_Copy" xml:space="preserve">
     <value>Másolás</value>
   </data>
+  <data name="MainMenuBuilder_CopyTimestamp" xml:space="preserve">
+    <value>Időbélyeg másolása</value>
+  </data>
+  <data name="MainMenuBuilder_CopyUUID" xml:space="preserve">
+    <value>UUID másolása</value>
+  </data>
   <data name="MainMenuBuilder_CustomUploaderSettings" xml:space="preserve">
     <value>Egyéni feltöltő beállításai...</value>
   </data>
@@ -1618,6 +1804,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_DragAndDropUpload" xml:space="preserve">
     <value>Húzd és vond feltöltés</value>
+  </data>
+  <data name="MainMenuBuilder_DuplicateFinder" xml:space="preserve">
+    <value>Duplikált fájlok keresése...</value>
   </data>
   <data name="MainMenuBuilder_EditTools" xml:space="preserve">
     <value>Szerkesztés</value>
@@ -1651,6 +1840,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_ImageBeautifier" xml:space="preserve">
     <value>Kép beautifier</value>
+  </data>
+  <data name="MainMenuBuilder_ImageBrowser" xml:space="preserve">
+    <value>Képböngésző...</value>
   </data>
   <data name="MainMenuBuilder_ImageCombiner" xml:space="preserve">
     <value>Kép combiner</value>
@@ -2320,6 +2512,12 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Hozzáadja a(z) „{0}” egyéni feltöltőt?</value>
   </data>
+  <data name="TaskHelpers_CopyTimestamp" xml:space="preserve">
+    <value>Időbélyeg másolása</value>
+  </data>
+  <data name="TaskHelpers_CopyUUID" xml:space="preserve">
+    <value>UUID másolása</value>
+  </data>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX – Egyéni feltöltő megerősítése</value>
   </data>
@@ -2530,6 +2728,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>OCR-ablak bezárása a szolgáltatáshivatkozás megnyitása után</value>
+  </data>
+  <data name="TaskSettingsWindow_CommonOutputFileName" xml:space="preserve">
+    <value>Közös kimeneti fájlnév</value>
   </data>
   <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
     <value>Kompakt képszerkesztő eszköztár</value>
@@ -3188,6 +3389,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Időzóna:</value>
   </data>
+  <data name="TaskSettingsWindow_TimestampCopy" xml:space="preserve">
+    <value>Időbélyeg másolása</value>
+  </data>
   <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
     <value>{0}. monitor (nincs csatlakoztatva)</value>
   </data>
@@ -3205,6 +3409,12 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_URLReplacement" xml:space="preserve">
     <value>URL-csere</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDCopy" xml:space="preserve">
+    <value>UUID másolása</value>
+  </data>
+  <data name="TaskSettingsWindow_UUIDVersion" xml:space="preserve">
+    <value>UUID-verzió:</value>
   </data>
   <data name="TaskSettingsWindow_Update" xml:space="preserve">
     <value>Frissítés</value>

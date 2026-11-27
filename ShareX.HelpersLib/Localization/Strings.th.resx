@@ -657,6 +657,12 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>ตัวเลือกสี</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>คัดลอกการประทับเวลาไปยังคลิปบอร์ด</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>คัดลอก UUID ไปยังคลิปบอร์ด</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>จับภาพ pre กำหนดค่าแล้ว พื้นที่</value>
   </data>
@@ -1137,6 +1143,12 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>เพิ่มตามลำดับ</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>ไฟล์อินพุต</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>โฟลเดอร์อินพุต</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>สุ่ม</value>
   </data>
@@ -1148,6 +1160,21 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>วัน</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>นามสกุลไฟล์อินพุต</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>เส้นทางโฟลเดอร์ไฟล์อินพุต</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>ชื่อไฟล์อินพุต (ไม่รวมนามสกุล)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>ชื่อโฟลเดอร์ไฟล์อินพุต</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>เส้นทางเต็มของไฟล์อินพุต</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>สุ่ม GUID</value>

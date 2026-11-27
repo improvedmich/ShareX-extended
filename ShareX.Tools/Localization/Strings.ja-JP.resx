@@ -617,6 +617,96 @@
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>XML 出力</value>
   </data>
+  <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
+    <value>SHA-256 ハッシュ別</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>ファイル名別</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
+    <value>{0} 個の重複グループが見つかりました。合計 {1} ファイル。</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
+    <value>SHA-256 ハッシュ: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>ファイルをハッシュしています... ({0}/{1})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
+    <value>{0} ファイル</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
+    <value>重複は見つかりませんでした。</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
+    <value>選択したフォルダーにファイルが見つかりませんでした。</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Press_scan" xml:space="preserve">
+    <value>フォルダーを選択して「スキャン」を押してください。</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Reading_files" xml:space="preserve">
+    <value>ファイルを読み込んでいます... ({0})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_failed" xml:space="preserve">
+    <value>スキャンに失敗しました: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_stopped" xml:space="preserve">
+    <value>スキャンを停止しました。</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Select_a_folder" xml:space="preserve">
+    <value>重複を検索するフォルダーを選択してください。</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Stopping" xml:space="preserve">
+    <value>停止しています...</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
+    <value>{0} 個の重複ファイル</value>
+  </data>
+  <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
+    <value>(0 = 無制限)</value>
+  </data>
+  <data name="DuplicateFinderWindow_Browse" xml:space="preserve">
+    <value>参照...</value>
+  </data>
+  <data name="DuplicateFinderWindow_Copy_path" xml:space="preserve">
+    <value>パスをクリップボードにコピー</value>
+  </data>
+  <data name="DuplicateFinderWindow_Folder" xml:space="preserve">
+    <value>フォルダー</value>
+  </data>
+  <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
+    <value>最大深さ</value>
+  </data>
+  <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
+    <value>保存先フォルダーを開く</value>
+  </data>
+  <data name="DuplicateFinderWindow_Results" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="DuplicateFinderWindow_Scan" xml:space="preserve">
+    <value>スキャン</value>
+  </data>
+  <data name="DuplicateFinderWindow_Search_mode" xml:space="preserve">
+    <value>検索モード</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
+    <value>重複を検索するフォルダーを選択</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
+    <value>フォルダーを選択するか、ここにドロップしてください</value>
+  </data>
+  <data name="DuplicateFinderWindow_Skip_hidden" xml:space="preserve">
+    <value>隠し項目をスキップ</value>
+  </data>
+  <data name="DuplicateFinderWindow_Stop" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="DuplicateFinderWindow_Title" xml:space="preserve">
+    <value>ShareX - 重複ファイル検索</value>
+  </data>
+  <data name="DuplicateFinderWindow_Total_reclaimable" xml:space="preserve">
+    <value>回収可能な合計容量: {0}</value>
+  </data>
   <data name="GeminiProvider_API_error" xml:space="preserve">
     <value>Gemini API からのエラー: {0}</value>
   </data>
@@ -1678,6 +1768,15 @@
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>サービスを開く...</value>
   </data>
+  <data name="OCRWindow_Recognition_model" xml:space="preserve">
+    <value>認識モデル</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Cyrillic" xml:space="preserve">
+    <value>キリル文字（ロシア語、ウクライナ語など）</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Default" xml:space="preserve">
+    <value>ラテン文字とCJK</value>
+  </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>削除</value>
   </data>
@@ -2092,6 +2191,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>変換を停止しています...</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>マスクを適用</value>
+  </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>平均ビットレート</value>
   </data>
@@ -2104,8 +2206,14 @@
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>固定品質</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>カスタム</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>エンコード</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>FFmpeg 引数</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg を利用できません。</value>

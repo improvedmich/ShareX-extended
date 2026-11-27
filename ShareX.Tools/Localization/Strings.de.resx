@@ -617,6 +617,96 @@ Dateipfad: {0}</value>
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>XML-Ausgabe</value>
   </data>
+  <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
+    <value>Nach SHA-256-Hash</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>Nach Dateiname</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
+    <value>{0} doppelte Gruppen gefunden, insgesamt {1} Dateien.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
+    <value>SHA-256-Hash: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>Dateien werden gehasht... ({0}/{1})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
+    <value>{0} Dateien</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
+    <value>Keine Duplikate gefunden.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
+    <value>Im ausgewählten Ordner wurden keine Dateien gefunden.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Press_scan" xml:space="preserve">
+    <value>Wählen Sie einen Ordner aus und klicken Sie auf Scannen.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Reading_files" xml:space="preserve">
+    <value>Dateien werden gelesen... ({0})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_failed" xml:space="preserve">
+    <value>Scannen fehlgeschlagen: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_stopped" xml:space="preserve">
+    <value>Scannen angehalten.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Select_a_folder" xml:space="preserve">
+    <value>Wählen Sie einen Ordner, in dem nach Duplikaten gesucht werden soll.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Stopping" xml:space="preserve">
+    <value>Wird angehalten...</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
+    <value>{0} doppelte Dateien</value>
+  </data>
+  <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
+    <value>(0 = unbegrenzt)</value>
+  </data>
+  <data name="DuplicateFinderWindow_Browse" xml:space="preserve">
+    <value>Durchsuchen...</value>
+  </data>
+  <data name="DuplicateFinderWindow_Copy_path" xml:space="preserve">
+    <value>Pfad in die Zwischenablage kopieren</value>
+  </data>
+  <data name="DuplicateFinderWindow_Folder" xml:space="preserve">
+    <value>Ordner</value>
+  </data>
+  <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
+    <value>Maximale Tiefe</value>
+  </data>
+  <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
+    <value>Enthaltenden Ordner öffnen</value>
+  </data>
+  <data name="DuplicateFinderWindow_Results" xml:space="preserve">
+    <value>Ergebnisse</value>
+  </data>
+  <data name="DuplicateFinderWindow_Scan" xml:space="preserve">
+    <value>Scannen</value>
+  </data>
+  <data name="DuplicateFinderWindow_Search_mode" xml:space="preserve">
+    <value>Suchmodus</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
+    <value>Ordner zum Suchen nach Duplikaten auswählen</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
+    <value>Ordner auswählen oder hier ablegen</value>
+  </data>
+  <data name="DuplicateFinderWindow_Skip_hidden" xml:space="preserve">
+    <value>Versteckte Elemente überspringen</value>
+  </data>
+  <data name="DuplicateFinderWindow_Stop" xml:space="preserve">
+    <value>Beenden</value>
+  </data>
+  <data name="DuplicateFinderWindow_Title" xml:space="preserve">
+    <value>ShareX – Duplikatdatei-Finder</value>
+  </data>
+  <data name="DuplicateFinderWindow_Total_reclaimable" xml:space="preserve">
+    <value>Insgesamt freigebbarer Speicherplatz: {0}</value>
+  </data>
   <data name="GeminiProvider_API_error" xml:space="preserve">
     <value>Fehler von der Gemini-API: {0}</value>
   </data>
@@ -1678,6 +1768,15 @@ Dateipfad: {0}</value>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Dienst öffnen...</value>
   </data>
+  <data name="OCRWindow_Recognition_model" xml:space="preserve">
+    <value>Erkennungsmodell</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Cyrillic" xml:space="preserve">
+    <value>Kyrillisch (Russisch, Ukrainisch und andere)</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Default" xml:space="preserve">
+    <value>Lateinisch und CJK</value>
+  </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Entfernen</value>
   </data>
@@ -2092,6 +2191,9 @@ Dateipfad: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Konvertierung wird angehalten...</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>Maske anwenden</value>
+  </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>Durchschnittliche Bitrate</value>
   </data>
@@ -2104,8 +2206,14 @@ Dateipfad: {0}</value>
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>Konstante Qualität</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>Benutzerdefiniert</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>Kodierung</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>FFmpeg-Argumente</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg ist nicht verfügbar.</value>

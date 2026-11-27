@@ -618,7 +618,7 @@
     <value>Вывод XML</value>
   </data>
   <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
-    <value>По SHA-256 хешу</value>
+    <value>По хешу SHA-256</value>
   </data>
   <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
     <value>По имени файла</value>
@@ -627,16 +627,16 @@
     <value>Найдено {0} групп дубликатов, всего {1} файл(ов).</value>
   </data>
   <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
-    <value>SHA-256: {0}</value>
+    <value>Хеш SHA-256: {0}</value>
   </data>
   <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
-    <value>Хеширование файлов... ({0}/{1})</value>
+    <value>Вычисление хешей файлов... ({0}/{1})</value>
   </data>
   <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
-    <value>{0} файл(ов)</value>
+    <value>{0} файлов</value>
   </data>
   <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
-    <value>Дубликатов не найдено.</value>
+    <value>Дубликаты не найдены.</value>
   </data>
   <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
     <value>В выбранной папке файлы не найдены.</value>
@@ -660,7 +660,7 @@
     <value>Остановка...</value>
   </data>
   <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
-    <value>{0} файлов-дубликатов</value>
+    <value>{0} дублирующихся файлов</value>
   </data>
   <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
     <value>(0 = без ограничений)</value>
@@ -675,7 +675,7 @@
     <value>Папка</value>
   </data>
   <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
-    <value>Макс. глубина</value>
+    <value>Максимальная глубина</value>
   </data>
   <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
     <value>Открыть папку</value>
@@ -690,7 +690,7 @@
     <value>Режим поиска</value>
   </data>
   <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
-    <value>Выберите папку для поиска дубликатов</value>
+    <value>Выбрать папку для поиска дубликатов</value>
   </data>
   <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
     <value>Выберите папку или перетащите её сюда</value>
@@ -2190,6 +2190,9 @@
   </data>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Остановка преобразования...</value>
+  </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>Применить маску</value>
   </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>Средний битрейт</value>

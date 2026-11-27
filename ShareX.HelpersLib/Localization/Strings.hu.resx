@@ -657,6 +657,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Szín picker</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Időbélyeg másolása a vágólapra</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>UUID másolása a vágólapra</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Rögzítés pre configured terület</value>
   </data>
@@ -1137,6 +1143,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Növekményes</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Bemeneti fájl</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Bemeneti mappa</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Véletlen</value>
   </data>
@@ -1148,6 +1160,21 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Jelenlegi nap</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Bemeneti fájl kiterjesztése</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Bemeneti fájl mappájának elérési útja</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Bemeneti fájl neve (kiterjesztés nélkül)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Bemeneti fájl mappájának neve</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Bemeneti fájl teljes elérési útja</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Véletlen GUID</value>

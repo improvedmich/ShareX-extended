@@ -245,7 +245,7 @@
                                         <Grid IsVisible="{Binding ShowRegexOptions}" ColumnDefinitions="*,*" ColumnSpacing="8">
                                             <StackPanel Spacing="3">
                                                 <TextBlock Classes="param-label" Text="{x:Static localization:Strings.TaskSettingsWindow_Pattern}"/>
-                                                <TextBox Text="{Binding RegexPattern, Mode=TwoWay}" PlaceholderText="^(?&lt;app&gt;.+?)_\d{4}-"/>
+                                                <TextBox Text="{Binding RegexPattern, Mode=TwoWay}"/>
                                             </StackPanel>
                                             <StackPanel Grid.Column="1" Spacing="3">
                                                 <TextBlock Classes="param-label" Text="{x:Static localization:Strings.ImageBrowserWindow_Stats_Group}"/>

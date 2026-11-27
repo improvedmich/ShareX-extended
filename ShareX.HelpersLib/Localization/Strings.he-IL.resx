@@ -657,6 +657,12 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>בוחר הצבעים</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>העתק חותמת זמן ללוח</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>העתק UUID ללוח</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>צילום אזור מוגדר מראש</value>
   </data>
@@ -1137,6 +1143,12 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>מצטבר</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>קובץ קלט</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>תיקיית קלט</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>אקראי</value>
   </data>
@@ -1148,6 +1160,21 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>יום</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>סיומת קובץ קלט</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>נתיב תיקיית קובץ הקלט</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>שם קובץ קלט (ללא סיומת)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>שם תיקיית קובץ הקלט</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>נתיב מלא של קובץ הקלט</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID אקראי</value>

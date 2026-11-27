@@ -657,6 +657,12 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Färgväljare</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Kopiera tidsstämpel till urklipp</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Kopiera UUID till urklipp</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Ta bild av förkonfigurerat område</value>
   </data>
@@ -1137,6 +1143,12 @@ Vill du ändå köra det?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Ökande</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Indatafil</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Indatamapp</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Slumpmässigt</value>
   </data>
@@ -1148,6 +1160,21 @@ Vill du ändå köra det?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Dag</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Indatafilens filändelse</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Indatafilens mappsökväg</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Indatafilens namn (utan filändelse)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Indatafilens mappnamn</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Indatafilens fullständiga sökväg</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Slumpmässigt GUID</value>

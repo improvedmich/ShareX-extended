@@ -657,6 +657,12 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>انتخاب کننده رنگ</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>کپی برچسب زمانی در کلیپ‌بورد</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>کپی UUID در کلیپ‌بورد</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>ضبط pre configured ناحیه</value>
   </data>
@@ -1137,6 +1143,12 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>افزایشی</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>فایل ورودی</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>پوشه ورودی</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>تصادفی</value>
   </data>
@@ -1148,6 +1160,21 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>روز جاری</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>پسوند فایل ورودی</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>مسیر پوشه فایل ورودی</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>نام فایل ورودی (بدون پسوند)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>نام پوشه فایل ورودی</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>مسیر کامل فایل ورودی</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID تصادفی</value>

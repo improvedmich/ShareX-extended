@@ -657,6 +657,12 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>रंग चयनकर्ता</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>समय-मुद्रा क्लिपबोर्ड पर कॉपी करें</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>UUID क्लिपबोर्ड पर कॉपी करें</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>पूर्वकॉन्फ़िगर क्षेत्र कैप्चर करें</value>
   </data>
@@ -1137,6 +1143,12 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>वृद्धिशील</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>इनपुट फ़ाइल</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>इनपुट फ़ोल्डर</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>यादृच्छिक</value>
   </data>
@@ -1148,6 +1160,21 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>दिन</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>इनपुट फ़ाइल एक्सटेंशन</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>इनपुट फ़ाइल फ़ोल्डर पथ</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>इनपुट फ़ाइल नाम (एक्सटेंशन के बिना)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>इनपुट फ़ाइल फ़ोल्डर नाम</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>इनपुट फ़ाइल का पूर्ण पथ</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>यादृच्छिक GUID</value>

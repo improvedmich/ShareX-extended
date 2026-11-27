@@ -657,6 +657,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Selektor kolorów</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Kopiuj znacznik czasu do schowka</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Kopiuj UUID do schowka</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Przechwytywanie wstępnie skonfigurowanego regionu</value>
   </data>
@@ -1137,6 +1143,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Przyrostowo</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Plik wejściowy</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Folder wejściowy</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Losowo</value>
   </data>
@@ -1148,6 +1160,21 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Dzień</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Rozszerzenie pliku wejściowego</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Ścieżka folderu pliku wejściowego</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Nazwa pliku wejściowego (bez rozszerzenia)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Nazwa folderu pliku wejściowego</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Pełna ścieżka pliku wejściowego</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Losowy GUID</value>

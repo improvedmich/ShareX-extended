@@ -1529,9 +1529,6 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="ImageBrowserWindow_Dimensions" xml:space="preserve">
     <value>Dimensions</value>
   </data>
-  <data name="ImageBrowserWindow_Filtered" xml:space="preserve">
-    <value>Filtered</value>
-  </data>
   <data name="ImageBrowserWindow_Folder" xml:space="preserve">
     <value>Folder...</value>
   </data>
@@ -1550,29 +1547,14 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="ImageBrowserWindow_Group_value" xml:space="preserve">
     <value>Value</value>
   </data>
-  <data name="ImageBrowserWindow_Groups_hint" xml:space="preserve">
-    <value>Enter a regular expression with named groups, for example (?&lt;extension&gt;\w+), to see a breakdown by group value.</value>
-  </data>
-  <data name="ImageBrowserWindow_Groups_no_named_groups" xml:space="preserve">
-    <value>The regular expression has no named groups.</value>
-  </data>
   <data name="ImageBrowserWindow_Items_format" xml:space="preserve">
     <value>{0} items</value>
   </data>
   <data name="ImageBrowserWindow_Loading" xml:space="preserve">
     <value>Loading...</value>
   </data>
-  <data name="ImageBrowserWindow_Matched" xml:space="preserve">
-    <value>Matched</value>
-  </data>
   <data name="ImageBrowserWindow_Modified" xml:space="preserve">
     <value>Modified</value>
-  </data>
-  <data name="ImageBrowserWindow_More_groups_format" xml:space="preserve">
-    <value>... {0} more groups</value>
-  </data>
-  <data name="ImageBrowserWindow_More_values_format" xml:space="preserve">
-    <value>... {0} more values</value>
   </data>
   <data name="ImageBrowserWindow_No_files" xml:space="preserve">
     <value>No image files found</value>
@@ -1702,12 +1684,6 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="ImageBrowserWindow_Title" xml:space="preserve">
     <value>ShareX - Image browser</value>
-  </data>
-  <data name="ImageBrowserWindow_Total" xml:space="preserve">
-    <value>Total</value>
-  </data>
-  <data name="ImageBrowserWindow_Unmatched" xml:space="preserve">
-    <value>Unmatched</value>
   </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write image to path:</value>

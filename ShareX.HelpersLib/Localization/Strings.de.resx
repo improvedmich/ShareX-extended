@@ -657,6 +657,12 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Farbauswähler</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Zeitstempel in die Zwischenablage kopieren</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>UUID in die Zwischenablage kopieren</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Vordefinierten Bereich aufnehmen</value>
   </data>
@@ -1137,6 +1143,12 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Inkrementell</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Eingabedatei</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Eingabeordner</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Zufällig</value>
   </data>
@@ -1148,6 +1160,21 @@ Möchten Sie es dennoch ausführen?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Derzeitiger Tag</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Dateiendung der Eingabedatei</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Ordnerpfad der Eingabedatei</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Name der Eingabedatei (ohne Erweiterung)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Ordnername der Eingabedatei</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Vollständiger Pfad der Eingabedatei</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Zufällige GUID</value>

@@ -1143,23 +1143,38 @@ Do you still want to run it?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Incremental</value>
   </data>
-  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
-    <value>Random</value>
-  </data>
-  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
-    <value>Window</value>
-  </data>
   <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
     <value>Input file</value>
   </data>
   <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
     <value>Input folder</value>
   </data>
+  <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Window" xml:space="preserve">
+    <value>Window</value>
+  </data>
   <data name="ReplCodeMenuEntry_cn_Computer_name" xml:space="preserve">
     <value>Computer name</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Day</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Input file extension</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Input file folder path</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Input file name (without extension)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Input file folder name</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Input file full path</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Random GUID</value>
@@ -1253,21 +1268,6 @@ Do you still want to run it?</value>
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Year (2 digits)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
-    <value>Input file name (without extension)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
-    <value>Input file extension</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
-    <value>Input file full path</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
-    <value>Input file folder path</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
-    <value>Input file folder name</value>
   </data>
   <data name="ScrollMethod_DownArrow" xml:space="preserve">
     <value>Down arrow</value>

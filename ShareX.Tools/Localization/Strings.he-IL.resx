@@ -617,6 +617,96 @@
   <data name="DirectoryIndexerWindow_XML_output" xml:space="preserve">
     <value>פלט XML</value>
   </data>
+  <data name="DuplicateFinderViewModel_ByHash" xml:space="preserve">
+    <value>לפי גיבוב SHA-256</value>
+  </data>
+  <data name="DuplicateFinderViewModel_ByName" xml:space="preserve">
+    <value>לפי שם קובץ</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Duplicates_found" xml:space="preserve">
+    <value>נמצאו {0} קבוצות כפולות, {1} קבצים בסך הכול.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hash" xml:space="preserve">
+    <value>גיבוב SHA-256: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Hashing_files" xml:space="preserve">
+    <value>מגבב קבצים... ({0}/{1})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_N_files" xml:space="preserve">
+    <value>{0} קבצים</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_duplicates_found" xml:space="preserve">
+    <value>לא נמצאו כפילויות.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_No_files_in_folder" xml:space="preserve">
+    <value>לא נמצאו קבצים בתיקייה שנבחרה.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Press_scan" xml:space="preserve">
+    <value>בחר תיקייה ולחץ על סרוק.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Reading_files" xml:space="preserve">
+    <value>קורא קבצים... ({0})</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_failed" xml:space="preserve">
+    <value>הסריקה נכשלה: {0}</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Scan_stopped" xml:space="preserve">
+    <value>הסריקה הופסקה.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Select_a_folder" xml:space="preserve">
+    <value>בחר תיקייה לחיפוש כפילויות.</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Stopping" xml:space="preserve">
+    <value>עוצר...</value>
+  </data>
+  <data name="DuplicateFinderViewModel_Total_duplicates" xml:space="preserve">
+    <value>{0} קבצים כפולים</value>
+  </data>
+  <data name="DuplicateFinderWindow_0_is_unlimited" xml:space="preserve">
+    <value>(0 = ללא הגבלה)</value>
+  </data>
+  <data name="DuplicateFinderWindow_Browse" xml:space="preserve">
+    <value>בחר...</value>
+  </data>
+  <data name="DuplicateFinderWindow_Copy_path" xml:space="preserve">
+    <value>העתק נתיב ללוח</value>
+  </data>
+  <data name="DuplicateFinderWindow_Folder" xml:space="preserve">
+    <value>תיקייה</value>
+  </data>
+  <data name="DuplicateFinderWindow_Max_depth" xml:space="preserve">
+    <value>עומק מרבי</value>
+  </data>
+  <data name="DuplicateFinderWindow_Open_folder" xml:space="preserve">
+    <value>פתח את התיקייה המכילה</value>
+  </data>
+  <data name="DuplicateFinderWindow_Results" xml:space="preserve">
+    <value>תוצאות</value>
+  </data>
+  <data name="DuplicateFinderWindow_Scan" xml:space="preserve">
+    <value>סרוק</value>
+  </data>
+  <data name="DuplicateFinderWindow_Search_mode" xml:space="preserve">
+    <value>מצב חיפוש</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_dialog" xml:space="preserve">
+    <value>בחר תיקייה לחיפוש כפילויות</value>
+  </data>
+  <data name="DuplicateFinderWindow_Select_folder_placeholder" xml:space="preserve">
+    <value>בחר תיקייה או שחרר אותה כאן</value>
+  </data>
+  <data name="DuplicateFinderWindow_Skip_hidden" xml:space="preserve">
+    <value>דלג על פריטים מוסתרים</value>
+  </data>
+  <data name="DuplicateFinderWindow_Stop" xml:space="preserve">
+    <value>עצור</value>
+  </data>
+  <data name="DuplicateFinderWindow_Title" xml:space="preserve">
+    <value>ShareX - מאתר קבצים כפולים</value>
+  </data>
+  <data name="DuplicateFinderWindow_Total_reclaimable" xml:space="preserve">
+    <value>סך השטח שניתן לשחזר: {0}</value>
+  </data>
   <data name="GeminiProvider_API_error" xml:space="preserve">
     <value>שגיאה מ-API של Gemini: {0}</value>
   </data>
@@ -1678,6 +1768,15 @@
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>פתח שירות...</value>
   </data>
+  <data name="OCRWindow_Recognition_model" xml:space="preserve">
+    <value>מודל זיהוי</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Cyrillic" xml:space="preserve">
+    <value>קירילית (רוסית, אוקראינית ואחרות)</value>
+  </data>
+  <data name="OCRWindow_Recognition_model_Default" xml:space="preserve">
+    <value>לטינית ו-CJK</value>
+  </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>הסר</value>
   </data>
@@ -2092,6 +2191,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>עוצר את ההמרה...</value>
   </data>
+  <data name="VideoConverterWindow_Apply_mask" xml:space="preserve">
+    <value>החל מסכה</value>
+  </data>
   <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
     <value>קצב סיביות ממוצע</value>
   </data>
@@ -2104,8 +2206,14 @@
   <data name="VideoConverterWindow_Constant_quality" xml:space="preserve">
     <value>איכות קבועה</value>
   </data>
+  <data name="VideoConverterWindow_Custom" xml:space="preserve">
+    <value>מותאם אישית</value>
+  </data>
   <data name="VideoConverterWindow_Encoding" xml:space="preserve">
     <value>קידוד</value>
+  </data>
+  <data name="VideoConverterWindow_FFmpeg_arguments" xml:space="preserve">
+    <value>ארגומנטים של FFmpeg</value>
   </data>
   <data name="VideoConverterWindow_FFmpeg_unavailable" xml:space="preserve">
     <value>FFmpeg אינו זמין.</value>

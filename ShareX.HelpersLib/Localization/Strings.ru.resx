@@ -657,6 +657,12 @@
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Палитра</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Копировать временную метку в буфер обмена</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Копировать UUID в буфер обмена</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Захват подготовленной области экрана</value>
   </data>
@@ -1137,6 +1143,12 @@
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Счетчик</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Входной файл</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Папка ввода</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Случайные числа</value>
   </data>
@@ -1148,6 +1160,21 @@
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Сегодняшний день</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Расширение входного файла</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Путь к папке входного файла</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Имя входного файла (без расширения)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Имя папки входного файла</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Полный путь к входному файлу</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Случайный GUID</value>
@@ -1241,21 +1268,6 @@
   </data>
   <data name="ReplCodeMenuEntry_yy_Current_year__2_digits_" xml:space="preserve">
     <value>Текущий год (2 цифры)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
-    <value>Имя входного файла (без расширения)</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
-    <value>Расширение входного файла</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
-    <value>Полный путь к входному файлу</value>
-  </data>
-  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
-    <value>Путь к папке входного файла</value>
-  </data>
-  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
-    <value>Имя папки входного файла</value>
   </data>
   <data name="ScrollMethod_DownArrow" xml:space="preserve">
     <value>Стрелка вниз</value>

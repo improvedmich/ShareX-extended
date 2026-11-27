@@ -657,6 +657,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Pemilih warna...</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Salin stempel waktu ke papan klip</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Salin UUID ke papan klip</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Jepret area yang dikonfigurasi sebelumnya</value>
   </data>
@@ -1137,6 +1143,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Tambahkan</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>File masukan</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Folder input</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Acak</value>
   </data>
@@ -1148,6 +1160,21 @@ Apakah Anda tetap ingin menjalankannya?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Hari ini</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Ekstensi file input</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Jalur folder file input</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Nama file input (tanpa ekstensi)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Nama folder file input</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Jalur lengkap file input</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>GUID Acak</value>

@@ -657,6 +657,12 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_ColorPicker" xml:space="preserve">
     <value>Výběr barvy</value>
   </data>
+  <data name="HotkeyType_CopyTimestamp" xml:space="preserve">
+    <value>Kopírovat časové razítko do schránky</value>
+  </data>
+  <data name="HotkeyType_CopyUUID" xml:space="preserve">
+    <value>Kopírovat UUID do schránky</value>
+  </data>
   <data name="HotkeyType_CustomRegion" xml:space="preserve">
     <value>Zachytit přednastavenou oblast</value>
   </data>
@@ -1137,6 +1143,12 @@ Chcete jej přesto spustit?</value>
   <data name="ReplCodeMenuCategory_Incremental" xml:space="preserve">
     <value>Přírůstkové</value>
   </data>
+  <data name="ReplCodeMenuCategory_Input_File" xml:space="preserve">
+    <value>Vstupní soubor</value>
+  </data>
+  <data name="ReplCodeMenuCategory_Input_Folder" xml:space="preserve">
+    <value>Vstupní složka</value>
+  </data>
   <data name="ReplCodeMenuCategory_Random" xml:space="preserve">
     <value>Náhodné</value>
   </data>
@@ -1148,6 +1160,21 @@ Chcete jej přesto spustit?</value>
   </data>
   <data name="ReplCodeMenuEntry_d_Current_day" xml:space="preserve">
     <value>Den</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fe_input_file_extension" xml:space="preserve">
+    <value>Přípona vstupního souboru</value>
+  </data>
+  <data name="ReplCodeMenuEntry_ff_input_folder_path" xml:space="preserve">
+    <value>Cesta ke složce vstupního souboru</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fn_input_file_name" xml:space="preserve">
+    <value>Název vstupního souboru (bez přípony)</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fnm_input_folder_name" xml:space="preserve">
+    <value>Název složky vstupního souboru</value>
+  </data>
+  <data name="ReplCodeMenuEntry_fp_input_file_path" xml:space="preserve">
+    <value>Úplná cesta ke vstupnímu souboru</value>
   </data>
   <data name="ReplCodeMenuEntry_guid_Random_guid" xml:space="preserve">
     <value>Náhodný identifikátor GUID</value>
