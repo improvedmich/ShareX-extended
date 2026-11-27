@@ -102,6 +102,18 @@ public sealed class VideoTrimmerTimeline : Control
             IBrush shade = new SolidColorBrush(Color.FromArgb(180, 0, 0, 0));
             context.DrawRectangle(shade, null, new Rect(Inset, TrackTop, X(model.Start) - Inset, TrackHeight));
             context.DrawRectangle(shade, null, new Rect(X(model.End), TrackTop, X(model.Duration) - X(model.End), TrackHeight));
+
+            if (model.Deletions.Count > 0)
+            {
+                IBrush deleted = new SolidColorBrush(Color.FromArgb(120, 220, 50, 50));
+                IPen outline = new Pen(new SolidColorBrush(Color.FromArgb(230, 235, 70, 70)), 1);
+                foreach (var range in model.Deletions)
+                {
+                    double leftEdge = X(range.Start);
+                    double rightEdge = X(range.End);
+                    context.DrawRectangle(deleted, outline, new Rect(leftEdge, TrackTop, rightEdge - leftEdge, TrackHeight));
+                }
+            }
         }
 
         // The frame and handles sit on the thumbnails, so outline them with the accent's halo color to keep them

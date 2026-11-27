@@ -126,10 +126,10 @@
             </Border>
 
             <Border Grid.Row="2" Classes="tool-panel">
-                <Grid ColumnDefinitions="Auto,Auto,Auto,*" ColumnSpacing="16">
+                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,*" ColumnSpacing="16">
                     <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_TrimMode}"/>
                     <RadioButton Grid.Column="1" GroupName="TrimMode" IsChecked="{Binding Lossless, Mode=TwoWay}"
-                                 IsEnabled="{Binding CanBrowse}" VerticalAlignment="Center"
+                                 IsEnabled="{Binding CanChooseLossless}" VerticalAlignment="Center"
                                  ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_CopyHint}">
                         <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_Lossless}" FontWeight="Normal"/>
                     </RadioButton>
@@ -139,7 +139,23 @@
                         <TextBlock Text="{x:Static loc:Strings.VideoTrimmer_Precise}" FontWeight="Normal"/>
                     </RadioButton>
 
-                    <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                    <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center"
+                                IsVisible="{Binding HasDeletions}">
+                        <TextBlock Classes="row-label" Text="{Binding DeletionsText}" MaxWidth="220"
+                                   TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                        <Button Command="{Binding ClearDeletionsCommand}" Width="32"
+                                ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_ClearDeletions}"
+                                AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_ClearDeletions}">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Eraser}"/>
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="4" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
+                        <Button Command="{Binding DeleteSelectionCommand}" IsEnabled="{Binding CanTrim}" Width="40"
+                                ToolTip.Tip="{x:Static loc:Strings.VideoTrimmer_DeleteSelection}"
+                                AutomationProperties.Name="{x:Static loc:Strings.VideoTrimmer_DeleteSelection}">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
+                        </Button>
                         <Button Command="{Binding PrimaryActionCommand}" IsEnabled="{Binding CanUsePrimaryAction}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
                                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Scissors}"

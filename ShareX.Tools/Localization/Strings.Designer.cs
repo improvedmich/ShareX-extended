@@ -7099,11 +7099,38 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear pending deletions.
+        /// </summary>
+        public static string VideoTrimmer_ClearDeletions {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_ClearDeletions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copies the original streams without re-encoding. Cut points may shift to nearby keyframes..
         /// </summary>
         public static string VideoTrimmer_CopyHint {
             get {
                 return ResourceManager.GetString("VideoTrimmer_CopyHint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete selection.
+        /// </summary>
+        public static string VideoTrimmer_DeleteSelection {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_DeleteSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleting selected fragment….
+        /// </summary>
+        public static string VideoTrimmer_Deleting {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_Deleting", resourceCulture);
             }
         }
         
@@ -7176,6 +7203,15 @@ namespace ShareX.Tools.Localization {
         public static string VideoTrimmer_Lossless {
             get {
                 return ResourceManager.GetString("VideoTrimmer_Lossless", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selection covers the whole video. Choose a shorter range to delete..
+        /// </summary>
+        public static string VideoTrimmer_NothingToKeep {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_NothingToKeep", resourceCulture);
             }
         }
         
@@ -7311,6 +7347,15 @@ namespace ShareX.Tools.Localization {
         public static string VideoTrimmer_Title {
             get {
                 return ResourceManager.GetString("VideoTrimmer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To delete: {0} ({1}).
+        /// </summary>
+        public static string VideoTrimmer_ToDelete {
+            get {
+                return ResourceManager.GetString("VideoTrimmer_ToDelete", resourceCulture);
             }
         }
         

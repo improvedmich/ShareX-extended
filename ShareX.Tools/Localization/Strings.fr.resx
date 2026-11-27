@@ -2302,8 +2302,17 @@ Chemin du fichier : {0}</value>
   <data name="VideoTrimmer_ChooseVideo" xml:space="preserve">
     <value>Ouvrez ou déposez une vidéo pour commencer</value>
   </data>
+  <data name="VideoTrimmer_ClearDeletions" xml:space="preserve">
+    <value>Effacer les suppressions en attente</value>
+  </data>
   <data name="VideoTrimmer_CopyHint" xml:space="preserve">
     <value>Copie les flux d’origine sans réencodage. Les points de coupe peuvent se déplacer vers des images clés proches.</value>
+  </data>
+  <data name="VideoTrimmer_DeleteSelection" xml:space="preserve">
+    <value>Supprimer la sélection</value>
+  </data>
+  <data name="VideoTrimmer_Deleting" xml:space="preserve">
+    <value>Suppression du fragment sélectionné…</value>
   </data>
   <data name="VideoTrimmer_Duration" xml:space="preserve">
     <value>Durée :</value>
@@ -2328,6 +2337,9 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Sans perte</value>
+  </data>
+  <data name="VideoTrimmer_NothingToKeep" xml:space="preserve">
+    <value>La sélection couvre toute la vidéo. Choisissez une plage plus courte à supprimer.</value>
   </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Ouvrir une vidéo…</value>
@@ -2373,6 +2385,9 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="VideoTrimmer_Title" xml:space="preserve">
     <value>ShareX - Découpage vidéo</value>
+  </data>
+  <data name="VideoTrimmer_ToDelete" xml:space="preserve">
+    <value>À supprimer : {0} ({1})</value>
   </data>
   <data name="VideoTrimmer_TrimMode" xml:space="preserve">
     <value>Mode de découpage :</value>

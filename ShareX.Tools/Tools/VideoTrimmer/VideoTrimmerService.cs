@@ -47,49 +47,179 @@ internal sealed class VideoTrimmerService(string ffmpegPath)
         }
         else
         {
-            args.AddRange(["-map", "0:s?", "-c", "copy", "-avoid_negative_ts", "make_zero"]);
+            // Keep the muxer's edit list instead of forcing zero-based timestamps: with an input seek the
+            // copied stream starts at the preceding keyframe, and make_zero would expose that extra head
+            // material instead of trimming it.
+            args.AddRange(["-map", "0:s?", "-c", "copy"]);
         }
 
         args.AddRange(["-progress", "pipe:1", "-nostats", "-n", output]);
         return args.ToArray();
     }
 
-    public async Task TrimAsync(string input, string output, double start, double end, double duration,
-        bool precise, IProgress<double> progress, CancellationToken token)
+    internal static string[] BuildConcatArguments(string listFile, string output, bool precise)
+    {
+        List<string> args = ["-v", "error", "-f", "concat", "-safe", "0", "-i", listFile,
+            "-map", "0:V:0", "-map", "0:a?", "-map", "0:s?", "-map_chapters", "-1", "-c", "copy"];
+        if (precise) args.AddRange(["-movflags", "+faststart"]);
+        args.AddRange(["-progress", "pipe:1", "-nostats", "-n", output]);
+        return args.ToArray();
+    }
+
+    private static string GetOutputExtension(string input, bool precise) => precise ? ".mp4" : Path.GetExtension(input);
+
+    private static void ValidateRange(double start, double end, double duration)
     {
         if (!double.IsFinite(start) || !double.IsFinite(end) || start < 0 || end <= start || end > duration)
         {
             throw new ArgumentOutOfRangeException(nameof(start));
         }
+    }
 
+    private static void ValidateOutput(string input, string output, bool precise)
+    {
         if (string.Equals(Path.GetFullPath(input), Path.GetFullPath(output), StringComparison.OrdinalIgnoreCase))
         {
             throw new InvalidOperationException(Strings.VideoTrimmer_SourceOverwrite);
         }
 
-        string extension = precise ? ".mp4" : Path.GetExtension(input);
+        string extension = GetOutputExtension(input, precise);
         if (!string.Equals(Path.GetExtension(output), extension, StringComparison.OrdinalIgnoreCase))
         {
             throw new InvalidOperationException(string.Format(Strings.VideoTrimmer_OutputExtension, extension));
         }
+    }
+
+    private static void EnsureOutputExists(string path)
+    {
+        if (!File.Exists(path) || new FileInfo(path).Length == 0)
+        {
+            throw new InvalidOperationException(Strings.VideoTrimmer_EmptyOutput);
+        }
+    }
+
+    private static void DeleteIfExists(string path)
+    {
+        if (File.Exists(path)) File.Delete(path);
+    }
+
+    // Concat demuxer paths are single-quoted; an embedded quote needs the shell-like '\'' escape.
+    private static string QuoteConcatPath(string path) =>
+        $"file '{path.Replace("\\", "/").Replace("'", "'\\''")}'";
+
+    public async Task TrimAsync(string input, string output, double start, double end, double duration,
+        bool precise, IProgress<double> progress, CancellationToken token)
+    {
+        ValidateRange(start, end, duration);
+        ValidateOutput(input, output, precise);
 
         // Publish only after success; cancellation or a muxer failure leaves an existing destination intact.
+        string extension = GetOutputExtension(input, precise);
         string temporary = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(output))!, $".sharex-trim-{Guid.NewGuid():N}{extension}");
         try
         {
             await RunAsync(BuildTrimArguments(input, temporary, start, end, precise), token, progress: progress, duration: end - start);
             token.ThrowIfCancellationRequested();
-            if (!File.Exists(temporary) || new FileInfo(temporary).Length == 0)
-            {
-                throw new InvalidOperationException(Strings.VideoTrimmer_EmptyOutput);
-            }
-
+            EnsureOutputExists(temporary);
             File.Move(temporary, output, true);
         }
         finally
         {
-            if (File.Exists(temporary)) File.Delete(temporary);
+            DeleteIfExists(temporary);
         }
+    }
+
+    /// <summary>Removes all ranges and joins the surviving parts into one export.</summary>
+    public async Task DeleteRangesAsync(string input, string output, IReadOnlyList<(double Start, double End)> ranges,
+        double duration, bool precise, IProgress<double> progress, CancellationToken token)
+    {
+        if (!double.IsFinite(duration) || duration <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(duration));
+        }
+
+        ValidateOutput(input, output, precise);
+
+        // Cuts this close to an edge would leave nothing meaningful, so they are folded into the edge.
+        const double edgeTolerance = 0.05;
+        List<(double Start, double End)> merged = [];
+        foreach (var range in ranges.OrderBy(range => range.Start))
+        {
+            double start = double.IsFinite(range.Start) ? Math.Clamp(range.Start, 0, duration) : 0;
+            double end = double.IsFinite(range.End) ? Math.Clamp(range.End, 0, duration) : 0;
+            if (end - start <= edgeTolerance) continue;
+
+            if (merged.Count > 0 && start <= merged[^1].End + edgeTolerance)
+            {
+                merged[^1] = (merged[^1].Start, Math.Max(merged[^1].End, end));
+            }
+            else
+            {
+                merged.Add((start, end));
+            }
+        }
+
+        if (merged.Count == 0) throw new InvalidOperationException(Strings.VideoTrimmer_NothingToKeep);
+
+        List<(double Start, double End)> keep = [];
+        double cursor = 0;
+        foreach (var range in merged)
+        {
+            if (range.Start - cursor > edgeTolerance) keep.Add((cursor, range.Start));
+            cursor = Math.Max(cursor, range.End);
+        }
+
+        if (duration - cursor > edgeTolerance) keep.Add((cursor, duration));
+        if (keep.Count == 0) throw new InvalidOperationException(Strings.VideoTrimmer_NothingToKeep);
+
+        if (keep.Count == 1)
+        {
+            await TrimAsync(input, output, keep[0].Start, keep[0].End, duration, precise, progress, token);
+            return;
+        }
+
+        string extension = GetOutputExtension(input, precise);
+        string directory = Path.GetDirectoryName(Path.GetFullPath(output))!;
+        string id = Guid.NewGuid().ToString("N");
+        string list = Path.Combine(directory, $".sharex-delete-{id}-list.txt");
+        string temporary = Path.Combine(directory, $".sharex-delete-{id}-out{extension}");
+        List<string> parts = [];
+        try
+        {
+            // Re-encoding and stream copy both produce parts with identical stream layouts, so the
+            // concat demuxer can join them without another encode.
+            double keepLength = keep.Sum(part => part.End - part.Start);
+            double completed = 0;
+            foreach (var (partStart, partEnd) in keep)
+            {
+                string part = Path.Combine(directory, $".sharex-delete-{id}-{parts.Count}{extension}");
+                parts.Add(part);
+                double length = partEnd - partStart;
+                await RunAsync(BuildTrimArguments(input, part, partStart, partEnd, precise), token,
+                    new ScaledProgress(progress, completed / keepLength * 90, length / keepLength * 90), length);
+                token.ThrowIfCancellationRequested();
+                EnsureOutputExists(part);
+                completed += length;
+            }
+
+            File.WriteAllLines(list, parts.Select(QuoteConcatPath), new UTF8Encoding(false));
+            await RunAsync(BuildConcatArguments(list, temporary, precise), token,
+                new ScaledProgress(progress, 90, 10), keepLength);
+            token.ThrowIfCancellationRequested();
+            EnsureOutputExists(temporary);
+            File.Move(temporary, output, true);
+        }
+        finally
+        {
+            foreach (string part in parts) DeleteIfExists(part);
+            DeleteIfExists(list);
+            DeleteIfExists(temporary);
+        }
+    }
+
+    private sealed class ScaledProgress(IProgress<double> inner, double offset, double scale) : IProgress<double>
+    {
+        public void Report(double value) => inner.Report(offset + Math.Clamp(value, 0, 100) * scale / 100);
     }
 
     private async Task RunAsync(IEnumerable<string> arguments, CancellationToken token,

@@ -2302,8 +2302,17 @@
   <data name="VideoTrimmer_ChooseVideo" xml:space="preserve">
     <value>Mở hoặc thả video để bắt đầu</value>
   </data>
+  <data name="VideoTrimmer_ClearDeletions" xml:space="preserve">
+    <value>Xóa các đoạn chờ xóa</value>
+  </data>
   <data name="VideoTrimmer_CopyHint" xml:space="preserve">
     <value>Sao chép các luồng gốc mà không mã hóa lại. Điểm cắt có thể dịch chuyển đến khung hình chính gần đó.</value>
+  </data>
+  <data name="VideoTrimmer_DeleteSelection" xml:space="preserve">
+    <value>Xóa vùng chọn</value>
+  </data>
+  <data name="VideoTrimmer_Deleting" xml:space="preserve">
+    <value>Đang xóa đoạn đã chọn…</value>
   </data>
   <data name="VideoTrimmer_Duration" xml:space="preserve">
     <value>Thời lượng:</value>
@@ -2328,6 +2337,9 @@
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Không mất dữ liệu</value>
+  </data>
+  <data name="VideoTrimmer_NothingToKeep" xml:space="preserve">
+    <value>Vùng chọn bao phủ toàn bộ video. Hãy chọn một khoảng ngắn hơn để xóa.</value>
   </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Mở video…</value>
@@ -2373,6 +2385,9 @@
   </data>
   <data name="VideoTrimmer_Title" xml:space="preserve">
     <value>ShareX - Cắt video</value>
+  </data>
+  <data name="VideoTrimmer_ToDelete" xml:space="preserve">
+    <value>Sẽ xóa: {0} ({1})</value>
   </data>
   <data name="VideoTrimmer_TrimMode" xml:space="preserve">
     <value>Chế độ cắt:</value>

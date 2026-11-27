@@ -2302,8 +2302,17 @@
   <data name="VideoTrimmer_ChooseVideo" xml:space="preserve">
     <value>Відкрийте або перетягніть відео, щоб почати</value>
   </data>
+  <data name="VideoTrimmer_ClearDeletions" xml:space="preserve">
+    <value>Очистити позначені видалення</value>
+  </data>
   <data name="VideoTrimmer_CopyHint" xml:space="preserve">
     <value>Копіює початкові потоки без перекодування. Точки обрізання можуть зміститися до найближчих ключових кадрів.</value>
+  </data>
+  <data name="VideoTrimmer_DeleteSelection" xml:space="preserve">
+    <value>Видалити вибір</value>
+  </data>
+  <data name="VideoTrimmer_Deleting" xml:space="preserve">
+    <value>Видалення вибраного фрагмента…</value>
   </data>
   <data name="VideoTrimmer_Duration" xml:space="preserve">
     <value>Тривалість:</value>
@@ -2328,6 +2337,9 @@
   </data>
   <data name="VideoTrimmer_Lossless" xml:space="preserve">
     <value>Без втрат</value>
+  </data>
+  <data name="VideoTrimmer_NothingToKeep" xml:space="preserve">
+    <value>Вибір охоплює все відео. Виберіть коротший діапазон для видалення.</value>
   </data>
   <data name="VideoTrimmer_Open" xml:space="preserve">
     <value>Відкрити відео…</value>
@@ -2373,6 +2385,9 @@
   </data>
   <data name="VideoTrimmer_Title" xml:space="preserve">
     <value>ShareX — Обрізання відео</value>
+  </data>
+  <data name="VideoTrimmer_ToDelete" xml:space="preserve">
+    <value>До видалення: {0} ({1})</value>
   </data>
   <data name="VideoTrimmer_TrimMode" xml:space="preserve">
     <value>Режим обрізання:</value>

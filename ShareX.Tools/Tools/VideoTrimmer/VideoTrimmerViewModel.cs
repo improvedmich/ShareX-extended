@@ -40,6 +40,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     private readonly Action? _playNotificationSound;
     private readonly CancellationTokenSource _lifetime = new();
     private readonly List<VideoTrimmerThumbnail> _thumbnails = [];
+    private readonly List<(double Start, double End)> _deletions = [];
     private CancellationTokenSource? _loadCancellation;
     private CancellationTokenSource? _exportCancellation;
     private bool _disposed;
@@ -74,14 +75,18 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     public Func<string, Task<string?>>? SelectOutputRequested { get; set; }
     public Action<string>? ShowErrorRequested { get; set; }
     public IReadOnlyList<VideoTrimmerThumbnail> Thumbnails => _thumbnails;
+    public IReadOnlyList<(double Start, double End)> Deletions => _deletions;
+    public bool HasDeletions => _deletions.Count > 0;
     public bool HasVideo => Duration > 0;
     public bool HasStatus => !string.IsNullOrEmpty(StatusText);
     public string PlayActionText => IsPlaying ? Strings.AnimatedGifTrimmer_Pause : Strings.AnimatedGifTrimmer_Play;
     public bool CanEdit => HasVideo && !IsExporting;
     public bool CanTrim => CanEdit && (Start >= 0.001 || End <= Duration - 0.001);
+    public bool CanExport => CanEdit && (HasDeletions || CanTrim);
+    public bool CanChooseLossless => CanBrowse && !HasDeletions;
     public bool CanBrowse => !IsExporting;
     public bool IsWorking => IsLoading || IsExporting;
-    public bool CanUsePrimaryAction => IsExporting || CanTrim;
+    public bool CanUsePrimaryAction => IsExporting || CanExport;
     public bool HasOutput => !string.IsNullOrEmpty(OutputFilePath);
     public System.Windows.Input.ICommand PrimaryActionCommand => IsExporting ? CancelCommand : ExportCommand;
     public string PrimaryActionText => IsExporting ? Strings.VideoTrimmer_Cancel : Strings.VideoTrimmer_Export;
@@ -96,6 +101,8 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     public string EndTimeText => FormatTime(End);
     public string SelectionDurationText => FormatTime(End - Start);
     public string SelectionText => string.Format(Strings.VideoTrimmer_Selection, FormatTime(End - Start));
+    public string DeletionsText => string.Format(Strings.VideoTrimmer_ToDelete, _deletions.Count,
+        FormatTime(_deletions.Sum(range => range.End - range.Start)));
     public string InputDisplay => string.IsNullOrEmpty(InputFilePath) ? Strings.VideoTrimmer_ChooseVideo : InputFilePath;
 
     public static string FormatTime(double seconds)
@@ -156,6 +163,8 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         Duration = 0;
         Position = Start = End = 0;
         ClearThumbnails();
+        _deletions.Clear();
+        NotifyDeletionsChanged();
         InputFilePath = file;
         OutputFilePath = string.Empty;
         IsLoading = true;
@@ -316,6 +325,7 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
         OnPropertyChanged(nameof(CanEdit));
         OnPropertyChanged(nameof(CanTrim));
         OnPropertyChanged(nameof(CanBrowse));
+        OnPropertyChanged(nameof(CanChooseLossless));
         OnPropertyChanged(nameof(IsWorking));
         OnPropertyChanged(nameof(CanUsePrimaryAction));
         OnPropertyChanged(nameof(PrimaryActionCommand));
@@ -335,9 +345,52 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
     }
 
     [RelayCommand]
+    private void DeleteSelection()
+    {
+        if (!CanTrim || _disposed) return;
+        double start = Math.Clamp(Math.Min(Start, End), 0, Duration);
+        double end = Math.Clamp(Math.Max(Start, End), 0, Duration);
+        if (end <= start) return;
+
+        _deletions.Add((start, end));
+        _deletions.Sort((left, right) => left.Start.CompareTo(right.Start));
+        for (int i = _deletions.Count - 1; i > 0; i--)
+        {
+            if (_deletions[i].Start > _deletions[i - 1].End) continue;
+            _deletions[i - 1] = (_deletions[i - 1].Start, Math.Max(_deletions[i - 1].End, _deletions[i].End));
+            _deletions.RemoveAt(i);
+        }
+
+        // Stream copy can only cut on reference frames; re-encoding is required so the deleted
+        // fragment never leaks into the joined result.
+        Precise = true;
+        NotifyDeletionsChanged();
+        Position = end;
+    }
+
+    [RelayCommand]
+    private void ClearDeletions()
+    {
+        if (_deletions.Count == 0) return;
+        _deletions.Clear();
+        NotifyDeletionsChanged();
+    }
+
+    private void NotifyDeletionsChanged()
+    {
+        OnPropertyChanged(nameof(Deletions));
+        OnPropertyChanged(nameof(HasDeletions));
+        OnPropertyChanged(nameof(DeletionsText));
+        OnPropertyChanged(nameof(CanChooseLossless));
+        OnPropertyChanged(nameof(CanExport));
+        OnPropertyChanged(nameof(CanUsePrimaryAction));
+    }
+
+    [RelayCommand]
     private async Task ExportAsync()
     {
-        if (!CanTrim || SelectOutputRequested == null || _disposed) return;
+        bool removeSelection = HasDeletions;
+        if (!CanExport || SelectOutputRequested == null || _disposed) return;
         IsExporting = true;
         using CancellationTokenSource cancellation = CancellationTokenSource.CreateLinkedTokenSource(_lifetime.Token);
         _exportCancellation = cancellation;
@@ -351,17 +404,36 @@ public sealed partial class VideoTrimmerViewModel : ViewModelBase, IDisposable
                 if (string.IsNullOrEmpty(ffmpegPath)) return;
                 _service.FFmpegPath = ffmpegPath;
             }
-            string extension = Precise ? ".mp4" : Path.GetExtension(InputFilePath);
-            string? output = await SelectOutputRequested(Path.GetFileNameWithoutExtension(InputFilePath) + "-trimmed" + extension);
+            // Deleting requires re-encoding: stream copy cannot drop the trailing reference frames
+            // around a cut, and the leaked frames would appear in the joined video.
+            bool precise = Precise || removeSelection;
+            string extension = precise ? ".mp4" : Path.GetExtension(InputFilePath);
+            string suffix = removeSelection ? "-edited" : "-trimmed";
+            string? output = await SelectOutputRequested(Path.GetFileNameWithoutExtension(InputFilePath) + suffix + extension);
             if (output == null) return;
             cancellation.Token.ThrowIfCancellationRequested();
             _loadCancellation?.Cancel();
             Progress = 0;
-            StatusText = Strings.VideoTrimmer_Exporting;
-            await _service.TrimAsync(InputFilePath, output, Start, End, Duration, Precise,
-                new Progress<double>(value => { if (!cancellation.IsCancellationRequested && !_disposed) Progress = value; }), cancellation.Token);
+            StatusText = removeSelection ? Strings.VideoTrimmer_Deleting : Strings.VideoTrimmer_Exporting;
+            IProgress<double> progress = new Progress<double>(value =>
+            {
+                if (!cancellation.IsCancellationRequested && !_disposed) Progress = value;
+            });
+            if (removeSelection)
+            {
+                await _service.DeleteRangesAsync(InputFilePath, output, _deletions, Duration, precise, progress, cancellation.Token);
+            }
+            else
+            {
+                await _service.TrimAsync(InputFilePath, output, Start, End, Duration, precise, progress, cancellation.Token);
+            }
             Progress = 100;
             OutputFilePath = output;
+            if (removeSelection)
+            {
+                _deletions.Clear();
+                NotifyDeletionsChanged();
+            }
             StatusText = string.Format(Strings.VideoTrimmer_Saved, output);
             _playNotificationSound?.Invoke();
         }
