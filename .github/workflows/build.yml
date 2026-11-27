@@ -42,6 +42,9 @@ jobs:
       SOLUTION_FILE_PATH: ShareX.sln
       ASSEMBLY_INFO_PATH: Directory.build.props
       FFMPEG_VERSION: "9.0"
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     outputs:
       APP_VERSION: ${{ env.APP_VERSION }}
@@ -129,9 +132,12 @@ jobs:
 
       - name: Azure login
         if: >-
-          (github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
+          env.AZURE_CLIENT_ID != '' &&
+          env.AZURE_TENANT_ID != '' &&
+          env.AZURE_SUBSCRIPTION_ID != '' &&
+          ((github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
           (startsWith(github.ref, 'refs/tags/v') &&
-          (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'))
+          (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore')))
         uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -140,9 +146,11 @@ jobs:
 
       - name: Sign ShareX binaries
         if: >-
-          (github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
+          env.AZURE_CLIENT_ID != '' &&
+          vars.SIGNING_ENDPOINT != '' &&
+          ((github.ref == 'refs/heads/develop' && matrix.configuration == 'Release') ||
           (startsWith(github.ref, 'refs/tags/v') &&
-          (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'))
+          (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore')))
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
@@ -156,6 +164,8 @@ jobs:
 
       - name: Sign Avalonia binaries
         if: >-
+          env.AZURE_CLIENT_ID != '' &&
+          vars.SIGNING_ENDPOINT != '' &&
           startsWith(github.ref, 'refs/tags/v') &&
           (matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore')
         uses: azure/artifact-signing-action@v2
@@ -170,7 +180,7 @@ jobs:
           timestamp-digest: SHA256
 
       - name: Sign Steam launcher
-        if: startsWith(github.ref, 'refs/tags/v') && matrix.configuration == 'Steam'
+        if: env.AZURE_CLIENT_ID != '' && vars.SIGNING_ENDPOINT != '' && startsWith(github.ref, 'refs/tags/v') && matrix.configuration == 'Steam'
         uses: azure/artifact-signing-action@v2
         with:
           endpoint: ${{ vars.SIGNING_ENDPOINT }}
@@ -194,6 +204,8 @@ jobs:
 
       - name: Sign setup
         if: >-
+          env.AZURE_CLIENT_ID != '' &&
+          vars.SIGNING_ENDPOINT != '' &&
           (github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')) &&
           matrix.configuration == 'Release'
         uses: azure/artifact-signing-action@v2

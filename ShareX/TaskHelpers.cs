@@ -2872,7 +2872,7 @@ namespace ShareX
 
         public static async Task DownloadDevBuild()
         {
-            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "DevBuilds")
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("improvedmich", "ShareX-extended")
             {
                 IsDev = true,
                 IsPortable = StartupOptions.Portable

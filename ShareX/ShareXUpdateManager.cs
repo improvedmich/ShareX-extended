@@ -33,7 +33,7 @@ namespace ShareX
 
         public override GitHubUpdateChecker CreateUpdateChecker()
         {
-            return new GitHubUpdateChecker("ShareX", "ShareX")
+            return new GitHubUpdateChecker("improvedmich", "ShareX-extended")
             {
                 IsPortable = StartupOptions.Portable,
                 IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,
