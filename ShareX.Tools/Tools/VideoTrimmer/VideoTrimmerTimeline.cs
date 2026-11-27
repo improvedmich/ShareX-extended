@@ -141,9 +141,24 @@ public sealed class VideoTrimmerTimeline : Control
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
         base.OnPointerPressed(e);
-        if (_model is not { CanEdit: true } model || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed) return;
+        if (_model is not { CanEdit: true } model) return;
+        PointerPoint pointer = e.GetCurrentPoint(this);
         Focus();
-        Point point = e.GetPosition(this);
+
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Shift) &&
+            (pointer.Properties.IsLeftButtonPressed || pointer.Properties.IsRightButtonPressed))
+        {
+            // Shift places the boundaries directly: left click sets the start, right click the end.
+            // The view model clamps each value, so a boundary never crosses the other one.
+            _drag = pointer.Properties.IsLeftButtonPressed ? 1 : 2;
+            e.Pointer.Capture(this);
+            UpdatePosition(pointer.Position.X);
+            e.Handled = true;
+            return;
+        }
+
+        if (!pointer.Properties.IsLeftButtonPressed) return;
+        Point point = pointer.Position;
         double startDistance = Math.Abs(point.X - X(model.Start));
         double endDistance = Math.Abs(point.X - X(model.End));
         _drag = point.Y >= TrackTop - 3 && point.Y <= TrackBottom + 3 && Math.Min(startDistance, endDistance) <= 12
