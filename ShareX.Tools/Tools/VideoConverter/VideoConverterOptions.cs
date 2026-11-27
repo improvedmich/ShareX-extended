@@ -36,9 +36,13 @@ namespace ShareX.Tools
         public string OutputFolderPath { get; set; }
         public string OutputFileName { get; set; }
 
+        // Default mask keeps the converted file next to the source without reusing its name, so a
+        // codec that produces the same extension as the input cannot overwrite the original.
+        public const string DefaultOutputFileNameMask = "%input_file_name%_converted";
+
         // Output file name mask, expanded by InputFileNameParser when encoding starts.
         // Supports %input_file_name%, %input_file_ext%, %input_folder_name% and every NameParser token.
-        public string OutputFileNameMask { get; set; } = InputFileNameParser.DefaultMask;
+        public string OutputFileNameMask { get; set; } = DefaultOutputFileNameMask;
 
         // Persisted counter behind the %i NameParser token.
         public int NameParserAutoIncrementNumber { get; set; } = 0;

@@ -55,6 +55,8 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
 
     private static readonly string[] AnimationOnlyExtensions = [".gif", ".webp", ".png", ".apng"];
 
+    private const string LegacyDefaultOutputFileNameMask = "%input_file_name%";
+
     // Only these extensions are treated as a container chosen by the user. Any other dot in the
     // file name (for example "my.video" or "Movie.2024") is part of the name, not an extension.
     private static readonly string[] KnownOutputExtensions =
@@ -148,10 +150,12 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         _conversionHandler = conversionHandler;
         _inputFilePath = options.InputFilePath ?? string.Empty;
         _outputFolderPath = options.OutputFolderPath ?? string.Empty;
-        _outputFileName = options.OutputFileName ?? string.Empty;
-        _outputFileNameMask = string.IsNullOrWhiteSpace(options.OutputFileNameMask)
-            ? InputFileNameParser.DefaultMask
+        _outputFileNameMask = string.IsNullOrWhiteSpace(options.OutputFileNameMask) || options.OutputFileNameMask == LegacyDefaultOutputFileNameMask
+            ? VideoConverterOptions.DefaultOutputFileNameMask
             : options.OutputFileNameMask;
+        _outputFileName = string.IsNullOrWhiteSpace(options.OutputFileName) || options.OutputFileName == LegacyDefaultOutputFileNameMask
+            ? _outputFileNameMask
+            : options.OutputFileName;
         _selectedCodec = Codecs.First(x => (int)x.Codec == (int)options.VideoCodec);
         _useBitrate = options.VideoQualityUseBitrate;
         _videoQuality = options.VideoQuality;
@@ -163,9 +167,11 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             ? Localization.Strings.VideoConverterViewModel_Choose_video_or_animation
             : string.Empty;
 
-        if (!string.IsNullOrWhiteSpace(inputFilePath))
+        string? initialInputFilePath = !string.IsNullOrWhiteSpace(inputFilePath) ? inputFilePath : _inputFilePath;
+
+        if (!string.IsNullOrWhiteSpace(initialInputFilePath))
         {
-            LoadInput(inputFilePath);
+            LoadInput(initialInputFilePath);
         }
     }
 
@@ -232,8 +238,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
                 return string.Empty;
             }
 
-            string path = Path.Combine(OutputFolderPath, fileName);
-            return AddOutputExtension(path, fileName);
+            return BuildOutputPath(fileName);
         }
     }
 
@@ -260,8 +265,39 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             _options.NameParserAutoIncrementNumber++;
         }
 
+        return BuildOutputPath(fileName);
+    }
+
+    private string BuildOutputPath(string fileName)
+    {
         string path = Path.Combine(OutputFolderPath, fileName);
-        return AddOutputExtension(path, fileName);
+        path = AddOutputExtension(path, fileName);
+        return EnsureDistinctFromInput(path);
+    }
+
+    private string EnsureDistinctFromInput(string outputPath)
+    {
+        if (string.IsNullOrWhiteSpace(InputFilePath))
+        {
+            return outputPath;
+        }
+
+        try
+        {
+            if (!string.Equals(Path.GetFullPath(InputFilePath), Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+            {
+                return outputPath;
+            }
+        }
+        catch
+        {
+            return outputPath;
+        }
+
+        string directory = Path.GetDirectoryName(outputPath) ?? string.Empty;
+        string fileName = Path.GetFileNameWithoutExtension(outputPath);
+        string extension = Path.GetExtension(outputPath);
+        return Path.Combine(directory, $"{fileName}_converted{extension}");
     }
 
     private static bool HasKnownOutputExtension(string fileName)
